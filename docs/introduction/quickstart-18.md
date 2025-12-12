@@ -23,10 +23,8 @@ O protocolo de **staking do token Hymple** foi projetado para incentivar a reten
 
 O programa de staking é totalmente on-chain, transparente e auditável, garantindo justiça na distribuição e preservação da integridade do ecossistema.
 
-{% hint style="info" %}
 💡 **Nota:** O protocolo de staking do token HYM possui um limite máximo e imutável de **15.000.000 HYM**.\
 Esses tokens **não serão mintados**, mas sim **pré-reservados durante a criação do token**, garantindo total transparência, controle de emissão e preservação da escassez dentro do ecossistema.
-{% endhint %}
 
 #### **Distribuição e taxas de recompensa**
 

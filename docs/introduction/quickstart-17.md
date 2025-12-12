@@ -25,10 +25,8 @@ O ecossistema Hymple adota um mecanismo de recompensas inovador, destinado a inc
 
 O objetivo principal do mecanismo de recompensas é **fomentar a utilização sustentável da plataforma**, premiando usuários que contribuem para o crescimento, estabilidade e integridade do ecossistema, enquanto controla a liberação de tokens para evitar concentração excessiva.
 
-{% hint style="info" %}
 💡 **Nota:** O programa de recompensas da Hymple possui um limite máximo e imutável de **15.000.000 HYM**.\
 Esses tokens **não serão mintados**, mas sim **pré-reservados durante a criação do token**, garantindo total transparência, controle de emissão e preservação da escassez dentro do ecossistema.
-{% endhint %}
 
 #### **2. Estrutura de pesos e critérios**
 
