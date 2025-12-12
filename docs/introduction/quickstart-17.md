@@ -654,5 +654,4 @@ Assim, o modelo de _Rewards_ da Hymple garante **incentivos equilibrados, transp
 
 Para visualizar uma simulação da liberação das recompensas ao longo do tempo, veja o arquivo "**hymple\_rewards\_simulation**" abaixo:
 
-{% file src="../.gitbook/assets/hymple_rewards_simulation.xlsx" %}
 
