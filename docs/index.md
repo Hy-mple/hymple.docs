@@ -16,10 +16,10 @@ layout:
     visible: true
 ---
 
-# Documentação | Hymple
+# Documentação | Hymple :material-hand-wave:
 
-<figure><img src=".gitbook/assets/hymple_with_log.png" alt=""><figcaption></figcaption></figure>
+![Hymple Logo](assets/hymple_with_log.png)
 
-**Hymple Whitepaper — Versão 1.0**\
-&#xNAN;_&#x48;ybrid Execution. On-Chain Transparency. User Sovereignty._\
-Última atualização: Dezembro de 2025
+**Hymple Whitepaper — Versão 1.0**  
+_Hybrid Execution. On-Chain Transparency. User Sovereignty._  
+Última atualização: **Dezembro de 2025**
