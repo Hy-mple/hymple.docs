@@ -1,5 +1,4 @@
 ---
-icon: hand-heart
 layout:
   width: default
   title:
@@ -16,7 +15,7 @@ layout:
     visible: true
 ---
 
-# Documentação | Hymple :material-hand-heart:
+# Documentação | Hymple
 
 ![Hymple Logo](assets/hymple_with_log.png)
 
