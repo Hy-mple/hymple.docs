@@ -1,7 +1,5 @@
 site_name: Hymple Docs
 site_url: https://seusite.com
-nav:
-  - Home: index.md
 
 theme:
   name: material
