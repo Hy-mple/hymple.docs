@@ -1,22 +1,3 @@
----
-description: Redefinindo padrões e resolvendo os entraves das plataformas tradicionais.
-icon: code-compare
-layout:
-  width: default
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
-  metadata:
-    visible: true
----
-
 # From Traditional to Hybrid: Hymple in Focus
 
 A Hymple foi projetada para unir as vantagens de CEX e DEX, eliminando limitações comuns de cada modelo. Abaixo, o comparativo consolidado:

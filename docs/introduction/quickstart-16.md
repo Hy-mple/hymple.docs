@@ -1,22 +1,3 @@
----
-description: Como o HYM gera utilidade, demanda e sustentabilidade no ecossistema Hymple
-icon: gears
-layout:
-  width: default
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
-  metadata:
-    visible: true
----
-
 # Token Utility
 
 O HYM é o elemento que conecta usuários, traders, provedores de liquidez e parceiros à dinâmica econômica da Hymple.\

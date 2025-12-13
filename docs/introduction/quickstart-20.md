@@ -1,22 +1,3 @@
----
-description: Política de Queima e Redução Programada da Oferta
-icon: fire
-layout:
-  width: default
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
-  metadata:
-    visible: true
----
-
 # Burn Policy
 
 A Política de Queima da Hymple foi desenvolvida para criar um modelo econômico sustentável, transparente e focado em valor de longo prazo para os detentores do token HYM. O objetivo é reduzir gradualmente a oferta circulante ao mesmo tempo em que se preserva a utilidade real do token dentro da plataforma.

@@ -1,24 +1,3 @@
----
-description: >-
-  Processos estruturados para lidar com divergências operacionais, falhas de
-  execução e comportamentos abusivos
-icon: resolving
-layout:
-  width: default
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
-  metadata:
-    visible: true
----
-
 # Conflict and Dispute Resolution Mechanism
 
 A Hymple incorpora um mecanismo estruturado de resolução de conflitos projetado para lidar com disputas relacionadas a ordens, execução, uso indevido da plataforma e falhas operacionais. Embora a plataforma opere de forma não custodial e minimize pontos de atrito, situações excepcionais podem requerer validação, auditoria ou intervenção limitada para garantir a integridade do sistema.

@@ -1,22 +1,3 @@
----
-description: Privacy by Design & Global Compliance Model
-icon: hand-holding-circle-dollar
-layout:
-  width: default
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
-  metadata:
-    visible: true
----
-
 # Privacy & Data Protection Compliance
 
 Hymple opera como uma plataforma non-custodial, non-KYC e com zero coleta de dados pessoais, toda a arquitetura do ecossistema foi construída para respeitar princípios amplamente reconhecidos de proteção e governança internacional de dados.

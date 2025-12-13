@@ -1,22 +1,3 @@
----
-description: Análise de mercado e diferenciação estratégica
-icon: chart-line-up
-layout:
-  width: default
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
-  metadata:
-    visible: true
----
-
 # Global Exchange Landscape and Our Proposal
 
 ### **1. Panorama do mercado global**

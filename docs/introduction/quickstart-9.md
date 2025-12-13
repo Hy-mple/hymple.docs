@@ -1,22 +1,3 @@
----
-description: Ensuring a Fair, Transparent, and Manipulation-Resistant Environment
-icon: shield-virus
-layout:
-  width: default
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
-  metadata:
-    visible: true
----
-
 # Anti-Manipulation and Anti-Abuse Protocols
 
 A Hymple adota um conjunto de mecanismos avançados para preservar a integridade da plataforma, prevenir comportamentos abusivos e garantir que o ambiente de negociação permaneça justo, seguro e sustentável — especialmente considerando sua natureza **non-custodial**, **sem KYC** e com **engine centralizado de alta performance**.

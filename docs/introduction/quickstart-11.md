@@ -1,22 +1,3 @@
----
-description: Premissas operacionais e limites técnicos que definem o escopo real do sistema
-icon: road-barrier
-layout:
-  width: default
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
-  metadata:
-    visible: true
----
-
 # System Limitations & Assumptions
 
 #### 1. Overview

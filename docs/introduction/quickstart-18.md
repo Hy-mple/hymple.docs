@@ -1,22 +1,3 @@
----
-description: Recompensas, Governança e Sustentabilidade do Ecossistema.
-icon: money-bill-trend-up
-layout:
-  width: default
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
-  metadata:
-    visible: true
----
-
 # Staking
 
 O protocolo de **staking do token Hymple** foi projetado para incentivar a retenção de tokens, promover a estabilidade e recompensar a participação ativa da comunidade. O mecanismo baseia-se em um modelo de distribuição variável, ajustado de acordo com o **volume de negociação mensal da plataforma**.

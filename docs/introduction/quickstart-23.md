@@ -1,22 +1,3 @@
----
-description: Estrutura Jurídica e Aviso Regulatório
-icon: hand-holding-circle-dollar
-layout:
-  width: default
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
-  metadata:
-    visible: true
----
-
 # Legal Framework & Regulatory Notice
 
 A Hymple encontra-se em processo de definição de sua estrutura jurídica oficial, incluindo a escolha da jurisdição, modelo societário e responsabilidades de cada entidade dentro do ecossistema. Como o projeto opera com tecnologia não custodial e infraestrutura híbrida, a estrutura final será determinada com apoio de consultoria especializada, de acordo com as exigências regulatórias e operacionais das possíveis regiões de atuação.

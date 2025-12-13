@@ -1,22 +1,3 @@
----
-description: Modelo de Auditoria e Transparência
-icon: check-double
-layout:
-  width: default
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
-  metadata:
-    visible: true
----
-
 # Audit & Transparency Model
 
 A Hymple adota uma política de transparência técnica e operacional como pilar central de sua credibilidade, garantindo que usuários, parceiros e investidores possam verificar de maneira independente o funcionamento do sistema, a saúde do protocolo e a integridade das operações.

@@ -1,24 +1,3 @@
----
-description: >-
-  A estrutura técnica que combina performance centralizada e liquidação
-  descentralizada.
-icon: sitemap
-layout:
-  width: default
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
-  metadata:
-    visible: true
----
-
 # Architecture
 
 A arquitetura do Hymple entrega **baixa latência**, **auditabilidade** e **soberania do usuário** ao unir execução off-chain com liquidação on-chain.

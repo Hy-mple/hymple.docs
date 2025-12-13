@@ -1,22 +1,3 @@
----
-description: Experiência do Usuário e Fluxo de Entrada Simplificado
-icon: person-snowboarding
-layout:
-  width: default
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
-  metadata:
-    visible: true
----
-
 # User Experience & Onboarding Flow
 
 A Hymple foi projetada para oferecer uma jornada fluida, intuitiva e descomplicada, eliminando barreiras comuns encontradas em plataformas tradicionais. O objetivo é permitir que qualquer usuário — iniciante ou avançado — consiga operar com autonomia total e sem fricção, mantendo ao mesmo tempo um padrão elevado de segurança e eficiência técnica.

@@ -1,22 +1,3 @@
----
-description: Estrutura de Taxas, Incentivos e Sustentabilidade.
-icon: hand-holding-circle-dollar
-layout:
-  width: default
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
-  metadata:
-    visible: true
----
-
 # Fees
 
 A política de taxas da **Hymple** foi desenvolvida para equilibrar sustentabilidade operacional, incentivos à comunidade e competitividade frente ao mercado global de exchanges híbridas.\

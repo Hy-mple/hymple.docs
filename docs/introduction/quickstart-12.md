@@ -1,24 +1,3 @@
----
-description: >-
-  Mecanismos de participação comunitária e alinhamento técnico sem delegação de
-  controle total
-icon: landmark
-layout:
-  width: default
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
-  metadata:
-    visible: true
----
-
 # Technical Governance Framework
 
 A Hymple não opera como uma DAO e não transfere governança plena para a comunidade.\

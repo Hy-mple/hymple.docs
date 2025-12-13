@@ -1,22 +1,3 @@
----
-description: Arquitetura econômica e sustentabilidade do token HYM.
-icon: circle-dollar-to-slot
-layout:
-  width: default
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
-  metadata:
-    visible: true
----
-
 # Tokenomics
 
 HYM é o token nativo que sustenta todo o ecossistema Hymple, atuando como\

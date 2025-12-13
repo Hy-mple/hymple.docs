@@ -1,24 +1,3 @@
----
-description: >-
-  Proteção multicamadas para um ecossistema resiliente, confiável e resistente a
-  ataques
-icon: building-lock
-layout:
-  width: default
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
-  metadata:
-    visible: true
----
-
 # Advanced Security Architecture
 
 A Hymple opera sob uma arquitetura de segurança avançada, desenvolvida para proteger usuários, transações, liquidez e infraestrutura, combinando técnicas modernas de segurança cibernética com práticas nativas de Web3. O objetivo é garantir resiliência operacional, minimizar superfícies de ataque e assegurar a integridade e continuidade do ecossistema, independentemente das condições de mercado ou do volume de atividade.

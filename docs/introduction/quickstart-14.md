@@ -1,22 +1,3 @@
----
-description: Transparência sobre riscos e premissas operacionais do ecossistema Hymple
-icon: message-exclamation
-layout:
-  width: default
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
-  metadata:
-    visible: true
----
-
 # Risk Disclosure & Threat Model
 
 A operação de uma exchange híbrida non-custodial envolve fatores tecnológicos, econômicos e regulatórios que podem impactar o desempenho, a experiência e a segurança do usuário.\

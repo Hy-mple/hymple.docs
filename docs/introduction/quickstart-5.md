@@ -1,22 +1,3 @@
----
-description: Unified Telemetry for Performance, Security, and On-Chain Integrity
-icon: sitemap
-layout:
-  width: default
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
-  metadata:
-    visible: true
----
-
 # Observability & Monitoring Layer
 
 A Observability Layer do Hymple foi projetada para garantir visibilidade completa sobre todos os componentes do ecossistema — interface, APIs, execução off-chain, liquidação on-chain e infraestrutura crítica.\

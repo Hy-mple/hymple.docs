@@ -1,22 +1,3 @@
----
-description: Planejamento para continuidade, estabilidade e resposta a eventos críticos
-icon: brake-warning
-layout:
-  width: default
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
-  metadata:
-    visible: true
----
-
 # Operational Resilience & Incident Response
 
 A Hymple foi projetada com foco em resiliência operacional, garantindo que o sistema continue funcional mesmo diante de falhas, picos abruptos de demanda, eventos inesperados ou ameaças externas.\
