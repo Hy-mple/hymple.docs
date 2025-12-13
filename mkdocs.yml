@@ -2,3 +2,14 @@ site_name: Hymple Docs
 theme:
   name: material
   language: pt-BR
+
+nav:
+  - Home: index.md
+  - Introdução:
+      - Visão Geral: introduction/index.md
+      - Quickstart:
+          - QS 0 — Visão Geral: introduction/quickstart-0.md
+          - QS 1 — Conceitos Básicos: introduction/quickstart-1.md
+          - QS 2 — Carteiras e Custódia: introduction/quickstart-2.md
+          - QS 3 — Primeira Operação: introduction/quickstart-3.md
+          - QS 4 — Segurança: introduction/quickstart-4.md
