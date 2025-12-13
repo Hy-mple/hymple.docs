@@ -1,12 +1,4 @@
 site_name: Hymple Docs
-site_url: https://seusite.com
-
 theme:
   name: material
   language: pt-BR
-
-markdown_extensions:
-  - admonition
-  - codehilite
-  - toc:
-      permalink: true
