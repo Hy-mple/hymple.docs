@@ -1,24 +1,11 @@
----
-layout:
-  width: default
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
-  metadata:
-    visible: true
+# Hymple Documentation
+
+Bem-vindo à documentação oficial do **Hymple**.
+
+Este site foi criado usando **MkDocs + Material**, com foco em clareza, simplicidade e navegação progressiva.
+
+Use o menu lateral para navegar entre as páginas.
+
 ---
 
-# Documentação | Hymple
-
-![Hymple Logo](assets/hymple_with_log.png)
-
-**Hymple Whitepaper — Versão 1.0**  
-_Hybrid Execution. On-Chain Transparency. User Sovereignty._  
-Última atualização: **Dezembro de 2025**
+➡️ Vá para a próxima página: [Página de Exemplo](example.md)
