@@ -4,7 +4,7 @@ site_author: Hymple Team
 
 theme:
   name: material
-  language: en-US
+  language: en
 
 nav:
   - Home: index.md
