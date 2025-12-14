@@ -1,10 +1,12 @@
 site_name: Hymple Docs
-site_description: Oficial documentation for Hymple
+site_description: Official documentation for Hymple
 site_author: Hymple Team
 
 theme:
   name: material
   language: en
+  features:
+    - navigation.footer
 
 nav:
   - Home: index.md
