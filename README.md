@@ -2,14 +2,10 @@
 icon: hand-heart
 ---
 
-# Hymple Documentation
+# Documentação | Hymple
 
-Bem-vindo à documentação oficial do **Hymple**.
+![Hymple Logo](.gitbook/assets/hymple_with_log.png)
 
-Este site foi criado usando **MkDocs + Material**, com foco em clareza, simplicidade e navegação progressiva.
-
-Use o menu lateral para navegar entre as páginas.
-
-***
-
-➡️ Next: [Introduction](docs/introduction.md)
+**Hymple Whitepaper — Versão 1.0**\
+&#xNAN;_&#x48;ybrid Execution. On-Chain Transparency. User Sovereignty._\
+Última atualização: **Dezembro de 2025**
