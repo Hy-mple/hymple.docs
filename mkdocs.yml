@@ -1,20 +1,29 @@
 site_name: Hymple Docs
 site_description: Official documentation for Hymple
 site_author: Hymple Team
+site_url: https://docs.hymple.io
 
 theme:
   name: material
   language: en
   features:
+    - navigation.instant
+    - navigation.tracking
     - navigation.footer
+    - navigation.sections
+    - content.code.copy
 
 nav:
   - Home: index.md
-  - Introduction: introduction.md
+  - Introduction:
+      - Getting Started: introduction.md
 
 markdown_extensions:
   - admonition
+  - attr_list
+  - md_in_html
   - toc:
       permalink: true
+
 extra_css:
   - stylesheets/extra.css
