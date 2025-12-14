@@ -10,7 +10,7 @@ theme:
     - navigation.instant
     - navigation.tracking
     - navigation.footer
-    - navigation.sections
+    # REMOVIDO: navigation.sections
     - content.code.copy
 
 nav:

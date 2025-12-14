@@ -1,4 +1,4 @@
-# Página de Exemplo
+# Getting Started
 
 Esta é uma página de exemplo para validar a navegação do MkDocs.
 
@@ -8,7 +8,3 @@ Esta é uma página de exemplo para validar a navegação do MkDocs.
 - Navegação entre páginas
 - Estrutura correta de arquivos
 - Build e deploy sem erro
-
----
-
-⬅️ Previous [Home](index.md)
