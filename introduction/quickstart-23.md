@@ -1,5 +1,20 @@
 ---
+description: Estrutura Jurídica e Aviso Regulatório
 icon: hand-holding-circle-dollar
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
 ---
 
 # Legal Framework & Regulatory Notice

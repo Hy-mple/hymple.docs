@@ -1,5 +1,20 @@
 ---
+description: Modelo de Sustentabilidade Econômica e Viabilidade de Longo Prazo
 icon: money-bill-wheat
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
 ---
 
 # Economic Sustainability & Long-Term Viability Model

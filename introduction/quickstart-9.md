@@ -1,5 +1,20 @@
 ---
+description: Ensuring a Fair, Transparent, and Manipulation-Resistant Environment
 icon: shield-virus
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
 ---
 
 # Anti-Manipulation and Anti-Abuse Protocols

@@ -1,5 +1,20 @@
 ---
+description: Experiência do Usuário e Fluxo de Entrada Simplificado
 icon: person-snowboarding
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
 ---
 
 # User Experience & Onboarding Flow

@@ -1,5 +1,22 @@
 ---
+description: >-
+  A estrutura técnica que combina performance centralizada e liquidação
+  descentralizada.
 icon: sitemap
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
 ---
 
 # Architecture
@@ -146,7 +163,7 @@ A BSC funciona como um **runway** ideal para tirar o projeto do papel com veloci
 
 ### **2. Fase 2 — Expansão para L2s da Rede Ethereum**
 
-Após validação do modelo e a consolidação da adoção inicial, o ecossistema evoluirá para uma arquitetura **multichain**, incorporando supote nativo às principais Layer 2 (L2) do mercado, incluindo:
+Após validação do modelo e a consolidação  da adoção inicial, o ecossistema evoluirá para uma arquitetura **multichain**, incorporando supote nativo às principais Layer 2 (L2) do mercado, incluindo:
 
 * **Base**
 * **Arbitrum**

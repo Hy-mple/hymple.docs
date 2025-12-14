@@ -1,5 +1,22 @@
 ---
+description: >-
+  Processos estruturados para lidar com divergências operacionais, falhas de
+  execução e comportamentos abusivos
 icon: resolving
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
 ---
 
 # Conflict and Dispute Resolution Mechanism

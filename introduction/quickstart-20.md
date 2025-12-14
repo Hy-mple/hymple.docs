@@ -1,5 +1,20 @@
 ---
+description: Política de Queima e Redução Programada da Oferta
 icon: fire
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
 ---
 
 # Burn Policy

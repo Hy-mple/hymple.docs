@@ -1,5 +1,20 @@
 ---
+description: Unindo performance, segurança e simplicidade em um único ecossistema.
 icon: users
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
 ---
 
 # Benefits

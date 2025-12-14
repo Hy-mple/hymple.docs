@@ -1,5 +1,20 @@
 ---
+description: Arquitetura econômica e sustentabilidade do token HYM.
 icon: circle-dollar-to-slot
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
 ---
 
 # Tokenomics
@@ -48,7 +63,7 @@ A oferta total de **70 milhões de tokens HYM** será distribuída da seguinte f
 ### ⏳ Cronograma de Liberação e Vesting
 
 As **Recompensas de Uso da Plataforma (15M)** e as **Recompensas de Staking**\
-\&#xNAN;**(15M)** serão liberadas gradualmente seguindo um teto anual fixo.
+&#xNAN;**(15M)** serão liberadas gradualmente seguindo um teto anual fixo.
 
 **Importante:**\
 Esses tokens **não serão mintados ao longo do tempo**.\

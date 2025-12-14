@@ -1,5 +1,22 @@
 ---
+description: >-
+  Proteção multicamadas para um ecossistema resiliente, confiável e resistente a
+  ataques
 icon: building-lock
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
 ---
 
 # Advanced Security Architecture

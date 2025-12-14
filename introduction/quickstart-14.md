@@ -1,5 +1,20 @@
 ---
+description: Transparência sobre riscos e premissas operacionais do ecossistema Hymple
 icon: message-exclamation
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
 ---
 
 # Risk Disclosure & Threat Model

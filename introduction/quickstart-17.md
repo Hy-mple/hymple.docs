@@ -1,5 +1,20 @@
 ---
+description: Sistema de incentivos e valorização dos usuários Hymple.
 icon: gift
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
 ---
 
 # Rewards

@@ -1,5 +1,20 @@
 ---
+description: Privacy by Design & Global Compliance Model
 icon: hand-holding-circle-dollar
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
 ---
 
 # Privacy & Data Protection Compliance
