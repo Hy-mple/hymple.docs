@@ -1,3 +1,7 @@
+---
+icon: hand-heart
+---
+
 # Hymple Documentation
 
 Bem-vindo à documentação oficial do **Hymple**.
@@ -6,6 +10,6 @@ Este site foi criado usando **MkDocs + Material**, com foco em clareza, simplici
 
 Use o menu lateral para navegar entre as páginas.
 
----
+***
 
-➡️ Next: [Introduction](introduction.md)
+➡️ Next: [Introduction](docs/introduction.md)
