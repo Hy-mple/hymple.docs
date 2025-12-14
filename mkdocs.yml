@@ -2,6 +2,8 @@ site_name: Hymple Docs
 site_description: Official documentation for Hymple
 site_author: Hymple Team
 
+use_directory_urls: true
+
 theme:
   name: material
   language: en
