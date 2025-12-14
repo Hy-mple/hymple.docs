@@ -1,10 +1,10 @@
 site_name: Hymple Docs
-site_description: Documentação oficial do ecossistema Hymple
+site_description: Oficial documentation for Hymple
 site_author: Hymple Team
 
 theme:
   name: material
-  language: pt-BR
+  language: en-US
 
 nav:
   - Home: index.md
