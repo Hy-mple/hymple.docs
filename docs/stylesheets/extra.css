@@ -1,0 +1,12 @@
+.md-footer__link {
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+  background: rgba(255,255,255,0.03);
+  transition: all 0.25s ease;
+}
+
+.md-footer__link:hover {
+  background: rgba(255,255,255,0.06);
+  transform: translateY(-2px);
+}
