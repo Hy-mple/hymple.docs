@@ -8,4 +8,4 @@ Use o menu lateral para navegar entre as páginas.
 
 ---
 
-➡️ Vá para a próxima página: [Página de Exemplo](example.md)
+➡️ Next: [Introduction](example.md)

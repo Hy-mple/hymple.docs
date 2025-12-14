@@ -8,7 +8,7 @@ theme:
 
 nav:
   - Home: index.md
-  - Exemplo: example.md
+  - Introduction: introduction.md
 
 markdown_extensions:
   - admonition
