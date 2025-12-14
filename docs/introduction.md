@@ -11,4 +11,4 @@ Esta é uma página de exemplo para validar a navegação do MkDocs.
 
 ---
 
-⬅️ Go to [Home](index.md)
+⬅️ Previous [Home](index.md)
