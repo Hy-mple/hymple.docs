@@ -1,8 +1,5 @@
 site_name: Hymple Exchange Documentation
-site_description: Documentação oficial da Hymple Exchange
 site_url: https://hy-mple.github.io/hymple.docs/
-repo_url: https://github.com/Hy-mple/hymple.docs
-repo_name: hymple.docs
 
 nav:
   - Home: index.md
@@ -11,47 +8,18 @@ nav:
 theme:
   name: material
   language: pt-BR
-  features:
-    - navigation.instant
-    - navigation.sections
-    - navigation.top
-    - search.suggest
-    - search.highlight
-  palette:
-    - scheme: default
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/brightness-7
-        name: Modo escuro
-    - scheme: slate
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/brightness-4
-        name: Modo claro
 
 extra_css:
   - stylesheets/extra.css
 
 markdown_extensions:
   - admonition
-  - pymdownx.details
   - attr_list
   - md_in_html
-  - pymdownx.highlight
-  - pymdownx.superfences
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - tables
-  - toc:
-      permalink: true
 
 plugins:
-  - search:
-      lang: pt
-  - minify:
-      minify_html: true
-
-copyright: Copyright &copy; 2025 Hymple Exchange
+  - search
