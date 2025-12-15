@@ -1,8 +1,8 @@
 site_name: Hymple Exchange Documentation
 site_description: Documentação oficial da Hymple Exchange
-site_url: https://hy-mple.github.io/hymple.exchange.web/
-repo_url: https://github.com/Hy-mple/hymple.exchange.web
-repo_name: hymple.exchange.web
+site_url: https://hy-mple.github.io/hymple.docs/
+repo_url: https://github.com/Hy-mple/hymple.docs
+repo_name: hymple.docs
 
 nav:
   - Home: index.md

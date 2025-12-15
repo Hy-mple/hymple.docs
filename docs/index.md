@@ -8,7 +8,7 @@ Este guia foi desenvolvido para ajudá-lo a entender e utilizar todas as funcion
 
 ## 📚 O que você vai encontrar
 
-Esta documentação está organizada de forma clara e objetiva para facilitar sua navegação:
+Esta documentação estáa organizada de forma clara e objetiva para facilitar sua navegação:
 
 <div class="card-grid">
   <div class="card">
