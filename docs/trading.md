@@ -58,11 +58,11 @@ Utilize as ferramentas de análise para tomar decisões informadas:
 ---
 
 <div class="nav-cards">
-  <a class="nav-card prev" href="getting-started.html">
+  <a class="nav-card prev" href="../getting-started/">
     <span class="nav-card-label">Previous</span>
     <span class="nav-card-title">Primeiros Passos</span>
   </a>
-  <a class="nav-card next" href="wallet.html">
+  <a class="nav-card next" href="../wallet/">
     <span class="nav-card-label">Next</span>
     <span class="nav-card-title">Wallet</span>
   </a>
