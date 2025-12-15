@@ -18,12 +18,13 @@
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
-      
-        <title>Hymple Exchange Documentation</title>
-      
-    
+  <title>Hymple Exchange Documentation</title>
+
     
       <link rel="stylesheet" href="/hymple.docs/assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="/hymple.docs/assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -50,10 +51,73 @@
 
     
     
+  <!-- Garantir carregamento do Material Design Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  
+  <style>
+    /* Forçar exibição do drawer de navegação */
+    [data-md-toggle="drawer"] {
+      display: none;
+    }
+    
+    .md-sidebar--primary {
+      position: fixed;
+      top: 48px;
+      left: 0;
+      width: 242px;
+      height: 100%;
+      transform: translateX(0) !important;
+      transition: transform .25s cubic-bezier(.1,.7,.1,1),box-shadow .25s;
+      z-index: 3;
+    }
+    
+    @media screen and (max-width: 76.234375em) {
+      .md-sidebar--primary {
+        position: fixed;
+        top: 0;
+        left: -242px;
+        width: 242px;
+        height: 100%;
+        transform: translateX(0);
+        transition: transform .25s cubic-bezier(.1,.7,.1,1),box-shadow .25s;
+        background-color: var(--md-default-bg-color);
+        z-index: 4;
+      }
+      
+      [data-md-toggle="drawer"]:checked ~ .md-container .md-sidebar--primary {
+        transform: translateX(242px);
+        box-shadow: 0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12),0 5px 5px -3px rgba(0,0,0,.4);
+      }
+      
+      [data-md-toggle="drawer"] {
+        display: block;
+      }
+    }
+    
+    .md-nav--primary {
+      display: block !important;
+      visibility: visible !important;
+    }
+    
+    .md-nav__title {
+      display: block;
+    }
+    
+    .md-nav__list {
+      display: block !important;
+    }
+  </style>
+
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -100,8 +164,8 @@
       </div>
     </div>
     
+      
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -438,7 +502,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "/hymple.docs/", "features": [], "search": "/hymple.docs/assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "/hymple.docs/", "features": ["navigation.instant", "navigation.sections", "navigation.expand"], "search": "/hymple.docs/assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="/hymple.docs/assets/javascripts/bundle.e71a0d61.min.js"></script>
