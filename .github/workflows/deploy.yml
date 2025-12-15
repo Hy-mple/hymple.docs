@@ -32,11 +32,21 @@ jobs:
         run: |
           mkdocs --version
           pip show mkdocs-material
+          
+      - name: Build site
+        run: mkdocs build --verbose --strict
+        
+      - name: List build output
+        run: |
+          echo "=== Build directory contents ==="
+          ls -la site/
+          echo "=== Sample HTML file ==="
+          head -50 site/index.html
 
       - name: Configure Git
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Build and Deploy
-        run: mkdocs gh-deploy --force --clean --verbose
+      - name: Deploy to GitHub Pages
+        run: mkdocs gh-deploy --force --clean
