@@ -34,13 +34,8 @@ theme:
   features:
     # Navegação
     - navigation.instant      # Carregamento instantâneo
-    - navigation.instant.prefetch  # Prefetch de páginas
     - navigation.tracking     # Tracking de URL
-    - navigation.tabs         # Tabs superiores (opcional)
     - navigation.sections     # Seções expandidas
-    - navigation.expand       # Expansão automática
-    - navigation.path         # Breadcrumbs
-    - navigation.indexes      # Índices de seção
     - navigation.top          # Botão voltar ao topo
     - navigation.footer       # Footer com navegação
     
@@ -54,9 +49,6 @@ theme:
     - content.code.annotate   # Anotações em código
     - content.tabs.link       # Tabs sincronizadas
     - content.tooltips        # Tooltips
-    
-    # Header
-    - header.autohide         # Auto-esconder header
   
   icon:
     repo: fontawesome/brands/github
