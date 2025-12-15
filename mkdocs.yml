@@ -5,8 +5,15 @@ use_directory_urls: false
 nav:
   - Início:
       - Bem-vindo: index.md
-  - Documentação:
       - Introdução: introduction.md
+  - Guia do Usuário:
+      - Primeiros Passos: getting-started.md
+      - Trading: trading.md
+      - Wallet: wallet.md
+  - Desenvolvedores:
+      - API: api.md
+  - Suporte:
+      - FAQ: faq.md
 
 theme:
   name: material

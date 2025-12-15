@@ -86,4 +86,8 @@ Recomendamos seguir para a seção de **Trading** para aprender como realizar su
     <span class="nav-card-label">Previous</span>
     <span class="nav-card-title">Get Started</span>
   </a>
+  <a class="nav-card next" href="getting-started.html">
+    <span class="nav-card-label">Next</span>
+    <span class="nav-card-title">Primeiros Passos</span>
+  </a>
 </div>
