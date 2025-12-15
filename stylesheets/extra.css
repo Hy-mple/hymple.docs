@@ -1,4 +1,55 @@
 /* ==========================================
+   FIX: Forçar renderização do conteúdo do menu lateral
+   ========================================== */
+
+/* Garantir que o drawer de navegação seja visível */
+.md-sidebar--primary {
+  display: block !important;
+}
+
+.md-sidebar--primary .md-sidebar__scrollwrap {
+  display: block !important;
+  overflow: visible !important;
+}
+
+.md-sidebar--primary .md-sidebar__inner {
+  display: block !important;
+}
+
+/* Forçar exibição da navegação */
+.md-nav--primary {
+  display: block !important;
+  visibility: visible !important;
+  height: auto !important;
+}
+
+.md-nav--primary > .md-nav__list {
+  display: block !important;
+  visibility: visible !important;
+}
+
+.md-nav--primary .md-nav__item {
+  display: block !important;
+  visibility: visible !important;
+}
+
+.md-nav--primary .md-nav__link {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Garantir que títulos e labels apareçam */
+.md-nav__title {
+  display: block !important;
+  visibility: visible !important;
+}
+
+.md-nav__item--nested > .md-nav > .md-nav__list {
+  display: block !important;
+}
+
+/* ==========================================
    NAVIGATION CARDS - Sistema de navegação entre páginas
    ========================================== */
 
