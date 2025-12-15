@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block scripts %}
+  {{ super() }}
+  <script>
+    // Debug e forçar exibição do menu
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('=== DEBUG MENU LATERAL ===');
+      
+      // Encontrar elementos do menu
+      const sidebar = document.querySelector('.md-sidebar--primary');
+      const nav = document.querySelector('.md-nav--primary');
+      
+      console.log('Sidebar encontrado:', sidebar);
+      console.log('Nav encontrado:', nav);
+      
+      if (sidebar) {
+        console.log('Sidebar display:', window.getComputedStyle(sidebar).display);
+        console.log('Sidebar visibility:', window.getComputedStyle(sidebar).visibility);
+        
+        // Forçar exibição
+        sidebar.style.display = 'block';
+        sidebar.style.visibility = 'visible';
+        sidebar.style.opacity = '1';
+      }
+      
+      if (nav) {
+        console.log('Nav display:', window.getComputedStyle(nav).display);
+        console.log('Nav visibility:', window.getComputedStyle(nav).visibility);
+        
+        // Forçar exibição
+        nav.style.display = 'block';
+        nav.style.visibility = 'visible';
+        nav.style.opacity = '1';
+        nav.style.height = 'auto';
+        
+        // Forçar todos os filhos
+        const items = nav.querySelectorAll('.md-nav__item, .md-nav__link, .md-nav__list');
+        console.log('Items encontrados:', items.length);
+        items.forEach(item => {
+          item.style.display = 'block';
+          item.style.visibility = 'visible';
+          item.style.opacity = '1';
+        });
+      }
+      
+      console.log('=== FIM DEBUG ===');
+    });
+  </script>
+{% endblock %}
