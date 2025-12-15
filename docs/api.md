@@ -102,11 +102,11 @@ Bibliotecas oficiais disponíveis:
 ---
 
 <div class="nav-cards">
-  <a class="nav-card prev" href="../wallet/">
+  <a class="nav-card prev" href="wallet.html">
     <span class="nav-card-label">Previous</span>
     <span class="nav-card-title">Wallet</span>
   </a>
-  <a class="nav-card next" href="../faq/">
+  <a class="nav-card next" href="faq.html">
     <span class="nav-card-label">Next</span>
     <span class="nav-card-title">FAQ</span>
   </a>

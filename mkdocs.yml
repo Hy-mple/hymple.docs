@@ -1,5 +1,6 @@
 site_name: Hymple Exchange Documentation
 site_url: https://hy-mple.github.io/hymple.docs/
+use_directory_urls: false
 
 nav:
   - Home: index.md
@@ -15,10 +16,8 @@ theme:
   features:
     - navigation.instant
     - navigation.tracking
-    - navigation.tabs
     - navigation.sections
     - navigation.expand
-    - navigation.path
     - navigation.top
     - search.suggest
     - search.highlight
