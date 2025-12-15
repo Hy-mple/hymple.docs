@@ -4,15 +4,10 @@ site_url: https://hy-mple.github.io/hymple.exchange.web/
 repo_url: https://github.com/Hy-mple/hymple.exchange.web
 repo_name: hymple.exchange.web
 
-# Usar URLs de diretório (padrão, mas explícito)
-use_directory_urls: true
-
-# Navegação
 nav:
-  - Get Started: index.md
+  - Home: index.md
   - Introdução: introduction.md
 
-# Tema
 theme:
   name: material
   language: pt-BR
@@ -22,98 +17,41 @@ theme:
     - navigation.top
     - search.suggest
     - search.highlight
-    - content.code.copy
   palette:
     - scheme: default
       primary: indigo
       accent: indigo
       toggle:
         icon: material/brightness-7
-        name: Mudar para modo escuro
+        name: Modo escuro
     - scheme: slate
       primary: indigo
       accent: indigo
       toggle:
         icon: material/brightness-4
-        name: Mudar para modo claro
+        name: Modo claro
 
-# CSS customizado
 extra_css:
   - stylesheets/extra.css
 
-# JavaScript customizado (opcional)
-# extra_javascript:
-#   - javascripts/extra.js
-
-# Extensões Markdown
 markdown_extensions:
-  # Admonitions (caixas de aviso)
   - admonition
   - pymdownx.details
-  
-  # Atributos e HTML
   - attr_list
   - md_in_html
-  
-  # Code blocks
-  - pymdownx.highlight:
-      anchor_linenums: true
-      line_spans: __span
-      pygments_lang_class: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
-  
-  # Formatação
-  - pymdownx.betterem
-  - pymdownx.caret
-  - pymdownx.mark
-  - pymdownx.tilde
-  - pymdownx.keys
-  
-  # Listas e tabelas
-  - def_list
-  - pymdownx.tasklist:
-      custom_checkbox: true
-  - tables
-  
-  # Ícones e emojis
+  - pymdownx.highlight
+  - pymdownx.superfences
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  
-  # Links e referências
-  - footnotes
-  - abbr
-  - pymdownx.smartsymbols
-  
-  # Outros
+  - tables
   - toc:
       permalink: true
-      toc_depth: 3
 
-# Plugins
 plugins:
   - search:
       lang: pt
-      separator: '[\s\-\.]+'
   - minify:
       minify_html: true
-      minify_js: true
-      minify_css: true
-      htmlmin_opts:
-        remove_comments: true
 
-# Extra
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/Hy-mple
-      name: GitHub
-
-# Copyright
 copyright: Copyright &copy; 2025 Hymple Exchange
