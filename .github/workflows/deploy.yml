@@ -26,7 +26,12 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install mkdocs-material
+          pip install "mkdocs-material>=9.5.0"
+          
+      - name: Debug - Check MkDocs version
+        run: |
+          mkdocs --version
+          pip show mkdocs-material
 
       - name: Configure Git
         run: |
