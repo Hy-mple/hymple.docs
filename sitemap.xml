@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://hy-mple.github.io/hymple.docs/</loc>
+         <loc>https://hy-mple.github.io/hymple.docs/index.html</loc>
          <lastmod>2025-12-15</lastmod>
     </url>
     <url>
-         <loc>https://hy-mple.github.io/hymple.docs/api/</loc>
+         <loc>https://hy-mple.github.io/hymple.docs/api.html</loc>
          <lastmod>2025-12-15</lastmod>
     </url>
     <url>
-         <loc>https://hy-mple.github.io/hymple.docs/faq/</loc>
+         <loc>https://hy-mple.github.io/hymple.docs/faq.html</loc>
          <lastmod>2025-12-15</lastmod>
     </url>
     <url>
-         <loc>https://hy-mple.github.io/hymple.docs/getting-started/</loc>
+         <loc>https://hy-mple.github.io/hymple.docs/getting-started.html</loc>
          <lastmod>2025-12-15</lastmod>
     </url>
     <url>
-         <loc>https://hy-mple.github.io/hymple.docs/introduction/</loc>
+         <loc>https://hy-mple.github.io/hymple.docs/introduction.html</loc>
          <lastmod>2025-12-15</lastmod>
     </url>
     <url>
-         <loc>https://hy-mple.github.io/hymple.docs/trading/</loc>
+         <loc>https://hy-mple.github.io/hymple.docs/trading.html</loc>
          <lastmod>2025-12-15</lastmod>
     </url>
     <url>
-         <loc>https://hy-mple.github.io/hymple.docs/wallet/</loc>
+         <loc>https://hy-mple.github.io/hymple.docs/wallet.html</loc>
          <lastmod>2025-12-15</lastmod>
     </url>
 </urlset>

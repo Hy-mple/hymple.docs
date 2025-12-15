@@ -1,19 +1,4 @@
 /* ==========================================
-   FIX: Forçar exibição do menu lateral
-   ========================================== */
-
-.md-sidebar--primary {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-.md-nav--primary {
-  display: block !important;
-  visibility: visible !important;
-}
-
-/* ==========================================
    NAVIGATION CARDS - Sistema de navegação entre páginas
    ========================================== */
 
