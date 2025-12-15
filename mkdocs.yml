@@ -9,6 +9,23 @@ nav:
 theme:
   name: material
   language: pt-BR
+  features:
+    - navigation.sections
+    - navigation.expand
+    - toc.integrate
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Modo escuro
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Modo claro
 
 extra_css:
   - stylesheets/extra.css
