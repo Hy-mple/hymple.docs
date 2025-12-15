@@ -82,7 +82,7 @@ Recomendamos seguir para a seção de **Trading** para aprender como realizar su
 ---
 
 <div class="nav-cards">
-  <a class="nav-card prev" href="./">
+  <a class="nav-card prev" href="index.html">
     <span class="nav-card-label">Previous</span>
     <span class="nav-card-title">Get Started</span>
   </a>
