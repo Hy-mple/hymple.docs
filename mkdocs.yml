@@ -3,7 +3,7 @@ site_url: https://hy-mple.github.io/hymple.docs/
 use_directory_urls: false
 
 nav:
-  - Home: index.md
+  - Get Started: index.md
   - Introdução: introduction.md
   - Primeiros Passos: getting-started.md
   - Trading: trading.md
@@ -20,6 +20,7 @@ theme:
     - navigation.sections
     - navigation.expand
     - navigation.top
+    - navigation.footer
     - search.suggest
     - search.highlight
   palette:
