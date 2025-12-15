@@ -60,7 +60,7 @@ Pronto para começar? Use o card abaixo para seguir para a próxima página ou e
 ---
 
 <div class="nav-cards">
-  <a class="nav-card next" href="../introduction/">
+  <a class="nav-card next" href="introduction.html">
     <span class="nav-card-label">Next</span>
     <span class="nav-card-title">Introdução</span>
   </a>

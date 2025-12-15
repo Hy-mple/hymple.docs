@@ -79,7 +79,7 @@ Atualmente a plataforma é web-based e responsiva, funcionando perfeitamente em 
 ---
 
 <div class="nav-cards">
-  <a class="nav-card prev" href="../api/">
+  <a class="nav-card prev" href="api.html">
     <span class="nav-card-label">Previous</span>
     <span class="nav-card-title">API</span>
   </a>
