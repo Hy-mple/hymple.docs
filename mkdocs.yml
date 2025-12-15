@@ -1,6 +1,6 @@
 site_name: Hymple Exchange Documentation
 site_description: Documentação oficial da Hymple Exchange
-site_url: https://hy-mple.github.io/hymple.docs/
+site_url: https://hy-mple.github.io/hymple.exchange.web/
 repo_url: https://github.com/Hy-mple/hymple.exchange.web
 repo_name: hymple.exchange.web
 
@@ -16,58 +16,26 @@ nav:
 theme:
   name: material
   language: pt-BR
+  features:
+    - navigation.instant
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
   palette:
-    # Modo claro
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
+    - scheme: default
       primary: indigo
       accent: indigo
       toggle:
         icon: material/brightness-7
         name: Mudar para modo escuro
-    # Modo escuro
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
+    - scheme: slate
       primary: indigo
       accent: indigo
       toggle:
         icon: material/brightness-4
         name: Mudar para modo claro
-  
-  features:
-    # Navegação
-    - navigation.instant      # Carregamento instantâneo
-    - navigation.tracking     # Tracking de URL
-    - navigation.sections     # Seções expandidas
-    - navigation.top          # Botão voltar ao topo
-    - navigation.footer       # Footer com navegação
-    
-    # Busca
-    - search.suggest          # Sugestões de busca
-    - search.highlight        # Destacar termos buscados
-    - search.share            # Compartilhar busca
-    
-    # Conteúdo
-    - content.code.copy       # Copiar código
-    - content.code.annotate   # Anotações em código
-    - content.tabs.link       # Tabs sincronizadas
-    - content.tooltips        # Tooltips
-  
-  icon:
-    repo: fontawesome/brands/github
-    admonition:
-      note: octicons/tag-16
-      abstract: octicons/checklist-16
-      info: octicons/info-16
-      tip: octicons/squirrel-16
-      success: octicons/check-16
-      question: octicons/question-16
-      warning: octicons/alert-16
-      failure: octicons/x-circle-16
-      danger: octicons/zap-16
-      bug: octicons/bug-16
-      example: octicons/beaker-16
-      quote: octicons/quote-16
 
 # CSS customizado
 extra_css:
@@ -146,25 +114,6 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/Hy-mple
       name: GitHub
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/hymple
-      name: Twitter
-  
-  analytics:
-    provider: google
-    property: G-XXXXXXXXXX  # Substitua pelo seu ID do Google Analytics
-  
-  consent:
-    title: Consentimento de cookies
-    description: >- 
-      Utilizamos cookies para reconhecer suas visitas e preferências, bem como
-      para medir a eficácia de nossa documentação e verificar se os usuários
-      encontram o que procuram. Com seu consentimento, você nos ajuda a 
-      melhorar nossa documentação.
-    actions:
-      - accept
-      - reject
-      - manage
 
 # Copyright
 copyright: Copyright &copy; 2025 Hymple Exchange
