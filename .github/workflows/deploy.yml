@@ -5,24 +5,34 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: "3.x"
+          python-version: 3.x
+          cache: 'pip'
 
-      - name: Install MkDocs + Material
+      - name: Install dependencies
         run: |
-          pip install mkdocs
+          pip install --upgrade pip
           pip install mkdocs-material
           pip install mkdocs-minify-plugin
 
-      - name: Build and Deploy
+      - name: Configure Git
         run: |
-          mkdocs gh-deploy --force
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Build and Deploy
+        run: mkdocs gh-deploy --force --clean --verbose

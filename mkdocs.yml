@@ -1,8 +1,11 @@
 site_name: Hymple Exchange Documentation
 site_description: Documentação oficial da Hymple Exchange
-site_url: https://docs.hymple.exchange
+site_url: https://hy-mple.github.io/hymple.docs/
 repo_url: https://github.com/Hy-mple/hymple.exchange.web
 repo_name: hymple.exchange.web
+
+# Usar URLs de diretório (padrão, mas explícito)
+use_directory_urls: true
 
 # Navegação
 nav:
