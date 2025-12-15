@@ -1,62 +1,23 @@
 site_name: Hymple Exchange Documentation
 site_url: https://hy-mple.github.io/hymple.docs/
-use_directory_urls: false
+use_directory_urls: true
 
 nav:
-  - Início:
-      - Bem-vindo: index.md
-      - Introdução: introduction.md
-  - Guia do Usuário:
-      - Primeiros Passos: getting-started.md
-      - Trading: trading.md
-      - Wallet: wallet.md
-  - Desenvolvedores:
-      - API: api.md
-  - Suporte:
-      - FAQ: faq.md
+  - Home: index.md
+  - Introdução: introduction.md
+  - Primeiros Passos: getting-started.md
+  - Trading: trading.md
+  - Wallet: wallet.md
+  - API: api.md
+  - FAQ: faq.md
 
 theme:
   name: material
-  language: pt-BR
-  custom_dir: docs/overrides
-  icon:
-    logo: material/currency-btc
-  features:
-    - navigation.instant
-    - navigation.tracking
-    - navigation.sections
-    - navigation.expand
-    - navigation.top
-    - navigation.footer
-    - toc.follow
-    - search.suggest
-    - search.highlight
-    - search.share
-  palette:
-    - scheme: default
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/brightness-7
-        name: Modo escuro
-    - scheme: slate
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/brightness-4
-        name: Modo claro
 
-# extra_css:
-#   - stylesheets/extra.css
+plugins:
+  - search
 
 markdown_extensions:
   - admonition
   - attr_list
   - md_in_html
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - tables
-
-plugins:
-  - search

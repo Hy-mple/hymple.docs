@@ -65,11 +65,11 @@ Sua segurança é nossa prioridade:
 ---
 
 <div class="nav-cards">
-  <a class="nav-card prev" href="trading.html">
+  <a class="nav-card prev" href="../trading/">
     <span class="nav-card-label">Previous</span>
     <span class="nav-card-title">Trading</span>
   </a>
-  <a class="nav-card next" href="api.html">
+  <a class="nav-card next" href="../api/">
     <span class="nav-card-label">Next</span>
     <span class="nav-card-title">API</span>
   </a>

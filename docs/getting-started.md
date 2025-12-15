@@ -40,11 +40,11 @@ Agora que você conhece os requisitos básicos, veja como realizar sua primeira 
 ---
 
 <div class="nav-cards">
-  <a class="nav-card prev" href="introduction.html">
+  <a class="nav-card prev" href="../introduction/">
     <span class="nav-card-label">Previous</span>
     <span class="nav-card-title">Introdução</span>
   </a>
-  <a class="nav-card next" href="trading.html">
+  <a class="nav-card next" href="../trading/">
     <span class="nav-card-label">Next</span>
     <span class="nav-card-title">Trading</span>
   </a>
