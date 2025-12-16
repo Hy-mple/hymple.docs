@@ -15,7 +15,7 @@ _Hybrid Execution. On-Chain Transparency. User Sovereignty._&#x20;
 ---
 
 <div class="nav-cards">
-  <a href="01/" class="nav-card next">
+  <a href="introduction/" class="nav-card next">
     <div class="nav-card-header">
       <span class="nav-card-icon">→</span>
       <span>Next</span>

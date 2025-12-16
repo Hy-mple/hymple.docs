@@ -47,8 +47,8 @@ theme:
 # Navigation Structure
 nav:
   - Getting Started: index.md
-  - Introduction: 01.md
-  - From Traditional to Hybrid: 02.md
+  - Introduction: introduction.md
+  - From Traditional to Hybrid: from_traditional_to_hybrid.md
 
 # Plugins
 plugins:
@@ -78,7 +78,7 @@ markdown_extensions:
 
 # Extra CSS for custom navigation cards
 extra_css:
-  - stylesheets/extra.css
+  - stylesheets/styles.css
 
 # Repository
 repo_name: Hy-mple/hymple.docs

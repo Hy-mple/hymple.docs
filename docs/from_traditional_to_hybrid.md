@@ -29,7 +29,7 @@ Hymple was designed to combine the advantages of CEX and DEX, removing common li
 ---
 
 <div class="nav-cards">
-  <a href="../01/" class="nav-card previous">
+  <a href="../introduction/" class="nav-card previous">
     <div class="nav-card-header">
       <span class="nav-card-icon">←</span>
       <span>Previous</span>
