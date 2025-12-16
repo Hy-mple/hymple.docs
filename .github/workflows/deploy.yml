@@ -22,6 +22,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: 3.x
+          cache: 'pip'
 
       - name: Install dependencies
         run: |
@@ -29,10 +30,10 @@ jobs:
           pip install mkdocs-material
           pip install mkdocs-glightbox
           
-      - name: Debug - Check MkDocs version
+      - name: Verify installations
         run: |
           mkdocs --version
-          pip show mkdocs-material
+          pip show mkdocs-material mkdocs-glightbox
           
       - name: Build site
         run: mkdocs build --verbose --strict
@@ -41,6 +42,8 @@ jobs:
         run: |
           echo "=== Build directory contents ==="
           ls -la site/
+          echo "=== Stylesheets directory ==="
+          ls -la site/stylesheets/ || echo "Stylesheets directory not found"
           echo "=== Sample HTML file ==="
           head -50 site/index.html
 
