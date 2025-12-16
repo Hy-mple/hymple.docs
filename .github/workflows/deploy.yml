@@ -50,8 +50,8 @@ jobs:
           ls -la site/
           echo "=== Stylesheets directory ==="
           ls -la site/stylesheets/
-          echo "=== Check extra.css ==="
-          head -30 site/stylesheets/extra.css
+          echo "=== Check styles.css ==="
+          head -30 site/stylesheets/styles.css
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
