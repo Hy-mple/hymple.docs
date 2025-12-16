@@ -1,0 +1,93 @@
+/* Custom Navigation Cards */
+.nav-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.nav-card {
+  flex: 1;
+  min-width: 250px;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  background: var(--md-code-bg-color);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-color: var(--md-accent-fg-color);
+}
+
+.nav-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--md-accent-fg-color);
+}
+
+.nav-card-icon {
+  font-size: 1rem;
+}
+
+.nav-card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--md-default-fg-color);
+  margin: 0;
+}
+
+.nav-card-description {
+  font-size: 0.9rem;
+  color: var(--md-default-fg-color--light);
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+
+.nav-card.previous {
+  text-align: left;
+}
+
+.nav-card.next {
+  text-align: right;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .nav-cards {
+    flex-direction: column;
+  }
+  
+  .nav-card {
+    min-width: 100%;
+  }
+  
+  .nav-card.next {
+    text-align: left;
+  }
+}
+
+/* Dark mode adjustments */
+[data-md-color-scheme="slate"] .nav-card {
+  background: var(--md-code-bg-color);
+  border-color: var(--md-default-fg-color--lightest);
+}
+
+[data-md-color-scheme="slate"] .nav-card:hover {
+  border-color: var(--md-accent-fg-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
