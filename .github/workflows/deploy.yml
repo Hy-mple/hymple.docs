@@ -26,7 +26,8 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install "mkdocs-material==9.5.3"
+          pip install mkdocs-material
+          pip install mkdocs-glightbox
           
       - name: Debug - Check MkDocs version
         run: |
