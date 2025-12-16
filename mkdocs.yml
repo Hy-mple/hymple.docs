@@ -10,7 +10,7 @@ theme:
     # Light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
+      primary: custom
       accent: indigo
       toggle:
         icon: material/brightness-7
@@ -18,7 +18,7 @@ theme:
     # Dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: indigo
+      primary: custom
       accent: indigo
       toggle:
         icon: material/brightness-4
@@ -41,8 +41,9 @@ theme:
     - content.code.annotate
   
   icon:
-    logo: material/currency-btc
     repo: fontawesome/brands/github
+  
+  logo: assets/logo.png
 
 # Navigation Structure
 nav:
