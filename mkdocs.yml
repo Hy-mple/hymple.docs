@@ -30,7 +30,6 @@ theme:
     - navigation.sections
     - navigation.expand
     - navigation.top
-    - navigation.footer
     - navigation.indexes
     - navigation.tabs.sticky
     - toc.follow
@@ -80,6 +79,10 @@ markdown_extensions:
 # Extra CSS for custom navigation cards
 extra_css:
   - stylesheets/styles.css
+
+# Remove "Made with Material for MkDocs" from footer
+extra:
+  generator: false
 
 # Copyright
 copyright: Copyright &copy; 2025 Hymple Exchange
