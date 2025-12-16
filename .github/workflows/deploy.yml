@@ -35,7 +35,9 @@ jobs:
           pip show mkdocs-material mkdocs-glightbox
           
       - name: Build site
-        run: mkdocs build --verbose --strict
+        run: |
+          mkdocs build --verbose --strict
+          touch site/.nojekyll
         
       - name: List build output
         run: |
@@ -43,8 +45,10 @@ jobs:
           ls -la site/
           echo "=== Stylesheets directory ==="
           ls -la site/stylesheets/ || echo "Stylesheets directory not found"
+          echo "=== Check 01 directory ==="
+          ls -la site/01/ || echo "01 directory not found"
           echo "=== Sample HTML file ==="
-          head -50 site/index.html
+          head -100 site/index.html | grep -A 5 "stylesheet\|01"
 
       - name: Configure Git
         run: |
