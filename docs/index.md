@@ -2,7 +2,7 @@
 description: Hybrid by nature, simple by choice.
 ---
 
-# GETTING STARTED
+# Getting Started
 
 <figure><img src=".gitbook/assets/symbol-transparent-512.png" alt=""><figcaption></figcaption></figure>
 
