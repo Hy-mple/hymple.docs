@@ -1,67 +1,26 @@
-# Get Started
-
-Bem-vindo à documentação oficial da **Hymple Exchange** 🚀
-
-Este guia foi desenvolvido para ajudá-lo a entender e utilizar todas as funcionalidades da plataforma, desde conceitos básicos até recursos avançados.
-
+---
+description: Hybrid by nature, simple by choice.
 ---
 
-## 📚 O que você vai encontrar
+# GETTING STARTED
 
-Esta documentação estáa organizada de forma clara e objetiva para facilitar sua navegação:
+<figure><img src=".gitbook/assets/symbol-transparent-512.png" alt=""><figcaption></figcaption></figure>
 
-<div class="card-grid">
-  <div class="card">
-    <h3>🎯 Introdução</h3>
-    <p>Conheça a plataforma, seus objetivos e como a documentação está estruturada.</p>
-  </div>
-  
-  <div class="card">
-    <h3>💼 Trading</h3>
-    <p>Aprenda a negociar tokens, analisar mercados e gerenciar suas ordens.</p>
-  </div>
-  
-  <div class="card">
-    <h3>💰 Wallet</h3>
-    <p>Gerencie seus ativos, depósitos e saques com segurança.</p>
-  </div>
-  
-  <div class="card">
-    <h3>🔧 Integrações</h3>
-    <p>APIs, webhooks e ferramentas para desenvolvedores.</p>
-  </div>
-</div>
+**Hymple Whitepaper — Versão 1.0**&#x20;
 
----
+_Hybrid Execution. On-Chain Transparency. User Sovereignty._&#x20;
 
-## 🎯 Como usar esta documentação
-
-### Navegação Lateral
-Use o **menu lateral** à esquerda para navegar rapidamente entre diferentes seções e páginas da documentação.
-
-### Busca Inteligente
-Utilize a **barra de busca** no topo para encontrar rapidamente o que você procura.
-
-### Navegação Sequencial
-Ao final de cada página, você encontrará **cards de navegação** que permitem avançar ou voltar na sequência lógica da documentação.
-
-### Modo Escuro/Claro
-Alterne entre os temas claro e escuro usando o ícone no canto superior direito.
-
----
-
-## 🚀 Comece agora
-
-Pronto para começar? Use o card abaixo para seguir para a próxima página ou explore o menu lateral para ir diretamente ao tópico que você precisa.
-
-!!! tip "Dica"
-    Se você é novo na plataforma, recomendamos seguir a documentação na ordem sequencial para uma melhor compreensão.
+Última atualização: Dezembro de 2025
 
 ---
 
 <div class="nav-cards">
-  <a class="nav-card next" href="introduction.html">
-    <span class="nav-card-label">Next</span>
-    <span class="nav-card-title">Introdução</span>
+  <a href="01/" class="nav-card next">
+    <div class="nav-card-header">
+      <span class="nav-card-icon">→</span>
+      <span>Next</span>
+    </div>
+    <div class="nav-card-title">Introduction</div>
   </a>
 </div>
+
