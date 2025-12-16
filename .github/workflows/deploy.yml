@@ -42,16 +42,20 @@ jobs:
           
       - name: Build site
         run: |
-          mkdocs build --verbose --strict
+          mkdocs build --verbose --strict --clean
         
       - name: List build output
         run: |
           echo "=== Build directory contents ==="
           ls -la site/
+          echo "=== Assets directory ==="
+          ls -la site/assets/ || echo "Assets not found"
           echo "=== Stylesheets directory ==="
           ls -la site/stylesheets/
           echo "=== Check styles.css ==="
           head -30 site/stylesheets/styles.css
+          echo "=== Check index.html for logo ==="
+          grep -i "logo" site/index.html || echo "Logo not found in HTML"
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
