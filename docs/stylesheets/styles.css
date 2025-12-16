@@ -27,6 +27,15 @@
   width: auto;
 }
 
+/* Move color scheme toggle after search */
+.md-header__option {
+  order: 3;
+}
+
+.md-header__source {
+  order: 4;
+}
+
 .nav-card {
   flex: 0 0 auto;
   width: 180px;

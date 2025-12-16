@@ -81,9 +81,5 @@ markdown_extensions:
 extra_css:
   - stylesheets/styles.css
 
-# Repository
-repo_name: Hy-mple/hymple.docs
-repo_url: https://github.com/Hy-mple/hymple.docs
-
 # Copyright
 copyright: Copyright &copy; 2025 Hymple Exchange
