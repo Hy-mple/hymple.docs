@@ -1,4 +1,4 @@
-site_name: Hymple
+site_name: HYMPLE
 site_url: https://hy-mple.github.io/hymple.docs/
 site_description: Hybrid by nature, simple by choice - Next-generation hybrid decentralized exchange
 
@@ -15,7 +15,7 @@ theme:
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: custom
-      accent: blue
+      accent: orange
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
@@ -23,7 +23,7 @@ theme:
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: custom
-      accent: blue
+      accent: orange
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
