@@ -8,24 +8,24 @@ theme:
   language: en
   font:
     text: Inter
-    code: Roboto Mono
+    code: JetBrains Mono
   
   palette:
-    # Light mode
+    # Light mode - GitBook style
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: custom
       accent: orange
       toggle:
-        icon: material/brightness-7
+        icon: material/weather-night
         name: Switch to dark mode
-    # Dark mode
+    # Dark mode - GitBook style
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: custom
       accent: orange
       toggle:
-        icon: material/brightness-4
+        icon: material/weather-sunny
         name: Switch to light mode
   
   features:
@@ -37,7 +37,6 @@ theme:
     - content.tabs.link
     - content.tooltips
     - navigation.expand
-    - navigation.footer
     - navigation.indexes
     - navigation.instant
     - navigation.instant.prefetch
@@ -86,9 +85,6 @@ plugins:
         - custom-skip-class-name
       auto_caption: false
       caption_position: bottom
-  - git-revision-date-localized:
-      enable_creation_date: true
-      type: timeago
   - minify:
       minify_html: true
       minify_js: true
@@ -173,20 +169,6 @@ extra:
   analytics:
     provider: google
     property: !ENV GOOGLE_ANALYTICS_KEY
-    feedback:
-      title: Was this page helpful?
-      ratings:
-        - icon: material/emoticon-happy-outline
-          name: This page was helpful
-          data: 1
-          note: >-
-            Thanks for your feedback!
-        - icon: material/emoticon-sad-outline
-          name: This page could be improved
-          data: 0
-          note: >-
-            Thanks for your feedback! Help us improve this page by
-            <a href="https://github.com/hy-mple/hymple.docs/issues/new/?title=[Feedback]+{title}+-+{url}" target="_blank" rel="noopener">opening an issue</a>.
 
 # Copyright
 copyright: |

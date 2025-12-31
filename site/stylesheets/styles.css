@@ -477,7 +477,7 @@ body {
 }
 
 /* ==========================================
-   FOOTER - HYMPLE STYLE (No Navigation)
+   FOOTER - HYMPLE STYLE
    ========================================== */
 .md-footer {
   background: linear-gradient(135deg, #18214D 0%, #2a3566 100%);
@@ -485,11 +485,6 @@ body {
 
 .md-footer-meta {
   background: rgba(0, 0, 0, 0.2);
-}
-
-/* Hide previous/next navigation in footer */
-.md-footer__inner {
-  display: none;
 }
 
 .md-footer__link,
