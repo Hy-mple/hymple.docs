@@ -154,18 +154,9 @@ extra_javascript:
 extra:
   generator: false
   social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/hy-mple
-      name: Hymple on GitHub
-    - icon: fontawesome/brands/twitter
+    - icon: fontawesome/brands/x-twitter
       link: https://twitter.com/hymple
-      name: Hymple on Twitter
-    - icon: fontawesome/brands/discord
-      link: https://discord.gg/hymple
-      name: Join our Discord
-    - icon: fontawesome/brands/telegram
-      link: https://t.me/hymple
-      name: Telegram Community
+      name: Hymple on X
   analytics:
     provider: google
     property: !ENV GOOGLE_ANALYTICS_KEY

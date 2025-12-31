@@ -816,13 +816,6 @@ html {
   color: var(--hymple-accent);
 }
 
-/* External links indicator */
-.md-typeset a[href^="http"]:after {
-  content: " ↗";
-  font-size: 0.85em;
-  opacity: 0.6;
-}
-
 /* ==========================================
    GITBOOK-STYLE LISTS
    ========================================== */
