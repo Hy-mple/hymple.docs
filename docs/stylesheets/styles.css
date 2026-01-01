@@ -161,7 +161,7 @@ body {
    HEADER STYLING - HYMPLE BRAND
    ========================================== */
 .md-header {
-  background: linear-gradient(135deg, #18214D 0%, #2a3566 100%);
+  background: #131722;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
@@ -485,7 +485,7 @@ body {
    FOOTER - HYMPLE STYLE (No Navigation)
    ========================================== */
 .md-footer {
-  background: linear-gradient(135deg, #18214D 0%, #2a3566 100%);
+  background: #131722;
 }
 
 .md-footer-meta {
@@ -578,7 +578,7 @@ body {
 }
 
 [data-md-color-scheme="slate"] .md-header {
-  background: linear-gradient(135deg, #18214D 0%, #2a3566 100%);
+  background: #131722;
 }
 
 [data-md-color-scheme="slate"] .nav-card {
