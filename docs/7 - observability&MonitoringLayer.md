@@ -102,11 +102,11 @@ Thus, Hymple maintains its core commitment: to offer a secure, efficient, and tr
 ---
 
 <div class="nav-buttons">
-  <a href="../6 - architecture/" class="nav-button nav-button-prev">
+  <a href="/6 - architecture/" class="nav-button nav-button-prev">
     <span class="nav-label">PREVIOUS</span>
     <span class="nav-title">Architecture</span>
   </a>
-  <a href="../8 - userExperience&OnboardingFlow/" class="nav-button nav-button-next">
+  <a href="/8 - userExperience&OnboardingFlow/" class="nav-button nav-button-next">
     <span class="nav-label">NEXT</span>
     <span class="nav-title">User Experience & Onboarding</span>
   </a>

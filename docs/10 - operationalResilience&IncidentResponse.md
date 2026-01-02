@@ -88,7 +88,7 @@ Hymple operates under the premise that resilience is not just a technical requir
 ---
 
 <div class="nav-buttons">
-  <a href="../9 - advancedSecurityArchitecture/" class="nav-button nav-button-prev">
+  <a href="/9 - advancedSecurityArchitecture/" class="nav-button nav-button-prev">
     <span class="nav-label">PREVIOUS</span>
     <span class="nav-title">Advanced Security Architecture</span>
   </a>

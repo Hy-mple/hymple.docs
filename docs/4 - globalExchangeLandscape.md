@@ -87,11 +87,11 @@ and capturing users dissatisfied with limitations of both CEX and DEX.
 ---
 
 <div class="nav-buttons">
-  <a href="../3 - from_traditional_to_hybrid/" class="nav-button nav-button-prev">
+  <a href="/3 - from_traditional_to_hybrid/" class="nav-button nav-button-prev">
     <span class="nav-label">PREVIOUS</span>
     <span class="nav-title">From Traditional to Hybrid</span>
   </a>
-  <a href="../5 - benefits/" class="nav-button nav-button-next">
+  <a href="/5 - benefits/" class="nav-button nav-button-next">
     <span class="nav-label">NEXT</span>
     <span class="nav-title">Benefits</span>
   </a>
