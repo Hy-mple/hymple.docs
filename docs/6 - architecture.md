@@ -17,19 +17,24 @@ Responsible for the user experience, it was designed with a focus on simplicity,
 - Initial integration via WalletConnect v2
 
 **Mobile Roadmap**
+
 Development of a native app for iOS and Android, offering full access to the Hymple ecosystem and optimized connectivity with mobile wallets.
-Wallet Support Strategy
+
+**Wallet Support Strategy**
+
 Hymple adopts WalletConnect v2 as the main integration layer, ensuring immediate compatibility with hundreds of non-custodial wallets. This allows users to connect their wallets securely, quickly and in a standardized way.
+
 Wallets supported via WC2 (among others):
-MetaMask (mobile via WalletConnect)
-Trust Wallet
-Coinbase Wallet
-OKX Wallet
-Rabby
-Rainbow
-Ledger Live (via WalletConnect)
-SafePal
-1inch Wallet
+
+- MetaMask (mobile via WalletConnect)
+- Trust Wallet
+- Coinbase Wallet
+- OKX Wallet
+- Rabby
+- Rainbow
+- Ledger Live (via WalletConnect)
+- SafePal
+- 1inch Wallet
 **Beginner Mode**
 
 - Simplified layout
@@ -80,12 +85,15 @@ Ensures secure and transparent on-chain settlement.
 Batch settlement → reduces gas, avoids partial liquidations and increases efficiency.
 
 ### Core Protocol and Infrastructure Layer
+
 Supports the interoperability and resilience of the ecosystem.
-Technologies
-Kubernetes + Docker
-Georedundant load balancing
-gRPC, REST and GraphQL APIs
-On-chain indexers
+
+**Technologies**
+
+- Kubernetes + Docker
+- Georedundant load balancing
+- gRPC, REST and GraphQL APIs
+- On-chain indexers
 ### Security and Privacy
 
 - Non-custodial
@@ -95,14 +103,17 @@ On-chain indexers
 - Rate limiting + firewalls
 
 ### Scalability and Resilience
-Distributed microservices
-Horizontal scalability
-Dedicated channels for HFT and institutional volumes
-7. 🔄 Interoperability
-Multi-chain EVM
-Expansion to non-EVM ecosystems planned in later phases, according to ecosystem maturity and market demand.
-API and SDK for partners
-Modular architecture for continuous updates
+
+- Distributed microservices
+- Horizontal scalability
+- Dedicated channels for HFT and institutional volumes
+
+### Interoperability
+
+- Multi-chain EVM
+- Expansion to non-EVM ecosystems planned in later phases, according to ecosystem maturity and market demand.
+- API and SDK for partners
+- Modular architecture for continuous updates
 ### Hymple's Multichain Deploy Strategy
 
 *(BSC as a starting point, L2 as strategic expansion)*
@@ -110,13 +121,16 @@ Modular architecture for continuous updates
 Hymple adopts a pragmatic, growth-oriented multichain deployment strategy, balancing user adoption, operational efficiency and technological evolution. This approach was designed to minimize friction in the initial launch while positioning the ecosystem for sustainable expansion within the Ethereum universe.
 
 **Initial Phase — Deploy on BNB Smart Chain (BSC)**
+
 The first phase of the Hymple ecosystem will be launched on the BNB Smart Chain, chosen for strategic factors:
-Motivations
-Extremely simple onboarding: a large portion of global market users already use BSC natively.
-Low operational cost: significantly cheaper gas and deployment fees, ideal for validation, iteration and growth phases.
-Access to a large retail market: BSC has one of the largest active communities of users and developers.
-Accelerated launch: allows releasing the token, staking and initial liquidity quickly, without unnecessary technical complexity.
-Easy integration with popular wallets: Trust Wallet and MetaMask already work natively.
+
+**Motivations**
+
+- Extremely simple onboarding: a large portion of global market users already use BSC natively.
+- Low operational cost: significantly cheaper gas and deployment fees, ideal for validation, iteration and growth phases.
+- Access to a large retail market: BSC has one of the largest active communities of users and developers.
+- Accelerated launch: allows releasing the token, staking and initial liquidity quickly, without unnecessary technical complexity.
+- Easy integration with popular wallets: Trust Wallet and MetaMask already work natively.
 **Objectives of the Initial Phase**
 
 - Establish a solid user base.
@@ -134,14 +148,17 @@ After validating the model and consolidating initial adoption, the ecosystem wil
 - Optimism
 
 **Benefits of Expanding to L2**
-Stronger institutional reputation, attracting advanced traders, market makers and strategic partners.
-Safer and standardized settlement, leveraging the Ethereum-rollups ecosystem.
-Much lower costs and better performance than traditional L1s (Ethereum), ideal for on-chain settlement of a hybrid exchange.
-Greater global reach, connecting the token and users to the entire modern EVM ecosystem.
-Objectives of Phase 2
-Introduce an institutional version of Hymple.
-Implement optimized settlement routes on L2.
-Expand wallet compatibility via WalletConnect natively.
+
+- Stronger institutional reputation, attracting advanced traders, market makers and strategic partners.
+- Safer and standardized settlement, leveraging the Ethereum-rollups ecosystem.
+- Much lower costs and better performance than traditional L1s (Ethereum), ideal for on-chain settlement of a hybrid exchange.
+- Greater global reach, connecting the token and users to the entire modern EVM ecosystem.
+
+**Objectives of Phase 2**
+
+- Introduce an institutional version of Hymple.
+- Implement optimized settlement routes on L2.
+- Expand wallet compatibility via WalletConnect natively.
 **Long-Term Multichain Strategy**
 
 Hymple will be natively multichain, but with unified governance.
@@ -161,17 +178,12 @@ Expansion to new networks will happen gradually, following technical criteria:
 - wallet support
 
 **Strategic Summary**
-Stage
-Network
-Main Objective
-Phase 1
-BSC
-Fast adoption, low cost, initial user base building
-Phase 2
-L2s
-Scale, institutional reputation, security and efficiency
-Phase 3
-Multichain
-Distributed liquidity, advanced integration, global expansion
-Conclusion
+
+| **Stage** | **Network** | **Main Objective** |
+|-----------|-------------|--------------------|
+| Phase 1 | BSC | Fast adoption, low cost, initial user base building |
+| Phase 2 | L2s | Scale, institutional reputation, security and efficiency |
+| Phase 3 | Multichain | Distributed liquidity, advanced integration, global expansion |
+
+**Conclusion**
 Hymple is born on BSC to grow quickly and then expands to L2s to scale with safety, reputation and efficiency. This strategy — combined with Hymple's hybrid architecture, which blends the performance of a CEX with the sovereignty and transparency of a DEX — establishes a new technical standard for global hybrid exchanges, uniting accessible entry for users and a robust infrastructure geared toward the platform's institutional future.
