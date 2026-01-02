@@ -71,6 +71,8 @@ nav:
   - 5. Architecture: 6 - architecture.md
   - 6. Observability & Monitoring: 7 - observability&MonitoringLayer.md
   - 7. User Experience & Onboarding: 8 - userExperience&OnboardingFlow.md
+  - 8. Advanced Security Architecture: 9 - advancedSecurityArchitecture.md
+  - 9. Operational Resilience & Incident Response: 10 - operationalResilience&IncidentResponse.md
 
 # Plugins
 plugins:
