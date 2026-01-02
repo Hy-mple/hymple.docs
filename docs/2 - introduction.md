@@ -1,4 +1,4 @@
-# 1. Introduction
+# Introduction
 
 #### The Next-Gen Hybrid Exchange - No custody, user controlled, built for scale.
 
@@ -24,8 +24,6 @@ Hymple was designed to unite freedom, security and auditability, balancing decen
 
 As a result, Hymple does not act as a traditional broker nor as a custodial institution.
 
-
-
 ### Hybrid Architecture
 
 The Hymple ecosystem combines two complementary layers:
@@ -44,7 +42,6 @@ The Hymple ecosystem combines two complementary layers:
   - operational metrics
 
 are made available in public and auditable logs.
-
 
 ### Transparency and Audit
 

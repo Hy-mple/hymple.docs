@@ -1,16 +1,12 @@
-# 2. From Traditional to Hybrid: Hymple in Focus
-
----
+# From Traditional to Hybrid: Hymple in Focus
 
 ## Redefining Standards and Solving the Bottlenecks of Traditional Platforms
 
-### 2.1 Overview
+### Overview
 
 Hymple was designed to combine the advantages of CEX and DEX, removing common limitations of each model. Below, the consolidated comparison:
 
----
-
-### 2.2 Comparative Analysis
+### Comparative Analysis
 
 | **Problem** | **DEX** | **CEX** | **HYMPLE** |
 |-------------|---------|---------|------------|
@@ -26,12 +22,8 @@ Hymple was designed to combine the advantages of CEX and DEX, removing common li
 | **10. Scalability** | Limited | High | High - Resilient hybrid architecture |
 | **11. Accessibility** | High technical barrier | Simple | Smooth and educational onboarding |
 
----
-
-### 2.3 Strategic Summary
+### Strategic Summary
 
 - **DEX:** sovereignty and transparency, but low usability and liquidity.
 - **CEX:** performance and simplicity, but little privacy and custody risks.
 - **Hymple:** combines speed, liquidity, privacy, sovereignty and accessibility.
-
----

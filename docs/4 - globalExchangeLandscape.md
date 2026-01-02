@@ -1,10 +1,8 @@
-# 3. Global Exchange Landscape and Our Proposal
-
----
+# Global Exchange Landscape and Our Proposal
 
 ## Market Analysis and Strategic Differentiation
 
-### 3.1 Global Market Overview
+### Global Market Overview
 
 The exchange market is one of the most competitive in the crypto sector. In 2025:
 
@@ -14,27 +12,21 @@ The exchange market is one of the most competitive in the crypto sector. In 2025
 
 **Insight:** there is clear room for hybrid solutions that combine the liquidity and simplicity of CEX with the sovereignty and privacy of DEX.
 
----
-
-### 3.2 Trends Favoring Hybrid Exchanges
+### Trends Favoring Hybrid Exchanges
 
 - Global demand for privacy and self-custody
 - Growth in regions with restrictions on CEX
 - Increasing adoption of DeFi
 - More user-friendly interfaces accessible to new users
 
----
-
-### 3.3 Competitive Analysis
+### Competitive Analysis
 
 A hybrid exchange, non-custodial and without KYC, with an interface adapted for beginners and advanced users, has the potential to capture users who:
 
 - migrate from CEX seeking privacy;
 - migrate from DEX seeking liquidity and ease.
 
----
-
-### 3.4 Target Audience Segmentation
+### Target Audience Segmentation
 
 - Beginner traders
 - Advanced traders
@@ -43,7 +35,7 @@ A hybrid exchange, non-custodial and without KYC, with an interface adapted for 
 
 ---
 
-### 3.5 Market Potential
+### Market Potential
 
 - **420+ million** crypto users in 2025
 - **35%** of DEX users want something more user-friendly
@@ -59,27 +51,21 @@ A hybrid exchange, non-custodial and without KYC, with an interface adapted for 
 
 **Insight:** Even the conservative scenario demonstrates significant economic viability.
 
----
-
-### 3.6 Value Proposition
+### Value Proposition
 
 - No KYC
 - Non-custodial
 - Adaptive interfaces
 - Global access without severe regulatory barriers
 
----
-
-### 3.7 Go-to-Market Strategies
+### Go-to-Market Strategies
 
 - Simplified onboarding
 - Marketing focused on privacy and UX
 - Strategic partnerships
 - Incentives and liquidity programs
 
----
-
-### 3.8 Monetization Sources
+### Monetization Sources
 
 - Maker/taker fees
 - Token listings
@@ -87,9 +73,7 @@ A hybrid exchange, non-custodial and without KYC, with an interface adapted for 
 - Staking
 - Affiliate program
 
----
-
-### 3.9 Analysis Conclusion
+### Analysis Conclusion
 
 Hymple is a timely and economically viable solution in the current context, capable of uniting:
 
@@ -99,5 +83,3 @@ Hymple is a timely and economically viable solution in the current context, capa
 - simplified UX
 
 and capturing users dissatisfied with limitations of both CEX and DEX.
-
----
