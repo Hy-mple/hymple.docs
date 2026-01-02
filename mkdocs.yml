@@ -68,6 +68,9 @@ nav:
   - 2. From Traditional to Hybrid: 3 - from_traditional_to_hybrid.md
   - 3. Global Exchange Landscape: 4 - globalExchangeLandscape.md
   - 4. Benefits: 5 - benefits.md
+  - 5. Architecture: 6 - architecture.md
+  - 6. Observability & Monitoring: 7 - observability&MonitoringLayer.md
+  - 7. User Experience & Onboarding: 8 - userExperience&OnboardingFlow.md
 
 # Plugins
 plugins:
