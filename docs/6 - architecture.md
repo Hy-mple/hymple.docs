@@ -4,7 +4,7 @@
 
 Hymple's architecture delivers low latency, auditability and user sovereignty by combining off-chain execution with on-chain settlement.
 
-### Interface Layer
+### 💻 Interface Layer
 
 Responsible for the user experience, it was designed with a focus on simplicity, performance and interoperability with the Web3 ecosystem.
 
