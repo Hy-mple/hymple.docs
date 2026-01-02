@@ -98,3 +98,16 @@ Hymple's observability layer is not just a set of tools — it is an essential c
 With a lightweight, modular, and economical stack, Hymple obtains institutional-grade visibility without compromising costs or complexity.
 As Hymple evolves, scales, and enters new markets, all tools, processes, and solutions described here will be improved, replaced, or expanded. The platform was built with modularity exactly for this: to grow without friction, adopt more advanced technologies when necessary, and sustain an increasingly robust, reliable, and competitive ecosystem.
 Thus, Hymple maintains its core commitment: to offer a secure, efficient, and transparent experience for novice and advanced users alike, while continuously adapting to the global technological and regulatory landscape.
+
+---
+
+<div class="nav-buttons">
+  <a href="../6 - architecture/" class="nav-button nav-button-prev">
+    <span class="nav-label">PREVIOUS</span>
+    <span class="nav-title">Architecture</span>
+  </a>
+  <a href="../8 - userExperience&OnboardingFlow/" class="nav-button nav-button-next">
+    <span class="nav-label">NEXT</span>
+    <span class="nav-title">User Experience & Onboarding</span>
+  </a>
+</div>

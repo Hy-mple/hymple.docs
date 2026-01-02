@@ -77,3 +77,16 @@ Hymple positions itself as a hybrid, auditable and transparent ecosystem that ba
 - 🗳 **On-chain participatory governance**
 
 The result is a hybrid exchange that combines the sovereignty of DEXs with the operational efficiency of CEXs.
+
+---
+
+<div class="nav-buttons">
+  <a href="../" class="nav-button nav-button-prev">
+    <span class="nav-label">PREVIOUS</span>
+    <span class="nav-title">Home</span>
+  </a>
+  <a href="../3 - from_traditional_to_hybrid/" class="nav-button nav-button-next">
+    <span class="nav-label">NEXT</span>
+    <span class="nav-title">From Traditional to Hybrid</span>
+  </a>
+</div>

@@ -84,3 +84,13 @@ Hymple's operational resilience approach was built to ensure:
 - Protection of the platform's and users' integrity.
 
 Hymple operates under the premise that resilience is not just a technical requirement, but a fundamental part of ecosystem trust.
+
+---
+
+<div class="nav-buttons">
+  <a href="../9 - advancedSecurityArchitecture/" class="nav-button nav-button-prev">
+    <span class="nav-label">PREVIOUS</span>
+    <span class="nav-title">Advanced Security Architecture</span>
+  </a>
+  <div class="nav-button-placeholder"></div>
+</div>

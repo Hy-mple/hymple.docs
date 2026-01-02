@@ -42,3 +42,16 @@ By combining off-chain execution with on-chain settlement, Hymple minimizes fees
 Hymple emerges as an intelligent synthesis between the performance of centralized exchanges and the sovereignty of decentralized solutions. Its hybrid model delivers the best of both worlds: speed, transparency and full user control, without sacrificing simplicity.
 
 In this way, Hymple not only facilitates interaction with the crypto universe — it redefines the standard of how innovation, efficiency and decentralization can coexist in harmony.
+
+---
+
+<div class="nav-buttons">
+  <a href="../4 - globalExchangeLandscape/" class="nav-button nav-button-prev">
+    <span class="nav-label">PREVIOUS</span>
+    <span class="nav-title">Global Exchange Landscape</span>
+  </a>
+  <a href="../6 - architecture/" class="nav-button nav-button-next">
+    <span class="nav-label">NEXT</span>
+    <span class="nav-title">Architecture</span>
+  </a>
+</div>
