@@ -2,8 +2,6 @@
 
 > *Redefining Standards and Solving the Bottlenecks of Traditional Platforms*
 
-### Overview
-
 Hymple was designed to combine the advantages of CEX and DEX, removing common limitations of each model. Below, the consolidated comparison:
 
 ### Comparative Analysis

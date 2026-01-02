@@ -2,8 +2,6 @@
 
 > *Combining Performance, Security, and Simplicity in a Single Ecosystem*
 
-### Overview
-
 Hymple was designed to establish a new paradigm in the crypto asset sector by combining the operational efficiency of CEXs with the security and user sovereignty typical of decentralized models.
 
 This hybrid architecture offers strategic advantages for both beginner users and advanced traders, driving the evolution and maturity of the global crypto ecosystem.

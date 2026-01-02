@@ -2,8 +2,6 @@
 
 > *The Next-Gen Hybrid Exchange - No custody, user controlled, built for scale.*
 
-### Overview
-
 Hymple is a cryptocurrency exchange designed to unify the benefits of centralized (CEX) and decentralized (DEX) models into a single hybrid solution. Its core operates with off-chain order books, allowing low latency, high liquidity and superior order execution performance.
 
 The platform adopts an **non-custodial** architecture, ensuring that users retain full control over their assets. This eliminates risks associated with intermediary custody and significantly reduces common attack vectors present in traditional exchanges.
