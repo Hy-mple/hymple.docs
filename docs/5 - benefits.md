@@ -1,6 +1,6 @@
 # Benefits
 
-## Combining Performance, Security, and Simplicity in a Single Ecosystem
+#### Combining Performance, Security, and Simplicity in a Single Ecosystem
 
 ### Overview
 
