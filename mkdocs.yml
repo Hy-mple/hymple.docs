@@ -64,8 +64,10 @@ theme:
 # Navigation Structure
 nav:
   - Home: index.md
-  - Introduction: introduction.md
-  - From Traditional to Hybrid: from_traditional_to_hybrid.md
+  - 1. Introduction: 2 - introduction.md
+  - 2. From Traditional to Hybrid: 3 - from_traditional_to_hybrid.md
+  - 3. Global Exchange Landscape: 4 - globalExchangeLandscape.md
+  - 4. Benefits: 5 - benefits.md
 
 # Plugins
 plugins:
