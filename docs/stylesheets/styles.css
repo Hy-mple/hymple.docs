@@ -848,14 +848,15 @@ html {
 .md-typeset blockquote {
   border-left: 4px solid var(--hymple-accent);
   background: rgba(253, 168, 0, 0.05);
-  padding: 1rem 1.5rem;
-  margin: 1.5rem 0;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
   border-radius: 0 var(--gitbook-radius) var(--gitbook-radius) 0;
   color: var(--hymple-text-secondary);
 }
 
 .md-typeset blockquote p {
   color: inherit;
+  margin: 0;
 }
 
 /* ==========================================

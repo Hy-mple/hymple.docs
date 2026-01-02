@@ -1,6 +1,6 @@
 # From Traditional to Hybrid: Hymple in Focus
 
-#### Redefining Standards and Solving the Bottlenecks of Traditional Platforms
+> *Redefining Standards and Solving the Bottlenecks of Traditional Platforms*
 
 ### Overview
 

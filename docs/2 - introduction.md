@@ -1,6 +1,6 @@
 # Introduction
 
-#### The Next-Gen Hybrid Exchange - No custody, user controlled, built for scale.
+> *The Next-Gen Hybrid Exchange - No custody, user controlled, built for scale.*
 
 ### Overview
 

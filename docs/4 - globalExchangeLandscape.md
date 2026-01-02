@@ -1,6 +1,6 @@
 # Global Exchange Landscape and Our Proposal
 
-#### Market Analysis and Strategic Differentiation
+> *Market Analysis and Strategic Differentiation*
 
 ### Global Market Overview
 
