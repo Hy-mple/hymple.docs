@@ -1,26 +1,19 @@
----
-description: Hybrid by nature, simple by choice.
----
+# Documentation | Hymple
 
-# Getting Started
+## Hymple Whitepaper — Version 1.0
 
-<figure><img src=".gitbook/assets/symbol-transparent-512.png" alt=""><figcaption></figcaption></figure>
+**Hybrid Execution. On-Chain Transparency. User Sovereignty.**
 
-**Hymple Whitepaper — Versão 1.0**&#x20;
+Hybrid Execution. On-Chain Transparency. User Sovereignty.
 
-_Hybrid Execution. On-Chain Transparency. User Sovereignty._&#x20;
-
-Última atualização: Dezembro de 2025
+Last updated: January 2026
 
 ---
 
-<div class="nav-cards">
-  <a href="introduction/" class="nav-card next">
-    <div class="nav-card-header">
-      <span class="nav-card-icon">→</span>
-      <span>Next</span>
-    </div>
-    <div class="nav-card-title">Introduction</div>
+<div class="nav-buttons">
+  <div class="nav-button-placeholder"></div>
+  <a href="/hymple.docs/2 - introduction/" class="nav-button nav-button-next">
+    <span class="nav-label">NEXT</span>
+    <span class="nav-title">Introduction</span>
   </a>
 </div>
-
