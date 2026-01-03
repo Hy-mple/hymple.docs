@@ -92,13 +92,6 @@ plugins:
         - custom-skip-class-name
       auto_caption: false
       caption_position: bottom
-  - minify:
-      minify_html: true
-      minify_js: true
-      minify_css: true
-      htmlmin_opts:
-        remove_comments: true
-      cache_safe: true
 
 # Extensions
 markdown_extensions:
