@@ -81,11 +81,11 @@ The result is a hybrid exchange that combines the sovereignty of DEXs with the o
 ---
 
 <div class="nav-buttons">
-  <a href="/hymple.docs/" class="nav-button nav-button-prev">
+  <a href="../" class="nav-button nav-button-prev">
     <span class="nav-label">PREVIOUS</span>
     <span class="nav-title">Home</span>
   </a>
-  <a href="/hymple.docs/3 - from_traditional_to_hybrid/" class="nav-button nav-button-next">
+  <a href="../3 - from_traditional_to_hybrid/" class="nav-button nav-button-next">
     <span class="nav-label">NEXT</span>
     <span class="nav-title">From Traditional to Hybrid</span>
   </a>
