@@ -1,0 +1,98 @@
+# Global Exchange Landscape and Our Proposal
+
+> *Market Analysis and Strategic Differentiation*
+
+### Global Market Overview
+
+The exchange market is one of the most competitive in the crypto sector. In 2025:
+
+- **Estimated global daily volume:** US$ 100 billion
+- **CEX:** ~70% of the volume
+- **DEX:** steady growth, driven by privacy and self-custody
+
+**Insight:** there is clear room for hybrid solutions that combine the liquidity and simplicity of CEX with the sovereignty and privacy of DEX.
+
+### Trends Favoring Hybrid Exchanges
+
+- Global demand for privacy and self-custody
+- Growth in regions with restrictions on CEX
+- Increasing adoption of DeFi
+- More user-friendly interfaces accessible to new users
+
+### Competitive Analysis
+
+A hybrid exchange, non-custodial and without KYC, with an interface adapted for beginners and advanced users, has the potential to capture users who:
+
+- migrate from CEX seeking privacy;
+- migrate from DEX seeking liquidity and ease.
+
+### Target Audience Segmentation
+
+- Beginner traders
+- Advanced traders
+- CEX users dissatisfied with centralization
+- DEX users dissatisfied with low liquidity or complexity
+
+---
+
+### Market Potential
+
+- **420+ million** crypto users in 2025
+- **35%** of DEX users want something more user-friendly
+- **70%** of CEX traders consider migrating to non-custodial platforms
+
+#### Adoption Scenarios
+
+| **Scenario** | **Global Market Share** | **Daily Volume** | **Estimated Revenue (0.05%)** |
+|--------------|-------------------------|------------------|-------------------------------|
+| Conservative | 0,01% | ~US$ 1M | ~US$ 500/day |
+| Moderate | 0,1% | ~US$ 10M | ~US$ 5,000/day |
+| Optimistic | 0,5% | ~US$ 50M | ~US$ 25,000/day |
+
+**Insight:** Even the conservative scenario demonstrates significant economic viability.
+
+### Value Proposition
+
+- No KYC
+- Non-custodial
+- Adaptive interfaces
+- Global access without severe regulatory barriers
+
+### Go-to-Market Strategies
+
+- Simplified onboarding
+- Marketing focused on privacy and UX
+- Strategic partnerships
+- Incentives and liquidity programs
+
+### Monetization Sources
+
+- Maker/taker fees
+- Token listings
+- Premium API
+- Staking
+- Affiliate program
+
+### Analysis Conclusion
+
+Hymple is a timely and economically viable solution in the current context, capable of uniting:
+
+- financial sovereignty
+- privacy
+- high performance
+- simplified UX
+
+and capturing users dissatisfied with limitations of both CEX and DEX.
+
+---
+
+<div class="nav-buttons">
+  <a href="/hymple.docs/3 - from_traditional_to_hybrid/" class="nav-button nav-button-prev">
+    <span class="nav-label">PREVIOUS</span>
+    <span class="nav-title">From Traditional to Hybrid</span>
+  </a>
+  <a href="/hymple.docs/5 - benefits/" class="nav-button nav-button-next">
+    <span class="nav-label">NEXT</span>
+    <span class="nav-title">Benefits</span>
+  </a>
+</div>
