@@ -76,6 +76,18 @@
 /* ==========================================
    TYPOGRAPHY IMPROVEMENTS - GITBOOK STYLE
    ========================================== */
+   
+/* Global box-sizing and overflow prevention */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
   font-feature-settings: "kern", "liga", "clig", "calt";
@@ -88,6 +100,9 @@ body {
   line-height: 1.7;
   color: var(--hymple-text-primary);
   letter-spacing: -0.003em;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 /* Tamanho de fonte reduzido para parágrafos e listas - padrão GitBook */
@@ -95,6 +110,15 @@ body {
 .md-typeset li {
   font-size: 0.875rem;
   line-height: 1.7;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.md-typeset ul,
+.md-typeset ol {
+  max-width: 100%;
+  padding-left: 1.5rem;
 }
 
 .md-typeset h1 {
@@ -104,6 +128,8 @@ body {
   line-height: 1.2;
   letter-spacing: -0.03em;
   color: var(--hymple-text-primary);
+  max-width: 100%;
+  overflow-wrap: break-word;
 }
 
 .md-typeset h2 {
@@ -115,6 +141,8 @@ body {
   border-bottom: 1px solid var(--hymple-border);
   letter-spacing: -0.02em;
   color: var(--hymple-text-primary);
+  max-width: 100%;
+  overflow-wrap: break-word;
 }
 
 .md-typeset h3 {
@@ -235,6 +263,15 @@ body {
   display: none;
 }
 
+/* Show site name on mobile */
+@media screen and (max-width: 76.1875em) {
+  .md-nav--primary .md-nav__title[for="__drawer"] {
+    display: block;
+    background-color: var(--hymple-primary);
+    color: white;
+  }
+}
+
 .md-nav__link {
   border-radius: 0.375rem;
   margin: 0.125rem 0.5rem;
@@ -313,6 +350,7 @@ body {
   border-radius: 0.25rem;
   font-size: 0.9em;
   font-weight: 500;
+  word-break: break-word;
 }
 
 .md-typeset pre {
@@ -320,12 +358,16 @@ body {
   box-shadow: var(--gitbook-shadow-sm);
   border: 1px solid var(--hymple-border);
   background-color: var(--hymple-bg-tertiary);
+  overflow-x: auto;
+  max-width: 100%;
 }
 
 .md-typeset pre > code {
   background-color: transparent;
   padding: 0;
   color: var(--hymple-text-primary);
+  white-space: pre;
+  word-break: normal;
 }
 
 /* Code copy button */
@@ -1021,8 +1063,64 @@ html {
    RESPONSIVE DESIGN - MOBILE FIRST
    ========================================== */
 
+/* Fix overflow and enable horizontal scrolling prevention */
+html {
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.md-container {
+  overflow-x: hidden;
+}
+
 /* Mobile Devices (up to 768px) */
 @media screen and (max-width: 768px) {
+  /* Ensure menu toggle button is visible */
+  .md-header__button.md-logo {
+    display: block;
+  }
+  
+  /* Ensure hamburger menu is always visible on mobile */
+  .md-header__button {
+    display: inline-block;
+  }
+  
+  /* Fix sidebar/drawer navigation */
+  .md-nav--primary .md-nav__title {
+    display: block;
+  }
+  
+  /* Prevent content overflow */
+  .md-content {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .md-content__inner {
+    padding: 1rem;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  /* Fix any element that might cause horizontal scroll */
+  .md-typeset pre,
+  .md-typeset code,
+  .md-typeset table {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  
+  /* Ensure all direct children respect container width */
+  .md-typeset > * {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+  
   /* Typography adjustments */
   .md-typeset {
     font-size: 0.8125rem;
