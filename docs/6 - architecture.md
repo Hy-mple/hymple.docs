@@ -3,7 +3,7 @@
 > *The technical framework that combines centralized performance and decentralized settlement.*
 
 Hymple's architecture delivers low latency, auditability and user sovereignty by combining off-chain execution with on-chain settlement.
-
+ 
 ### 💻 Interface Layer
 
 Responsible for the user experience, it was designed with a focus on simplicity, performance and interoperability with the Web3 ecosystem.
@@ -54,7 +54,7 @@ Wallets supported via WC2 (among others):
 
 The interface connects to the Execution Layer via WebSocket and REST, ensuring fast, stable and optimized communication for high demand.
 
-### Execution Layer
+### ⚙ Execution Layer
 
 Operational core responsible for order processing.
 
@@ -67,7 +67,7 @@ Operational core responsible for order processing.
 - Support for complex orders
 - WebSockets for real-time
 
-### Settlement Layer
+### 🔗 Settlement Layer
 
 Ensures secure and transparent on-chain settlement.
 
@@ -84,7 +84,7 @@ Ensures secure and transparent on-chain settlement.
 
 Batch settlement → reduces gas, avoids partial liquidations and increases efficiency.
 
-### Core Protocol and Infrastructure Layer
+### 🧩 Core Protocol and Infrastructure Layer
 
 Supports the interoperability and resilience of the ecosystem.
 
@@ -94,7 +94,8 @@ Supports the interoperability and resilience of the ecosystem.
 - Georedundant load balancing
 - gRPC, REST and GraphQL APIs
 - On-chain indexers
-### Security and Privacy
+
+### 🔐 Security and Privacy
 
 - Non-custodial
 - No KYC
@@ -102,19 +103,20 @@ Supports the interoperability and resilience of the ecosystem.
 - Anti-fraud and anti front-running mechanisms
 - Rate limiting + firewalls
 
-### Scalability and Resilience
+### ⚡Scalability and Resilience
 
 - Distributed microservices
 - Horizontal scalability
 - Dedicated channels for HFT and institutional volumes
 
-### Interoperability
+### 🔄 Interoperability
 
 - Multi-chain EVM
 - Expansion to non-EVM ecosystems planned in later phases, according to ecosystem maturity and market demand.
 - API and SDK for partners
 - Modular architecture for continuous updates
-### Hymple's Multichain Deploy Strategy
+
+### 📘 Hymple's Multichain Deploy Strategy
 
 *(BSC as a starting point, L2 as strategic expansion)*
 
