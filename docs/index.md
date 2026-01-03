@@ -1,3 +1,7 @@
+---
+title: Documentation | Hymple
+---
+
 # Documentation | Hymple
 
 ## Hymple Whitepaper — Version 1.0
