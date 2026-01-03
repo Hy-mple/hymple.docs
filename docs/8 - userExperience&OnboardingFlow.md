@@ -86,11 +86,11 @@ The entire interface follows UX best practices ensuring a consistent experience 
 ---
 
 <div class="nav-buttons">
-  <a href="/7 - observability&MonitoringLayer/" class="nav-button nav-button-prev">
+  <a href="/hymple.docs/7 - observability&MonitoringLayer/" class="nav-button nav-button-prev">
     <span class="nav-label">PREVIOUS</span>
     <span class="nav-title">Observability & Monitoring</span>
   </a>
-  <a href="/9 - advancedSecurityArchitecture/" class="nav-button nav-button-next">
+  <a href="/hymple.docs/9 - advancedSecurityArchitecture/" class="nav-button nav-button-next">
     <span class="nav-label">NEXT</span>
     <span class="nav-title">Advanced Security Architecture</span>
   </a>

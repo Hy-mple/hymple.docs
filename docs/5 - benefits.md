@@ -46,11 +46,11 @@ In this way, Hymple not only facilitates interaction with the crypto universe â€
 ---
 
 <div class="nav-buttons">
-  <a href="/4 - globalExchangeLandscape/" class="nav-button nav-button-prev">
+  <a href="/hymple.docs/4 - globalExchangeLandscape/" class="nav-button nav-button-prev">
     <span class="nav-label">PREVIOUS</span>
     <span class="nav-title">Global Exchange Landscape</span>
   </a>
-  <a href="/6 - architecture/" class="nav-button nav-button-next">
+  <a href="/hymple.docs/6 - architecture/" class="nav-button nav-button-next">
     <span class="nav-label">NEXT</span>
     <span class="nav-title">Architecture</span>
   </a>
