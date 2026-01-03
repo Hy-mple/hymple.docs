@@ -5,7 +5,7 @@ title: Documentation | Hymple
 # Documentation | Hymple
 
 <div style="text-align: center; margin: 2rem 0;">
-  <img src="assets/logo.png" alt="Hymple Logo" style="max-width: 500px; margin-bottom: 1rem;">
+  <img src="assets/logo.png" alt="Hymple Logo" style="max-width: min(500px, 90vw); width: 100%; height: auto; margin-bottom: 1rem;">
   <p style="font-size: 1.2rem; font-style: italic; color: #666;">Hybrid by nature, simple by choice.</p>
 </div>
 
