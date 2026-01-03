@@ -2,14 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://hy-mple.github.io/hymple.docs/</loc>
-         <lastmod>2025-12-31</lastmod>
+         <lastmod>2026-01-03</lastmod>
     </url>
     <url>
-         <loc>https://hy-mple.github.io/hymple.docs/from_traditional_to_hybrid/</loc>
-         <lastmod>2025-12-31</lastmod>
+         <loc>https://hy-mple.github.io/hymple.docs/10%20-%20operationalResilience%26IncidentResponse/</loc>
+         <lastmod>2026-01-03</lastmod>
     </url>
     <url>
-         <loc>https://hy-mple.github.io/hymple.docs/introduction/</loc>
-         <lastmod>2025-12-31</lastmod>
+         <loc>https://hy-mple.github.io/hymple.docs/2%20-%20introduction/</loc>
+         <lastmod>2026-01-03</lastmod>
+    </url>
+    <url>
+         <loc>https://hy-mple.github.io/hymple.docs/3%20-%20from_traditional_to_hybrid/</loc>
+         <lastmod>2026-01-03</lastmod>
+    </url>
+    <url>
+         <loc>https://hy-mple.github.io/hymple.docs/4%20-%20globalExchangeLandscape/</loc>
+         <lastmod>2026-01-03</lastmod>
+    </url>
+    <url>
+         <loc>https://hy-mple.github.io/hymple.docs/5%20-%20benefits/</loc>
+         <lastmod>2026-01-03</lastmod>
+    </url>
+    <url>
+         <loc>https://hy-mple.github.io/hymple.docs/6%20-%20architecture/</loc>
+         <lastmod>2026-01-03</lastmod>
+    </url>
+    <url>
+         <loc>https://hy-mple.github.io/hymple.docs/7%20-%20observability%26MonitoringLayer/</loc>
+         <lastmod>2026-01-03</lastmod>
+    </url>
+    <url>
+         <loc>https://hy-mple.github.io/hymple.docs/8%20-%20userExperience%26OnboardingFlow/</loc>
+         <lastmod>2026-01-03</lastmod>
+    </url>
+    <url>
+         <loc>https://hy-mple.github.io/hymple.docs/9%20-%20advancedSecurityArchitecture/</loc>
+         <lastmod>2026-01-03</lastmod>
     </url>
 </urlset>

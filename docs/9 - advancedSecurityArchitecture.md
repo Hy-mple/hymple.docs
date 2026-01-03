@@ -84,11 +84,11 @@ This set of practices ensures that Hymple operates with reliability, security an
 ---
 
 <div class="nav-buttons">
-  <a href="/hymple.docs/8 - userExperience&OnboardingFlow/" class="nav-button nav-button-prev">
+  <a href="../8 - userExperience&OnboardingFlow/" class="nav-button nav-button-prev">
     <span class="nav-label">PREVIOUS</span>
     <span class="nav-title">User Experience & Onboarding</span>
   </a>
-  <a href="/hymple.docs/10 - operationalResilience&IncidentResponse/" class="nav-button nav-button-next">
+  <a href="../10 - operationalResilience&IncidentResponse/" class="nav-button nav-button-next">
     <span class="nav-label">NEXT</span>
     <span class="nav-title">Operational Resilience & Incident Response</span>
   </a>

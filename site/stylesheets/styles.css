@@ -84,15 +84,22 @@ body {
 }
 
 .md-typeset {
-  font-size: 1rem;
+  font-size: 0.875rem;
   line-height: 1.7;
   color: var(--hymple-text-primary);
   letter-spacing: -0.003em;
 }
 
+/* Tamanho de fonte reduzido para parágrafos e listas - padrão GitBook */
+.md-typeset p,
+.md-typeset li {
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
 .md-typeset h1 {
   font-weight: 700;
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin: 0 0 1.5rem;
   line-height: 1.2;
   letter-spacing: -0.03em;
@@ -101,7 +108,7 @@ body {
 
 .md-typeset h2 {
   font-weight: 700;
-  font-size: 1.875rem;
+  font-size: 1.5rem;
   margin: 2.5rem 0 1rem;
   line-height: 1.3;
   padding-bottom: 0.5rem;
@@ -112,7 +119,7 @@ body {
 
 .md-typeset h3 {
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   margin: 2rem 0 0.75rem;
   line-height: 1.4;
   letter-spacing: -0.01em;
@@ -121,21 +128,21 @@ body {
 
 .md-typeset h4 {
   font-weight: 600;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   margin: 1.5rem 0 0.5rem;
   color: var(--hymple-text-primary);
 }
 
 .md-typeset h5 {
   font-weight: 600;
-  font-size: 1.125rem;
+  font-size: 1rem;
   margin: 1.25rem 0 0.5rem;
   color: var(--hymple-text-primary);
 }
 
 .md-typeset h6 {
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.875rem;
   margin: 1rem 0 0.5rem;
   color: var(--hymple-text-secondary);
   text-transform: uppercase;
@@ -161,7 +168,7 @@ body {
    HEADER STYLING - HYMPLE BRAND
    ========================================== */
 .md-header {
-  background: linear-gradient(135deg, #18214D 0%, #2a3566 100%);
+  background: #131722;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
@@ -194,6 +201,11 @@ body {
 }
 
 /* Logo styling */
+.md-header__button.md-logo {
+  margin-right: -0.5rem;
+  padding-right: 0;
+}
+
 .md-header__button.md-logo img,
 .md-header__button.md-logo svg {
   height: 2.5rem;
@@ -477,14 +489,19 @@ body {
 }
 
 /* ==========================================
-   FOOTER - HYMPLE STYLE
+   FOOTER - HYMPLE STYLE (No Navigation)
    ========================================== */
 .md-footer {
-  background: linear-gradient(135deg, #18214D 0%, #2a3566 100%);
+  background: #131722;
 }
 
 .md-footer-meta {
   background: rgba(0, 0, 0, 0.2);
+}
+
+/* Hide previous/next navigation in footer */
+.md-footer__inner {
+  display: none;
 }
 
 .md-footer__link,
@@ -568,7 +585,7 @@ body {
 }
 
 [data-md-color-scheme="slate"] .md-header {
-  background: linear-gradient(135deg, #18214D 0%, #2a3566 100%);
+  background: #131722;
 }
 
 [data-md-color-scheme="slate"] .nav-card {
@@ -739,47 +756,120 @@ html {
    GITBOOK-STYLE NAVIGATION (Next/Previous)
    ========================================== */
 .md-footer__inner {
-  padding: 0;
+  padding: 2rem 0;
+  display: flex;
+  gap: 1.5rem;
+  max-width: none;
 }
 
 .md-footer__link {
-  padding: 1.5rem 1rem;
-  border-radius: 0;
-  background: rgba(255, 255, 255, 0.05);
+  flex: 1;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: var(--hymple-bg-secondary);
+  border: 1px solid var(--hymple-border);
   transition: all 0.3s ease;
   display: flex;
-  align-items: center;
-  gap: 0.75rem;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-decoration: none;
+  box-shadow: var(--gitbook-shadow-sm);
 }
 
 .md-footer__link:hover {
-  background: rgba(253, 168, 0, 0.15);
+  background: var(--hymple-bg-tertiary);
+  border-color: var(--hymple-accent);
+  box-shadow: var(--gitbook-shadow-md);
   transform: translateY(-2px);
 }
 
 .md-footer__link--prev {
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  align-items: flex-start;
 }
 
 .md-footer__link--next {
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
-  justify-content: flex-end;
+  align-items: flex-end;
   text-align: right;
 }
 
 .md-footer__direction {
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  opacity: 0.7;
+  letter-spacing: 0.1em;
   color: var(--hymple-accent);
+  margin: 0;
 }
 
 .md-footer__title {
   font-size: 1rem;
-  font-weight: 500;
-  color: #ffffff;
+  font-weight: 600;
+  color: var(--hymple-text-primary);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* ==========================================
+   CUSTOM NAVIGATION BUTTONS IN MARKDOWN
+   ========================================== */
+.nav-buttons {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+.nav-button-placeholder {
+  flex: 1;
+}
+
+.nav-button {
+  flex: 1;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: var(--hymple-bg-secondary);
+  border: 1px solid var(--hymple-border);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-decoration: none;
+  box-shadow: var(--gitbook-shadow-sm);
+  cursor: pointer;
+}
+
+.nav-button:hover {
+  background: var(--hymple-bg-tertiary);
+  border-color: var(--hymple-accent);
+  box-shadow: var(--gitbook-shadow-md);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.nav-button-prev {
+  align-items: flex-start;
+}
+
+.nav-button-next {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.nav-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--hymple-accent);
+  display: block;
+}
+
+.nav-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--hymple-text-primary);
+  line-height: 1.4;
+  display: block;
 }
 
 /* ==========================================
@@ -811,13 +901,6 @@ html {
   color: var(--hymple-accent);
 }
 
-/* External links indicator */
-.md-typeset a[href^="http"]:after {
-  content: " ↗";
-  font-size: 0.85em;
-  opacity: 0.6;
-}
-
 /* ==========================================
    GITBOOK-STYLE LISTS
    ========================================== */
@@ -845,14 +928,15 @@ html {
 .md-typeset blockquote {
   border-left: 4px solid var(--hymple-accent);
   background: rgba(253, 168, 0, 0.05);
-  padding: 1rem 1.5rem;
-  margin: 1.5rem 0;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
   border-radius: 0 var(--gitbook-radius) var(--gitbook-radius) 0;
   color: var(--hymple-text-secondary);
 }
 
 .md-typeset blockquote p {
   color: inherit;
+  margin: 0;
 }
 
 /* ==========================================
