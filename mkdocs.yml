@@ -73,6 +73,7 @@ nav:
   - 7. User Experience & Onboarding: 8 - userExperience&OnboardingFlow.md
   - 8. Advanced Security Architecture: 9 - advancedSecurityArchitecture.md
   - 9. Operational Resilience & Incident Response: 10 - operationalResilience&IncidentResponse.md
+  - 10. Anti-Manipulation and Anti-Abuse Protocols: 11 - antiManipulationandAntiAbuseProtocols.md
 
 # Plugins
 plugins:
