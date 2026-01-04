@@ -252,6 +252,14 @@ body {
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
+/* Fix theme toggle - show only one button on mobile */
+@media screen and (max-width: 76.1875em) {
+  /* Hide only the second palette form, keep the first one */
+  form[data-md-component="palette"]:nth-of-type(2) {
+    display: none !important;
+  }
+}
+
 /* ==========================================
    NAVIGATION SIDEBAR - HYMPLE STYLE
    ========================================== */
@@ -279,9 +287,26 @@ body {
 /* Show site name and ensure menu works on mobile */
 @media screen and (max-width: 76.1875em) {
   .md-nav--primary .md-nav__title[for="__drawer"] {
-    display: block;
-    background-color: var(--hymple-primary);
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    background-color: #131722;
     color: white;
+    z-index: 5;
+    padding: 0.75rem 1rem;
+  }
+  
+  /* Keep logo and title on same line */
+  .md-nav--primary .md-nav__title .md-nav__button {
+    position: static !important;
+    margin-right: 0.3rem;
+    flex-shrink: 0;
+  }
+  
+  .md-nav--primary .md-nav__title .md-ellipsis {
+    white-space: nowrap;
+    position: static !important;
+    flex: 1;
   }
   
   /* Ensure drawer works properly */
