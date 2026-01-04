@@ -92,5 +92,8 @@ Hymple operates under the premise that resilience is not just a technical requir
     <span class="nav-label">PREVIOUS</span>
     <span class="nav-title">Advanced Security Architecture</span>
   </a>
-  <div class="nav-button-placeholder"></div>
+  <a href="../11 - antiManipulationandAntiAbuseProtocols/" class="nav-button nav-button-next">
+    <span class="nav-label">NEXT</span>
+    <span class="nav-title">Anti-Manipulation and Anti-Abuse Protocols</span>
+  </a>
 </div>
