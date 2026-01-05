@@ -85,5 +85,8 @@ This commitment to transparency is fundamental to the hybrid model, balancing te
     <span class="nav-label">PREVIOUS</span>
     <span class="nav-title">Conflict and Dispute Resolution Mechanism</span>
   </a>
-  <div class="nav-button-placeholder"></div>
+  <a href="../14 - technicalGovernanceFramework/" class="nav-button nav-button-next">
+    <span class="nav-label">NEXT</span>
+    <span class="nav-title">Technical Governance Framework</span>
+  </a>
 </div>
