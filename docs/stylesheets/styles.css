@@ -1471,6 +1471,35 @@ body {
   .md-content img[alt="Hymple Logo"] {
     max-width: 400px !important;
   }
+  
+  /* Navigation cards - fix padding for tablets */
+  .md-footer__link {
+    padding: 1.5rem 2rem;
+  }
+  
+  .md-footer__link--next .md-footer__direction,
+  .md-footer__link--next .md-footer__title {
+    padding-right: 1.5rem;
+  }
+  
+  .md-footer__link--prev .md-footer__direction,
+  .md-footer__link--prev .md-footer__title {
+    padding-left: 1.5rem;
+  }
+  
+  .nav-button {
+    padding: 1.5rem 2rem;
+  }
+  
+  .nav-button-next .nav-label,
+  .nav-button-next .nav-title {
+    padding-right: 1.5rem;
+  }
+  
+  .nav-button-prev .nav-label,
+  .nav-button-prev .nav-title {
+    padding-left: 1.5rem;
+  }
 }
 
 /* Ensure images are responsive globally */
