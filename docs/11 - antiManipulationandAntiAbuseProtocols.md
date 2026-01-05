@@ -175,5 +175,8 @@ All this while preserving Hymple's core principles: **non-custodial nature, priv
     <span class="nav-label">PREVIOUS</span>
     <span class="nav-title">Operational Resilience & Incident Response</span>
   </a>
-  <div class="nav-button-placeholder"></div>
+  <a href="../12 - conflictandDisputeResolutionMechanism/" class="nav-button nav-button-next">
+    <span class="nav-label">NEXT</span>
+    <span class="nav-title">Conflict and Dispute Resolution Mechanism</span>
+  </a>
 </div>
