@@ -944,9 +944,23 @@ html {
   align-items: flex-start;
 }
 
+.md-footer__link--prev .md-footer__direction,
+.md-footer__link--prev .md-footer__title {
+  max-width: 100%;
+  padding-left: 0.5rem;
+  box-sizing: border-box;
+}
+
 .md-footer__link--next {
   align-items: flex-end;
   text-align: right;
+}
+
+.md-footer__link--next .md-footer__direction,
+.md-footer__link--next .md-footer__title {
+  max-width: 100%;
+  padding-right: 0.5rem;
+  box-sizing: border-box;
 }
 
 .md-footer__direction {
@@ -1012,9 +1026,22 @@ html {
   align-items: flex-start;
 }
 
+.nav-button-prev .nav-label,
+.nav-button-prev .nav-title {
+  max-width: 100%;
+  padding-left: 0.5rem;
+  box-sizing: border-box;
+}
+
 .nav-button-next {
   align-items: flex-end;
   text-align: right;
+}
+
+.nav-button-next .nav-label,
+.nav-button-next .nav-title {
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .nav-label {
@@ -1324,11 +1351,18 @@ body {
   .nav-buttons {
     flex-direction: column;
     gap: 0.75rem;
+    padding: 0 0.5rem;
   }
   
   .nav-button {
     width: 100%;
     padding: 1rem;
+    box-sizing: border-box;
+  }
+  
+  .nav-button-next .nav-label,
+  .nav-button-next .nav-title {
+    padding-right: 0.5rem;
   }
   
   .nav-button-placeholder {
@@ -1399,6 +1433,13 @@ body {
   /* Navigation buttons even more compact */
   .nav-button {
     padding: 0.875rem;
+    box-sizing: border-box;
+  }
+  
+  .nav-button-next .nav-label,
+  .nav-button-next .nav-title {
+    padding-right: 0.75rem;
+    text-align: right;
   }
   
   .nav-label {
@@ -1407,6 +1448,8 @@ body {
   
   .nav-title {
     font-size: 0.875rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 }
 
