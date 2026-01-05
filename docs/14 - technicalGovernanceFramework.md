@@ -85,5 +85,8 @@ It offers the best of both worlds: an active voice for users and technical robus
     <span class="nav-label">PREVIOUS</span>
     <span class="nav-title">System Limitations & Assumptions</span>
   </a>
-  <div class="nav-button-placeholder"></div>
+  <a href="../15 - audit&TransparencyModel/" class="nav-button nav-button-next">
+    <span class="nav-label">NEXT</span>
+    <span class="nav-title">Audit & Transparency Model</span>
+  </a>
 </div>
