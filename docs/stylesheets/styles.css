@@ -211,10 +211,31 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
+.md-header__inner {
+  padding-left: 0;
+  margin-left: 0;
+}
+
 .md-header__title {
   font-weight: 600;
   font-size: 1.1rem;
   color: #ffffff !important;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* Logo styling */
+.md-header__button.md-logo {
+  margin-left: 1rem;
+  margin-right: 0.4rem;
+  padding: 0;
+}
+
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 2.5rem;
+  width: auto;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
 /* Ensure white text in header */
@@ -237,6 +258,14 @@ body {
 .md-search__input:focus {
   background-color: rgba(255, 255, 255, 0.25) !important;
   border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Fix theme toggle - show only one button on mobile */
+@media screen and (max-width: 76.1875em) {
+  /* Hide only the second palette form, keep the first one */
+  form[data-md-component="palette"]:nth-of-type(2) {
+    display: none !important;
+  }
 }
 
 /* Logo styling */
@@ -1166,10 +1195,33 @@ html {
 }
 
 /* ==========================================
-   GITBOOK-STYLE SIDEBAR WIDTH
+   GITBOOK-STYLE SIDEBAR WIDTH & FIXED HEIGHT
    ========================================== */
 .md-sidebar--primary {
   width: 15rem;
+  position: fixed;
+  top: 3.6rem;
+  left: 0;
+  bottom: 0;
+  height: calc(100vh - 3.6rem);
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 3;
+}
+
+.md-sidebar--primary .md-sidebar__scrollwrap {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-bottom: 2rem;
+}
+
+/* Ajuste do conteúdo principal para não sobrepor o sidebar fixo */
+@media screen and (min-width: 76.25em) {
+  .md-main__inner {
+    margin-left: 15rem;
+    padding-left: 1rem;
+  }
 }
 
 .md-sidebar--secondary {
