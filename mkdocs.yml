@@ -78,6 +78,7 @@ nav:
   - 12. System Limitations & Assumptions: 13 - systemLimitations&Assumptions.md
   - 13. Technical Governance Framework: 14 - technicalGovernanceFramework.md
   - 14. Audit & Transparency Model: 15 - audit&TransparencyModel.md
+  - 15. Risk Disclosure & Threat Model: 16 - riskDisclosure&ThreatModel.md
 
 # Plugins
 plugins:
