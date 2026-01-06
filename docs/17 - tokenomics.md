@@ -105,5 +105,8 @@ support for the longevity and economic resilience of the Hymple ecosystem.
     <span class="nav-label">PREVIOUS</span>
     <span class="nav-title">Risk Disclosure & Threat Model</span>
   </a>
-  <div class="nav-button-placeholder"></div>
+  <a href="../18 - tokenUtility/" class="nav-button nav-button-next">
+    <span class="nav-label">NEXT</span>
+    <span class="nav-title">Token Utility</span>
+  </a>
 </div>
