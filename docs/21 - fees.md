@@ -130,5 +130,8 @@ This policy reinforces the commitment of Hymple to transparency, security and lo
     <span class="nav-label">PREVIOUS</span>
     <span class="nav-title">Staking</span>
   </a>
-  <div class="nav-button-placeholder"></div>
+  <a href="../22 - burnPolicy/" class="nav-button nav-button-next">
+    <span class="nav-label">NEXT</span>
+    <span class="nav-title">Burn Policy</span>
+  </a>
 </div>
