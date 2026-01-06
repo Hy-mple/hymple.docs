@@ -104,5 +104,8 @@ It is the link that transforms Hymple into a living, efficient and aligned ecosy
     <span class="nav-label">PREVIOUS</span>
     <span class="nav-title">Tokenomics</span>
   </a>
-  <div class="nav-button-placeholder"></div>
+  <a href="../19 - rewards/" class="nav-button nav-button-next">
+    <span class="nav-label">NEXT</span>
+    <span class="nav-title">Rewards</span>
+  </a>
 </div>
