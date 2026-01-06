@@ -656,5 +656,8 @@ Thus, the Rewards model of Hymple ensures balanced incentives, on-chain transpar
     <span class="nav-label">PREVIOUS</span>
     <span class="nav-title">Token Utility</span>
   </a>
-  <div class="nav-button-placeholder"></div>
+  <a href="../20 - staking/" class="nav-button nav-button-next">
+    <span class="nav-label">NEXT</span>
+    <span class="nav-title">Staking</span>
+  </a>
 </div>
