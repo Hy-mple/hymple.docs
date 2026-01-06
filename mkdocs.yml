@@ -79,6 +79,10 @@ nav:
   - 13. Technical Governance Framework: 14 - technicalGovernanceFramework.md
   - 14. Audit & Transparency Model: 15 - audit&TransparencyModel.md
   - 15. Risk Disclosure & Threat Model: 16 - riskDisclosure&ThreatModel.md
+  - 16. Tokenomics: 17 - tokenomics.md
+  - 17. Token Utility: 18 - tokenUtility.md
+  - 18. Rewards: 19 - rewards.md
+  - 19. Staking: 20 - staking.md
 
 # Plugins
 plugins:
