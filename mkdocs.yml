@@ -64,27 +64,27 @@ theme:
 # Navigation Structure
 nav:
   - Home: index.md
-  - 1. Introduction: 2 - introduction.md
-  - 2. From Traditional to Hybrid: 3 - from_traditional_to_hybrid.md
-  - 3. Global Exchange Landscape: 4 - globalExchangeLandscape.md
-  - 4. Benefits: 5 - benefits.md
-  - 5. Architecture: 6 - architecture.md
-  - 6. Observability & Monitoring: 7 - observability&MonitoringLayer.md
-  - 7. User Experience & Onboarding: 8 - userExperience&OnboardingFlow.md
-  - 8. Advanced Security Architecture: 9 - advancedSecurityArchitecture.md
-  - 9. Operational Resilience & Incident Response: 10 - operationalResilience&IncidentResponse.md
-  - 10. Anti-Manipulation and Anti-Abuse Protocols: 11 - antiManipulationandAntiAbuseProtocols.md
-  - 11. Conflict and Dispute Resolution Mechanism: 12 - conflictandDisputeResolutionMechanism.md
-  - 12. System Limitations & Assumptions: 13 - systemLimitations&Assumptions.md
-  - 13. Technical Governance Framework: 14 - technicalGovernanceFramework.md
-  - 14. Audit & Transparency Model: 15 - audit&TransparencyModel.md
-  - 15. Risk Disclosure & Threat Model: 16 - riskDisclosure&ThreatModel.md
-  - 16. Tokenomics: 17 - tokenomics.md
-  - 17. Token Utility: 18 - tokenUtility.md
-  - 18. Rewards: 19 - rewards.md
-  - 19. Staking: 20 - staking.md
-  - 20. Fees: 21 - fees.md
-  - 21. Burn Policy: 22 - burnPolicy.md
+  - 📖 Introduction: 2 - introduction.md
+  - 🔄 From Traditional to Hybrid: 3 - from_traditional_to_hybrid.md
+  - 🌍 Global Exchange Landscape: 4 - globalExchangeLandscape.md
+  - ✨ Benefits: 5 - benefits.md
+  - 🏗️ Architecture: 6 - architecture.md
+  - 📊 Observability & Monitoring: 7 - observability&MonitoringLayer.md
+  - 👤 User Experience & Onboarding: 8 - userExperience&OnboardingFlow.md
+  - 🔒 Advanced Security Architecture: 9 - advancedSecurityArchitecture.md
+  - 🚨 Operational Resilience & Incident Response: 10 - operationalResilience&IncidentResponse.md
+  - 🛡️ Anti-Manipulation and Anti-Abuse Protocols: 11 - antiManipulationandAntiAbuseProtocols.md
+  - ⚖️ Conflict and Dispute Resolution Mechanism: 12 - conflictandDisputeResolutionMechanism.md
+  - ⚠️ System Limitations & Assumptions: 13 - systemLimitations&Assumptions.md
+  - 🏛️ Technical Governance Framework: 14 - technicalGovernanceFramework.md
+  - 🔍 Audit & Transparency Model: 15 - audit&TransparencyModel.md
+  - 🎯 Risk Disclosure & Threat Model: 16 - riskDisclosure&ThreatModel.md
+  - 💰 Tokenomics: 17 - tokenomics.md
+  - 🪙 Token Utility: 18 - tokenUtility.md
+  - 🎁 Rewards: 19 - rewards.md
+  - 📈 Staking: 20 - staking.md
+  - 💵 Fees: 21 - fees.md
+  - 🔥 Burn Policy: 22 - burnPolicy.md
 
 # Plugins
 plugins:
