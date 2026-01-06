@@ -125,5 +125,8 @@ Hymple adopts robust prevention measures, but users must understand and accept t
     <span class="nav-label">PREVIOUS</span>
     <span class="nav-title">Audit & Transparency Model</span>
   </a>
-  <div class="nav-button-placeholder"></div>
+  <a href="../17 - tokenomics/" class="nav-button nav-button-next">
+    <span class="nav-label">NEXT</span>
+    <span class="nav-title">Tokenomics</span>
+  </a>
 </div>
