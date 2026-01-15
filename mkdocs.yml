@@ -61,7 +61,7 @@ theme:
 
 # Navigation Structure
 nav:
-  - Home: index.md
+  - 🏠 Home: index.md
   - 📖 Introduction: 2 - introduction.md
   - 🔄 From Traditional to Hybrid: 3 - from_traditional_to_hybrid.md
   - 🌍 Global Exchange Landscape: 4 - globalExchangeLandscape.md
