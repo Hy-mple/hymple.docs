@@ -209,10 +209,13 @@ body {
 .md-header {
   background: #131722;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  position: fixed !important;
+  top: 0 !important;
+  z-index: 100 !important;
 }
 
 .md-header__inner {
-  padding-left: 0;
+  padding-left: 0.5rem;
   padding-right: 0 !important;
   margin-left: 0;
   margin-right: 0 !important;
@@ -225,16 +228,16 @@ body {
   font-weight: 600;
   font-size: 1.1rem;
   color: #ffffff !important;
-  margin-left: 0;
-  padding-left: 0;
+  margin-left: 0.2rem !important;
+  padding-left: 0 !important;
   order: 1;
 }
 
 /* Logo styling */
 .md-header__button.md-logo {
-  margin-left: 1rem;
-  margin-right: 0.4rem;
-  padding: 0;
+  margin-left: 0.5rem !important;
+  margin-right: -0.2rem !important;
+  padding: 0 !important;
   order: 0;
 }
 
@@ -302,8 +305,9 @@ body {
 
 /* Logo styling */
 .md-header__button.md-logo {
-  margin-right: -0.5rem;
-  padding-right: 0;
+  margin-left: 0.5rem !important;
+  margin-right: -0.2rem !important;
+  padding-right: 0 !important;
 }
 
 .md-header__button.md-logo img,
@@ -680,6 +684,10 @@ body {
    ========================================== */
 .md-footer {
   background: #131722;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  margin-left: 0;
 }
 
 .md-footer-meta {
@@ -1229,23 +1237,62 @@ html {
 /* ==========================================
    GITBOOK-STYLE SIDEBAR WIDTH & FIXED HEIGHT
    ========================================== */
-.md-sidebar--primary {
-  width: 15rem;
-  position: fixed;
-  top: 3.6rem;
-  left: 0;
-  bottom: 0;
-  height: calc(100vh - 3.6rem);
-  overflow-y: auto;
-  overflow-x: hidden;
-  z-index: 3;
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary {
+    width: 15rem;
+    position: fixed;
+    top: 3.6rem;
+    left: 0;
+    height: auto;
+    max-height: calc(100vh - 3.6rem);
+    overflow: hidden;
+    z-index: 3;
+  }
 }
 
 .md-sidebar--primary .md-sidebar__scrollwrap {
   height: 100%;
+  max-height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
   padding-bottom: 2rem;
+  /* Forçar cor padrão da scrollbar */
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent !important;
+  scrollbar-width: thin !important;
+}
+
+/* Remover customização de scrollbar - usar cor padrão do navegador */
+.md-sidebar--primary .md-sidebar__scrollwrap::-webkit-scrollbar {
+  width: 6px !important;
+  height: 6px !important;
+  background: transparent !important;
+}
+
+.md-sidebar--primary .md-sidebar__scrollwrap::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+.md-sidebar--primary .md-sidebar__scrollwrap::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15) !important;
+  border-radius: 3px !important;
+  transition: background 0.2s ease !important;
+}
+
+.md-sidebar--primary .md-sidebar__scrollwrap::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Dark mode scrollbar */
+[data-md-color-scheme="slate"] .md-sidebar--primary .md-sidebar__scrollwrap {
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent !important;
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--primary .md-sidebar__scrollwrap::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15) !important;
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--primary .md-sidebar__scrollwrap::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25) !important;
 }
 
 /* Ajuste do conteúdo principal para não sobrepor o sidebar fixo */
@@ -1267,27 +1314,6 @@ html {
   transition-property: background-color, border-color, color, box-shadow, transform;
   transition-duration: 0.2s;
   transition-timing-function: ease;
-}
-
-/* ==========================================
-   GITBOOK-STYLE SCROLLBAR
-   ========================================== */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--hymple-bg-secondary);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--hymple-border);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--hymple-accent);
 }
 
 /* ==========================================
