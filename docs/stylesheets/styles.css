@@ -409,17 +409,17 @@ body {
 /* Active navigation item */
 [data-md-color-scheme="slate"] .md-nav__link--active,
 [data-md-color-scheme="slate"] .md-nav__link--active:hover {
-  background: rgba(253, 168, 0, 0.2);
+  background: transparent;
   color: var(--hymple-accent) !important;
   font-weight: 600;
 }
 
 [data-md-color-scheme="default"] .md-nav__link--active,
 [data-md-color-scheme="default"] .md-nav__link--active:hover {
-  background: rgba(253, 168, 0, 0.1);
+  background: transparent;
   color: var(--hymple-accent);
   font-weight: 600;
-  border-left: 3px solid var(--hymple-accent);
+  border-left: none;
 }
 
 /* ==========================================
@@ -442,7 +442,7 @@ body {
 .md-nav--secondary .md-nav__link--active {
   color: var(--hymple-accent);
   font-weight: 600;
-  border-left: 2px solid var(--hymple-accent);
+  border-left: none;
 }
 
 /* ==========================================
