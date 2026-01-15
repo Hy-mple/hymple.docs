@@ -13,8 +13,6 @@ title: Documentation | Hymple
 
 **Hybrid Execution. On-Chain Transparency. User Sovereignty.**
 
-Hybrid Execution. On-Chain Transparency. User Sovereignty.
-
 Last updated: January 2026
 
 ---
