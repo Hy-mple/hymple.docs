@@ -209,6 +209,9 @@ body {
 .md-header {
   background: #131722;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  position: fixed !important;
+  top: 0 !important;
+  z-index: 100 !important;
 }
 
 .md-header__inner {
