@@ -376,15 +376,46 @@ body {
   
   .md-nav--primary {
     position: fixed;
-    top: 0;
+    top: 3.6rem;
     left: 0;
     width: 12.1rem;
-    height: 100%;
+    height: calc(100% - 3.6rem);
     z-index: 4;
     background-color: var(--hymple-bg-primary);
     transform: translateX(-100%);
     transition: transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s;
-    padding-top: 3.6rem;
+    padding: 0;
+  }
+  
+  /* Remove margin/padding from nav and list */
+  .md-nav--primary .md-nav,
+  .md-nav--primary .md-nav__list {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  /* Remove any inner nav padding/background */
+  .md-nav--primary > .md-nav {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+    padding-bottom: 0 !important;
+    background: transparent !important;
+  }
+  
+  /* Force remove spacing from nav wrapper */
+  .md-nav--primary .md-nav--primary__inner {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  /* Remove spacing from first item */
+  .md-nav--primary .md-nav__list > .md-nav__item:first-child {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  
+  .md-nav--primary .md-nav__list > .md-nav__item:first-child .md-nav__link {
+    margin-top: 0.5rem !important;
   }
   
   [data-md-toggle="drawer"]:checked~.md-container .md-nav--primary {
@@ -1504,7 +1535,21 @@ body {
 @media screen and (max-width: 480px) {
   /* Ensure drawer menu starts below header */
   .md-nav--primary {
-    padding-top: 3.6rem !important;
+    padding: 0 !important;
+    top: 3.6rem !important;
+    height: calc(100% - 3.6rem) !important;
+  }
+  
+  /* Remove margin/padding from nav and list */
+  .md-nav--primary .md-nav,
+  .md-nav--primary .md-nav__list {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  /* Add minimal spacing to first item */
+  .md-nav--primary .md-nav__list > .md-nav__item:first-child {
+    margin-top: 0.5rem !important;
   }
   
   .md-typeset h1 {
