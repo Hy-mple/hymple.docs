@@ -349,29 +349,10 @@ body {
   }
 }
 
-/* Show site name and ensure menu works on mobile */
+/* Hide site name in mobile drawer */
 @media screen and (max-width: 76.1875em) {
   .md-nav--primary .md-nav__title[for="__drawer"] {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    background-color: #131722;
-    color: white;
-    z-index: 5;
-    padding: 0.75rem 1rem;
-  }
-  
-  /* Keep logo and title on same line */
-  .md-nav--primary .md-nav__title .md-nav__button {
-    position: static !important;
-    margin-right: 0.3rem;
-    flex-shrink: 0;
-  }
-  
-  .md-nav--primary .md-nav__title .md-ellipsis {
-    white-space: nowrap;
-    position: static !important;
-    flex: 1;
+    display: none !important;
   }
   
   /* Ensure drawer works properly */
@@ -403,6 +384,7 @@ body {
     background-color: var(--hymple-bg-primary);
     transform: translateX(-100%);
     transition: transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s;
+    padding-top: 3.6rem;
   }
   
   [data-md-toggle="drawer"]:checked~.md-container .md-nav--primary {
@@ -1382,6 +1364,7 @@ body {
     max-width: 100vw !important;
     overflow-x: hidden !important;
     padding: 0 !important;
+    padding-top: 4rem !important;
   }
   
   .md-content__inner {
