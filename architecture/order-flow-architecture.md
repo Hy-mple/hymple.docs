@@ -1,67 +1,67 @@
-# Arquitetura do Fluxo de Submissão e Execução de Ordens
+# Order Submission and Execution Flow Architecture
 
-## Visão Geral Executiva
+## Executive Overview
 
-Este documento especifica a arquitetura técnica do sistema de submissão, execução e liquidação de ordens da Hymple Exchange. A plataforma implementa uma arquitetura híbrida de alto desempenho que combina a eficiência operacional de exchanges centralizadas (CEX) com a soberania e transparência de exchanges descentralizadas (DEX).
+This document specifies the technical architecture of Hymple Exchange's order submission, execution, and settlement system. The platform implements a high-performance hybrid architecture that combines the operational efficiency of centralized exchanges (CEX) with the sovereignty and transparency of decentralized exchanges (DEX).
 
-**Princípios Arquiteturais:**
-- **Ultra-baixa latência**: <10ms para acknowledgment de ordens
-- **Alta disponibilidade**: 99.99% uptime SLA
-- **Escalabilidade horizontal**: Capacidade para >100.000 TPS
-- **Event-driven & loosely coupled**: Resiliência e independência de serviços
-- **Auditabilidade completa**: Trilha de auditoria imutável para compliance
+**Architectural Principles:**
+- **Ultra-low latency**: <10ms for order acknowledgment
+- **High availability**: 99.99% uptime SLA
+- **Horizontal scalability**: Capacity for >100,000 TPS
+- **Event-driven & loosely coupled**: Service resilience and independence
+- **Complete auditability**: Immutable audit trail for compliance
 
-## Diagrama Arquitetural
+## Architectural Diagram
 
 ```mermaid
 flowchart TD
     %% User Layer
-    User[👤 Usuário/Carteira] -->|1. Conectar| Platform[Plataforma Web<br/>WebSocket/REST]
-    Platform -->|2. Assinar Mensagem| Auth[API de Autenticação<br/>Golang gRPC<br/>Multi-Replica]
+    User[👤 User/Wallet] -->|1. Connect| Platform[Web Platform<br/>WebSocket/REST]
+    Platform -->|2. Sign Message| Auth[Authentication API<br/>Golang gRPC<br/>Multi-Replica]
     
     %% Authentication Flow
-    Auth -->|3. Verificar Assinatura| AuthDecision{Válida?}
-    AuthDecision -->|4. Aprovada| Token[JWT Token<br/>TTL: 24h]
-    AuthDecision -->|Rejeitada| AuthFail[❌ Falha de Autenticação]
+    Auth -->|3. Verify Signature| AuthDecision{Valid?}
+    AuthDecision -->|4. Approved| Token[JWT Token<br/>TTL: 24h]
+    AuthDecision -->|Rejected| AuthFail[❌ Authentication Failed]
     
     Token --> User
     
     %% Order Submission Flow
-    User -->|5. Submeter Ordem<br/>Aprovar Transferência| OrderAPI[Gerenciamento de Ordens<br/>Golang gRPC<br/>Load Balanced]
+    User -->|5. Submit Order<br/>Approve Transfer| OrderAPI[Order Management<br/>Golang gRPC<br/>Load Balanced]
     
-    OrderAPI -->|6. Validar<br/>Verificar Saldo| OrderValidation{Válida?}
-    OrderValidation -->|7. Publicar| OrdersTopic[(orders.new<br/>Kafka Topic<br/>Particionado)]
-    OrderValidation -->|Rejeitada| OrderFail[❌ Ordem Rejeitada<br/>Código de Erro]
+    OrderAPI -->|6. Validate<br/>Check Balance| OrderValidation{Valid?}
+    OrderValidation -->|7. Publish| OrdersTopic[(orders.new<br/>Kafka Topic<br/>Partitioned)]
+    OrderValidation -->|Rejected| OrderFail[❌ Order Rejected<br/>Error Code]
     
     %% Order Book Processing
-    OrdersTopic -->|8. Consumir| OrderBook[Matching Engine<br/>C# .NET 8<br/>In-Memory]
+    OrdersTopic -->|8. Consume| OrderBook[Matching Engine<br/>C# .NET 8<br/>In-Memory]
     
-    OrderBook -->|9. Processar| OrderBookProcessing[Processamento de Ordens:<br/>NOVA, EXECUTADA, CANCELADA<br/>Price-Time Priority]
+    OrderBook -->|9. Process| OrderBookProcessing[Order Processing:<br/>NEW, EXECUTED, CANCELED<br/>Price-Time Priority]
     
-    OrderBookProcessing -->|10. Relatórios de Execução| UpdateTopic[(orders.update<br/>Kafka Topic<br/>High Throughput)]
+    OrderBookProcessing -->|10. Execution Reports| UpdateTopic[(orders.update<br/>Kafka Topic<br/>High Throughput)]
     
     %% Parallel Consumer Services
-    UpdateTopic -->|Tempo Real| Notification[Serviço de Notificações<br/>Golang<br/>WebSocket Push]
-    UpdateTopic -->|Persistência| Persistence[Serviço de Persistência<br/>C# + PostgreSQL<br/>Write-Optimized]
-    UpdateTopic -->|Consolidação| Consolidator[Serviço de Consolidação<br/>C# + Redis<br/>Stateful]
+    UpdateTopic -->|Real Time| Notification[Notification Service<br/>Golang<br/>WebSocket Push]
+    UpdateTopic -->|Persistence| Persistence[Persistence Service<br/>C# + PostgreSQL<br/>Write-Optimized]
+    UpdateTopic -->|Consolidation| Consolidator[Consolidation Service<br/>C# + Redis<br/>Stateful]
     
-    Notification -->|11. Notificar| User
-    Persistence -->|12. Armazenar| Database[(PostgreSQL<br/>Histórico de Ordens<br/>Hot + Cold Storage)]
+    Notification -->|11. Notify| User
+    Persistence -->|12. Store| Database[(PostgreSQL<br/>Order History<br/>Hot + Cold Storage)]
     
     %% Consolidation and Settlement Flow
-    Consolidator -->|13. Agregar| ConsolidationLogic{Ordem<br/>Completa?}
-    ConsolidationLogic -->|Parcial| WaitMore[Aguardar Mais<br/>Execuções]
-    WaitMore -->|Continuar| Consolidator
+    Consolidator -->|13. Aggregate| ConsolidationLogic{Order<br/>Complete?}
+    ConsolidationLogic -->|Partial| WaitMore[Wait for More<br/>Executions]
+    WaitMore -->|Continue| Consolidator
     
-    ConsolidationLogic -->|14. Consolidada| SettlementTopic[(orders.for.settlement<br/>Kafka Topic<br/>DLQ Enabled)]
-    Consolidator -->|Atualização de Status| UpdateTopic
+    ConsolidationLogic -->|14. Consolidated| SettlementTopic[(orders.for.settlement<br/>Kafka Topic<br/>DLQ Enabled)]
+    Consolidator -->|Status Update| UpdateTopic
     
-    SettlementTopic -->|15. Liquidação| Settlement[Serviço de Liquidação<br/>Golang<br/>Batch Processing]
+    SettlementTopic -->|15. Settlement| Settlement[Settlement Service<br/>Golang<br/>Batch Processing]
     
-    Settlement -->|16. Executar<br/>Smart Contract| Blockchain[⛓️ Blockchain<br/>BSC / L2s<br/>Batch Settlement]
-    Settlement -->|17. Atualização de Status| UpdateTopic
+    Settlement -->|16. Execute<br/>Smart Contract| Blockchain[⛓️ Blockchain<br/>BSC / L2s<br/>Batch Settlement]
+    Settlement -->|17. Status Update| UpdateTopic
     
-    Blockchain -->|Confirmado| User
+    Blockchain -->|Confirmed| User
     
     %% Styling
     classDef userStyle fill:#4A90E2,stroke:#2E5C8A,stroke-width:2px,color:#fff
@@ -79,457 +79,430 @@ flowchart TD
     class Database,Blockchain blockchainStyle
 ```
 
-## Componentes do Sistema
+## System Components
 
-### 1. **Camada de Autenticação**
+### 1. **Authentication Layer**
 
-**Serviço**: `hymple.exchange.auth`  
-**Stack Tecnológico**: Golang 1.22+, gRPC, Redis (session cache)  
-**Estratégia de Deploy**: Kubernetes Deployment com HPA (Horizontal Pod Autoscaler)
+**Service**: `hymple.exchange.auth`  
+**Technology Stack**: Golang 1.22+, gRPC, Redis (session cache)  
+**Deployment Strategy**: Kubernetes Deployment with HPA (Horizontal Pod Autoscaler)
 
-#### Funcionalidades
-- Validação de assinaturas criptográficas de carteiras (ECDSA secp256k1)
-- Emissão de tokens JWT (HS256) com claims customizados
-- Rate limiting por endereço IP e carteira
-- Detecção de replay attacks através de nonces
-- Suporte a múltiplos provedores de carteira (MetaMask, WalletConnect, etc.)
+#### Features
+- Validation of wallet cryptographic signatures (ECDSA secp256k1)
+- JWT token issuance (HS256) with custom claims
+- Rate limiting per IP address and wallet
+- Replay attack detection through nonces
+- Support for multiple wallet providers (MetaMask, WalletConnect, etc.)
 
-#### Métricas de Performance
-- **Latência P99**: <15ms
-- **Throughput**: 50.000 req/s por réplica
-- **Disponibilidade**: 99.99%
-- **Réplicas mínimas**: 3 (produção)
+#### Performance Metrics
+- **P99 Latency**: <15ms
+- **Throughput**: 50,000 req/s per replica
+- **Availability**: 99.99%
+- **Minimum replicas**: 3 (production)
 
-#### Segurança
-- Validação de assinatura off-chain
-- Tokens com expiração configurável (default: 24h)
-- Refresh tokens para sessões longas
-- Blacklist de tokens comprometidos (Redis)
-- Audit log de todas as autenticações
+#### Security
+- Off-chain signature validation
+- Tokens with configurable expiration (default: 24h)
+- Refresh tokens for long sessions
+- Blacklist of compromised tokens (Redis)
+- Audit log of all authentications
 
 ---
 
-### 2. **API de Gerenciamento de Ordens**
+### 2. **Order Management API**
 
-**Serviço**: `hymple.exchange.orders`  
-**Stack Tecnológico**: Golang 1.22+, gRPC, Protocol Buffers  
-**Estratégia de Deploy**: Multi-AZ com load balancer (AWS ALB / GCP LB)
+**Service**: `hymple.exchange.orders`  
+**Technology Stack**: Golang 1.22+, gRPC, Protocol Buffers  
+**Deployment Strategy**: Multi-AZ with load balancer (AWS ALB / GCP LB)
 
-#### Funcionalidades
-- Recepção e validação de ordens (LIMIT, MARKET, STOP-LIMIT, OCO)
-- Validação de saldo em tempo real (integração com balance service)
+#### Features
+- Reception and validation of orders (LIMIT, MARKET, STOP-LIMIT, OCO)
+- Real-time balance validation (integration with balance service)
 - Pre-trade risk checks (exposure limits, daily limits)
-- Order enrichment (timestamp, ordem ID, user context)
-- Publicação em Kafka com garantia de entrega (acks=all)
+- Order enrichment (timestamp, order ID, user context)
+- Publication to Kafka with delivery guarantee (acks=all)
 
-#### Validações Pré-Execução
-1. **Validação de Formato**: Schema validation (Protocol Buffers)
-2. **Validação de Autenticação**: JWT verification e permissões
-3. **Validação de Saldo**: Consulta ao balance service com cache
-4. **Validação de Risco**: Limites por usuário e por par de trading
-5. **Validação de Mercado**: Verificação de trading pair ativo
-6. **Validação de Preço**: Price collar checks (±10% do último preço)
+#### Pre-Execution Validations
+1. **Format Validation**: Schema validation (Protocol Buffers)
+2. **Authentication Validation**: JWT verification and permissions
+3. **Balance Validation**: Query to balance service with cache
+4. **Risk Validation**: Limits per user and per trading pair
+5. **Market Validation**: Active trading pair verification
+6. **Price Validation**: Price collar checks (±10% of last price)
 
-#### Métricas de Performance
-- **Latência P99**: <10ms (pre-kafka publish)
-- **Throughput**: 100.000 ordens/s (agregado)
-- **Taxa de rejeição**: <0.1% (ordens válidas)
-- **Disponibilidade**: 99.99%
+#### Performance Metrics
+- **P99 Latency**: <10ms (pre-kafka publish)
+- **Throughput**: 100,000 orders/s (aggregate)
+- **Rejection rate**: <0.1% (valid orders)
+- **Availability**: 99.99%
 
-#### Códigos de Erro (RFC 7807)
-- `ORD-001`: Formato de ordem inválido
-- `ORD-002`: Saldo insuficiente
-- `ORD-003`: Par de trading inválido ou inativo
-- `ORD-004`: Preço fora do collar permitido
-- `ORD-005`: Quantidade abaixo do mínimo
-- `ORD-006`: Limite de exposição excedido
-- `ORD-007`: Rate limit excedido
+#### Error Codes (RFC 7807)
+- `ORD-001`: Invalid order format
+- `ORD-002`: Insufficient balance
+- `ORD-003`: Invalid or inactive trading pair
+- `ORD-004`: Price outside allowed collar
+- `ORD-005`: Quantity below minimum
+- `ORD-006`: Exposure limit exceeded
+- `ORD-007`: Rate limit exceeded
 
 ---
 
 ### 3. **Matching Engine (Order Book)**
 
-**Serviço**: `hymple.exchange.order.book`  
-**Stack Tecnológico**: C# .NET 8, In-Memory Data Structures  
-**Estratégia de Deploy**: Instâncias dedicadas por ativo ou grupo de ativos
+**Service**: `hymple.exchange.order.book`  
+**Technology Stack**: C# .NET 8, In-Memory Data Structures  
+**Deployment Strategy**: Dedicated instances per asset or asset group
 
-#### Arquitetura do Matching Engine
+#### Matching Engine Architecture
 
-##### Algoritmo de Matching
-- **Price-Time Priority**: Melhor preço primeiro, mesmo preço = primeiro a chegar
-- **Estrutura de dados**: Red-Black Trees para order books (O(log n) insert/delete)
-- **Execução determinística**: Ordem de processamento garantida
-- **Partial fills**: Suporte completo a execuções parciais
-- **Fill-or-Kill (FOK)**: Execução completa ou cancelamento
-- **Immediate-or-Cancel (IOC)**: Execução parcial imediata
+##### Matching Algorithm
+- **Price-Time Priority**: Best price first, same price = first to arrive
+- **Data structure**: Red-Black Trees for order books (O(log n) insert/delete)
+- **Deterministic execution**: Guaranteed processing order
+- **Partial fills**: Full support for partial executions
+- **Fill-or-Kill (FOK)**: Complete execution or cancellation
+- **Immediate-or-Cancel (IOC)**: Immediate partial execution
 
-##### Tipos de Ordem Suportados
-- **LIMIT**: Ordem com preço específico
-- **MARKET**: Execução imediata ao melhor preço disponível
-- **STOP-LOSS**: Ordem ativada quando preço atinge trigger
-- **STOP-LIMIT**: Stop-loss com limite de preço
-- **OCO (One-Cancels-Other)**: Duas ordens linkadas
-- **Trailing Stop**: Stop loss dinâmico
+##### Supported Order Types
+- **LIMIT**: Order with specific price
+- **MARKET**: Immediate execution at best available price
+- **STOP-LOSS**: Order activated when price reaches trigger
+- **STOP-LIMIT**: Stop-loss with price limit
+- **OCO (One-Cancels-Other)**: Two linked orders
+- **Trailing Stop**: Dynamic stop loss
 
-##### Estados de Ordem
-1. **NEW**: Ordem aceita e inserida no book
-2. **PARTIALLY_FILLED**: Execução parcial em andamento
-3. **FILLED**: Ordem completamente executada
-4. **CANCELED**: Ordem cancelada pelo usuário
-5. **REJECTED**: Ordem rejeitada pelo sistema
-6. **EXPIRED**: Ordem expirada (GTC, GTD)
+##### Order States
+1. **NEW**: Order accepted and inserted in book
+2. **PARTIALLY_FILLED**: Partial execution in progress
+3. **FILLED**: Order completely executed
+4. **CANCELED**: Order canceled by user
+5. **REJECTED**: Order rejected by system
+6. **EXPIRED**: Order expired (GTC, GTD)
 
-#### Métricas de Performance
-- **Latência de Matching**: <1ms (P99)
-- **Throughput**: 1.000.000 matches/s por instância
-- **Capacity**: 500.000 ordens ativas simultâneas por book
+#### Performance Metrics
+- **Matching Latency**: <1ms (P99)
+- **Throughput**: 1,000,000 matches/s per instance
+- **Capacity**: 500,000 active simultaneous orders per book
 - **Market depth updates**: >1000 updates/s
 
-#### Otimizações
-- Lock-free data structures onde possível
+#### Optimizations
+- Lock-free data structures where possible
 - Zero-allocation hot paths
-- Memory pooling para objetos frequentes
+- Memory pooling for frequent objects
 - NUMA-aware memory allocation
-- CPU pinning para threads críticas
+- CPU pinning for critical threads
 
 ---
 
-### 4. **Serviços Event-Driven**
+### 4. **Event-Driven Services**
 
-#### 4.1 Serviço de Notificações
+#### 4.1 Notification Service
 
-**Serviço**: `hymple.exchange.orders.notification`  
-**Stack Tecnológico**: Golang, WebSocket, Server-Sent Events (SSE)
+**Service**: `hymple.exchange.orders.notification`  
+**Technology Stack**: Golang, WebSocket, Server-Sent Events (SSE)
 
-##### Funcionalidades
-- Conexões WebSocket persistentes com heartbeat
-- Broadcasting de updates de ordens em tempo real
-- Suporte a múltiplos dispositivos por usuário
-- Fallback para SSE em ambientes restritos
-- Compressão de mensagens (gzip, brotli)
-- Filtros de subscrição customizáveis
+##### Features
+- Persistent WebSocket connections with heartbeat
+- Broadcasting of order updates in real time
+- Support for multiple devices per user
+- Fallback to SSE in restricted environments
+- Message compression (gzip, brotli)
+- Customizable subscription filters
 
-##### Métricas
-- **Latência de entrega**: <5ms (P95)
-- **Conexões simultâneas**: 100.000+ por instância
-- **Taxa de mensagens**: 1.000.000 msgs/s (agregado)
-- **Taxa de reconexão**: <2% (em condições normais)
+##### Metrics
+- **Delivery latency**: <5ms (P95)
+- **Simultaneous connections**: 100,000+ per instance
+- **Message rate**: 1,000,000 msgs/s (aggregate)
+- **Reconnection rate**: <2% (under normal conditions)
 
 ---
 
-#### 4.2 Serviço de Persistência
+#### 4.2 Persistence Service
 
-**Serviço**: `hymple.exchange.orders.persistence`  
-**Stack Tecnológico**: C# .NET 8, MySQL 8.0
+**Service**: `hymple.exchange.orders.persistence`  
+**Technology Stack**: C# .NET 8, MySQL 8.0
 
-##### Funcionalidades
-- Persistência de todos os eventos de ordem (event sourcing)
-- Armazenamento de execution reports
-- Histórico de trades (hot storage: 90 dias, cold storage: infinito)
-- Indexação otimizada para queries comuns
-- Particionamento por range temporal
-- Backup contínuo e point-in-time recovery
+##### Features
+- Persistence of all order events (event sourcing)
+- Execution reports storage
+- Trade history (hot storage: 90 days, cold storage: infinite)
+- Optimized indexing for common queries
+- Partitioning by time range
+- Continuous backup and point-in-time recovery
 
-##### Schema de Dados
-```sql
--- Tabela de ordens (time-series)
-orders (
-  order_id UUID PRIMARY KEY,
-  user_id UUID NOT NULL,
-  symbol VARCHAR(20) NOT NULL,
-  side ENUM('BUY', 'SELL'),
-  type ENUM('LIMIT', 'MARKET', 'STOP_LIMIT'),
-  status VARCHAR(20),
-  price NUMERIC(20,8),
-  quantity NUMERIC(20,8),
-  filled_quantity NUMERIC(20,8),
-  created_at TIMESTAMPTZ,
-  updated_at TIMESTAMPTZ
-)
 
--- Tabela de execuções
-executions (
-  execution_id UUID PRIMARY KEY,
-  order_id UUID REFERENCES orders(order_id),
-  price NUMERIC(20,8),
-  quantity NUMERIC(20,8),
-  fee NUMERIC(20,8),
-  executed_at TIMESTAMPTZ
-)
+##### Metrics
+- **Write throughput**: 50,000 writes/s
+- **Write latency**: <10ms (P99)
+- **Retention**: Hot (90d), Warm (1y), Cold (infinite)
+- **Backup RPO**: <1 minute
+
+---
+
+#### 4.3 Consolidation Service
+
+**Service**: `hymple.exchange.orders.consolidator`  
+**Technology Stack**: C# .NET 8, Redis (state management)
+
+##### Features
+- Aggregation of partial executions per order
+- Volume-weighted average price (VWAP) calculation
+- Detection of completely filled orders
+- Generation of consolidated reports for settlement
+- Retry logic with exponential backoff
+- Guaranteed idempotency
+
+##### Consolidation Logic
+```
+For each order:
+  1. Aggregate all executions
+  2. Calculate total filled_quantity
+  3. Calculate volume-weighted average price
+  4. Calculate total fees
+  5. If filled_quantity == order_quantity:
+     -> Mark as FILLED
+     -> Publish to orders.for.settlement
+  6. Otherwise:
+     -> Wait for more executions
 ```
 
-##### Métricas
-- **Write throughput**: 50.000 writes/s
-- **Latência de escrita**: <10ms (P99)
-- **Retention**: Hot (90d), Warm (1y), Cold (infinito)
-- **Backup RPO**: <1 minuto
+##### Metrics
+- **Consolidation latency**: <20ms (P95)
+- **Throughput**: 50,000 consolidations/s
+- **Error rate**: <0.01%
 
 ---
 
-#### 4.3 Serviço de Consolidação
+#### 4.4 Settlement Service
 
-**Serviço**: `hymple.exchange.orders.consolidator`  
-**Stack Tecnológico**: C# .NET 8, Redis (state management)
+**Service**: `hymple.exchange.orders.settlement`  
+**Technology Stack**: Golang, Web3, Smart Contracts (Solidity)
 
-##### Funcionalidades
-- Agregação de execuções parciais por ordem
-- Cálculo de preço médio ponderado (VWAP)
-- Detecção de ordens completamente preenchidas
-- Geração de relatórios consolidados para settlement
-- Retry logic com exponential backoff
-- Idempotency garantida
+##### Features
+- On-chain settlement execution via smart contracts
+- Batch settlement for gas optimization
+- Automatic retry on network failures
+- Multi-chain support (BSC, Arbitrum, Optimism, Base)
+- Blockchain confirmation monitoring
+- Reconciliation between off-chain and on-chain balance
 
-##### Lógica de Consolidação
-```
-Para cada ordem:
-  1. Agregar todas as execuções
-  2. Calcular filled_quantity total
-  3. Calcular preço médio ponderado
-  4. Calcular fees totais
-  5. Se filled_quantity == order_quantity:
-     -> Marcar como FILLED
-     -> Publicar em orders.for.settlement
-  6. Caso contrário:
-     -> Aguardar mais execuções
-```
+##### Settlement Process
+1. **Aggregation**: Group orders by user and asset
+2. **Batch creation**: Create batch of up to 100 orders
+3. **Gas estimation**: Estimate required gas
+4. **Transaction submission**: Submit transaction to blockchain
+5. **Confirmation monitoring**: Wait for confirmations (12 blocks)
+6. **Status update**: Publish final status
 
-##### Métricas
-- **Latência de consolidação**: <20ms (P95)
-- **Throughput**: 50.000 consolidações/s
-- **Taxa de erro**: <0.01%
-
----
-
-#### 4.4 Serviço de Liquidação
-
-**Serviço**: `hymple.exchange.orders.settlement`  
-**Stack Tecnológico**: Golang, Web3, Smart Contracts (Solidity)
-
-##### Funcionalidades
-- Execução de liquidação on-chain via smart contracts
-- Batch settlement para otimização de gas
-- Retry automático em caso de falhas de rede
-- Suporte multi-chain (BSC, Arbitrum, Optimism, Base)
-- Monitoring de confirmações de blockchain
-- Reconciliação entre saldo off-chain e on-chain
-
-##### Processo de Liquidação
-1. **Agregação**: Agrupar ordens por usuário e ativo
-2. **Batch creation**: Criar lote de até 100 ordens
-3. **Gas estimation**: Estimar gas necessário
-4. **Transaction submission**: Enviar transação para blockchain
-5. **Confirmation monitoring**: Aguardar confirmações (12 blocos)
-6. **Status update**: Publicar status final
-
-##### Otimizações de Gas
-- Batch settlement reduz custos em ~80%
+##### Gas Optimizations
+- Batch settlement reduces costs by ~80%
 - EIP-2930 access lists
-- Otimização de storage slots
-- Uso de eventos em vez de storage para logs
+- Storage slot optimization
+- Use of events instead of storage for logs
 
-##### Métricas
-- **Latência de settlement**: <30 segundos (BSC)
-- **Custo médio de gas**: <$0.50 por lote
-- **Taxa de sucesso**: >99.9%
-- **Throughput**: 10.000 settlements/minuto
+##### Metrics
+- **Settlement latency**: <30 seconds (BSC)
+- **Average gas cost**: <$0.50 per batch
+- **Success rate**: >99.9%
+- **Throughput**: 10,000 settlements/minute
 
 ---
 
 ### 5. **Message Broker (Apache Kafka)**
 
-**Stack Tecnológico**: Apache Kafka 3.6+, Zookeeper/KRaft  
-**Estratégia de Deploy**: Cluster multi-AZ com replicação
+**Technology Stack**: Apache Kafka 3.6+, Zookeeper/KRaft  
+**Deployment Strategy**: Multi-AZ cluster with replication
 
-#### Tópicos e Configurações
+#### Topics and Configurations
 
 ##### `orders.new`
-- **Partições**: 50 (particionamento por symbol hash)
+- **Partitions**: 50 (partitioning by symbol hash)
 - **Replication factor**: 3
-- **Retention**: 7 dias
+- **Retention**: 7 days
 - **Compression**: lz4
 - **Min in-sync replicas**: 2
 
 ##### `orders.update`
-- **Partições**: 100 (particionamento por order_id hash)
+- **Partitions**: 100 (partitioning by order_id hash)
 - **Replication factor**: 3
-- **Retention**: 30 dias
+- **Retention**: 30 days
 - **Compression**: snappy
 - **Min in-sync replicas**: 2
 
 ##### `orders.for.settlement`
-- **Partições**: 20
+- **Partitions**: 20
 - **Replication factor**: 3
-- **Retention**: 90 dias (compliance)
+- **Retention**: 90 days (compliance)
 - **Compression**: gzip
 - **Min in-sync replicas**: 3 (critical)
 
-#### Garantias de Entrega
+#### Delivery Guarantees
 - **Producer**: acks=all, retries=∞, idempotent=true
-- **Consumer**: Offset management manual, exactly-once semantics
-- **Dead Letter Queue (DLQ)**: Para mensagens com falha após N retries
+- **Consumer**: Manual offset management, exactly-once semantics
+- **Dead Letter Queue (DLQ)**: For messages failing after N retries
 
-#### Métricas de Cluster
-- **Throughput**: 10GB/s (agregado)
-- **Latência**: <10ms (P99)
-- **Disponibilidade**: 99.99%
-- **Messages/s**: 5.000.000+
-
----
-
-## Fluxo Detalhado de Execução
-
-### Fase 1: Autenticação (Passos 1-4)
-
-**Tempo total**: ~50ms
-
-1. **Conexão da Carteira** (10ms)
-   - Usuário conecta carteira via WalletConnect ou injeção
-   - Plataforma solicita acesso à conta
-   
-2. **Assinatura de Mensagem** (20ms)
-   - Plataforma gera challenge único (nonce)
-   - Usuário assina mensagem com chave privada
-   - Formato: EIP-191 ou EIP-712
-   
-3. **Verificação de Assinatura** (10ms)
-   - API de autenticação recupera endereço público
-   - Valida que assinatura corresponde ao endereço
-   - Verifica nonce não foi usado (replay protection)
-   
-4. **Emissão de Token** (10ms)
-   - Gera JWT com claims: user_id, wallet_address, roles
-   - Armazena em cache Redis para validação rápida
-   - Retorna token ao cliente (TTL: 24h)
+#### Cluster Metrics
+- **Throughput**: 10GB/s (aggregate)
+- **Latency**: <10ms (P99)
+- **Availability**: 99.99%
+- **Messages/s**: 5,000,000+
 
 ---
 
-### Fase 2: Submissão de Ordem (Passos 5-7)
+## Detailed Execution Flow
 
-**Tempo total**: ~15ms
+### Phase 1: Authentication (Steps 1-4)
 
-5. **Submissão da Ordem** (<1ms)
-   - Cliente envia ordem via gRPC
+**Total time**: ~50ms
+
+1. **Wallet Connection** (10ms)
+   - User connects wallet via WalletConnect or injection
+   - Platform requests account access
+   
+2. **Message Signing** (20ms)
+   - Platform generates unique challenge (nonce)
+   - User signs message with private key
+   - Format: EIP-191 or EIP-712
+   
+3. **Signature Verification** (10ms)
+   - Authentication API recovers public address
+   - Validates that signature matches address
+   - Verifies nonce hasn't been used (replay protection)
+   
+4. **Token Issuance** (10ms)
+   - Generates JWT with claims: user_id, wallet_address, roles
+   - Stores in Redis cache for fast validation
+   - Returns token to client (TTL: 24h)
+
+---
+
+### Phase 2: Order Submission (Steps 5-7)
+
+**Total time**: ~15ms
+
+5. **Order Submission** (<1ms)
+   - Client sends order via gRPC
    - Payload: symbol, side, type, price, quantity, timeInForce
-   - Aprovação de transferência (se primeira ordem): permit/approve
+   - Transfer approval (if first order): permit/approve
    
-6. **Validação e Verificação** (10ms)
-   - **Validação JWT**: Verifica autenticidade e expiração (1ms)
-   - **Validação de schema**: Protocol Buffers validation (0.5ms)
-   - **Verificação de saldo**: Cache-aside pattern com Redis (2ms)
-   - **Risk checks**: Limites de exposição e daily limits (2ms)
-   - **Price collar**: Validação de preço razoável (0.5ms)
-   - **Geração de order ID**: UUID v7 (time-ordered) (0.5ms)
+6. **Validation and Verification** (10ms)
+   - **JWT Validation**: Verifies authenticity and expiration (1ms)
+   - **Schema validation**: Protocol Buffers validation (0.5ms)
+   - **Balance verification**: Cache-aside pattern with Redis (2ms)
+   - **Risk checks**: Exposure limits and daily limits (2ms)
+   - **Price collar**: Reasonable price validation (0.5ms)
+   - **Order ID generation**: UUID v7 (time-ordered) (0.5ms)
    
-7. **Publicação no Kafka** (4ms)
-   - Serialização para Protocol Buffers (0.5ms)
-   - Envio ao tópico `orders.new` com acks=all (3ms)
-   - Retorno de acknowledgment ao cliente (0.5ms)
+7. **Kafka Publication** (4ms)
+   - Serialization to Protocol Buffers (0.5ms)
+   - Send to `orders.new` topic with acks=all (3ms)
+   - Return acknowledgment to client (0.5ms)
 
-**Códigos de Resposta**:
-- `200 OK`: Ordem aceita
-- `400 Bad Request`: Validação falhou
-- `401 Unauthorized`: Token inválido
+**Response Codes**:
+- `200 OK`: Order accepted
+- `400 Bad Request`: Validation failed
+- `401 Unauthorized`: Invalid token
 - `429 Too Many Requests`: Rate limit
-- `503 Service Unavailable`: Sistema indisponível
+- `503 Service Unavailable`: System unavailable
 
 ---
 
-### Fase 3: Processamento de Ordem (Passos 8-10)
+### Phase 3: Order Processing (Steps 8-10)
 
-**Tempo total**: ~2ms
+**Total time**: ~2ms
 
-8. **Consumo do Kafka** (0.5ms)
-   - Matching engine consome mensagem do tópico `orders.new`
-   - Deserialização de Protocol Buffers
-   - Roteamento para order book específico (por symbol)
+8. **Kafka Consumption** (0.5ms)
+   - Matching engine consumes message from `orders.new` topic
+   - Protocol Buffers deserialization
+   - Routing to specific order book (by symbol)
    
 9. **Matching Engine** (1ms)
-   - **Inserção no book**: Red-Black Tree insertion (O(log n))
-   - **Matching loop**: Busca por ordens compatíveis
-     - Para BUY: Buscar melhor ASK (menor preço)
-     - Para SELL: Buscar melhor BID (maior preço)
-   - **Execução**: Criar execution reports para cada match
-   - **Atualização de estado**: Modificar quantidade preenchida
+   - **Book insertion**: Red-Black Tree insertion (O(log n))
+   - **Matching loop**: Search for compatible orders
+     - For BUY: Search for best ASK (lowest price)
+     - For SELL: Search for best BID (highest price)
+   - **Execution**: Create execution reports for each match
+   - **State update**: Modify filled quantity
    
-10. **Publicação de Execution Reports** (0.5ms)
-    - Gerar relatórios de execução (JSON ou Protobuf)
-    - Publicar em `orders.update` topic
-    - Broadcast para todos os consumidores interessados
+10. **Execution Reports Publication** (0.5ms)
+    - Generate execution reports (JSON or Protobuf)
+    - Publish to `orders.update` topic
+    - Broadcast to all interested consumers
 
-**Tipos de Execution Reports**:
-- `ORDER_NEW`: Ordem aceita no book
-- `ORDER_TRADE`: Execução total ou parcial
-- `ORDER_CANCEL`: Cancelamento processado
-- `ORDER_REJECT`: Rejeição pelo matching engine
-- `ORDER_EXPIRE`: Ordem expirada
-
----
-
-### Fase 4: Distribuição de Eventos (Passos 11-13)
-
-**Tempo total (paralelo)**: ~20ms
-
-11. **Notificação em Tempo Real** (5ms)
-    - Serviço de notificações consome `orders.update`
-    - Identifica conexões WebSocket ativas do usuário
-    - Serializa mensagem (JSON compacto)
-    - Push via WebSocket para todos os dispositivos
-    - Cliente atualiza UI instantaneamente
-    
-12. **Persistência em Banco de Dados** (10ms)
-    - Serviço de persistência consome `orders.update`
-    - Batch insert em MySQL (lotes de 100 mensagens)
-    - Atualização de índices
-    - Escrita em InnoDB redo log
-    - Replicação para standby servers
-    
-13. **Consolidação** (20ms)
-    - Serviço de consolidação consome `orders.update`
-    - Carrega estado atual da ordem do Redis
-    - Agrega nova execução ao estado
-    - Calcula VWAP (Volume Weighted Average Price)
-    - Se ordem completa → publica em `orders.for.settlement`
-    - Caso contrário → atualiza estado e aguarda
+**Execution Report Types**:
+- `ORDER_NEW`: Order accepted in book
+- `ORDER_TRADE`: Total or partial execution
+- `ORDER_CANCEL`: Cancellation processed
+- `ORDER_REJECT`: Rejection by matching engine
+- `ORDER_EXPIRE`: Order expired
 
 ---
 
-### Fase 5: Liquidação On-Chain (Passos 14-17)
+### Phase 4: Event Distribution (Steps 11-13)
 
-**Tempo total**: ~30 segundos (dependente da blockchain)
+**Total time (parallel)**: ~20ms
 
-14. **Preparação para Settlement** (100ms)
-    - Consolidador identifica ordem completamente preenchida
-    - Calcula net positions (por usuário e ativo)
-    - Agrupa ordens em batch (até 100 ordens)
-    - Publica lote em `orders.for.settlement`
+11. **Real-Time Notification** (5ms)
+    - Notification service consumes `orders.update`
+    - Identifies active WebSocket connections for user
+    - Serializes message (compact JSON)
+    - Push via WebSocket to all devices
+    - Client updates UI instantly
     
-15. **Processamento de Settlement** (5s)
-    - Serviço de settlement consome mensagem
-    - Valida integridade dos dados
-    - Estima gas necessário (eth_estimateGas)
-    - Ajusta gas price baseado em network conditions
-    - Constrói transação com batch de settlements
+12. **Database Persistence** (10ms)
+    - Persistence service consumes `orders.update`
+    - Batch insert into MySQL (batches of 100 messages)
+    - Index update
+    - Write to InnoDB redo log
+    - Replication to standby servers
     
-16. **Execução na Blockchain** (25s)
-    - Assina transação com hot wallet (HSM-protected)
-    - Submete transação para blockchain (BSC/L2)
-    - Aguarda inclusão em bloco (~3s)
-    - Aguarda confirmações (12 blocos ~36s BSC, ~12s L2)
-    - Lê eventos emitidos pelo smart contract
-    
-17. **Atualização Final de Status** (500ms)
-    - Publica evento de settlement confirmado em `orders.update`
-    - Atualiza status da ordem para `SETTLED`
-    - Notifica usuário via WebSocket
-    - Persiste hash da transação e receipt
-    - Atualiza saldo on-chain do usuário
+13. **Consolidation** (20ms)
+    - Consolidation service consumes `orders.update`
+    - Loads current order state from Redis
+    - Aggregates new execution to state
+    - Calculates VWAP (Volume Weighted Average Price)
+    - If order complete → publishes to `orders.for.settlement`
+    - Otherwise → updates state and waits
 
-**Estados de Settlement**:
-- `PENDING`: Aguardando processamento
-- `SUBMITTED`: Transação enviada para blockchain
-- `CONFIRMING`: Aguardando confirmações
-- `CONFIRMED`: Settlement confirmado
-- `FAILED`: Falha no settlement (retry automático)
+---
+
+### Phase 5: On-Chain Settlement (Steps 14-17)
+
+**Total time**: ~30 seconds (blockchain dependent)
+
+14. **Settlement Preparation** (100ms)
+    - Consolidator identifies completely filled order
+    - Calculates net positions (per user and asset)
+    - Groups orders in batch (up to 100 orders)
+    - Publishes batch to `orders.for.settlement`
+    
+15. **Settlement Processing** (5s)
+    - Settlement service consumes message
+    - Validates data integrity
+    - Estimates required gas (eth_estimateGas)
+    - Adjusts gas price based on network conditions
+    - Constructs transaction with settlement batch
+    
+16. **Blockchain Execution** (25s)
+    - Signs transaction with hot wallet (HSM-protected)
+    - Submits transaction to blockchain (BSC/L2)
+    - Waits for block inclusion (~3s)
+    - Waits for confirmations (12 blocks ~36s BSC, ~12s L2)
+    - Reads events emitted by smart contract
+    
+17. **Final Status Update** (500ms)
+    - Publishes confirmed settlement event to `orders.update`
+    - Updates order status to `SETTLED`
+    - Notifies user via WebSocket
+    - Persists transaction hash and receipt
+    - Updates user's on-chain balance
+
+**Settlement States**:
+- `PENDING`: Awaiting processing
+- `SUBMITTED`: Transaction sent to blockchain
+- `CONFIRMING`: Awaiting confirmations
+- `CONFIRMED`: Settlement confirmed
+- `FAILED`: Settlement failed (automatic retry)
 
 ---
 
@@ -547,74 +520,74 @@ Cada serviço é responsável por um bounded context específico:
 ### 2. Event Sourcing & CQRS
 
 **Event Sourcing**:
-- Todos os eventos são armazenados como log imutável
-- Estado atual é derivado do replay de eventos
-- Auditoria completa e temporal queries
+- All events are stored as immutable log
+- Current state is derived from event replay
+- Complete audit and temporal queries
 
 **CQRS (Command Query Responsibility Segregation)**:
-- **Command Side**: APIs de submissão (Write)
-- **Query Side**: APIs de consulta (Read)
-- Modelos de dados otimizados separadamente
-- Eventual consistency entre write e read models
+- **Command Side**: Submission APIs (Write)
+- **Query Side**: Query APIs (Read)
+- Separately optimized data models
+- Eventual consistency between write and read models
 
-### 3. Saga Pattern para Transações Distribuídas
+### 3. Saga Pattern for Distributed Transactions
 
-Implementado para fluxos que envolvem múltiplos serviços:
+Implemented for flows involving multiple services:
 
-**Exemplo: Order Submission Saga**
-1. Reservar saldo → Success/Fail
-2. Criar ordem no book → Success/Compensate(1)
-3. Persistir ordem → Success/Compensate(1,2)
-4. Notificar usuário → Best effort
+**Example: Order Submission Saga**
+1. Reserve balance → Success/Fail
+2. Create order in book → Success/Compensate(1)
+3. Persist order → Success/Compensate(1,2)
+4. Notify user → Best effort
 
-**Compensação em caso de falha**:
-- Rollback automático de operações anteriores
-- Logs de compensação para debugging
-- Alertas para operações que requerem intervenção manual
+**Compensation on failure**:
+- Automatic rollback of previous operations
+- Compensation logs for debugging
+- Alerts for operations requiring manual intervention
 
 ### 4. Circuit Breaker Pattern
 
-Proteção contra cascatas de falhas:
+Protection against failure cascades:
 
 ```
-Estados do Circuit Breaker:
-- CLOSED: Operação normal
-- OPEN: Falhas detectadas, rejeitar requisições
-- HALF_OPEN: Teste de recuperação
+Circuit Breaker States:
+- CLOSED: Normal operation
+- OPEN: Failures detected, reject requests
+- HALF_OPEN: Recovery test
 
 Thresholds:
-- Failure rate: >5% em 10s
+- Failure rate: >5% in 10s
 - Timeout: >1s (P95)
-- Recovery: 30s em estado OPEN
+- Recovery: 30s in OPEN state
 ```
 
 ### 5. API Gateway Pattern
 
-**Gateway unificado** para todos os serviços:
-- Rate limiting global e por usuário
-- Autenticação centralizada (JWT validation)
+**Unified gateway** for all services:
+- Global and per-user rate limiting
+- Centralized authentication (JWT validation)
 - Request/Response logging
 - Metrics aggregation
 - Protocol translation (REST → gRPC)
 
 ---
 
-## Stack Tecnológico Completo
+## Complete Technology Stack
 
-| Componente | Tecnologia | Justificativa |
+| Component | Technology | Justification |
 |------------|-----------|---------------|
-| **APIs de Entrada** | Golang 1.22+ | Alta concorrência, baixa latência |
-| **Matching Engine** | C# .NET 8 | Performance, tipagem forte, tooling |
-| **Message Broker** | Apache Kafka 3.6 | Throughput massivo, durabilidade |
-| **Cache Distribuído** | Redis 7.x (Cluster) | Sub-millisecond latency, pub/sub |
-| **Banco de Dados** | MySQL 8.0 (InnoDB) | ACID, alta performance, replicação |
-| **Orquestração** | Kubernetes 1.28+ | Auto-scaling, self-healing |
+| **Entry APIs** | Golang 1.22+ | High concurrency, low latency |
+| **Matching Engine** | C# .NET 8 | Performance, strong typing, tooling |
+| **Message Broker** | Apache Kafka 3.6 | Massive throughput, durability |
+| **Distributed Cache** | Redis 7.x (Cluster) | Sub-millisecond latency, pub/sub |
+| **Database** | MySQL 8.0 (InnoDB) | ACID, high performance, replication |
+| **Orchestration** | Kubernetes 1.28+ | Auto-scaling, self-healing |
 | **Service Mesh** | Istio / Linkerd | mTLS, observability, traffic management |
-| **Monitoring** | Prometheus + Grafana | Métricas e visualização |
-| **Logging** | ELK Stack (Elasticsearch, Logstash, Kibana) | Logs centralizados |
+| **Monitoring** | Prometheus + Grafana | Metrics and visualization |
+| **Logging** | ELK Stack (Elasticsearch, Logstash, Kibana) | Centralized logs |
 | **Tracing** | Jaeger / Tempo | Distributed tracing |
-| **Blockchain** | Web3.js / Ethers.js | Interação com smart contracts |
-| **Load Balancer** | AWS ALB / GCP LB | Distribuição de tráfego |
+| **Blockchain** | Web3.js / Ethers.js | Smart contract interaction |
+| **Load Balancer** | AWS ALB / GCP LB | Traffic distribution |
 | **CDN** | CloudFlare | Edge caching, DDoS protection |
 
 ---
@@ -637,110 +610,110 @@ Thresholds:
 | Componente | Throughput |
 |------------|-----------|
 | Order API | 100.000 req/s (agregado) |
-| Matching Engine | 1.000.000 matches/s por instância |
-| Kafka Cluster | 5.000.000 msg/s |
-| WebSocket Server | 100.000 conexões/instância |
-| Database Writes | 50.000 writes/s |
+| Matching Engine | 1,000,000 matches/s per instance |
+| Kafka Cluster | 5,000,000 msg/s |
+| WebSocket Server | 100,000 connections/instance |
+| Database Writes | 50,000 writes/s |
 
-### Disponibilidade
+### Availability
 
-| Serviço | SLA | Downtime Mensal |
-|---------|-----|-----------------|
-| Order API | 99.99% | 4.32 minutos |
-| Matching Engine | 99.95% | 21.6 minutos |
-| Settlement Service | 99.9% | 43.2 minutos |
-| Overall System | 99.95% | 21.6 minutos |
+| Service | SLA | Monthly Downtime |
+|---------|-----|------------------|
+| Order API | 99.99% | 4.32 minutes |
+| Matching Engine | 99.95% | 21.6 minutes |
+| Settlement Service | 99.9% | 43.2 minutes |
+| Overall System | 99.95% | 21.6 minutes |
 
 ---
 
-## Segurança Enterprise
+## Enterprise Security
 
-### 1. Autenticação e Autorização
+### 1. Authentication and Authorization
 
-- **mTLS** entre todos os microserviços
-- **JWT** com rotação automática de secrets
+- **mTLS** between all microservices
+- **JWT** with automatic secret rotation
 - **RBAC** (Role-Based Access Control) granular
-- **API Keys** para integrações de terceiros
-- **Rate limiting** adaptativo baseado em ML
+- **API Keys** for third-party integrations
+- **Rate limiting** adaptive based on ML
 
-### 2. Proteção de Dados
+### 2. Data Protection
 
 - **Encryption at rest**: AES-256 (database, backups)
 - **Encryption in transit**: TLS 1.3
-- **PII masking**: Logs não contêm dados sensíveis
+- **PII masking**: Logs don't contain sensitive data
 - **Key management**: AWS KMS / HashiCorp Vault
-- **Secret rotation**: Automática a cada 90 dias
+- **Secret rotation**: Automatic every 90 days
 
-### 3. Segurança de Smart Contracts
+### 3. Smart Contract Security
 
-- **Multi-sig wallets** para operações críticas
-- **Time-locks** para upgrades de contratos
-- **Pausable contracts** para emergências
-- **Reentrancy guards** em todas as funções payable
-- **Auditorias periódicas** (CertiK, Trail of Bits, OpenZeppelin)
+- **Multi-sig wallets** for critical operations
+- **Time-locks** for contract upgrades
+- **Pausable contracts** for emergencies
+- **Reentrancy guards** on all payable functions
+- **Periodic audits** (CertiK, Trail of Bits, OpenZeppelin)
 
-### 4. Detecção de Anomalias
+### 4. Anomaly Detection
 
-- **ML models** para detecção de wash trading
-- **Behavioral analysis** para identificar bots maliciosos
-- **Pattern matching** para front-running attempts
-- **Alertas em tempo real** para atividades suspeitas
+- **ML models** for wash trading detection
+- **Behavioral analysis** to identify malicious bots
+- **Pattern matching** for front-running attempts
+- **Real-time alerts** for suspicious activities
 
 ---
 
 ## Disaster Recovery & Business Continuity
 
-### Estratégia de Backup
+### Backup Strategy
 
-**Bancos de Dados**:
-- Full backup: Diário às 00:00 UTC
-- Incremental backup: A cada hora
-- Point-in-time recovery: Até 30 dias atrás
-- Replicação cross-region: Síncrona (DR site)
+**Databases**:
+- Full backup: Daily at 00:00 UTC
+- Incremental backup: Every hour
+- Point-in-time recovery: Up to 30 days ago
+- Cross-region replication: Synchronous (DR site)
 
 **Kafka**:
-- Replicação de tópicos: Factor 3 (multi-AZ)
-- Backup de configurações: Git (Infrastructure as Code)
-- Disaster recovery cluster: Região secundária (standby)
+- Topic replication: Factor 3 (multi-AZ)
+- Configuration backup: Git (Infrastructure as Code)
+- Disaster recovery cluster: Secondary region (standby)
 
-### Failover Automático
+### Automatic Failover
 
 **Database**:
 - MySQL Group Replication (multi-primary)
-- Automatic failover com orchestrator
-- RTO: <60 segundos
-- RPO: <10 segundos
+- Automatic failover with orchestrator
+- RTO: <60 seconds
+- RPO: <10 seconds
 
-**Serviços**:
-- Health checks contínuos (readiness, liveness)
+**Services**:
+- Continuous health checks (readiness, liveness)
 - Auto-healing: Kubernetes restart unhealthy pods
-- Circuit breakers: Isolar serviços com falha
-- Graceful degradation: Funcionalidade reduzida vs. downtime total
+- Circuit breakers: Isolate failing services
+- Graceful degradation: Reduced functionality vs. total downtime
 
 ### RTO & RPO Targets
 
-| Componente | RTO | RPO |
+| Component | RTO | RPO |
 |------------|-----|-----|
-| Order API | 1 minuto | 0 (stateless) |
-| Matching Engine | 5 minutos | <10 segundos |
-| Database | 1 minuto | <10 segundos |
-| Settlement | 10 minutos | 0 (blockchain é source of truth) |
+| Order API | 1 minute | 0 (stateless) |
+| Matching Engine | 5 minutes | <10 seconds |
+| Database | 1 minute | <10 seconds |
+| Settlement | 10 minutes | 0 (blockchain is source of truth) |
 
 ---
 
-## Compliance e Auditoria
+## Compliance and Audit
 
-### Trilha de Auditoria
+### Audit Trail
 
-**Eventos auditados**:
-- Todas as autenticações (sucesso e falha)
-- Submissões de ordem (aceitas e rejeitadas)
-- Execuções de trade (com timestamps precisos)
-- Cancelamentos e modificações
-- Settlements on-chain (com TX hashes)
-- Acessos administrativos
+**Audited events**:
+- All authentications (success and failure)
+- Order submissions (accepted and rejected)
+- Trade executions (with precise timestamps)
+- Cancellations and modifications
+- On-chain settlements (with TX hashes)
+- Administrative accesses
 
-**Formato de logs**:
+**Log format**:
 ```json
 {
   "timestamp": "2026-01-31T10:30:00.123Z",
@@ -757,94 +730,94 @@ Thresholds:
 }
 ```
 
-### Retenção de Dados
+### Data Retention
 
-| Tipo de Dado | Hot Storage | Cold Storage | Total |
+| Data Type | Hot Storage | Cold Storage | Total |
 |--------------|-------------|--------------|-------|
-| Ordens ativas | 90 dias | - | 90 dias |
-| Histórico de trades | 1 ano | 7 anos | 8 anos |
-| Audit logs | 1 ano | Permanente | ∞ |
-| Settlements | 2 anos | Permanente | ∞ |
+| Active orders | 90 days | - | 90 days |
+| Trade history | 1 year | 7 years | 8 years |
+| Audit logs | 1 year | Permanent | ∞ |
+| Settlements | 2 years | Permanent | ∞ |
 
-### Relatórios Regulatórios
+### Regulatory Reporting
 
-- **Trade reporting**: Export diário em formato FIX/CSV
-- **AML screening**: Integração com providers (Chainalysis, Elliptic)
-- **Suspicious activity reports**: Alertas automáticos para compliance team
-- **Jurisdictional compliance**: Adaptável por região
+- **Trade reporting**: Daily export in FIX/CSV format
+- **AML screening**: Integration with providers (Chainalysis, Elliptic)
+- **Suspicious activity reports**: Automatic alerts for compliance team
+- **Jurisdictional compliance**: Adaptable by region
 
 ---
 
-## Observabilidade
+## Observability
 
-### Métricas (Prometheus)
+### Metrics (Prometheus)
 
 **Golden Signals**:
-- **Latency**: Histogramas P50, P95, P99, P99.9
+- **Latency**: Histograms P50, P95, P99, P99.9
 - **Traffic**: Request rate (req/s)
-- **Errors**: Error rate e error types
+- **Errors**: Error rate and error types
 - **Saturation**: CPU, Memory, Disk, Network
 
-**Métricas de Negócio**:
-- Ordens por segundo (total, por symbol)
-- Volume de trading (USD, por symbol)
-- Taxa de rejeição de ordens
-- Tempo médio de settlement
-- Custo médio de gas
+**Business Metrics**:
+- Orders per second (total, per symbol)
+- Trading volume (USD, per symbol)
+- Order rejection rate
+- Average settlement time
+- Average gas cost
 
 ### Logs (ELK Stack)
 
-**Structured logging** em JSON:
-- Correlation IDs para tracing end-to-end
+**Structured logging** in JSON:
+- Correlation IDs for end-to-end tracing
 - Log levels: DEBUG, INFO, WARN, ERROR, FATAL
-- Sampling: 100% para ERROR+, 10% para INFO, 1% para DEBUG (produção)
+- Sampling: 100% for ERROR+, 10% for INFO, 1% for DEBUG (production)
 
 ### Tracing (Jaeger)
 
-**Distributed tracing** para cada requisição:
-- Spans para cada operação (API call, DB query, Kafka publish)
-- Baggage propagation para context sharing
-- Sampling rate: 1% (produção), 100% (dev)
+**Distributed tracing** for each request:
+- Spans for each operation (API call, DB query, Kafka publish)
+- Baggage propagation for context sharing
+- Sampling rate: 1% (production), 100% (dev)
 
-### Alertas
+### Alerts
 
-**Alertmanager** com integração Slack/PagerDuty:
+**Alertmanager** with Slack/PagerDuty integration:
 
-**Severidade CRITICAL (P1)**:
+**CRITICAL Severity (P1)**:
 - API availability <99% (5min window)
 - Error rate >5% (1min window)
 - Latency P99 >100ms (5min window)
 - Database replication lag >30s
 
-**Severidade HIGH (P2)**:
-- Kafka consumer lag >10.000 mensagens
+**HIGH Severity (P2)**:
+- Kafka consumer lag >10,000 messages
 - Disk usage >85%
 - Memory usage >90%
 - Settlement failures >1% (15min window)
 
-**Severidade MEDIUM (P3)**:
-- Certificate expiration <7 dias
+**MEDIUM Severity (P3)**:
+- Certificate expiration <7 days
 - Backup failures
 - Anomalous trading patterns detected
 
 ---
 
-## Conclusão
+## Conclusion
 
-A arquitetura da Hymple Exchange foi projetada seguindo os mais altos padrões da indústria, combinando:
+The Hymple Exchange architecture was designed following the highest industry standards, combining:
 
-✅ **Performance**: Latência sub-10ms, throughput de 100k+ TPS  
-✅ **Escalabilidade**: Horizontalmente escalável, multi-region ready  
-✅ **Resiliência**: Failover automático, disaster recovery  
-✅ **Segurança**: Defense in depth, auditorias regulares  
-✅ **Observabilidade**: Metrics, logs, traces integrados  
+✅ **Performance**: Sub-10ms latency, throughput of 100k+ TPS  
+✅ **Scalability**: Horizontally scalable, multi-region ready  
+✅ **Resilience**: Automatic failover, disaster recovery  
+✅ **Security**: Defense in depth, regular audits  
+✅ **Observability**: Integrated metrics, logs, traces  
 ✅ **Compliance**: Audit trails, regulatory reporting ready  
 
-Esta arquitetura híbrida estabelece um novo paradigma no mercado, oferecendo a performance de exchanges centralizadas com a transparência e auto-custódia de soluções descentralizadas.
+This hybrid architecture establishes a new paradigm in the market, offering the performance of centralized exchanges with the transparency and self-custody of decentralized solutions.
 
 ---
 
-**Versão do Documento**: 2.0  
-**Última Atualização**: 31 de Janeiro de 2026  
-**Arquitetura**: Hymple Exchange - Order Flow (Professional Edition)  
-**Status**: ✅ Produção
+**Document Version**: 2.0  
+**Last Update**: January 31, 2026  
+**Architecture**: Hymple Exchange - Order Flow (Professional Edition)  
+**Status**: ✅ Production
