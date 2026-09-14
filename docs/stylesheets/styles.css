@@ -20,7 +20,7 @@
   --hymple-accent: #FDA800;
   --hymple-accent-hover: #e69800;
   --hymple-accent-light: #ffb820;
-  
+
   /* Light Mode Colors - GitBook Style */
   --hymple-bg-primary: #FFFFFF;
   --hymple-bg-secondary: #F7F8FA;
@@ -30,27 +30,31 @@
   --hymple-text-tertiary: #9CA3AF;
   --hymple-border: #E5E7EB;
   --hymple-border-light: #F3F4F6;
-  
+
   /* Additional Colors */
   --hymple-success: #10B981;
   --hymple-warning: #FDA800;
   --hymple-danger: #EF4444;
   --hymple-info: #3B82F6;
-  
+
+  /* Links sóbrios estilo GitBook (amber fica só para acentos de marca) */
+  --hymple-link: #1F6FEB;
+  --hymple-link-hover: #1A5FCC;
+
   /* Spacing */
   --gitbook-spacing-xs: 0.5rem;
   --gitbook-spacing-sm: 1rem;
   --gitbook-spacing-md: 1.5rem;
   --gitbook-spacing-lg: 2rem;
-  
+
   /* Border radius */
   --gitbook-radius: 0.375rem;
-  
+
   /* Shadows - GitBook Style */
   --gitbook-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --gitbook-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   --gitbook-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  --gitbook-shadow-hymple: 0 4px 12px rgba(253, 168, 0, 0.3);
+  --gitbook-shadow-hymple: 0 4px 12px rgba(15, 23, 53, 0.12);
 }
 
 /* Dark Mode Variables */
@@ -63,7 +67,9 @@
   --hymple-text-tertiary: #d1d5db;
   --hymple-border: #2a2e39;
   --hymple-border-light: #333844;
-  
+  --hymple-link: #6EA8FE;
+  --hymple-link-hover: #9CC1FF;
+
   --md-default-bg-color: #131722;
   --md-default-fg-color: #e0e0e0;
   --md-code-bg-color: #1a1e2e;
@@ -82,7 +88,7 @@
 /* ==========================================
    TYPOGRAPHY IMPROVEMENTS - GITBOOK STYLE
    ========================================== */
-   
+
 /* Global box-sizing and overflow prevention */
 * {
   box-sizing: border-box;
@@ -92,7 +98,8 @@
   max-width: 100%;
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
   width: 100%;
   max-width: 100vw;
@@ -108,9 +115,9 @@ body {
 
 .md-typeset {
   font-size: 0.875rem;
-  line-height: 1.7;
+  line-height: 1.65;
   color: var(--hymple-text-primary);
-  letter-spacing: -0.003em;
+  letter-spacing: normal;
   max-width: 100%;
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -120,7 +127,7 @@ body {
 .md-typeset p,
 .md-typeset li {
   font-size: 0.875rem;
-  line-height: 1.7;
+  line-height: 1.65;
   max-width: 100%;
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -134,23 +141,21 @@ body {
 
 .md-typeset h1 {
   font-weight: 700;
-  font-size: 2rem;
-  margin: 0 0 1.5rem;
-  line-height: 1.2;
-  letter-spacing: -0.03em;
+  font-size: 1.75rem;
+  margin: 0 0 1.25rem;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
   color: var(--hymple-text-primary);
   max-width: 100%;
   overflow-wrap: break-word;
 }
 
 .md-typeset h2 {
-  font-weight: 700;
-  font-size: 1.5rem;
-  margin: 2.5rem 0 1rem;
+  font-weight: 600;
+  font-size: 1.375rem;
+  margin: 2rem 0 0.75rem;
   line-height: 1.3;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--hymple-border);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.015em;
   color: var(--hymple-text-primary);
   max-width: 100%;
   overflow-wrap: break-word;
@@ -158,8 +163,8 @@ body {
 
 .md-typeset h3 {
   font-weight: 600;
-  font-size: 1.25rem;
-  margin: 2rem 0 0.75rem;
+  font-size: 1.125rem;
+  margin: 1.75rem 0 0.625rem;
   line-height: 1.4;
   letter-spacing: -0.01em;
   color: var(--hymple-text-primary);
@@ -167,14 +172,14 @@ body {
 
 .md-typeset h4 {
   font-weight: 600;
-  font-size: 1.125rem;
+  font-size: 1rem;
   margin: 1.5rem 0 0.5rem;
   color: var(--hymple-text-primary);
 }
 
 .md-typeset h5 {
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.9375rem;
   margin: 1.25rem 0 0.5rem;
   color: var(--hymple-text-primary);
 }
@@ -191,6 +196,8 @@ body {
 .md-typeset p {
   color: var(--hymple-text-secondary);
   margin: 1em 0;
+  text-align: justify;
+  hyphens: auto;
 }
 
 .md-typeset strong {
@@ -297,6 +304,7 @@ body {
 
 /* Fix theme toggle - show only one button on mobile */
 @media screen and (max-width: 76.1875em) {
+
   /* Hide only the second palette form, keep the first one */
   form[data-md-component="palette"]:nth-of-type(2) {
     display: none !important;
@@ -319,6 +327,7 @@ body {
 
 /* Fix theme toggle - show only one button on mobile */
 @media screen and (max-width: 76.1875em) {
+
   /* Hide only the second palette form, keep the first one */
   form[data-md-component="palette"]:nth-of-type(2) {
     display: none !important;
@@ -354,26 +363,26 @@ body {
   .md-nav--primary .md-nav__title[for="__drawer"] {
     display: none !important;
   }
-  
+
   /* Ensure drawer works properly */
   .md-overlay {
     position: fixed;
     top: 0;
     width: 0;
     height: 0;
-    transition: width 0s .25s,height 0s .25s,opacity .25s;
-    background-color: rgba(0,0,0,.54);
+    transition: width 0s .25s, height 0s .25s, opacity .25s;
+    background-color: rgba(0, 0, 0, .54);
     opacity: 0;
     z-index: 3;
   }
-  
+
   [data-md-toggle="drawer"]:checked~.md-overlay {
     width: 100%;
     height: 100%;
-    transition: width 0s,height 0s,opacity .25s;
+    transition: width 0s, height 0s, opacity .25s;
     opacity: 1;
   }
-  
+
   .md-nav--primary {
     position: fixed;
     top: 3.6rem;
@@ -383,44 +392,44 @@ body {
     z-index: 4;
     background-color: var(--hymple-bg-primary);
     transform: translateX(-100%);
-    transition: transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s;
+    transition: transform .25s cubic-bezier(.4, 0, .2, 1), box-shadow .25s;
     padding: 0;
   }
-  
+
   /* Remove margin/padding from nav and list */
   .md-nav--primary .md-nav,
   .md-nav--primary .md-nav__list {
     margin: 0 !important;
     padding: 0 !important;
   }
-  
+
   /* Remove any inner nav padding/background */
-  .md-nav--primary > .md-nav {
+  .md-nav--primary>.md-nav {
     padding-top: 0 !important;
     margin-top: 0 !important;
     padding-bottom: 0 !important;
     background: transparent !important;
   }
-  
+
   /* Force remove spacing from nav wrapper */
   .md-nav--primary .md-nav--primary__inner {
     padding: 0 !important;
     margin: 0 !important;
   }
-  
+
   /* Remove spacing from first item */
-  .md-nav--primary .md-nav__list > .md-nav__item:first-child {
+  .md-nav--primary .md-nav__list>.md-nav__item:first-child {
     margin-top: 0 !important;
     padding-top: 0 !important;
   }
-  
-  .md-nav--primary .md-nav__list > .md-nav__item:first-child .md-nav__link {
+
+  .md-nav--primary .md-nav__list>.md-nav__item:first-child .md-nav__link {
     margin-top: 0.5rem !important;
   }
-  
+
   [data-md-toggle="drawer"]:checked~.md-container .md-nav--primary {
     transform: translateX(0);
-    box-shadow: 0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12),0 5px 5px -3px rgba(0,0,0,.2);
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12), 0 5px 5px -3px rgba(0, 0, 0, .2);
   }
 }
 
@@ -433,22 +442,22 @@ body {
 }
 
 .md-nav__link:hover {
-  background-color: rgba(253, 168, 0, 0.1);
-  color: var(--hymple-accent);
+  background-color: var(--hymple-bg-secondary);
+  color: var(--hymple-text-primary);
 }
 
 /* Active navigation item */
 [data-md-color-scheme="slate"] .md-nav__link--active,
 [data-md-color-scheme="slate"] .md-nav__link--active:hover {
-  background: transparent;
-  color: var(--hymple-accent) !important;
+  background: var(--hymple-bg-tertiary);
+  color: #ffffff !important;
   font-weight: 600;
 }
 
 [data-md-color-scheme="default"] .md-nav__link--active,
 [data-md-color-scheme="default"] .md-nav__link--active:hover {
-  background: transparent;
-  color: var(--hymple-accent);
+  background: var(--hymple-bg-secondary);
+  color: var(--hymple-primary);
   font-weight: 600;
   border-left: none;
 }
@@ -471,7 +480,7 @@ body {
 }
 
 .md-nav--secondary .md-nav__link--active {
-  color: var(--hymple-accent);
+  color: var(--hymple-primary);
   font-weight: 600;
   border-left: none;
 }
@@ -506,11 +515,12 @@ body {
    CODE BLOCKS - HYMPLE STYLE
    ========================================== */
 .md-typeset code {
-  background-color: rgba(253, 168, 0, 0.1);
-  color: var(--hymple-accent);
-  padding: 0.15em 0.4em;
+  background-color: var(--hymple-bg-tertiary);
+  border: 1px solid var(--hymple-border);
+  color: var(--hymple-text-primary);
+  padding: 0.1em 0.35em;
   border-radius: 0.25rem;
-  font-size: 0.9em;
+  font-size: 0.85em;
   font-weight: 500;
   word-break: break-word;
 }
@@ -524,7 +534,7 @@ body {
   max-width: 100%;
 }
 
-.md-typeset pre > code {
+.md-typeset pre>code {
   background-color: transparent;
   padding: 0;
   color: var(--hymple-text-primary);
@@ -538,7 +548,7 @@ body {
 }
 
 .md-clipboard:hover {
-  color: var(--hymple-accent);
+  color: var(--hymple-text-primary);
 }
 
 /* ==========================================
@@ -597,10 +607,10 @@ body {
 }
 
 .md-typeset table:not([class]) th {
-  background: rgba(253, 168, 0, 0.1);
+  background: var(--hymple-bg-secondary);
   font-weight: 600;
   text-align: left;
-  padding: 0.875rem 1rem;
+  padding: 0.75rem 1rem;
   color: var(--hymple-text-primary);
 }
 
@@ -611,7 +621,7 @@ body {
 }
 
 .md-typeset table:not([class]) tr:hover {
-  background-color: rgba(253, 168, 0, 0.05);
+  background-color: var(--hymple-bg-secondary);
 }
 
 /* ==========================================
@@ -648,15 +658,15 @@ body {
   left: 0;
   width: 4px;
   height: 100%;
-  background: var(--hymple-accent);
+  background: var(--hymple-primary);
   transform: scaleY(0);
   transition: transform 0.3s ease;
 }
 
 .nav-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--gitbook-shadow-hymple);
-  border-color: var(--hymple-accent);
+  box-shadow: var(--gitbook-shadow-md);
+  border-color: var(--hymple-text-tertiary);
 }
 
 .nav-card:hover::before {
@@ -671,7 +681,7 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--gitbook-accent);
+  color: var(--hymple-text-tertiary);
 }
 
 .nav-card-icon {
@@ -718,7 +728,7 @@ body {
 }
 
 .md-footer__link:hover {
-  color: var(--hymple-accent);
+  color: #9CC1FF;
 }
 
 /* ==========================================
@@ -740,11 +750,11 @@ body {
 }
 
 .md-search-result__link:hover {
-  background-color: rgba(253, 168, 0, 0.1);
+  background-color: var(--hymple-bg-secondary);
 }
 
 .md-search-result__link[data-md-state="active"] {
-  background-color: rgba(253, 168, 0, 0.15);
+  background-color: var(--hymple-bg-tertiary);
 }
 
 /* ==========================================
@@ -763,7 +773,7 @@ body {
 .md-tabs__link--active,
 .md-tabs__link:hover {
   opacity: 1;
-  color: var(--hymple-accent);
+  color: #ffffff;
 }
 
 /* Content tabs */
@@ -773,13 +783,13 @@ body {
 }
 
 .tabbed-set>input:checked+label {
-  border-color: var(--hymple-accent);
-  color: var(--hymple-accent);
+  border-color: var(--hymple-primary);
+  color: var(--hymple-primary);
   font-weight: 600;
 }
 
 .tabbed-set>label:hover {
-  color: var(--hymple-accent);
+  color: var(--hymple-text-primary);
 }
 
 /* ==========================================
@@ -789,7 +799,7 @@ body {
   --md-default-bg-color: #131722;
   --md-default-fg-color: #e0e0e0;
   --md-code-bg-color: #1a1e2e;
-  --md-typeset-a-color: var(--hymple-accent);
+  --md-typeset-a-color: var(--hymple-link);
 }
 
 [data-md-color-scheme="slate"] .md-header {
@@ -802,13 +812,14 @@ body {
 }
 
 [data-md-color-scheme="slate"] .nav-card:hover {
-  border-color: var(--hymple-accent);
-  box-shadow: var(--gitbook-shadow-hymple);
+  border-color: var(--hymple-border-light);
+  box-shadow: var(--gitbook-shadow-md);
 }
 
 [data-md-color-scheme="slate"] .md-typeset code {
-  background-color: rgba(253, 168, 0, 0.2);
-  color: var(--hymple-accent-light);
+  background-color: var(--hymple-bg-tertiary);
+  border-color: var(--hymple-border);
+  color: var(--hymple-text-primary);
 }
 
 [data-md-color-scheme="slate"] .md-typeset pre {
@@ -817,16 +828,16 @@ body {
 }
 
 [data-md-color-scheme="slate"] .md-typeset table:not([class]) th {
-  background: rgba(253, 168, 0, 0.15);
+  background: var(--hymple-bg-tertiary);
   color: var(--hymple-text-primary);
 }
 
 [data-md-color-scheme="slate"] .md-typeset a {
-  color: var(--hymple-accent-light);
+  color: var(--hymple-link);
 }
 
 [data-md-color-scheme="slate"] .md-typeset a:hover {
-  color: var(--hymple-accent);
+  color: var(--hymple-link-hover);
 }
 
 /* Sidebar dark mode */
@@ -845,33 +856,33 @@ body {
   .nav-cards {
     flex-direction: column;
   }
-  
+
   .nav-card {
     min-width: 100%;
   }
-  
+
   .md-typeset h1 {
-    font-size: 2rem;
+    font-size: 1.625rem;
     word-break: break-word;
   }
-  
+
   .md-typeset h2 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     word-break: break-word;
   }
-  
+
   .md-content__inner {
     padding: 1rem;
     max-width: 100%;
     overflow-x: hidden;
   }
-  
+
   /* Force all content to respect width */
-  .md-typeset > *:not(script):not(style) {
+  .md-typeset>*:not(script):not(style) {
     max-width: 100% !important;
     overflow-wrap: break-word;
   }
-  
+
   /* Specific fixes for common overflow elements */
   .md-typeset table {
     display: block;
@@ -879,13 +890,13 @@ body {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
-  
+
   .md-typeset pre,
   .md-typeset code {
     max-width: 100%;
     overflow-x: auto;
   }
-  
+
   /* Fix image in index.md */
   .md-content img[alt="Hymple Logo"] {
     max-width: 80vw !important;
@@ -902,13 +913,14 @@ body {
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-.md-content__inner > * {
+.md-content__inner>* {
   animation: fadeIn 0.5s ease-out;
 }
 
@@ -923,7 +935,7 @@ body {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  background: linear-gradient(135deg, var(--hymple-accent), var(--hymple-primary));
+  background: var(--hymple-primary);
   color: white;
   box-shadow: var(--gitbook-shadow-sm);
 }
@@ -946,13 +958,13 @@ body {
 
 .feature-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--gitbook-shadow-hymple);
-  border-color: var(--hymple-accent);
+  box-shadow: var(--gitbook-shadow-md);
+  border-color: var(--hymple-text-tertiary);
 }
 
 .feature-icon {
   font-size: 2rem;
-  color: var(--hymple-accent);
+  color: var(--hymple-primary);
   margin-bottom: 1rem;
 }
 
@@ -980,12 +992,13 @@ html {
    PRINT STYLES
    ========================================== */
 @media print {
+
   .md-header,
   .md-sidebar,
   .md-footer {
     display: none;
   }
-  
+
   .md-content__inner {
     max-width: 100%;
   }
@@ -1017,7 +1030,7 @@ html {
 
 .md-footer__link:hover {
   background: var(--hymple-bg-tertiary);
-  border-color: var(--hymple-accent);
+  border-color: var(--hymple-text-tertiary);
   box-shadow: var(--gitbook-shadow-md);
   transform: translateY(-2px);
 }
@@ -1050,7 +1063,7 @@ html {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--hymple-accent);
+  color: var(--hymple-text-tertiary);
   margin: 0;
 }
 
@@ -1098,7 +1111,7 @@ html {
 
 .nav-button:hover {
   background: var(--hymple-bg-tertiary);
-  border-color: var(--hymple-accent);
+  border-color: var(--hymple-text-tertiary);
   box-shadow: var(--gitbook-shadow-md);
   transform: translateY(-2px);
   text-decoration: none;
@@ -1131,7 +1144,7 @@ html {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--hymple-accent);
+  color: var(--hymple-text-tertiary);
   display: block;
 }
 
@@ -1148,28 +1161,28 @@ html {
    ========================================== */
 .md-typeset h1:first-of-type {
   margin-top: 0;
-  padding-bottom: 1.5rem;
-  border-bottom: 2px solid var(--hymple-border);
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--hymple-border);
 }
 
 /* ==========================================
    GITBOOK-STYLE LINKS
    ========================================== */
 .md-typeset a {
-  color: var(--hymple-accent);
+  color: var(--hymple-link);
   text-decoration: none;
   font-weight: 500;
-  transition: all 0.2s ease;
-  border-bottom: 1px solid transparent;
+  transition: color 0.15s ease;
 }
 
 .md-typeset a:hover {
-  color: var(--hymple-accent-hover);
-  border-bottom-color: var(--hymple-accent);
+  color: var(--hymple-link-hover);
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .md-typeset a:visited {
-  color: var(--hymple-accent);
+  color: var(--hymple-link);
 }
 
 /* ==========================================
@@ -1185,20 +1198,20 @@ html {
 }
 
 .md-typeset ul li::marker {
-  color: var(--hymple-accent);
+  color: var(--hymple-text-tertiary);
 }
 
 .md-typeset ol li::marker {
-  color: var(--hymple-accent);
-  font-weight: 600;
+  color: var(--hymple-text-tertiary);
+  font-weight: 500;
 }
 
 /* ==========================================
    GITBOOK-STYLE BLOCKQUOTES
    ========================================== */
 .md-typeset blockquote {
-  border-left: 4px solid var(--hymple-accent);
-  background: rgba(253, 168, 0, 0.05);
+  border-left: 3px solid var(--hymple-border);
+  background: var(--hymple-bg-secondary);
   padding: 0.5rem 1rem;
   margin: 1rem 0;
   border-radius: 0 var(--gitbook-radius) var(--gitbook-radius) 0;
@@ -1216,11 +1229,11 @@ html {
 .md-typeset hr {
   border: none;
   height: 2px;
-  background: linear-gradient(90deg, 
-    transparent 0%, 
-    var(--hymple-border) 20%, 
-    var(--hymple-border) 80%, 
-    transparent 100%);
+  background: linear-gradient(90deg,
+      transparent 0%,
+      var(--hymple-border) 20%,
+      var(--hymple-border) 80%,
+      transparent 100%);
   margin: 2rem 0;
 }
 
@@ -1349,47 +1362,48 @@ body {
 
 /* Mobile Devices (up to 768px) */
 @media screen and (max-width: 768px) {
+
   /* Force viewport constraints */
   html {
     max-width: 100vw !important;
     overflow-x: hidden !important;
   }
-  
+
   body {
     max-width: 100vw !important;
     overflow-x: hidden !important;
   }
-  
+
   .md-container {
     max-width: 100vw !important;
     overflow-x: hidden !important;
   }
-  
+
   .md-main {
     max-width: 100vw !important;
     overflow-x: hidden !important;
   }
-  
+
   .md-main__inner {
     max-width: 100vw !important;
     overflow-x: hidden !important;
   }
-  
+
   /* Ensure menu toggle button is visible */
   .md-header__button.md-logo {
     display: block;
   }
-  
+
   /* Ensure hamburger menu is always visible on mobile */
   .md-header__button {
     display: inline-block !important;
   }
-  
+
   /* Fix sidebar/drawer navigation */
   .md-nav--primary .md-nav__title {
     display: block;
   }
-  
+
   /* Prevent content overflow */
   .md-content {
     max-width: 100vw !important;
@@ -1397,14 +1411,14 @@ body {
     padding: 0 !important;
     padding-top: 4rem !important;
   }
-  
+
   .md-content__inner {
     padding: 1rem !important;
     max-width: 100vw !important;
     overflow-x: hidden !important;
     box-sizing: border-box !important;
   }
-  
+
   /* Fix any element that might cause horizontal scroll */
   .md-typeset pre,
   .md-typeset code,
@@ -1412,15 +1426,15 @@ body {
     max-width: calc(100vw - 2rem) !important;
     overflow-x: auto !important;
   }
-  
+
   /* Ensure all direct children respect container width */
-  .md-typeset > *:not(script):not(style) {
+  .md-typeset>*:not(script):not(style) {
     max-width: 100% !important;
     overflow-wrap: break-word !important;
     word-wrap: break-word !important;
     box-sizing: border-box !important;
   }
-  
+
   /* Specific element fixes */
   .md-typeset div,
   .md-typeset p,
@@ -1430,102 +1444,102 @@ body {
     max-width: 100% !important;
     overflow-x: hidden !important;
   }
-  
+
   /* Images */
   .md-typeset img {
     max-width: 100% !important;
     height: auto !important;
   }
-  
+
   /* Typography adjustments */
   .md-typeset {
     font-size: 0.8125rem;
   }
-  
+
   .md-typeset p,
   .md-typeset li {
     font-size: 0.8125rem;
     line-height: 1.6;
   }
-  
+
   .md-typeset h1 {
     font-size: 1.75rem;
     line-height: 1.3;
     margin-bottom: 1rem;
     margin-top: 1rem;
   }
-  
+
   .md-typeset h2 {
     font-size: 1.375rem;
     margin-top: 1.5rem;
     margin-bottom: 0.75rem;
   }
-  
+
   .md-typeset h3 {
     font-size: 1.125rem;
     margin-top: 1.25rem;
     margin-bottom: 0.5rem;
   }
-  
+
   /* Logo responsive */
   .md-content img[alt="Hymple Logo"] {
     max-width: 70% !important;
   }
-  
+
   /* Navigation buttons - stack vertically on mobile */
   .nav-buttons {
     flex-direction: column;
     gap: 0.75rem;
     padding: 0 0.5rem;
   }
-  
+
   .nav-button {
     width: 100%;
     padding: 1rem;
     box-sizing: border-box;
   }
-  
+
   .nav-button-next .nav-label,
   .nav-button-next .nav-title {
     padding-right: 0.5rem;
   }
-  
+
   .nav-button-placeholder {
     display: none;
   }
-  
+
   /* Content padding */
   .md-content__inner {
     padding: 1rem;
   }
-  
+
   /* Tables scroll horizontally */
   .md-typeset table:not([class]) {
     display: block;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
-  
+
   /* Code blocks */
   .md-typeset pre {
     font-size: 0.75rem;
     padding: 0.75rem;
   }
-  
+
   /* Blockquotes */
   .md-typeset blockquote {
     padding: 0.5rem 0.75rem;
     margin: 0.75rem 0;
     font-size: 0.8125rem;
   }
-  
+
   /* Reduce spacing */
   .md-typeset ul,
   .md-typeset ol {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
   }
-  
+
   .md-typeset li {
     margin-bottom: 0.25rem;
   }
@@ -1533,68 +1547,69 @@ body {
 
 /* Small Mobile Devices (up to 480px) */
 @media screen and (max-width: 480px) {
+
   /* Ensure drawer menu starts below header */
   .md-nav--primary {
     padding: 0 !important;
     top: 3.6rem !important;
     height: calc(100% - 3.6rem) !important;
   }
-  
+
   /* Remove margin/padding from nav and list */
   .md-nav--primary .md-nav,
   .md-nav--primary .md-nav__list {
     margin: 0 !important;
     padding: 0 !important;
   }
-  
+
   /* Add minimal spacing to first item */
-  .md-nav--primary .md-nav__list > .md-nav__item:first-child {
+  .md-nav--primary .md-nav__list>.md-nav__item:first-child {
     margin-top: 0.5rem !important;
   }
-  
+
   .md-typeset h1 {
     font-size: 1.5rem;
     margin-top: 1.5rem !important;
   }
-  
+
   .md-typeset h2 {
     font-size: 1.25rem;
   }
-  
+
   .md-typeset h3 {
     font-size: 1.0625rem;
   }
-  
+
   /* Logo even smaller on very small screens */
   .md-content img[alt="Hymple Logo"] {
     max-width: 80% !important;
   }
-  
+
   /* Tighter content padding */
   .md-content {
     padding-top: 4rem !important;
   }
-  
+
   .md-content__inner {
     padding: 0.75rem;
   }
-  
+
   /* Navigation buttons even more compact */
   .nav-button {
     padding: 0.875rem;
     box-sizing: border-box;
   }
-  
+
   .nav-button-next .nav-label,
   .nav-button-next .nav-title {
     padding-right: 0.75rem;
     text-align: right;
   }
-  
+
   .nav-label {
     font-size: 0.625rem;
   }
-  
+
   .nav-title {
     font-size: 0.875rem;
     word-wrap: break-word;
@@ -1607,44 +1622,44 @@ body {
   .md-typeset {
     font-size: 0.85rem;
   }
-  
+
   .md-typeset h1 {
-    font-size: 1.875rem;
+    font-size: 1.625rem;
   }
-  
+
   .md-typeset h2 {
-    font-size: 1.4375rem;
+    font-size: 1.25rem;
   }
-  
+
   /* Logo medium size on tablets */
   .md-content img[alt="Hymple Logo"] {
     max-width: 400px !important;
   }
-  
+
   /* Navigation cards - fix padding for tablets */
   .md-footer__link {
     padding: 1.5rem 2rem;
   }
-  
+
   .md-footer__link--next .md-footer__direction,
   .md-footer__link--next .md-footer__title {
     padding-right: 1.5rem;
   }
-  
+
   .md-footer__link--prev .md-footer__direction,
   .md-footer__link--prev .md-footer__title {
     padding-left: 1.5rem;
   }
-  
+
   .nav-button {
     padding: 1.5rem 2rem;
   }
-  
+
   .nav-button-next .nav-label,
   .nav-button-next .nav-title {
     padding-right: 1.5rem;
   }
-  
+
   .nav-button-prev .nav-label,
   .nav-button-prev .nav-title {
     padding-left: 1.5rem;
@@ -1662,11 +1677,11 @@ body {
   .md-typeset a {
     padding: 0.125rem 0;
   }
-  
+
   .nav-button {
     min-height: 44px;
   }
-  
+
   button,
   .md-button {
     min-height: 44px;
@@ -1677,48 +1692,49 @@ body {
 /* ==========================================
    EMERGENCY MOBILE FIX - HIGHEST PRIORITY
    ========================================== */
-   
+
 /* iPhone SE and similar small devices (375px and below) */
 @media screen and (max-width: 400px) {
+
   /* Absolutely force everything to fit */
   html {
     overflow-x: hidden !important;
     max-width: 100vw !important;
   }
-  
+
   body {
     overflow-x: hidden !important;
     max-width: 100vw !important;
     width: 100% !important;
   }
-  
+
   .md-header,
   .md-tabs,
   .md-main,
   .md-footer {
     max-width: 100vw !important;
   }
-  
+
   .md-container,
   .md-main__inner {
     max-width: 100vw !important;
     margin: 0 !important;
     padding: 0 !important;
   }
-  
+
   .md-grid {
     max-width: 100vw !important;
     margin: 0 !important;
     padding: 0 !important;
   }
-  
+
   .md-content {
     max-width: 100vw !important;
     width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
   }
-  
+
   .md-content__inner {
     max-width: 100% !important;
     width: 100% !important;
@@ -1726,48 +1742,48 @@ body {
     margin: 0 !important;
     box-sizing: border-box !important;
   }
-  
+
   /* All typeset elements */
   .md-typeset {
     max-width: 100% !important;
   }
-  
+
   .md-typeset * {
     max-width: 100% !important;
     box-sizing: border-box !important;
   }
-  
+
   .md-typeset pre,
   .md-typeset code {
     max-width: calc(100vw - 1.5rem) !important;
     overflow-x: auto !important;
     font-size: 0.7rem !important;
   }
-  
+
   .md-typeset table {
     display: block !important;
     max-width: calc(100vw - 1.5rem) !important;
     overflow-x: auto !important;
   }
-  
+
   /* Typography for very small screens */
   .md-typeset h1 {
     font-size: 1.5rem !important;
   }
-  
+
   .md-typeset h2 {
     font-size: 1.25rem !important;
   }
-  
+
   .md-typeset h3 {
     font-size: 1.0625rem !important;
   }
-  
+
   .md-typeset p,
   .md-typeset li {
     font-size: 0.8125rem !important;
   }
-  
+
   /* Navigation buttons */
   .nav-buttons {
     flex-direction: column !important;
@@ -1775,17 +1791,17 @@ body {
     padding: 0 !important;
     margin: 2rem 0 !important;
   }
-  
+
   .nav-button {
     width: 100% !important;
     max-width: 100% !important;
     padding: 0.875rem !important;
   }
-  
+
   .nav-button-placeholder {
     display: none !important;
   }
-  
+
   /* Logo */
   .md-typeset img[alt="Hymple Logo"] {
     max-width: 85vw !important;
@@ -1795,31 +1811,382 @@ body {
 
 /* All mobile devices (up to 768px) */
 @media screen and (max-width: 960px) {
+
   /* Force viewport constraints */
-  html, body {
+  html,
+  body {
     overflow-x: hidden !important;
     max-width: 100vw !important;
   }
-  
+
   /* Container fixes */
   .md-grid {
     max-width: 100% !important;
     margin: 0 auto !important;
   }
-  
+
   .md-sidebar {
     max-width: 12.1rem !important;
   }
-  
+
   /* Content area */
   .md-content {
     max-width: 100vw !important;
     width: 100% !important;
   }
-  
+
   .md-content__inner {
     max-width: 100% !important;
     padding: 1rem !important;
     box-sizing: border-box !important;
   }
+}
+
+/* ==========================================
+   UX UPGRADE - HERO, SECTION CARDS & POLISH
+   ========================================== */
+
+/* Corrige âncoras escondidas atrás do header fixo */
+html {
+  scroll-padding-top: 4.5rem;
+}
+
+/* Seleção de texto com a cor da marca */
+::selection {
+  background: rgba(31, 111, 235, 0.25);
+  color: inherit;
+}
+
+/* Foco visível para navegação por teclado */
+a:focus-visible,
+button:focus-visible,
+.md-nav__link:focus-visible {
+  outline: 2px solid var(--hymple-link);
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+/* Respeita usuários com redução de movimento */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ---------- HERO (homepage) ---------- */
+.hymple-hero {
+  position: relative;
+  margin: -1rem -1.5rem 2.5rem;
+  padding: 3.5rem 2rem 3rem;
+  text-align: center;
+  border-radius: 0 0 1.5rem 1.5rem;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% -10%, rgba(253, 168, 0, 0.10), transparent 70%),
+    linear-gradient(160deg, #18214D 0%, #131722 70%, #0f1735 100%);
+  overflow: hidden;
+}
+
+.hymple-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 22px 22px;
+  pointer-events: none;
+}
+
+.hymple-hero>* {
+  position: relative;
+  z-index: 1;
+}
+
+.hymple-hero-badge {
+  display: inline-block;
+  padding: 0.3rem 0.9rem;
+  margin-bottom: 1.5rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.hymple-hero-logo {
+  display: block;
+  width: min(220px, 55vw);
+  height: auto;
+  margin: 0 auto 1.25rem;
+  border: none !important;
+  box-shadow: none !important;
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.45));
+}
+
+.hymple-hero-logo:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.hymple-hero-title {
+  margin: 0 0 0.75rem !important;
+  padding: 0 !important;
+  border: none !important;
+  font-size: clamp(1.75rem, 4.5vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: #ffffff !important;
+}
+
+.hymple-hero-title span {
+  background: linear-gradient(90deg, var(--hymple-accent) 0%, var(--hymple-accent-light) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.hymple-hero-subtitle {
+  max-width: 34rem;
+  margin: 0 auto 2rem !important;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.hymple-hero-actions {
+  display: flex;
+  gap: 0.875rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hymple-btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  border-radius: 0.625rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  border: 1px solid transparent;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.hymple-btn-primary {
+  background: linear-gradient(135deg, var(--hymple-accent) 0%, var(--hymple-accent-hover) 100%);
+  color: #18214D !important;
+  box-shadow: 0 6px 20px rgba(253, 168, 0, 0.35);
+}
+
+.hymple-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(253, 168, 0, 0.45);
+  color: #18214D !important;
+  border-bottom-color: transparent !important;
+}
+
+.hymple-btn-outline {
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.hymple-btn-outline:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.55);
+  transform: translateY(-2px);
+  color: #ffffff !important;
+  border-bottom-color: rgba(255, 255, 255, 0.55) !important;
+}
+
+/* ---------- SECTION CARDS (homepage) ---------- */
+.hymple-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.hymple-section-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.25rem 1.25rem 1.1rem;
+  border-radius: 0.75rem;
+  background: var(--hymple-bg-secondary);
+  border: 1px solid var(--hymple-border);
+  border-top: 3px solid transparent;
+  text-decoration: none !important;
+  box-shadow: var(--gitbook-shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.hymple-section-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--hymple-border);
+  border-top-color: var(--hymple-primary);
+  box-shadow: var(--gitbook-shadow-md);
+}
+
+.hymple-section-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.hymple-section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--hymple-text-primary);
+}
+
+.hymple-section-desc {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--hymple-text-secondary);
+}
+
+/* ---------- SIDEBAR: indicador de página ativa ---------- */
+.md-nav__link--active,
+.md-nav__link--active:hover {
+  position: relative;
+  background: var(--hymple-bg-secondary) !important;
+  color: var(--hymple-primary) !important;
+  font-weight: 600;
+}
+
+.md-nav__link--active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 60%;
+  border-radius: 0 3px 3px 0;
+  background: var(--hymple-primary);
+}
+
+/* ---------- TOC (lado direito): indicador ativo ---------- */
+.md-nav--secondary .md-nav__link--active {
+  border-left: 2px solid var(--hymple-primary);
+  padding-left: calc(0.75rem - 2px);
+}
+
+/* ---------- kbd / mark ---------- */
+.md-typeset kbd {
+  background: var(--hymple-bg-tertiary);
+  border: 1px solid var(--hymple-border);
+  border-bottom-width: 2px;
+  border-radius: 0.3rem;
+  padding: 0.1em 0.45em;
+  font-size: 0.8em;
+  color: var(--hymple-text-primary);
+  box-shadow: none;
+}
+
+.md-typeset mark {
+  background: rgba(31, 111, 235, 0.18);
+  color: inherit;
+  padding: 0.05em 0.2em;
+  border-radius: 0.2em;
+}
+
+/* ---------- Admonitions: título colorido por tipo ---------- */
+.md-typeset .admonition.note>.admonition-title {
+  color: var(--hymple-info);
+}
+
+.md-typeset .admonition.tip>.admonition-title,
+.md-typeset .admonition.success>.admonition-title {
+  color: var(--hymple-success);
+}
+
+.md-typeset .admonition.warning>.admonition-title {
+  color: var(--hymple-accent-hover);
+}
+
+.md-typeset .admonition.danger>.admonition-title,
+.md-typeset .admonition.error>.admonition-title {
+  color: var(--hymple-danger);
+}
+
+/* ---------- Botão "back to top" ---------- */
+.md-top {
+  background: var(--hymple-primary);
+  color: #ffffff;
+  border-radius: 50%;
+  box-shadow: var(--gitbook-shadow-md);
+}
+
+.md-top:hover {
+  background: var(--hymple-primary-light);
+}
+
+/* ---------- Footer meta ---------- */
+.md-footer-meta {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.md-footer-meta .md-copyright {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.md-footer-meta .md-copyright a {
+  color: var(--hymple-accent-light);
+}
+
+/* ---------- Hero em telas pequenas ---------- */
+@media screen and (max-width: 768px) {
+  .hymple-hero {
+    margin: -1rem -1rem 2rem;
+    padding: 2.5rem 1.25rem 2.25rem;
+  }
+
+  .hymple-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hymple-btn {
+    text-align: center;
+  }
+}
+
+/* ---------- Dark mode: acentos neutros (sem laranja) ---------- */
+[data-md-color-scheme="slate"] .md-nav__link--active,
+[data-md-color-scheme="slate"] .md-nav__link--active:hover {
+  background: var(--hymple-bg-tertiary) !important;
+  color: #ffffff !important;
+}
+
+[data-md-color-scheme="slate"] .md-nav__link--active::before {
+  background: #6EA8FE;
+}
+
+[data-md-color-scheme="slate"] .md-nav--secondary .md-nav__link--active {
+  color: #9CC1FF;
+  border-left-color: #6EA8FE;
+}
+
+[data-md-color-scheme="slate"] .tabbed-set>input:checked+label {
+  border-color: #6EA8FE;
+  color: #9CC1FF;
+}
+
+[data-md-color-scheme="slate"] .nav-card::before {
+  background: #6EA8FE;
+}
+
+[data-md-color-scheme="slate"] .feature-icon {
+  color: #9CC1FF;
 }
