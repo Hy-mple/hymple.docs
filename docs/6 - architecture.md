@@ -60,8 +60,8 @@ Operational core responsible for order processing.
 
 **Technologies**
 
-- Rust
-- Redis (in-memory)
+- C#
+- Cache (in-memory)
 - Kafka
 - Proprietary optimized engine
 - Support for complex orders
