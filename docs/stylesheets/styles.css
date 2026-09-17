@@ -2152,6 +2152,23 @@ button:focus-visible,
     padding: 2.5rem 1.25rem 2.25rem;
   }
 
+  /* Os blocos <=768px/<=400px forçam max-width:100% em filhos de .md-typeset
+     com !important — sem isto o hero fica limitado à largura do container
+     e "encolhe" à esquerda. Precisa de especificidade maior para vencer. */
+  .md-typeset .hymple-hero {
+    max-width: none !important;
+  }
+
+  /* Vence as regras genéricas de img[alt="Hymple Logo"] (70%/80%/85vw),
+     que deslocavam o logo para a esquerda no mobile */
+  .md-typeset img.hymple-hero-logo {
+    display: block;
+    width: min(200px, 60vw) !important;
+    max-width: 60vw !important;
+    height: auto !important;
+    margin: 0 auto 1.25rem !important;
+  }
+
   .hymple-hero-actions {
     flex-direction: column;
     align-items: stretch;
@@ -2159,6 +2176,21 @@ button:focus-visible,
 
   .hymple-btn {
     text-align: center;
+  }
+}
+
+/* Em <=480px apenas compacta o hero. A margem negativa permanece -1rem:
+   o padding do .md-content__inner é sempre 1rem em <=960px (a regra de
+   0.75rem em <=400px é sobrescrita pela regra !important de <=960px). */
+@media screen and (max-width: 480px) {
+  .hymple-hero {
+    margin: -1rem -1rem 1.75rem;
+    padding: 2rem 1rem 1.75rem;
+  }
+
+  .md-typeset img.hymple-hero-logo {
+    width: min(180px, 62vw) !important;
+    max-width: 62vw !important;
   }
 }
 
