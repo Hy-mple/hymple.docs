@@ -2191,6 +2191,14 @@ button:focus-visible,
   .hymple-btn {
     text-align: center;
   }
+
+  /* Cards de seção: no mobile o card ocupa a largura toda; conteúdo
+     centralizado (como o hero) para não ficar visualmente colado à esquerda */
+  .hymple-section-card {
+    padding: 1.5rem 1.5rem 1.4rem;
+    align-items: center;
+    text-align: center;
+  }
 }
 
 /* Em <=480px apenas compacta o hero. A margem negativa permanece -1rem:
