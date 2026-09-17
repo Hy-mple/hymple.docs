@@ -9,7 +9,7 @@ Este documento descreve a arquitetura para cálculo de preços de ativos em temp
 ```mermaid
 flowchart TD
     %% Fonte de Execução de Trades
-    OrderBook[Order Book Engine<br/>C#] -->|Trade + Depth Events| UpdateTopic[(orders.update<br/>Kafka Topic)]
+    OrderBook[Order Book Engine<br/>C#] -->|Trade + Depth Events| UpdateTopic[(orders.update<br/>NATS Topic)]
     
     %% Serviços de Agregação
     UpdateTopic -->|TRADE Events| PriceAgg[Market Aggregator<br/>Golang<br/>In-Memory]
@@ -19,8 +19,8 @@ flowchart TD
     
     DepthAgg -->|Maintain| DepthState[Order Book State:<br/>Snapshot + Deltas,<br/>Best Bid/Ask,<br/>Depth Levels]
     
-    PriceCalc -->|Publish| MarketTopic[(market.data<br/>Kafka Topic)]
-    DepthState -->|Publish| DepthTopic[(market.depth<br/>Kafka Topic)]
+    PriceCalc -->|Publish| MarketTopic[(market.data<br/>NATS Topic)]
+    DepthState -->|Publish| DepthTopic[(market.depth<br/>NATS Topic)]
     
     PriceCalc -->|Update| RedisCache[(Redis Cache<br/>L1: Hot Data<br/>Ticker, BBO, Trades<br/>TTL: 1s)]
     DepthAgg -->|Update| RedisCache
@@ -551,7 +551,7 @@ SELECT create_hypertable('ohlcv_1m', 'time');
 | API REST | Golang + gRPC-Gateway | gRPC type-safe com compatibilidade HTTP/JSON |
 | Camada de Cache | Redis 7.x | Latência sub-milissegundo, capacidades pub/sub, estruturas de dados |
 | Banco Time-Series | TimescaleDB | Compatibilidade PostgreSQL, otimizado para consultas time-series |
-| Message Broker | Apache Kafka | Já em uso, streaming de eventos confiável |
+| Message Broker | NATS | Já em uso, streaming de eventos confiável |
 | Cliente Frontend | JavaScript/TypeScript | Suporte universal em navegadores |
 
 ## Integração Frontend
@@ -738,7 +738,7 @@ function TradingView() {
 ### Distribuição Geográfica
 - **CDN**: Localizações edge para conexões WebSocket
 - **Clusters Regionais**: Implantação em múltiplas regiões
-- **Replicação de Dados**: Replicação Kafka e Redis entre regiões
+- **Replicação de Dados**: Replicação NATS e Redis entre regiões
 
 ## Monitoramento e Observabilidade
 
@@ -753,7 +753,7 @@ function TradingView() {
 - Alertar se latência > 100ms (p99)
 - Alertar se taxa de acerto de cache < 95%
 - Alertar se taxa de erro de conexão > 1%
-- Alertar se backlog de mensagens > 1000 no Kafka
+- Alertar se backlog de mensagens > 1000 no NATS
 
 ## Alta Disponibilidade
 
@@ -761,7 +761,7 @@ function TradingView() {
 - Múltiplas instâncias de cada serviço
 - Redis Sentinel para failover automático
 - Replicação TimescaleDB (primário + standby)
-- Fator de replicação 3 no Kafka
+- Fator de replicação 3 no NATS
 
 ### Circuit Breaker
 - Implementar padrão circuit breaker para dependências externas
@@ -806,7 +806,7 @@ function TradingView() {
          ┌──────────────────┼──────────────────┐
          │                  │                  │
 ┌────────▼─────────┐ ┌─────▼──────┐ ┌─────────▼────────┐
-│ market.aggregator│ │   Kafka    │ │   TimescaleDB    │
+│ market.aggregator│ │   NATS    │ │   TimescaleDB    │
 │      (3x)        │ │  Cluster   │ │  (Primary +      │
 │                  │ │            │ │   Standby)       │
 └──────────────────┘ └────────────┘ └──────────────────┘
