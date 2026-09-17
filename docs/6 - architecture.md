@@ -62,7 +62,7 @@ Operational core responsible for order processing.
 
 - C#
 - Cache (in-memory)
-- Kafka
+- NATS
 - Proprietary optimized engine
 - Support for complex orders
 - WebSockets for real-time

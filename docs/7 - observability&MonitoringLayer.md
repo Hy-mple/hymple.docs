@@ -17,7 +17,7 @@ Among the monitored metrics are:
 - API latency and throughput
 - Execution engine (matching engine) performance
 - On-chain confirmation and settlement times
-- Utilization of Redis, Kafka, and databases
+- Utilization of Redis, NATS, and databases
 - CPU, memory, and network consumption of each microservice
 - Infrastructure security and availability metrics
 
@@ -55,7 +55,7 @@ Tracing is essential for the order engine's performance and the reliability of t
 The alerting system combines Alertmanager and Grafana Alerting to monitor:
 
 - Abnormal engine latency
-- Failure in essential services (API, Kafka, Redis)
+- Failure in essential services (API, NATS, Redis)
 - Settlement errors or pending transactions
 - Risks of overutilization
 - Suspicious security events

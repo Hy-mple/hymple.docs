@@ -30,7 +30,7 @@ flowchart TD
     User -->|5. Submit Order<br/>Approve Transfer| OrderAPI[Order Management<br/>Golang gRPC<br/>Load Balanced]
     
     OrderAPI -->|6. Validate<br/>Check Balance| OrderValidation{Valid?}
-    OrderValidation -->|7. Publish| OrdersTopic[(orders.new<br/>Kafka Topic<br/>Partitioned)]
+    OrderValidation -->|7. Publish| OrdersTopic[(orders.new<br/>NATS Topic<br/>Partitioned)]
     OrderValidation -->|Rejected| OrderFail[❌ Order Rejected<br/>Error Code]
     
     %% Order Book Processing
@@ -38,7 +38,7 @@ flowchart TD
     
     OrderBook -->|9. Process| OrderBookProcessing[Order Processing:<br/>NEW, EXECUTED, CANCELED<br/>Price-Time Priority]
     
-    OrderBookProcessing -->|10. Execution Reports| UpdateTopic[(orders.update<br/>Kafka Topic<br/>High Throughput)]
+    OrderBookProcessing -->|10. Execution Reports| UpdateTopic[(orders.update<br/>NATS Topic<br/>High Throughput)]
     
     %% Parallel Consumer Services
     UpdateTopic -->|Real Time| Notification[Notification Service<br/>Golang<br/>WebSocket Push]
@@ -53,7 +53,7 @@ flowchart TD
     ConsolidationLogic -->|Partial| WaitMore[Wait for More<br/>Executions]
     WaitMore -->|Continue| Consolidator
     
-    ConsolidationLogic -->|14. Consolidated| SettlementTopic[(orders.for.settlement<br/>Kafka Topic<br/>DLQ Enabled)]
+    ConsolidationLogic -->|14. Consolidated| SettlementTopic[(orders.for.settlement<br/>NATS Topic<br/>DLQ Enabled)]
     Consolidator -->|Status Update| UpdateTopic
     
     SettlementTopic -->|15. Settlement| Settlement[Settlement Service<br/>Golang<br/>Batch Processing]
@@ -120,7 +120,7 @@ flowchart TD
 - Real-time balance validation (integration with balance service)
 - Pre-trade risk checks (exposure limits, daily limits)
 - Order enrichment (timestamp, order ID, user context)
-- Publication to Kafka with delivery guarantee (acks=all)
+- Publication to NATS with delivery guarantee (acks=all)
 
 #### Pre-Execution Validations
 1. **Format Validation**: Schema validation (Protocol Buffers)
@@ -131,7 +131,7 @@ flowchart TD
 6. **Price Validation**: Price collar checks (±10% of last price)
 
 #### Performance Metrics
-- **P99 Latency**: <10ms (pre-kafka publish)
+- **P99 Latency**: <10ms (pre-NATS publish)
 - **Throughput**: 100,000 orders/s (aggregate)
 - **Rejection rate**: <0.1% (valid orders)
 - **Availability**: 99.99%
@@ -308,10 +308,9 @@ For each order:
 
 ---
 
-### 5. **Message Broker (Apache Kafka)**
+### 5. **Message Broker NATS**
 
-**Technology Stack**: Apache Kafka 3.6+, Zookeeper/KRaft  
-**Deployment Strategy**: Multi-AZ cluster with replication
+**Technology Stack**: NATS
 
 #### Topics and Configurations
 
@@ -393,7 +392,7 @@ For each order:
    - **Price collar**: Reasonable price validation (0.5ms)
    - **Order ID generation**: UUID v7 (time-ordered) (0.5ms)
    
-7. **Kafka Publication** (4ms)
+7. **NATS Publication** (4ms)
    - Serialization to Protocol Buffers (0.5ms)
    - Send to `orders.new` topic with acks=all (3ms)
    - Return acknowledgment to client (0.5ms)
@@ -411,7 +410,7 @@ For each order:
 
 **Total time**: ~2ms
 
-8. **Kafka Consumption** (0.5ms)
+8. **NATS Consumption** (0.5ms)
    - Matching engine consumes message from `orders.new` topic
    - Protocol Buffers deserialization
    - Routing to specific order book (by symbol)
@@ -578,7 +577,7 @@ Thresholds:
 |------------|-----------|---------------|
 | **Entry APIs** | Golang 1.22+ | High concurrency, low latency |
 | **Matching Engine** | C# .NET 8 | Performance, strong typing, tooling |
-| **Message Broker** | Apache Kafka 3.6 | Massive throughput, durability |
+| **Message Broker** | NATS | Massive throughput, durability |
 | **Distributed Cache** | Redis 7.x (Cluster) | Sub-millisecond latency, pub/sub |
 | **Database** | MySQL 8.0 (InnoDB) | ACID, high performance, replication |
 | **Orchestration** | Kubernetes 1.28+ | Auto-scaling, self-healing |
@@ -611,7 +610,7 @@ Thresholds:
 |------------|-----------|
 | Order API | 100.000 req/s (agregado) |
 | Matching Engine | 1,000,000 matches/s per instance |
-| Kafka Cluster | 5,000,000 msg/s |
+| NATS Cluster | 5,000,000 msg/s |
 | WebSocket Server | 100,000 connections/instance |
 | Database Writes | 50,000 writes/s |
 
@@ -671,8 +670,8 @@ Thresholds:
 - Point-in-time recovery: Up to 30 days ago
 - Cross-region replication: Synchronous (DR site)
 
-**Kafka**:
-- Topic replication: Factor 3 (multi-AZ)
+**NATS**:
+- Topic replication: Factor 3
 - Configuration backup: Git (Infrastructure as Code)
 - Disaster recovery cluster: Secondary region (standby)
 
@@ -775,7 +774,7 @@ Thresholds:
 ### Tracing (Jaeger)
 
 **Distributed tracing** for each request:
-- Spans for each operation (API call, DB query, Kafka publish)
+- Spans for each operation (API call, DB query, NATS publish)
 - Baggage propagation for context sharing
 - Sampling rate: 1% (production), 100% (dev)
 
@@ -790,7 +789,7 @@ Thresholds:
 - Database replication lag >30s
 
 **HIGH Severity (P2)**:
-- Kafka consumer lag >10,000 messages
+- NATS consumer lag >10,000 messages
 - Disk usage >85%
 - Memory usage >90%
 - Settlement failures >1% (15min window)

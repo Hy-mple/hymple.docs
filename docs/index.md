@@ -5,7 +5,7 @@ hide:
 ---
 
 <div class="hymple-hero">
-  <div class="hymple-hero-badge">Whitepaper v1.0 · January 2026</div>
+  <div class="hymple-hero-badge">Whitepaper v1.1 · September 2026</div>
   <img src="assets/logo.png" alt="Hymple Logo" class="hymple-hero-logo">
   <h1 class="hymple-hero-title">Hybrid by nature.<br><span>Simple by choice.</span></h1>
   <p class="hymple-hero-subtitle">
