@@ -1087,6 +1087,15 @@ html {
   box-sizing: border-box;
 }
 
+/* Em <=768px a regra genérica `.md-typeset div { overflow-x: hidden !important }`
+   atinge este container; o overflow-y computa como `auto` e o container vira um
+   clipping context, cortando o outline de foco e o hover (translateY) na borda
+   superior do primeiro card. Mantém o overflow visível para não cortar esses
+   estados. Precisa de especificidade maior que `.md-typeset div`. */
+.md-typeset .nav-buttons {
+  overflow: visible !important;
+}
+
 .nav-button-placeholder {
   flex: 1;
 }
@@ -1733,6 +1742,10 @@ body {
     width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
+    /* Mantém o afastamento do header fixo (o padding:0 acima zera o
+       padding-top:4rem do bloco <=768px; sem isto o hero fica atrás do
+       header e o badge do whitepaper cola nele) */
+    padding-top: 4rem !important;
   }
 
   .md-content__inner {
@@ -1887,7 +1900,8 @@ button:focus-visible,
   margin: -1rem -1.5rem 2.5rem;
   padding: 3.5rem 2rem 3rem;
   text-align: center;
-  border-radius: 0 0 1.5rem 1.5rem;
+  /* cantos superiores arredondados igual aos inferiores */
+  border-radius: 1.5rem;
   background:
     radial-gradient(ellipse 60% 50% at 50% -10%, rgba(253, 168, 0, 0.10), transparent 70%),
     linear-gradient(160deg, #18214D 0%, #131722 70%, #0f1735 100%);
