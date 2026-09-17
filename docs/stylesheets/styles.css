@@ -2031,6 +2031,14 @@ button:focus-visible,
   margin: 1.5rem 0 2.5rem;
 }
 
+/* Em <=768px a regra genérica `.md-typeset div { overflow-x: hidden !important }`
+   atinge este container; o overflow-y computa como `auto` e o container vira um
+   clipping context, cortando o outline de foco/hover na borda superior do
+   primeiro card. Mantém o overflow visível para não cortar esses estados. */
+.md-typeset .hymple-sections {
+  overflow: visible !important;
+}
+
 .hymple-section-card {
   display: flex;
   flex-direction: column;
@@ -2038,8 +2046,9 @@ button:focus-visible,
   padding: 1.25rem 1.25rem 1.1rem;
   border-radius: 0.75rem;
   background: var(--hymple-bg-secondary);
+  /* borda uniforme e fina em todos os lados (sem accent de 3px no topo),
+     igual aos cards de previous/next */
   border: 1px solid var(--hymple-border);
-  border-top: 3px solid transparent;
   text-decoration: none !important;
   box-shadow: var(--gitbook-shadow-sm);
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
@@ -2047,8 +2056,7 @@ button:focus-visible,
 
 .hymple-section-card:hover {
   transform: translateY(-4px);
-  border-color: var(--hymple-border);
-  border-top-color: var(--hymple-primary);
+  border-color: var(--hymple-text-tertiary);
   box-shadow: var(--gitbook-shadow-md);
 }
 
