@@ -12,7 +12,7 @@ The combination of off-chain order books with on-chain settlement enables low la
 
 ### Full User Custody
 
-By adopting a **non-custodial** model, Hymple ensures that each user maintains full control of their funds at all stages of trading. This drastically reduces risks associated with hacks, freezes, operational failures or mismanagement by custodians.
+By adopting a **non-custodial** model, Hymple ensures that user funds are held in a smart contract that only the user can withdraw from — the platform can never move funds on its own, only settle trades signed by the user. This drastically reduces risks associated with hacks, freezes, operational failures or mismanagement by custodians.
 
 ### Preserved Privacy (No-KYC)
 

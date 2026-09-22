@@ -101,7 +101,25 @@ This hybrid and interoperable model ensures that users can operate in a decentra
 
 ---
 
-### 7.5 Sustainability and Transparency
+### 7.5 Withdrawal Fees
+
+Withdrawal fees depend on the path chosen by the user:
+
+| **Withdrawal path** | **Release** | **Fees** |
+|---|---|---|
+| Hymple interface | Instant | Network fee only — Hymple charges no withdrawal fee |
+| Direct on-chain, no open orders | Immediate | Network fee only |
+| Direct on-chain, with open orders on the book | Up to 30 minutes | Network fee + behavior-based Hymple fee |
+
+The behavior-based fee on direct on-chain withdrawals with open orders is an anti-abuse measure: it prevents users from keeping orders on the book while withdrawing the funds that should back their settlement. The fee scales with the user's behavior history, and repeated abuse can lead to score reduction and, in extreme cases, account restrictions.
+
+Deposits into the custody contract never incur Hymple fees — only the standard network fee applies.
+
+See **Custody & Withdrawals** for the complete description of the model.
+
+---
+
+### 7.6 Sustainability and Transparency
 
 The distribution of fees collected by Hymple follows a model of mixed sustainability, ensuring the continuous maintenance of the protocol, community incentives and ecosystem stability.
 
