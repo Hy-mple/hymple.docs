@@ -10,7 +10,7 @@ Hymple's experience is guided by the following pillars:
 
 - **Radical simplicity:** all processes — from wallet connection to order execution — have been reduced to the minimum necessary, avoiding redundant steps.
 - **Operational transparency:** each relevant action is reflected clearly in the interface, without hiding critical details from the user.
-- **Full user control:** the platform never takes custody of private keys or assets, and all decisions remain exclusively in the user's hands.
+- **Full user control:** the platform never takes custody of private keys and has no withdrawal power over user funds — assets are held in a smart contract that only the user can withdraw from, and all decisions remain exclusively in the user's hands.
 - **Speed and responsiveness:** minimal loading time, instant feedback, and an interface optimized for high-volatility environments.
 
 ### Onboarding Flow
@@ -31,6 +31,13 @@ Onboarding was structured to be straightforward, without complex steps or KYC re
 - The backend validates the signature and generates a session token with limited scope, used only for order submission and off-chain interactions.
 
 This process eliminates the need for registration, password, or email.
+
+**Deposit into the Custody Contract**
+
+- To start trading, the user deposits funds into the Hymple custody smart contract directly from their wallet.
+- The deposit is a standard on-chain transaction and only requires the network fee — Hymple charges no deposit fee.
+- Funds remain under the user's exclusive control: Hymple cannot withdraw them and can only settle trades signed by the user.
+- Withdrawals are available at any time — instantly through the Hymple interface (network fee only) or directly on-chain. See **Custody & Withdrawals** for details.
 
 **Initial Setup (Optional)**
 

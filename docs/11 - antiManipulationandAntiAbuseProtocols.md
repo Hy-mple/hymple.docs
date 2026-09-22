@@ -104,7 +104,7 @@ Recurrent wallets may be prevented from interacting with:
 - Market maker program
 - Premium features
 
-**Note:** There is never a block on platform access or the user's funds, as the system is non-custodial.
+**Note:** The user's ability to withdraw is never permanently blocked — funds are held in a smart contract that only the user can withdraw from. As an anti-abuse measure, direct on-chain withdrawals made while the user has open orders on the book may be subject to a temporary release delay (up to 30 minutes) and a behavior-based fee, preventing orders from being left open without funds to settle. Repeated abuse can lead to score reduction and, in extreme cases, account restrictions on the platform. See **Custody & Withdrawals** for details.
 
 #### 4.5 Dynamic Adjustment of Algorithms
 

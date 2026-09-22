@@ -67,7 +67,8 @@ nav:
   - 🌍 Global Exchange Landscape: 4 - globalExchangeLandscape.md
   - ✨ Benefits: 5 - benefits.md
   - 🏗️ Architecture: 6 - architecture.md
-  - 📊 Observability & Monitoring: 7 - observability&MonitoringLayer.md
+  - � Custody & Withdrawals: 23 - custodyAndWithdrawals.md
+  - �📊 Observability & Monitoring: 7 - observability&MonitoringLayer.md
   - 👤 User Experience & Onboarding: 8 - userExperience&OnboardingFlow.md
   - 🔒 Advanced Security Architecture: 9 - advancedSecurityArchitecture.md
   - 🚨 Operational Resilience & Incident Response: 10 - operationalResilience&IncidentResponse.md

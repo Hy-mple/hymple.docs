@@ -83,7 +83,7 @@ The solution may include:
 
 ### Limitations and Considerations
 
-- Hymple does not hold custody of funds; therefore, decisions cannot directly interfere with the user's balance.
+- Hymple does not hold custody of funds; therefore, decisions cannot directly interfere with the user's balance — except for the anti-abuse measures documented in **Custody & Withdrawals** (temporary release delay and behavior-based fee on direct on-chain withdrawals made with open orders), which are applied automatically by protocol rules and are not discretionary decisions.
 - Conflicts involving external wallets or blockchain failures do not fall within the scope.
 - The platform does not request KYC, which limits direct legal actions against abuses, being replaced by technical protection mechanisms.
 
