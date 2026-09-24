@@ -13,22 +13,24 @@ The goal is to maintain a transparent, fair structure capable of rewarding users
 
 ---
 
-### 7.1 Fee Structure
+### 1. Fee Structure
 
 Fees vary according to the asset pair category and the user's level of engagement. This differentiation seeks to reflect the liquidity and risk of each market while rewarding loyalty and involvement within the ecosystem.
 
 | **Category**                  | **Example Pairs**                    | **Base Fee** | **Maker Order** | **With Staking** | **Staking + Maker Order** |
 |-------------------------------|--------------------------------------|--------------|-----------------|------------------|---------------------------|
-| Major Pairs                   | BTC, BNB, ETH, USDT, USDC            | 0,10%        | 0,075%          | 0,075%           | 0,05%                     |
-| Mid-cap Altcoins              | E.g.: MATIC, AVAX, ARB, SOL          | 0,20%        | 0,15%           | 0,15%            | 0,10%                     |
-| Microcaps / Emerging Tokens   | E.g.: PEPE, SHIB, DOGE               | 0,25%        | 0,20%           | 0,20%            | 0,15%                     |
+| Major Pairs                   | BTC, BNB, ETH, USDT, USDC            | 0.10%        | 0.075%          | 0.075%           | 0.05%                     |
+| Mid-cap Altcoins              | E.g.: MATIC, AVAX, ARB, SOL          | 0.20%        | 0.15%           | 0.15%            | 0.10%                     |
+| Microcaps / Emerging Tokens   | E.g.: PEPE, SHIB, DOGE               | 0.25%        | 0.20%           | 0.20%            | 0.15%                     |
 
 **Maker Order:** adds liquidity to the order book (limit order).  
 **Taker Order:** consumes existing liquidity (market order).
 
+**Fee currency:** fees are charged in the **quote currency** of the traded pair (e.g., USDT in ETH/USDT), deducted at settlement.
+
 ---
 
-### 7.2 Fee Calculation Formula
+### 2. Fee Calculation Formula
 
 The fee applied to each transaction follows the formula:
 
@@ -45,7 +47,7 @@ $$
 
 User without staking makes a purchase of 2 ETH in the pair ETH/USDT, total amount of US$ 7,000.
 
-Base fee = 0,10%
+Base fee = 0.10%
 
 $$
 Fee = 7000 \times 0.0010 = 7.00 \text{ USDT}
@@ -55,7 +57,7 @@ $$
 
 User with HYM staking and a maker order in MATIC/USDT, total amount US$ 3,000.
 
-Fee = 0,10%
+Fee = 0.10%
 
 $$
 Fee = 3000 \times 0.0010 = 3.00 \text{ USDT}
@@ -65,7 +67,7 @@ $$
 
 User with HYM staking makes a taker purchase of emerging token DOGE/USDT, amount US$ 1,000.
 
-Fee = 0,20%
+Fee = 0.20%
 
 $$
 Fee = 1000 \times 0.0020 = 2.00 \text{ USDT}
@@ -73,18 +75,18 @@ $$
 
 ---
 
-### 7.3 Progressive Reductions and Incentives
+### 3. Progressive Reductions and Incentives
 
 Automatic discounts are applied according to the user's level of engagement:
 
 - **HYM Staking:** reduces the base fee proportionally to the trading pair category.
 - **Maker Order:** grants additional discounts for adding liquidity to the market.
 
-This system creates a positive incentive cycle, promoting liquidity, engagement and long-term appreciation of the token HYM.
+This system creates a positive incentive cycle, promoting liquidity and long-term engagement with the ecosystem.
 
 ---
 
-### 7.4 Network Fees (Blockchain Fees)
+### 4. Network Fees (Blockchain Fees)
 
 In addition to internal trading fees, operations are subject to the network fees (gas fees) of the blockchains where orders are executed.
 
@@ -102,11 +104,11 @@ In addition, the Hymple exchange will seek compatibility with low-cost blockchai
 - Low transaction fees,
 - Compatibility with the EVM ecosystem.
 
-This hybrid and interoperable model ensures that users can operate in a decentralized, with competitive costs and optimized performance.
+This hybrid and interoperable model ensures that users can operate in a decentralized manner, with competitive costs and optimized performance.
 
 ---
 
-### 7.5 Withdrawal Fees
+### 5. Withdrawal Fees
 
 Withdrawal fees depend on the path chosen by the user:
 
@@ -124,7 +126,7 @@ See **Settlement & Withdrawals** for the complete description of the model.
 
 ---
 
-### 7.6 Sustainability and Transparency
+### 6. Sustainability and Transparency
 
 The distribution of fees collected by Hymple follows a model of mixed sustainability, ensuring the continuous maintenance of the protocol, community incentives and ecosystem stability.
 
@@ -133,10 +135,10 @@ The distribution of fees collected by Hymple follows a model of mixed sustainabi
 | Team                                      | 20%            | Founding and technical team.                                                                             |
 | Buyback and Burn                          | 10%            | Periodic repurchase of HYM tokens and permanent burn, reducing the circulating supply.                   |
 | Treasury                                  | 10%            | Reserve intended for governance and strategic partnerships.                                              |
-| Insurance Fund                            | 10%            | Partial coverage for technical incidents or proven user losses.                                          |
+| Insurance Fund                            | 10%            | Partial coverage for technical incidents (e.g., settlement errors or platform failures). It does not cover market losses, and it is unrelated to vault funds — those are withdrawable only by the depositing user (see Settlement & Withdrawals). |
 | Platform Investment and Maintenance       | 50%            | Reinvestment in liquidity, infrastructure, servers and continuous platform improvements.                 |
 
-This policy reinforces the commitment of Hymple to transparency, security and long-term sustainability, creating mechanisms for continuous appreciation of the HYM token and user protection.
+This policy reinforces the commitment of Hymple to transparency, security and long-term sustainability of the platform and user protection.
 
 ---
 

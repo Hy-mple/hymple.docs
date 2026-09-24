@@ -11,7 +11,12 @@ Hymple's Observability Layer was designed to ensure complete visibility across a
 
 Its role is to detect anomalies quickly, prevent incidents, and ensure the system maintains high levels of performance, security, and availability.
 
-The observability architecture is 100% modular, based on low-cost, high-efficiency open-source tools, allowing the project to scale sustainably.
+The observability architecture is modular and based on open-source tools, allowing the project to scale sustainably.
+
+!!! note "Deployed vs. target stack"
+    **Deployed:** Prometheus metrics, Grafana dashboards, structured logs and alerting on the core services. **Target / in rollout:** Loki log aggregation, Tempo distributed tracing and Wazuh security monitoring (see [Glossary](glossary.md)). This page describes the full target architecture.
+
+    Note also that this page covers **internal** observability. Internal logs and traces are not, by themselves, publicly auditable — community-facing transparency artifacts are covered in the Audit & Transparency Model.
 
 ### Metrics (Metrics Layer)
 
@@ -85,7 +90,7 @@ The system monitors, in real time, everything that happens in contracts and on t
 
 - Transaction and settlement status
 - Gas price, mempool, and congestion
-- Contract events (ERC-20, ERC-721, liquidations)
+- Contract events (ERC-20 transfers, settlements, liquidations)
 - Failures, reverts, and critical executions
 
 On-chain observability is integrated into the main dashboards, allowing the technical team to visualize the complete journey of a trade, from the off-chain order to the on-chain settlement.
@@ -96,7 +101,7 @@ Hymple's observability layer is not just a set of tools — it is an essential c
 
 - Operational transparency
 - Rapid diagnosis
-- Complete auditability
+- Internal auditability (public audit artifacts are covered in the Audit & Transparency Model)
 - Enhanced security
 - Predictable execution
 - Continuity and resilience

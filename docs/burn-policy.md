@@ -13,12 +13,11 @@ Hymple's Burn Policy was developed to create a sustainable, transparent economic
 
 ### 1. Strategic Objective of the Burn
 
-The burning of HYM tokens has two central purposes:
+The burning of HYM tokens has one central purpose:
 
-- **Reduce supply over time**, contributing to a controlled deflationary model.
-- **Align platform growth with token value increase**, reinforcing the relationship between using Hymple and appreciation of HYM.
+- **Reduce the circulating supply over time**, contributing to a controlled deflationary model (see the conditions in [Tokenomics](tokenomics.md)).
 
-This mechanism creates a cycle in which platform adoption directly benefits the token.
+This mechanism permanently links the burn rate to real platform activity: more trading fees, more tokens burned. Nothing in this policy is a promise of price appreciation.
 
 ---
 
@@ -41,7 +40,7 @@ Hymple will adopt a transparent process of automatic repurchase of HYM using par
 - Acquired tokens are sent to an address without a private key, characterizing irreversible burn.
 - All operations will be verifiable on-chain.
 
-This model strengthens the token proportionally to platform demand.
+This model scales the burn proportionally to platform usage.
 
 ---
 
@@ -49,7 +48,7 @@ This model strengthens the token proportionally to platform demand.
 
 To ensure predictability and transparency:
 
-**Burns will be carried out in regular cycles** (monthly or biweekly, as defined at launch).
+**Burns will be carried out in monthly cycles by default.** A biweekly cadence may be adopted if trading volume justifies it, and any change of cadence will be announced in advance.
 
 Each burn event will be accompanied by a public report with:
 
@@ -66,7 +65,7 @@ The burn policy was designed to be deflationary, yet sustainable, avoiding exces
 
 - Percentages may be adjusted in the future according to the platform's evolution.
 - Hymple will not carry out arbitrary or unexpected burns — any change in the policy will be documented and formally announced.
-- Technical governance and legal responsables will ensure transparency in any future alteration.
+- Technical governance and the legal team will ensure transparency in any future alteration.
 
 ---
 
@@ -76,7 +75,7 @@ All burn events will be publicly verifiable through:
 
 - Official burn address
 - Transaction hashes
-- Aggregated reports published on HYM Transparency Dashboard
+- Aggregated reports published on the HYM Transparency Dashboard *(planned — see Audit & Transparency Model)*
 
 **Nothing is done off-chain** — the community can audit the entire process.
 

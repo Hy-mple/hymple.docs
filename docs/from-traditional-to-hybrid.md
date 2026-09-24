@@ -5,31 +5,31 @@ description: Why Hymple moves beyond traditional CEX and DEX models toward a hyb
 
 # From Traditional to Hybrid: Hymple in Focus
 
-> *Redefining Standards and Solving the Bottlenecks of Traditional Platforms*
+> *What changes — and what is traded off — when moving from CEX and DEX models to a hybrid architecture*
 
-Hymple was designed to combine the advantages of CEX and DEX, removing common limitations of each model. Below, the consolidated comparison:
+Hymple was designed to combine the advantages of CEX and DEX, removing common limitations of each model. Every design choice is a trade-off — the table below presents them honestly, including where the hybrid model depends on the operator:
 
 ### Comparative Analysis
 
-| **Problem** | **DEX** | **CEX** | **HYMPLE** |
+| **Aspect** | **DEX** | **CEX** | **HYMPLE** |
 |-------------|---------|---------|------------|
-| **1. Liquidity** | Low and fragmented | High and concentrated | Off-chain order books + liquidity aggregation |
-| **2. User experience** | Complex | Intuitive | Simple interface for beginners + advanced tools |
-| **3. Speed** | Limited by the blockchain | High | Off-chain matching + on-chain settlement |
-| **4. Network fees** | High and variable | Stable | Scalability and transaction optimization |
-| **5. Trading tools** | Limited | Professional | Comprehensive tools and real-time data |
-| **6. Custody** | User | Exchange | User |
-| **7. Transparency** | Total | Partial | Auditable logs + on-chain verifiable |
-| **8. Privacy (KYC)** | High | Low | High - No KYC |
-| **9. Security** | High | Risk of hacks | High |
-| **10. Scalability** | Limited | High | High - Resilient hybrid architecture |
+| **1. Liquidity** | Fragmented across pools; aggregators mitigate but add hops | Deep, concentrated in one venue | Off-chain order book; **liquidity at launch depends on market makers** — the model enables depth, it does not create it |
+| **2. User experience** | Requires DeFi familiarity | Intuitive | Simple Mode for beginners + Advanced Mode for professionals |
+| **3. Execution speed** | Limited by block time | High | Off-chain matching (fast) + on-chain settlement (block-time finality) |
+| **4. Network fees** | Gas per operation | None on trades | Gas only on deposit/withdrawal; trades settle in batches |
+| **5. Trading tools** | Varies; often minimal | Professional | Order book, market depth and real-time data |
+| **6. Custody** | User's wallet | Exchange's custody | User-gated vault: funds in a contract only the depositor can withdraw (see [Glossary](glossary.md)) |
+| **7. Transparency** | Fully on-chain | Opaque internals | Settlement on-chain verifiable; **the off-chain book requires trusting the operator for price/fill** (see System Limitations) |
+| **8. Privacy (KYC)** | High | Low | High — No KYC |
+| **9. Security model** | Smart contract risk | Custodial + hack risk | Smart contract risk on the vault; no custodial balance risk |
+| **10. Scalability** | Limited by the chain | High | High for matching; settlement throughput bounded by the chain |
 | **11. Accessibility** | High technical barrier | Simple | Smooth and educational onboarding |
 
 ### Strategic Summary
 
-- **DEX:** sovereignty and transparency, but low usability and liquidity.
-- **CEX:** performance and simplicity, but little privacy and custody risks.
-- **Hymple:** combines speed, liquidity, privacy, sovereignty and accessibility.
+- **DEX:** sovereignty and transparency, at the cost of usability and fragmented liquidity.
+- **CEX:** performance and simplicity, at the cost of privacy and custody risk.
+- **Hymple:** off-chain speed with on-chain custody — accepting a **trust point in the operator for matching** in exchange for CEX-grade UX without custodial balance risk.
 
 ---
 

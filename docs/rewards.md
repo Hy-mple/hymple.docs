@@ -22,15 +22,15 @@ During the launch phase (year 1 to year 3), rewards will be calculated based on 
 
 | Criterion | Weight | Description |
 |-----------|--------|-------------|
-| Trading Volume | 0,45 | Reflects the total amount of transactions carried out by the user on the platform. It encourages liquidity and continuous use of the exchange. |
-| User Activity | 0,15 | Measures the frequency of platform use. |
-| Liquidity Provision | 0,25 | Rewards market makers and users who contribute to order book depth. |
-| Token Staking | 0,05 | Users who hold Hymple tokens in staking actively participate in the platform's security and governance. |
-| Quality Interactions | 0,05 | Assesses executed orders, average holding time and integrity of operations. |
-| Proof of Referral (PoR) | 0,10 | Users who refer new participants receive recognition for the community's organic growth. |
-| Loyalty and Retention (Bonus) | 0,05 | Additional bonus for users who maintain continuous and consistent activity over time. |
+| Trading Volume | 0.45 | Reflects the total amount of transactions carried out by the user on the platform. It encourages liquidity and continuous use of the exchange. |
+| User Activity | 0.15 | Measures the frequency of platform use. |
+| Liquidity Provision | 0.25 | Rewards market makers and users who contribute to order book depth. |
+| Token Staking | 0.05 | Users who hold Hymple tokens in staking actively participate in the platform's security and governance. |
+| Quality Interactions | 0.05 | Assesses executed orders, average holding time and integrity of operations. |
+| Proof of Referral (PoR) | 0.10 | Users who refer new participants receive recognition for the community's organic growth. |
+| Loyalty and Retention (Bonus) | 0.05 | Additional bonus for users who maintain continuous and consistent activity over time. |
 
-**Total Weights: 1,1**
+**Total Weights: 1.10**
 
 The sum of the metrics generates an individual normalized score, which defines each user's share of the rewards pool.
 
@@ -94,7 +94,7 @@ Effective distribution in the month:
 - **Volume Calculation:** consolidated volume in USD of all pairs supported by the exchange.
 - **Conversion to USD:** volume-weighted averages or reliable market sources.
 - **Publication:** the applicable percentage (f(v)) is disclosed in the monthly metrics report.
-- **Cumulativity:** undistributed tokens will have part burned and the remainder reaccumulated in the rewards pool.
+- **Cumulativity:** undistributed tokens follow the burn and accumulation rule defined in "Accumulation and burn of undistributed tokens" (Section 5): the burned portion equals the Volume Factor applied to the remainder, and the rest is reaccumulated in the rewards pool.
 - **Audit and Transparency:** methodology and aggregated data will be made available for community verification.
 
 #### Design rationale
@@ -107,7 +107,7 @@ Effective distribution in the month:
 
 #### Individual Score
 
-O Individual Score measures each user's contribution and engagement in the reference month for the ecosystem. It is composed of seven weighted and normalized components, using roots to reduce the effect of extreme values. The maximum possible score is 1.10 (1.0 from base components + 0.10 bonus). Each component is calculated and summed as below.
+The Individual Score measures each user's contribution and engagement in the reference month for the ecosystem. It is composed of seven weighted and normalized components, using roots to reduce the effect of extreme values. The maximum possible score is 1.10, corresponding to a user who reaches the maximum in all seven weighted criteria. Each component is calculated and summed as below.
 
 **1.1 Trading Volume (Weight 0.45)**
 
@@ -204,16 +204,16 @@ Steps:
 1. Weighted orders:
     - Executed → weight 1.0
     - Canceled (>24h) → weight 0.5
-    - Ex: 10 Executed orders + 5 orders canceled after 24 = 12,5
+    - Ex: 10 Executed orders + 5 orders canceled after 24 = 12.5
 
 2. Application of the diversification factor: based on the number of pairs traded.
 
     | Pairs Traded | Factor |
     |--------------|--------|
-    | 1 | 0,3 |
-    | 2 | 0,5 |
-    | 3 | 0,7 |
-    | 4 or more | 1,0 |
+    | 1 | 0.3 |
+    | 2 | 0.5 |
+    | 3 | 0.7 |
+    | 4 or more | 1.0 |
 
 3. Final normalization:
 
@@ -241,9 +241,9 @@ Given the situation:
 We have:
 
 - executed_orders_factor = 10 (10 * 1)
-- canceled_orders_factor = 2,5 (5*0.5)
-- step_1 = 12,5
-- step_2 = 8,75 (12.5 * 0.7)
+- canceled_orders_factor = 2.5 (5 * 0.5)
+- step_1 = 12.5
+- step_2 = 8.75 (12.5 * 0.7)
 - score_interaction = 0.05 * sqrt(8.75 / 50) = 0.02092
 
 ✅ **Notes:**
@@ -258,18 +258,19 @@ Description: rewards those who refer qualified new users.
 **Formula:**
 
 $$
-score\_referral = 0.10 \times \sqrt{\frac{referral\_count}{max\_referral\_count}}
+score\_referral = 0.10 \times \sqrt{\frac{qualified\_referral\_count}{max\_qualified\_referral\_count}}
 $$
 
 Where:
 
 - score_referral: user's referral score.
-- referral_count: number of referrals by the user during the month.
-- max_referral_count: highest number of referrals recorded for a user during the month.
+- qualified_referral_count: number of **qualified** referrals by the user during the month. A referral is qualified only when the referred user demonstrates proven real activity (executed trades) and passes the anti-abuse filters defined in **Anti-Manipulation and Anti-Abuse Protocols** — empty or sybil wallets do not count.
+- max_qualified_referral_count: highest number of qualified referrals recorded for a user during the month.
 
 ✅ **Notes:**
 
 - Normalizes discrepancies and prevents abuse.
+- Counting only qualified referrals removes the incentive to create empty wallets.
 - Encourages organic growth of the user base.
 
 **1.7 Loyalty (Weight 0.05)**
@@ -352,25 +353,21 @@ $$
 
 No user can receive more than 5% of the total pool in the month.
 
-If the user_rewards exceed 5% of R, the adjustment applies:
-
-**General case:**
+If user_rewards exceeds 5% of R, the user receives exactly the cap:
 
 $$
-user\_rewards\_capped = 0.05 \times R \times user\_score
+user\_rewards\_capped = \min(user\_rewards,\ 0.05 \times R)
 $$
 
-**Exception:** if user_score = 1.10, the user can exceed 5% using:
+**Redistribution of the surplus:**
 
-$$
-user\_rewards\_capped = 0.05 \times R \times 1.10
-$$
+The amount withheld by the cap is redistributed proportionally among the users who remain below the cap, according to their user_share:
 
-**Operational note:**
-
-1. First, calculate the user_rewards.
-2. Check the 5% cap of R.
-3. If it exceeds, apply the rule above according to the user_score.
+1. Calculate user_rewards for all eligible users.
+2. Apply the cap: every user above 5% of R receives exactly 0.05 × R.
+3. Redistribute the withheld surplus proportionally to the user_share of the users below the cap.
+4. Repeat the process until no user exceeds the cap.
+5. If all eligible users are at the cap, the remaining amount is treated as undistributed and follows the burn and accumulation rule (see "Accumulation and burn of undistributed tokens").
 
 #### Example of capped distribution (users A, B, C, D)
 
@@ -411,37 +408,23 @@ $$
 
 **Applying:**
 
-**User A (score 1.10):**
-
-Special cap:
-
 $$
-user\_rewards\_capped = 1,250 \times 1.10 = 1,375
+user\_rewards\_capped = \min(user\_rewards,\ 1,250)
 $$
 
-**User B (score 0.70):**
+- User A: min(11,956.52, 1,250) = **1,250**
+- User B: min(7,608.70, 1,250) = **1,250**
+- User C: min(3,260.87, 1,250) = **1,250**
+- User D: min(2,173.91, 1,250) = **1,250**
 
-Weighted general cap:
+**Result:**
 
-$$
-user\_rewards\_capped = 1,250 \times 0.70 = 875
-$$
+- Total distributed: 4 × 1,250 = **5,000**
+- Surplus withheld by the cap: 25,000 − 5,000 = **20,000**
 
-**User C (score 0.30):**
+Since all eligible users are at the cap, there is no one below the cap to receive the redistribution. The 20,000 surplus is therefore treated as undistributed and follows the burn and accumulation rule (see "Accumulation and burn of undistributed tokens").
 
-Weighted general cap:
-
-$$
-user\_rewards\_capped = 1,250 \times 0.30 = 375
-$$
-
-**User D (score 0.20):**
-
-Weighted general cap:
-
-$$
-user\_rewards\_capped = 1,250 \times 0.20 = 250
-$$
+💡 **Note:** with few eligible users, the 5% cap is intentionally restrictive — it prevents pool concentration and returns the undistributed amount to the ecosystem.
 
 ### 5. Simulated distribution example
 
@@ -465,19 +448,21 @@ $$
 
 | User | Proportional Reward |
 |------|---------------------|
-| A | 8,217.27 |
-| B | 3,736.51 |
-| C | 13,046.22 |
+| A | 26,423.48 × (0.3776 / 1.1488) ≈ 8,685.64 |
+| B | 26,423.48 × (0.1717 / 1.1488) ≈ 3,949.42 |
+| C | 26,423.48 × (0.5995 / 1.1488) ≈ 13,788.42 |
 
-Considering that a single user cannot receive more than 5% of the pool (in this example 1,250.0), we have:
+Considering that a single user cannot receive more than 5% of the pool (in this example 0.05 × 26,423.48 ≈ 1,321.17), we have:
 
 | User | Capped Reward |
 |------|---------------|
-| A | 1,250.0 × score = 472.00 |
-| B | 1,250.0 × score = 214.62 |
-| C | 1,250.0 × score = 749.37 |
+| A | min(8,685.64, 1,321.17) = 1,321.17 |
+| B | min(3,949.42, 1,321.17) = 1,321.17 |
+| C | min(13,788.42, 1,321.17) = 1,321.17 |
 
-**Tokens distributed: 1436**
+**Tokens distributed: 3,963.51**
+
+All users hit the cap, so there is no redistribution. The undistributed remainder (26,423.48 − 3,963.51 = 22,459.97) follows the burn and accumulation rule described below.
 
 #### Calculation of the monthly rewards amount
 
@@ -561,7 +546,7 @@ This approach ensures:
 #### Practical example
 
 - remaining_reward_token_balance (initial balance) = 15,000,000 tokens
-- annual_percentagege (Years 1–5) = 8%
+- annual_percentage (Years 1–5) = 8%
 
 **monthly_pool:**
 
@@ -652,7 +637,7 @@ The rewards mechanism of the Hymple was designed to create a self-regulated and 
 - There is prevention of concentration and long-term sustainability;
 - The community participates in a continuous cycle of mutual growth and appreciation.
 
-Thus, the Rewards model of Hymple ensures balanced incentives, on-chain transparency and an efficient, fair and resilient.
+Thus, the Rewards model of Hymple ensures balanced incentives, on-chain transparency and an efficient, fair and resilient ecosystem.
 
 ---
 

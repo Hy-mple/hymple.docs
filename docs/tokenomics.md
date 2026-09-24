@@ -19,9 +19,11 @@ The tokenomics structure was designed with a focus on:
 
 ### 🪙 Strategic Functions of the HYM Token
 
-- **On-chain voting:** each HYM token grants voting power over a defined set of
-protocol parameters (see Technical Governance). The operator retains control of the
-matching engine and product releases.
+- **On-chain signaling:** each HYM token grants voting power in public, recorded
+consultations over a defined set of protocol parameters (see Technical Governance).
+These votes are **non-binding** (signaling votes — see [Glossary](glossary.md)): the
+operator retains control of the matching engine, product releases and the final
+decision on parameters.
 - **Rewards and incentives:** fair and predictable distribution for those who use and
 strengthen the platform.
 - **Staking:** participation in pools with rewards in HYM, encouraging
@@ -54,6 +56,20 @@ The total supply of 70 million HYM tokens will be distributed as follows:
 The Platform Usage Rewards (15M) and the Staking Rewards
 (15M) will be released gradually following a fixed annual cap.
 
+**Annual emission curve (rewards):**
+
+| Period | Annual cap over the remaining rewards balance |
+|--------|-----------------------------------------------|
+| Years 1 – 5 | 8% per year |
+| Years 6 – 10 | 4% per year |
+| From Year 11 onward | 2% per year |
+
+The monthly pool is the annual cap divided by 12, applied to the remaining balance — and the
+**effective** distribution is further gated by real platform volume (25% to 100% of the monthly
+pool, depending on the month's trading volume range). Undistributed amounts are partially burned
+and partially reaccumulated. The full mechanism, formulas and examples are documented in
+[Rewards](rewards.md).
+
 **Important:**
 
 - These tokens will not be minted over time.
@@ -72,29 +88,42 @@ Additional schedules:
 
 - Team: 12 months cliff + 36 months linear vesting;
 - Partners: 12 months cliff + 24 months monthly linear vesting;
-- Private/Public Sale: gradual unlocking after TGE, following a published schedule;
+- Private/Public Sale: gradual unlocking after TGE. The detailed unlock schedule will be
+**published here before the TGE** — until it is linked, it is not yet public;
 
 ### 💰 Economic Sustainability
 
-- **Supply control:** gradual and deflationary model limits inflation.
+- **Supply control:** gradual, capped emission model limits inflation.
 - **Buybacks and burns:** part of the fees is destined for the permanent removal of
 tokens from the market.
 - **Circular economy:** tokens return to the ecosystem via fees, staking and
 rewards.
-- **Community management:** economic parameters can be revised through on-chain governance.
+- **Community participation:** economic parameters can be reviewed through community
+signaling votes (non-binding), recorded on-chain.
+
+!!! note "About the 'deflationary tendency'"
+    42.8% of the supply (30M HYM) is reserved for rewards and staking incentives. The model is
+    deflationary **only when** the amount burned (fee burns + burn of undistributed rewards)
+    exceeds the amount distributed in a period. In low-activity periods the volume gates reduce
+    distribution and increase the burn share (see [Rewards](rewards.md)); in high-activity
+    periods distribution approaches the cap. Net supply direction is therefore an emergent
+    result of usage, not a guarantee.
 
 ### 🧭 Governance
 
-The HYM token acts as a governance mechanism, allowing voting on decisions such as:
+The HYM token acts as a **signaling** mechanism, allowing the community to vote on
+topics such as:
 
 - Economic parameters, fees and distributions;
 - Listings and new pairs;
 - Use of the treasury;
 - Technical evolution of the protocol.
 
-Voting is on-chain and auditable. Hymple is not a DAO: the operator retains
-control of the matching engine and product releases, with on-chain voting covering a
-defined set of parameters.
+Voting is on-chain, recorded and auditable — but **non-binding** (signaling votes,
+see [Glossary](glossary.md)). Hymple is not a DAO: the operator retains control of
+the matching engine, product releases and the final decision on every parameter.
+Binding on-chain votes, if ever introduced, will cover only a closed set of low-risk
+parameters and will be announced in advance (see Technical Governance Framework).
 
 ### ✅ Conclusion
 

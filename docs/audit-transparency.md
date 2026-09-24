@@ -9,6 +9,9 @@ description: Hymple's audit and transparency model.
 
 Hymple adopts a policy of technical and operational transparency as a central pillar of its credibility, ensuring that users, partners and investors can independently verify the system's operation, the protocol's health, and the integrity of operations.
 
+!!! warning "Current status (as of September 2026)"
+    **No independent audit report has been published yet, and the HYM Transparency Dashboard is not live.** Everything described on this page is a **commitment** (see *planned* in the [Glossary](glossary.md)), not a description of existing deliverables. Each item will be linked here as it is published — until then, the absence of a link means the artifact does not exist yet.
+
 ### 1. Independent Audits of Smart Contracts
 
 All smart contracts used by Hymple — including execution, validation, staking and reward distribution modules — will be subjected to independent audits conducted by specialized firms.
@@ -50,7 +53,7 @@ To ensure trust in the economic model, Hymple will maintain:
 - Clear disclosures about burning, buybacks, distribution and rewards.
 - Periodic accountability of allocations and unlocks.
 
-These data will be presented on the HYM Transparency Dashboard.
+These data will be presented on the HYM Transparency Dashboard *(planned — not live yet; it will be linked here when published)*.
 
 ### 5. Commitment to Responsibility and Open Communication
 

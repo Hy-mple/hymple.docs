@@ -9,6 +9,9 @@ description: Hymple's advanced security architecture — Zero Trust, encryption,
 
 Hymple operates under an advanced security architecture designed to protect users, transactions, liquidity, and infrastructure, combining modern cybersecurity techniques with native Web3 practices. The goal is to ensure operational resilience, minimize attack surfaces, and guarantee the integrity and continuity of the ecosystem regardless of market conditions or activity volume.
 
+!!! note "Deployed vs. target controls"
+    This page describes the full security model. Controls marked as *(target control)* are designed and in rollout, but not necessarily deployed at launch (see [Glossary](glossary.md)). Foundational controls — environment isolation, encryption in transit, rate limiting, signature authentication and continuous monitoring — are part of the launch posture.
+
 ### Infrastructure and Runtime Environment Security
 Hymple's infrastructure is designed under Zero Trust principles and strict segmentation:
 Environment isolation: production, staging and development completely segregated.
@@ -22,11 +25,12 @@ Geo-location replication ensuring availability in case of issues at one of the d
 Hymple implements advanced controls to protect its core engine:
 
 - Adaptive rate limiting by IP, user and trading pair.
-- Malicious pattern detection via machine learning, including:
+- Malicious pattern detection, including:
   - unusual bursts of orders,
   - API DOS attempts,
   - repetitive spoofing orders,
   - automated wash trading.
+- Machine-learning-based detection models *(target control — see Anti-Manipulation Protocols, where ML is explicitly a future version)*.
 - AES-256/GCM and TLS 1.3 encryption for all communications.
 - HMAC signatures for critical endpoints.
 - Automatic key rotation, expiration policies and temporary tokens.
@@ -34,14 +38,17 @@ Hymple implements advanced controls to protect its core engine:
 ### On-Chain Security and Smart Contracts
 Hymple's on-chain layer follows rigorous standards:
 Open-source code for community auditing.
-Multiple independent audits before launch and after relevant updates.
+Independent audits before launch and after relevant updates *(planned — see Audit & Transparency Model for current status)*.
 Contracts with fail-safe mechanisms, such as:
 emergency pauses,
 movement limits,
 reentrancy protections,
 integrity validations.
 Timelock for upgrades, with sufficient time for public review.
-Permanent bug bounty, incentivizing ethical vulnerability disclosure.
+Bug bounty program *(planned)*, incentivizing ethical vulnerability disclosure.
+
+!!! note "Scope of an emergency pause"
+    An emergency pause never creates a withdrawal path for the operator. The exact scope of a pause — what it freezes and what it never freezes (withdrawals by the depositing user) — is documented in [Settlement & Withdrawals](custody-withdrawals.md).
 ### Wallet Protection and User Interactions
 
 Since Hymple is non-custodial, protecting user interactions is a priority:
@@ -61,7 +68,7 @@ temporary endpoint throttling,
 mitigation of anomalous bursts,
 component isolation,
 triggering emergency on-chain protocols.
-Immutable logs auditable by the team and the community.
+Immutable logs auditable by the team; community-facing audit exports are *(planned — see Audit & Transparency Model)*.
 ### Security Standards and Audits
 
 To reinforce trust and integrity:

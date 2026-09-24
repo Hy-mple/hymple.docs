@@ -85,6 +85,13 @@ Supervised models to identify:
 
 Hashed and exportable logs ensure transparency and allow external audit without exposing sensitive data.
 
+**What is logged and how:**
+
+- Each penalty event is recorded with: signal type, severity, wallet address (pseudonymous on-chain identity), symbol, the observed metric and threshold, the detection window, and a correlation ID.
+- Raw fingerprints and IP hashes are **never** logged in clear — only truncated hash references, sufficient for correlation and insufficient for reversal.
+- Logs are exported in JSON Lines format, with a SHA-256 integrity hash per batch, so external auditors can verify that records were not altered.
+- Retention: penalty logs are kept for a defined period (aligned with the platform's data retention policy) and are not kept indefinitely.
+
 ### 4. Reaction and Mitigation Protocol
 
 When suspicious behavior is detected, Hymple applies progressive responses:
@@ -136,7 +143,7 @@ These measures drastically reduce:
 
 To strengthen ecosystem trust:
 
-- **Penalties are recorded in hashed public logs**
+- **Penalties are recorded in hashed, exportable logs** (JSON Lines + SHA-256 integrity hash per batch — see "Public Audit" above for format and retention)
 - **Punishment criteria are disclosed**
 - **Decisions follow a clear, non-subjective policy**
 - **Updates to the rules are always documented**

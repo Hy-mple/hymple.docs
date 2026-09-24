@@ -15,9 +15,9 @@ This hybrid architecture offers strategic advantages for both beginner users and
 
 The combination of off-chain order books with on-chain settlement enables low latency, high market depth and full verifiable transparency. This approach eliminates common bottlenecks of traditional DEXs without giving up the user's control over their own assets.
 
-### Full User Custody
+### User-Gated Custody
 
-By adopting a **non-custodial** model, Hymple ensures that user funds are held in a smart contract that only the user can withdraw from — the platform can never move funds on its own, only settle trades signed by the user. This drastically reduces risks associated with hacks, freezes, operational failures or mismanagement by custodians.
+By adopting a **non-custodial** model, Hymple ensures that user funds are held in a **user-gated vault** — a smart contract that only the depositing user can withdraw from. The platform can never move funds on its own, only settle trades signed by the user's wallet (see [Glossary](glossary.md)). This drastically reduces risks associated with hacks, freezes, operational failures or mismanagement by custodians.
 
 ### Preserved Privacy (No-KYC)
 
@@ -27,12 +27,12 @@ Unlike traditional CEXs, Hymple dispenses with KYC checks, preserving user priva
 
 The platform interface was designed to remove technical barriers and make use intuitive for new investors, without compromising advanced features for professional traders.
 
-- **Beginner Mode** delivers a guided and simplified experience, while the
-- **Trader Mode** provides comprehensive analysis tools, advanced charts and high-speed order execution.
+- **Simple Mode** delivers a guided and simplified experience, while
+- **Advanced Mode** provides comprehensive analysis tools, advanced charts and high-speed order execution.
 
 ### Scalability and Interoperability
 
-With a modern technology stack — including Rust, Redis, Golang, Kubernetes, Docker, Kong and smart contracts in Solidity — Hymple offers horizontal scalability and smooth integration with multiple blockchains. This architecture expands liquidity and real-time trading opportunities.
+With a modern technology stack — services in Go and C# (.NET), NATS event streaming, DragonflyDB cache, PostgreSQL persistence, Docker-based infrastructure, an Envoy edge gateway and smart contracts in Solidity — Hymple offers horizontal scalability and smooth integration with multiple blockchains (see [Architecture](architecture.md)). This architecture expands liquidity and real-time trading opportunities.
 
 ### Transparency and Cryptographic Trust
 
