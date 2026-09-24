@@ -66,7 +66,7 @@ Additional risks related to the custody model:
 
 - **Smart contract risk:** funds deposited for trading are held in the Hymple settlement vault; although designed so that only the user can withdraw, undiscovered vulnerabilities in smart contracts are an inherent risk of on-chain systems.
 - **Withdrawal rules:** direct on-chain withdrawals made while open orders exist on the book are subject to a release delay (up to 30 minutes) and a behavior-based fee, as an anti-abuse measure. Users should understand these rules before choosing the direct on-chain path. See **Settlement & Withdrawals**.
-- **Behavioral sanctions:** repeated abuse of the settlement model can lead to score reduction and, in extreme cases, account restrictions on the platform.
+- **Behavioral sanctions:** repeated abuse of the settlement model can lead to score reduction and, in extreme cases, interface restrictions by the operator — the vault still honors withdrawals by the depositing address.
 
 ### 5. External Integration Risks
 

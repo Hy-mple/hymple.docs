@@ -19,8 +19,9 @@ The tokenomics structure was designed with a focus on:
 
 ### 🪙 Strategic Functions of the HYM Token
 
-- **Decentralized governance:** each HYM token grants voting power in
-strategic decisions related to the protocol.
+- **On-chain voting:** each HYM token grants voting power over a defined set of
+protocol parameters (see Technical Governance). The operator retains control of the
+matching engine and product releases.
 - **Rewards and incentives:** fair and predictable distribution for those who use and
 strengthen the platform.
 - **Staking:** participation in pools with rewards in HYM, encouraging
@@ -71,7 +72,7 @@ Additional schedules:
 
 - Team: 12 months cliff + 36 months linear vesting;
 - Partners: 12 months cliff + 24 months monthly linear vesting;
-- Private/Public Sale: controlled unlocking to avoid selling pressure;
+- Private/Public Sale: gradual unlocking after TGE, following a published schedule;
 
 ### 💰 Economic Sustainability
 
@@ -91,17 +92,18 @@ The HYM token acts as a governance mechanism, allowing voting on decisions such 
 - Use of the treasury;
 - Technical evolution of the protocol.
 
-Governance is fully transparent and progressively evolves toward
-greater decentralization.
+Voting is on-chain and auditable. Hymple is not a DAO: the operator retains
+control of the matching engine and product releases, with on-chain voting covering a
+defined set of parameters.
 
 ### ✅ Conclusion
 
 HYM Tokenomics combines robust initial incentives with controlled and deflationary
 distribution over time, promoting a balance between
-growth, liquidity and sustainable appreciation.
+growth, liquidity and long-term sustainability.
 
-The model aligns the interests of users, developers and investors, providing
-support for the longevity and economic resilience of the Hymple ecosystem.
+The allocation above funds liquidity, incentives and the team. It is not a forecast
+of price or return. Token availability may be restricted by jurisdiction.
 
 ---
 
