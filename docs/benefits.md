@@ -27,8 +27,8 @@ Unlike traditional CEXs, Hymple dispenses with KYC checks, preserving user priva
 
 The platform interface was designed to remove technical barriers and make use intuitive for new investors, without compromising advanced features for professional traders.
 
-- **Beginner Mode** delivers a guided and simplified experience, while the
-- **Trader Mode** provides comprehensive analysis tools, advanced charts and high-speed order execution.
+- **Simple Mode** delivers a guided and simplified experience, while
+- **Advanced Mode** provides comprehensive analysis tools, advanced charts and high-speed order execution.
 
 ### Scalability and Interoperability
 

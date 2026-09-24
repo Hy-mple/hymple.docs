@@ -74,8 +74,8 @@ To keep the experience light and efficient:
 - There is no creation of traditional accounts.
 - No documents, photos, or KYC are requested.
 - The interface adapts its complexity:
-  - Simplified mode: ideal for beginners.
-  - Advanced mode: with indicators, market depth, APIs, and professional parameters.
+  - **Simple Mode**: ideal for beginners.
+  - **Advanced Mode**: with indicators, market depth, APIs, and professional parameters.
 
 ### Retention and Engagement
 

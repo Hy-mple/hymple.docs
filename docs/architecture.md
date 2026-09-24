@@ -52,7 +52,7 @@ Wallets supported via WC2 (among others):
 - Ledger Live (via WalletConnect)
 - SafePal
 - 1inch Wallet
-**Beginner Mode**
+**Simple Mode**
 
 - Simplified layout
 - Quick orders (limit and market)
