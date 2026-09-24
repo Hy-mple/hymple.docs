@@ -7,100 +7,23 @@ description: Utility of the HYM token within the Hymple ecosystem.
 
 > *How HYM generates utility, demand, and sustainability in the Hymple ecosystem*
 
-HYM is the element that connects users, traders, liquidity providers and partners to Hymple's economic dynamics.
+HYM connects users, traders, liquidity providers and partners to Hymple's economic dynamics. Its utility is deliberately narrow and concrete — five functions, each documented in detail on its own page:
 
-It was designed to offer real utility, foster engagement and sustain a healthy growth cycle, aligning incentives in a transparent and efficient manner.
+| # | Utility | What it means in practice | Details |
+|---|---------|---------------------------|---------|
+| 1 | **Fee discounts** | Progressive discounts on trading fees for HYM holders/stakers. | [Fees](fees.md) |
+| 2 | **Staking** | Lock HYM to earn rewards from the staking reserve, subject to the monthly pool and per-user cap. | [Staking](staking.md) |
+| 3 | **Buyback & burn** | 10% of platform fees fund periodic HYM burns, executed on-chain and auditable. | [Burn Policy](burn-policy.md) |
+| 4 | **Rewards** | HYM is the asset distributed by the usage rewards program (volume-gated, capped per user). | [Rewards](rewards.md) |
+| 5 | **Signaling votes** | HYM holders vote in public, recorded, **non-binding** consultations on operational parameters. | [Governance](governance-framework.md) |
 
-Below are the pillars that define its utility.
+### Future expansion
 
-### 1. Access Token and Operational Priority
-
-HYM acts as an access token and operational advantages within the exchange, enabling:
-
-- progressive discounts on trading fees
-- early access to critical features and updates
-- additional benefits for users with HYM staked
-- participation in campaigns, special programs and seasonal perks
-
-This model directly ties the token's value to concrete platform usage, creating organic and sustainable demand.
-
-### 2. Reward System: Staking and Activity Incentives
-
-HYM supports the ecosystem's incentive system, rewarding real and engaged participation.
-
-Among the mechanisms planned:
-
-- staking with rewards proportional to the level of commitment
-- incentives for consistent activity, reinforcing retention
-- bonuses for users who contribute to key growth metrics
-
-The focus is to create a solid base of participants, reduce speculative pressures and reinforce long-term stability.
-
-### 3. Programmed Buyback & Burn Mechanism (Deflationary Model)
-
-A portion of the platform's revenues may be allocated to a programmed HYM buyback and burn mechanism.
-
-This process:
-
-- reduces the circulating supply
-- creates deflationary pressure over time
-- benefits holders through increasing scarcity
-- connects the exchange's real performance to the token's value
-
-All executions will be transparent, auditable and recorded on-chain.
-
-### 4. Internal Liquidity and Structural Support to the Exchange
-
-HYM will play a strategic operational role:
-
-- pairing asset in selected markets
-- reference for internal pricing mechanisms (as the platform expands)
-- reinforcement of stability during early phases and new launches
-
-This positioning contributes to the efficiency of internal markets and structural support to the ecosystem.
-
-### 5. Participatory Technical Governance
-
-Hymple does not operate as a DAO, but adopts community-oriented technical governance.
-
-HYM holders will be able to:
-
-- participate in public consultations
-- vote on non-custodial operational adjustments
-- suggest technical improvements
-- influence decisions about listings and ecosystem parameters
-
-Decisions will function as qualified public signaling, strengthening transparency without compromising security or operational sovereignty.
-
-### 6. Future and Expansion of the Hymple Ecosystem
-
-As Hymple evolves, HYM will serve as a pillar for:
-
-- integrations with new modules
-- complementary ecosystem products
-- advanced functionalities architected for future phases
-- native incentives and campaigns aimed at global expansion
-
-The token was designed to follow the platform's evolution and empower new fronts of innovation.
-
-### Summary of HYM's Core Value
-
-- **Operational Utility:** discounts, prioritized access, direct advantages
-- **Incentives:** staking, rewards, sustainable engagement
-- **Economy:** programmed buyback & burn
-- **Liquidity:** internal use as a strategic pair
-- **Governance:** technical and transparent participation
-- **Future:** support for ecosystem expansion
+As the platform evolves, HYM may also serve as a pairing asset in selected markets and as a reference in internal pricing mechanisms. These uses are **planned**, not live (see [Glossary](glossary.md)), and will be documented here when activated.
 
 ### Conclusion
 
-HYM is not just a utility token; it is the economic backbone of the Hymple ecosystem.
-
-Its architecture was designed to create real value, encourage genuine participation and connect the platform's growth to the success of its users.
-
-By combining practical utility, deflationary mechanisms, participatory governance and deep integration with future modules, HYM establishes the foundation for a solid, scalable and long-term oriented economy.
-
-It is the link that transforms Hymple into a living, efficient and aligned ecosystem — where every participant contributes and benefits from collective progress.
+HYM's utility is the set above — no more, no less. Each function is specified, capped and auditable on its own page. Nothing on this page is a promise of price appreciation or financial return.
 
 ---
 

@@ -63,6 +63,8 @@ Assets with low liquidity may be susceptible to manipulated price movements, des
 
 Although Hymple is non-custodial and transparent, the off-chain layer and the initial centralized governance introduce a necessary degree of trust.
 
+Concretely: **the matching engine is a trust point for price and fill execution.** Even with an honest vault, users rely on the operator to match orders fairly (price-time priority) and to report executions correctly. Ownership of funds never depends on the operator — but execution quality does. Mitigations include signed orders, on-chain settlement and the ability to withdraw directly on-chain at any time (see Settlement & Withdrawals).
+
 **Legal and regulatory limitations**
 
 Hymple's global operation depends on compliance with local and international regulations, which may evolve. This may impact the availability of features in certain regions.

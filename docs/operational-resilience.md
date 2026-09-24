@@ -11,6 +11,9 @@ Hymple was designed with a focus on operational resilience, ensuring that the sy
 
 This section describes the mechanisms that ensure continuity, redundancy, scalability, and a structured incident response, reinforcing the platform's reliability.
 
+!!! note "Target operating model"
+    This page describes the **target** operating model (see [Glossary](glossary.md)). At launch, the deployed baseline includes automated restarts, metrics/alerting and the incident response protocol. Geo-redundant clusters, formal BCP/DRP recovery tests and 24/7 monitoring coverage are rolled out progressively as the ecosystem matures.
+
 ### Operational Resilience Framework
 1.1 Redundant Infrastructure
 Critical components — APIs, authentication services, dashboards and the matching engine — operate in redundant clusters.

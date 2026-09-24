@@ -28,6 +28,8 @@ The annual return rate (APR) applied to staking is directly linked to the exchan
 
 The progressive variation of the APR seeks to balance reward distribution with the platform's organic growth, avoiding excessive token release and preserving its market value.
 
+💡 **Important:** the APR is a **nominal target rate**, not a guarantee of token emission. The actual payout is always limited by the tokens available in the monthly pool and by the per-user cap — see "Reward payout rule" below.
+
 ---
 
 ### Total reward reserve
@@ -50,11 +52,29 @@ Undistributed tokens remain accumulated in the pool and are re-evaluated in the 
 
 ---
 
+### Reward payout rule
+
+The APR defines the nominal yield target, but the amount actually paid to each participant is always limited by the available tokens. For each participant, in each monthly cycle:
+
+$$
+payout = \min\left(staked \times \frac{APR}{12},\ remaining\_monthly\_pool,\ user\_cap\right)
+$$
+
+Where:
+
+- **staked × APR/12:** nominal monthly yield of the staked amount;
+- **remaining_monthly_pool:** tokens still available in the cycle's pool;
+- **user_cap:** 1% of the monthly pool (see "Participation limits and fair distribution").
+
+If the sum of all nominal yields exceeds the monthly pool, rewards are distributed **pro-rata** — proportionally to each participant's nominal yield — until the pool is exhausted. This ensures that the reserve of 15,000,000 HYM is never exceeded, regardless of the total amount staked.
+
+---
+
 ### Participation limits and fair distribution
 
-To ensure decentralization and prevent excessive concentration of economic power, each participant may allocate at most **1% of the total monthly pool**.
+To ensure decentralization and prevent excessive concentration of economic power, each participant may allocate at most **1% of the monthly pool of the cycle**.
 
-If the monthly pool is 15,000,000 tokens, the individual maximum limit will be **150,000 tokens**.
+**Example:** if the monthly pool is 100,000 tokens, the individual maximum limit will be **1,000 tokens** (1% × 100,000).
 
 This limitation promotes a fairer and more accessible distribution, encouraging participation from multiple users and reducing excessive concentration by large holders.
 
@@ -88,7 +108,7 @@ Both the APR (nominal annual rate) and the estimated APY will be displayed in re
 
 All staking protocol parameters — including base rate, volume and balance of available tokens — are on-chain auditable.
 
-Structural changes, such as APR adjustments or changes in the maximum participation limit, will be submitted to on-chain voting by HYM holders, ensuring active community participation in critical decisions.
+Structural changes, such as APR adjustments or changes in the maximum participation limit, are submitted to **public signaling votes** by HYM holders — recorded on-chain, but **non-binding** (see [Glossary](glossary.md) and Technical Governance Framework). The operator retains the final decision, ensuring that critical parameters never change without accountable review.
 
 ---
 
@@ -96,8 +116,9 @@ Structural changes, such as APR adjustments or changes in the maximum participat
 
 | **Parameter**            | **Description**                                                                 | **Value/Condition**   |
 |--------------------------|---------------------------------------------------------------------------------|-----------------------|
-| Total Monthly Pool       | Maximum amount of tokens distributed in each staking cycle.                     | 15,000,000 HYM        |
-| Maximum Per-User Limit   | Maximum individual amount eligible for rewards in each cycle.                   | 150,000 HYM           |
+| Total Reward Reserve     | Lifetime cap of tokens allocated to staking rewards (pre-reserved, never minted beyond this amount). | 15,000,000 HYM        |
+| Monthly Pool             | Maximum amount of tokens distributed in each staking cycle; cannot exceed the remaining reserve balance. | Variable              |
+| Maximum Per-User Limit   | Maximum individual amount eligible for rewards in each cycle.                   | 1% of the monthly pool |
 | Minimum Lock Period      | Minimum time the user must keep tokens staked to generate yield.                | 15 days               |
 | Reward Cycle             | Duration of each distribution and yield calculation period.                     | Monthly               |
 | APY Calculation          | Automatic reinvestment of rewards, generating compounded yield.                 | Automatic             |

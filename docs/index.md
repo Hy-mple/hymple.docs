@@ -52,6 +52,9 @@ hide:
   </a>
 </div>
 
+!!! info "How to read this documentation"
+    Hymple is pre-launch. Pages describe the live model and future commitments side by side, marked with two labels (see [Glossary](glossary.md)): **planned** — a commitment not yet delivered — and **target control** — a security/operations control designed but not necessarily deployed. Where a commitment exists, the page links to where it will be published; the absence of a link means the artifact does not exist yet.
+
 <div class="nav-buttons">
   <div class="nav-button-placeholder"></div>
   <a href="./introduction/" class="nav-button nav-button-next">

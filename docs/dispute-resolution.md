@@ -14,7 +14,10 @@ Hymple incorporates a structured dispute resolution mechanism designed to handle
 - Ensure impartiality in disputes involving order execution or behavior considered abusive.
 - Protect market integrity, preventing manipulation, systemic errors, or malicious actions.
 - Provide transparency, documenting processes and evidence available to both parties.
-- Maintain legal certainty, aligning with global Web3 governance and compliance practices.
+- Maintain operational predictability, with documented and auditable decisions.
+
+!!! note "Scope of this mechanism"
+    This is an **internal operational process**, not a court or arbitration chamber. Outcomes are technical and operational (corrections, compensations per internal policy, anti-abuse measures). It does not create legal obligations beyond the platform's terms of use, and it does not replace the user's rights under their local jurisdiction.
 
 ### Eligible Dispute Scopes
 
@@ -74,7 +77,7 @@ After impartial analysis:
 
 The solution may include:
 
-- Technical reversal (when possible and justified)
+- Technical reversal — **only** when the disputed effect has not reached on-chain finality (e.g., correcting an off-chain record before the settlement batch is mined). Once a settlement is confirmed on-chain, it is immutable and cannot be reversed by the operator; remedies in that case are limited to compensation per internal policy.
 - Limited compensation (in accordance with internal policies)
 - Application of measures against abusive behaviors
 - Update or correction of platform modules
