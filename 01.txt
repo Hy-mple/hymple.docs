@@ -1,0 +1,192 @@
+# Avaliação — docs.hymple.com
+
+**URL:** https://docs.hymple.com  
+**Tipo:** documentação / whitepaper (Hymple — exchange híbrida CEX + DEX)  
+**Stack aparente:** MkDocs 1.6.1 + Material for MkDocs 9.7.7  
+**Hospedagem:** GitHub Pages + Cloudflare + Fastly (HTTP/2 e HTTP/3)  
+**Data da avaliação:** 22 de setembro de 2026  
+
+Foco desta fase: design, velocidade, SEO, segurança HTTP, usabilidade e conteúdo.
+
+> Nota geral: **~6,5/10** — bom como vitrine de whitepaper; abaixo do padrão de docs de exchange que querem parecer auditáveis.
+
+---
+
+## Design — 8/10
+
+### Pontos fortes
+
+- Identidade visual consistente (navy + dourado, logo “HY”).
+- Hero da home com hierarquia clara e CTAs (“Read the Whitepaper” / “Explore the Architecture”).
+- Tema claro/escuro e paleta alinhada ao produto.
+- Sidebar com ícones e seções bem nomeadas.
+- Material for MkDocs dá tipografia, contraste e cards de qualidade sem customização pesada.
+- No mobile, o header (logo, menu, busca, tema) funciona bem e o hero empilha corretamente.
+
+### Pontos fracos
+
+- A home mistura “landing de produto” com índice de docs; o primeiro scroll é marketing, não documentação.
+- Poucas imagens/diagramas reais nas páginas internas (a introdução é quase só texto).
+- Slugs feios: `/2 - introduction/`, `/9 - advancedSecurityArchitecture/` — parecem export de pasta numerada, não de um site publicado.
+
+---
+
+## Velocidade — 8/10
+
+### O que está bem
+
+- Resposta HTTP/2 200, cache CDN (`x-cache: HIT`), `cache-control: max-age=600`.
+- HTML estático, poucos assets — típico de MkDocs; deve ser rápido na prática.
+- `last-modified` recente (22 set 2026), o que indica deploy ativo.
+- Perfil (estático + CDN + HTTP/3) tende a Core Web Vitals bons, desde que fontes e JS do Material não explodam no first load.
+
+### O que melhorar
+
+- Cache de só 10 minutos é conservador para docs estáticos; 1h–1d seria mais eficiente sem prejuízo.
+- Não foi rodado Lighthouse completo nesta avaliação; vale medir LCP, INP e CLS em desktop e mobile.
+
+---
+
+## SEO — 5,5/10
+
+### O que existe
+
+- `title`: “Documentation | Hymple - HYMPLE” (genérico demais na home).
+- `meta description` presente: “Hybrid by nature, simple by choice - Next-generation hybrid decentralized exchange”.
+- `lang="en"`.
+- Conteúdo textual longo e indexável.
+
+### O que falta ou prejudica
+
+- URLs com espaços, números e camelCase (`2 - introduction`, `userExperience&OnboardingFlow`) — ruins para CTR e compartilhamento.
+- Quase nenhum Open Graph / Twitter Card nos metas coletados (compartilhamento no X/LinkedIn fica pobre).
+- Título da home não descreve o produto (“Hybrid exchange docs”, “Whitepaper Hymple”, etc.).
+- Duplicidade de origem: o mesmo material também aparece em `hy-mple.github.io/hymple.docs/` — risco de conteúdo duplicado se ambos forem indexados.
+- Sem evidência de `canonical`, sitemap anunciado na home, ou hreflang (só inglês).
+- Headings ok, mas a home tem pouco H1/H2 semântico além do hero.
+
+Para um whitepaper que quer credibilidade institucional, isso é o ponto mais fraco depois da segurança HTTP.
+
+---
+
+## Segurança (do site de docs, não do exchange) — 4,5/10
+
+HTTPS funciona e o tráfego passa por Cloudflare. Headers observados no `HEAD`:
+
+### Presentes
+
+- `server: cloudflare`
+- HTTP/2
+- `alt-svc` (HTTP/3)
+- NEL / `report-to` da Cloudflare
+
+### Ausentes
+
+- `Strict-Transport-Security`
+- `Content-Security-Policy`
+- `X-Frame-Options`
+- `X-Content-Type-Options`
+- `Referrer-Policy`
+- `Permissions-Policy`
+
+### Outros pontos
+
+- Há `access-control-allow-origin: *` em página HTML — desnecessário e frouxo para um site de documentação.
+- Isso é comum em GitHub Pages “puro”, mas para um projeto que dedica uma página inteira a “Advanced Security Architecture” (Zero Trust, TLS 1.3, HMAC, bug bounty…) a contradição é visível: o produto promete stack séria e o docs site não aplica o baseline OWASP de headers.
+- Domínio próprio (`docs.hymple.com`) é melhor que só GitHub Pages.
+- Docs estáticos = superfície de ataque pequena (não há login/API no docs).
+- `generator: mkdocs-1.6.1, mkdocs-material-9.7.7` expõe versões — baixo risco, mas dá fingerprint.
+
+A página de segurança do *produto* é ambiciosa (auditorias, timelock, SIEM, pausas de contrato). Como *site*, falta o básico de headers.
+
+---
+
+## Usabilidade — 7,5/10
+
+### Bom
+
+- Skip to content, busca no header, sidebar persistente, dark mode.
+- Cards “Explore the documentation” na home ajudam o primeiro acesso.
+- Estrutura de tópicos cobre o que um investidor/trader espera: intro, arquitetura, segurança, UX, tokenomics, fees.
+
+### Ruim
+
+- Navegação numerada no path quebra o hábito de “docs limpos” (compare com docs do Uniswap, dYdX, etc.).
+- Sem breadcrumb óbvio no recorte da home.
+- Conteúdo em inglês apenas; o público BR/LATAM do domínio `.com` não tem locale.
+- CTAs da home levam a “whitepaper” e “architecture”, mas o índice real tem dezenas de páginas — um “Start here” de 3 passos ajudaria.
+
+---
+
+## Conteúdo — 6,5/10
+
+### Qualidade de posicionamento
+
+- Mensagem clara: híbrido, non-custodial, order book off-chain + settlement on-chain, sem KYC, governança da equipe + votação on-chain limitada.
+- Introdução e tokenomics têm estrutura de whitepaper (distribuição 70M HYM, vesting, fees).
+
+### Problemas de conteúdo
+
+- Tom promocional demais para “documentation”. Frases como “setting a new standard” e listas de benefícios sem evidência (auditorias publicadas, endereços de contrato, dashboards, repos) enfraquecem a credibilidade.
+- Inglês com lapsos (“an non-custodial”, “Hymple is not a DAO” no meio de um parágrafo de governança).
+- Segurança descrita no superlativo (ML contra spoofing, SIEM, NGFW, 24/7) sem links para relatórios, auditors ou status page.
+- Claims fortes (no KYC + exchange com matching off-chain) exigem mais precisão jurídica/técnica do que o texto atual entrega.
+- Whitepaper v1.1 · September 2026 — data alinhada ao agora, o que é bom; falta changelog visível na home.
+
+---
+
+## Resumo por nota
+
+| Área | Nota | Comentário curto |
+|---|---|---|
+| Design | 8/10 | Polido, on-brand, Material bem usado |
+| Velocidade | 8/10 | Estático + CDN; cache curto |
+| SEO | 5,5/10 | Slugs ruins, OG fraco, título genérico, possível duplicata GitHub |
+| Segurança HTTP | 4,5/10 | HTTPS ok; headers de segurança praticamente ausentes |
+| Usabilidade | 7,5/10 | Busca e nav ok; IA da informação ainda “pasta numerada” |
+| Conteúdo | 6,5/10 | Completo como pitch; raso como docs verificáveis |
+| **Geral** | **~6,5/10** | Vitrine boa; docs ainda não “institucionais” |
+
+---
+
+## Prioridades se forem iterar (fase 1)
+
+1. Renomear slugs: `/introduction/`, `/architecture/`, `/security/`, `/tokenomics/`.
+2. Adicionar headers (Cloudflare Transform Rules bastam): HSTS, CSP razoável para MkDocs, `X-Content-Type-Options: nosniff`, `Referrer-Policy`, `X-Frame-Options` ou `frame-ancestors`.
+3. Canonical único (`docs.hymple.com`) e `noindex` no GitHub Pages espelho.
+4. Title/description por página + Open Graph.
+5. Diagramas da arquitetura (fluxo ordem → match → settle) e links para contratos/auditorias — isso muda a percepção de conteúdo mais do que qualquer CSS.
+6. Revisão de inglês e tom: menos slogan, mais especificação.
+
+---
+
+## Checklist rápido de ajuste
+
+- [ ] Slugs sem números, espaços ou `&`
+- [ ] `canonical` em todas as páginas
+- [ ] `noindex` no espelho `hy-mple.github.io`
+- [ ] OG + Twitter cards (imagem 1200×630 com logo)
+- [ ] Titles únicos por página
+- [ ] HSTS + CSP + nosniff + referrer-policy
+- [ ] Remover `Access-Control-Allow-Origin: *` das páginas HTML
+- [ ] Cache de assets estáticos > 10 min
+- [ ] Sitemap.xml + robots.txt explícitos
+- [ ] Changelog / versão do whitepaper na home
+- [ ] Diagramas de arquitetura e fluxo de trade
+- [ ] Links para auditorias, contratos e repos
+- [ ] Revisão de copy (EN) e tom menos promocional
+- [ ] (Opcional) locale PT-BR
+
+---
+
+## Observações para a próxima fase
+
+Esta avaliação cobre o site de documentação como produto web. Não valida:
+
+- Contratos on-chain
+- Matching engine
+- Tokenomics na prática
+- Compliance / KYC claims
+- Segurança operacional do exchange
+
+Na próxima fase dá para aprofundar copy, SEO técnico, comparativo com concorrentes ou checklist de launch.

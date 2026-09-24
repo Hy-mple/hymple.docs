@@ -1,0 +1,1803 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="How rewards work on Hymple.">
+      
+      
+      
+        <link rel="canonical" href="https://docs.hymple.com/rewards/">
+      
+      
+        <link rel="prev" href="../token-utility/">
+      
+      
+        <link rel="next" href="../staking/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Rewards - HYMPLE</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/styles.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config",""),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HYMPLE">
+<meta property="og:title" content="🎁 Rewards | HYMPLE">
+<meta property="og:description" content="How rewards work on Hymple.">
+<meta property="og:url" content="https://docs.hymple.com/rewards/">
+<meta property="og:image" content="https://docs.hymple.com/assets/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="🎁 Rewards | HYMPLE">
+<meta name="twitter:description" content="How rewards work on Hymple.">
+<meta name="twitter:image" content="https://docs.hymple.com/assets/logo.png">
+
+
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#rewards" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="HYMPLE" class="md-header__button md-logo" aria-label="HYMPLE" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            HYMPLE
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Rewards
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard="" data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="HYMPLE" class="md-nav__button md-logo" aria-label="HYMPLE" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    HYMPLE
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏠 Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📖 Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../from-traditional-to-hybrid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔄 From Traditional to Hybrid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../global-exchange-landscape/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🌍 Global Exchange Landscape
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benefits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ✨ Benefits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏗️ Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custody-withdrawals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔐 Custody &amp; Withdrawals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../observability-monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📊 Observability &amp; Monitoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-experience-onboarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    👤 User Experience &amp; Onboarding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔒 Advanced Security Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operational-resilience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚨 Operational Resilience &amp; Incident Response
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anti-manipulation-protocols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🛡️ Anti-Manipulation and Anti-Abuse Protocols
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dispute-resolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⚖️ Conflict and Dispute Resolution Mechanism
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-limitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ⚠️ System Limitations &amp; Assumptions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../governance-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏛️ Technical Governance Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audit-transparency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔍 Audit &amp; Transparency Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../risk-disclosure-threat-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎯 Risk Disclosure &amp; Threat Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tokenomics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💰 Tokenomics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../token-utility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🪙 Token Utility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎁 Rewards
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎁 Rewards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-weight-structure-and-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Weight structure and criteria
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-volume-weighted-rewards-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Volume-weighted rewards distribution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-calculation-of-rewards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Calculation of rewards
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-simulated-distribution-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Simulated distribution example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../staking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📈 Staking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fees/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    💵 Fees
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../burn-policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔥 Burn Policy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="rewards">Rewards</h1>
+<blockquote>
+<p><em>Incentive system and appreciation for Hymple users.</em></p>
+</blockquote>
+<h3 id="1-introduction">1. Introduction</h3>
+<p>The Hymple ecosystem adopts an innovative rewards mechanism intended to incentivize active participation, liquidity and healthy user behavior on the platform. The distribution of native tokens is structured proportional to the individual user's impact on the exchange, considering trading volume, usage frequency, liquidity provided, staking, quality behavior, referrals and loyalty.</p>
+<p>The main objective of the rewards mechanism is to foster sustainable use of the platform, rewarding users who contribute to the growth, stability and integrity of the ecosystem, while controlling token release to avoid excessive concentration.</p>
+<p>💡 <strong>Note:</strong> Hymple's rewards program has a maximum and immutable limit of 15,000,000 HYM.
+These tokens will not be minted, but rather pre-reserved during the token creation, ensuring full transparency, emission control and preservation of scarcity within the ecosystem.</p>
+<h3 id="2-weight-structure-and-criteria">2. Weight structure and criteria</h3>
+<p>During the launch phase (year 1 to year 3), rewards will be calculated based on the following criteria, with predefined weights:</p>
+<table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Weight</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Trading Volume</td>
+<td>0,45</td>
+<td>Reflects the total amount of transactions carried out by the user on the platform. It encourages liquidity and continuous use of the exchange.</td>
+</tr>
+<tr>
+<td>User Activity</td>
+<td>0,15</td>
+<td>Measures the frequency of platform use.</td>
+</tr>
+<tr>
+<td>Liquidity Provision</td>
+<td>0,25</td>
+<td>Rewards market makers and users who contribute to order book depth.</td>
+</tr>
+<tr>
+<td>Token Staking</td>
+<td>0,05</td>
+<td>Users who hold Hymple tokens in staking actively participate in the platform's security and governance.</td>
+</tr>
+<tr>
+<td>Quality Interactions</td>
+<td>0,05</td>
+<td>Assesses executed orders, average holding time and integrity of operations.</td>
+</tr>
+<tr>
+<td>Proof of Referral (PoR)</td>
+<td>0,10</td>
+<td>Users who refer new participants receive recognition for the community's organic growth.</td>
+</tr>
+<tr>
+<td>Loyalty and Retention (Bonus)</td>
+<td>0,05</td>
+<td>Additional bonus for users who maintain continuous and consistent activity over time.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Total Weights: 1,1</strong></p>
+<p>The sum of the metrics generates an individual normalized score, which defines each user's share of the rewards pool.</p>
+<p>💡 <strong>Note:</strong> A total weighted value greater than 1 reflects the possibility of amplifying rewards for users who stand out in multiple criteria, promoting a more robust and active ecosystem from the launch phase.</p>
+<h4 id="weights-review-in-future-phases">Weights review in future phases</h4>
+<p>To ensure alignment with the platform's growth and the user base profile, the weights will be reviewed in subsequent phases:</p>
+<ul>
+<li><strong>Growth phase (year 4 to year 6)</strong> – Adjustments focused on liquidity provision, the referral program and whatever else is necessary to help the exchange in its growth.</li>
+<li><strong>Maturity phase (year 7 onward)</strong> – Adjustments aimed at rewarding loyalty, governance and strategic engagement, maintaining the balance between volume, activity and user retention.</li>
+</ul>
+<p>This dynamic approach allows the rewards system to evolve along with the platform, maintaining fairness and encouraging behaviors that add value to the Hymple ecosystem.</p>
+<h3 id="3-volume-weighted-rewards-distribution">3. Volume-weighted rewards distribution</h3>
+<p>To align reward distribution with the platform's real economic activity, the scheduled distribution for each month will be adjusted according to the total trading volume on the platform in the month prior to the measurement (in USD). This mechanism:</p>
+<ul>
+<li>preserves the token's sustainability by reducing distribution in periods of lower activity; and</li>
+<li>increases distribution when platform usage intensifies.</li>
+</ul>
+<p>In practical terms, the total tokens scheduled for the month are multiplied by a distribution percentage defined by the range of monthly volume measured.</p>
+<p>For example, if the monthly rewards pool is 100,000 tokens and the previous month's trading volume was US$ 50 million or less, only 25% (25,000 tokens) will be distributed. If volume reaches higher ranges in subsequent months, the release percentage increases progressively.</p>
+<h4 id="distribution-rule-by-volume-range">Distribution rule by volume range</h4>
+<p>The effective distribution in the month will follow the table below:</p>
+<p><strong>Volume-weighted distribution</strong></p>
+<table>
+<thead>
+<tr>
+<th>Monthly Volume (USD)</th>
+<th>Distribution %</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>≤ $50M</td>
+<td>25%</td>
+</tr>
+<tr>
+<td>$50M – $200M</td>
+<td>50%</td>
+</tr>
+<tr>
+<td>$200M – $500M</td>
+<td>60%</td>
+</tr>
+<tr>
+<td>$500M – $1B</td>
+<td>80%</td>
+</tr>
+<tr>
+<td>&gt; $1B</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+<h4 id="formula">Formula</h4>
+<ul>
+<li>v = monthly volume measured (USD)</li>
+<li>p = pool scheduled for the month</li>
+<li>f(v) = distribution percentage according to the table range</li>
+</ul>
+<p>Effective distribution in the month:</p>
+<p><strong>Distribution = p × f(v)</strong></p>
+<h4 id="examples">Examples:</h4>
+<ul>
+<li>If p = 100,000 and v ≤ $50M → f(v) = 25% → Distribution = 25,000 tokens.</li>
+<li>If p = 100,000 and $50M &lt; v ≤ $200M → f(v) = 50% → Distribution = 50,000 tokens.</li>
+<li>If p = 100,000 and $200M &lt; v ≤ $500M → f(v) = 60% → Distribution = 60,000 tokens.</li>
+<li>If p = 100,000 and $500M &lt; v ≤ $1B → f(v) = 80% → Distribution = 80,000 tokens.</li>
+<li>If p = 100,000 and v &gt; $1B → f(v) = 100% → Distribution = 100,000 tokens.</li>
+</ul>
+<h4 id="operational-considerations">Operational considerations</h4>
+<ul>
+<li><strong>Measurement Window:</strong> calendar month in UTC.</li>
+<li><strong>Volume Calculation:</strong> consolidated volume in USD of all pairs supported by the exchange.</li>
+<li><strong>Conversion to USD:</strong> volume-weighted averages or reliable market sources.</li>
+<li><strong>Publication:</strong> the applicable percentage (f(v)) is disclosed in the monthly metrics report.</li>
+<li><strong>Cumulativity:</strong> undistributed tokens will have part burned and the remainder reaccumulated in the rewards pool.</li>
+<li><strong>Audit and Transparency:</strong> methodology and aggregated data will be made available for community verification.</li>
+</ul>
+<h4 id="design-rationale">Design rationale</h4>
+<ul>
+<li><strong>Sustainability:</strong> controls release according to demand and the platform's real usage.</li>
+<li><strong>Incentive Alignment:</strong> the higher the volume and community engagement, the higher the monthly distribution.</li>
+<li><strong>Predictability:</strong> fixed ranges and percentages offer clarity and stability to participants.</li>
+</ul>
+<h3 id="4-calculation-of-rewards">4. Calculation of rewards</h3>
+<h4 id="individual-score">Individual Score</h4>
+<p>O Individual Score measures each user's contribution and engagement in the reference month for the ecosystem. It is composed of seven weighted and normalized components, using roots to reduce the effect of extreme values. The maximum possible score is 1.10 (1.0 from base components + 0.10 bonus). Each component is calculated and summed as below.</p>
+<p><strong>1.1 Trading Volume (Weight 0.45)</strong></p>
+<p>Description: encourages higher trading volume on the platform.</p>
+<p><strong>Formula:</strong></p>
+<div class="arithmatex">\[
+score\_trading = 0.45 \times \sqrt{\frac{user\_volume}{max\_user\_volume}}
+\]</div>
+<p>Where:</p>
+<ul>
+<li>score_trading: user's trading volume score.</li>
+<li>user_volume: user's trading volume during the month.</li>
+<li>max_user_volume: highest trading volume recorded for a user during the month.</li>
+</ul>
+<p>✅ <strong>Notes:</strong></p>
+<ul>
+<li>The square root reduces disparities between large and small traders.</li>
+<li>It promotes constant activity, not just volume spikes.</li>
+</ul>
+<p><strong>1.2 Frequency (Weight 0.15)</strong></p>
+<p>Description: measures activity regularity in the month.</p>
+<p><strong>Formula:</strong></p>
+<div class="arithmatex">\[
+score\_frequency = 0.15 \times \frac{active\_days}{possible\_active\_days}
+\]</div>
+<p>Where:</p>
+<ul>
+<li>score_frequency: user's frequency score.</li>
+<li>active_days: number of days in the month the user had activity.</li>
+<li>possible_active_days: total possible days in the month (30 or 31).</li>
+</ul>
+<p>✅ <strong>Notes:</strong></p>
+<ul>
+<li>Rewards consistency of engagement, not just volume.</li>
+<li>Values users with continuous presence.</li>
+</ul>
+<p><strong>1.3 Liquidity (Weight 0.25)</strong></p>
+<p>Description: evaluates the user's contribution as a liquidity provider.</p>
+<p><strong>Formula:</strong></p>
+<div class="arithmatex">\[
+score\_liquidity = 0.25 \times \sqrt{\frac{user\_liquidity\_total}{max\_user\_liquidity}}
+\]</div>
+<p>Where:</p>
+<ul>
+<li>score_liquidity: user's liquidity score.</li>
+<li>user_liquidity_total: total liquidity provided by the user during the month.</li>
+<li>max_user_liquidity: highest liquidity provided value recorded for a user during the month.</li>
+</ul>
+<p>✅ <strong>Notes:</strong></p>
+<ul>
+<li>Encourages stable liquidity provision.</li>
+<li>Reduces disparities between large and small providers.</li>
+</ul>
+<p><strong>1.4 Staking (Weight 0.05)</strong></p>
+<p>Description: rewards those who keep value staked throughout the month.</p>
+<p><strong>Formula:</strong></p>
+<div class="arithmatex">\[
+score\_staking = 0.05 \times \sqrt{\frac{user\_staking\_amount}{max\_staking\_amount}} \times \frac{staking\_days}{days\_in\_month}
+\]</div>
+<p>Where:</p>
+<ul>
+<li>score_staking: user's staking score.</li>
+<li>user_staking_amount: user's total tokens in staking.</li>
+<li>max_staking_amount: highest staking amount recorded for a user.</li>
+<li>staking_days: number of days with tokens staked.</li>
+<li>days_in_month: total days in the month (30 or 31).</li>
+</ul>
+<p>✅ <strong>Notes:</strong></p>
+<ul>
+<li>Values commitment and stability.</li>
+<li>Ensures that only eligible users participate.</li>
+</ul>
+<p><strong>1.5 Quality Interactions (Weight 0.05)</strong></p>
+<p>Description: values genuine and diversified interactions.</p>
+<p>Steps:</p>
+<ol>
+<li>
+<p>Weighted orders:</p>
+<ul>
+<li>Executed → weight 1.0</li>
+<li>Canceled (&gt;24h) → weight 0.5</li>
+<li>Ex: 10 Executed orders + 5 orders canceled after 24 = 12,5</li>
+</ul>
+</li>
+<li>
+<p>Application of the diversification factor: based on the number of pairs traded.</p>
+<table>
+<thead>
+<tr>
+<th>Pairs Traded</th>
+<th>Factor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0,3</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0,5</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0,7</td>
+</tr>
+<tr>
+<td>4 or more</td>
+<td>1,0</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Final normalization:</p>
+</li>
+</ol>
+<p><strong>Formula:</strong></p>
+<div class="arithmatex">\[
+score\_interaction = 0.05 \times \sqrt{\frac{step2}{max\_step2}}
+\]</div>
+<p>Where:</p>
+<ul>
+<li>score_interaction: user's quality interactions score.</li>
+<li>step2: user's result after applying the diversification factor.</li>
+<li>max_step2: Highest Step 2 result among all users during the month.</li>
+</ul>
+<p>✅ <strong>Example</strong></p>
+<p>Given the situation:</p>
+<ul>
+<li>10 Executed orders</li>
+<li>5 Orders canceled after 24H.</li>
+<li>Diversification factor of 0.7, i.e., traded 3 asset pairs in the month.</li>
+<li>The user with the best result in the month was 50.</li>
+</ul>
+<p>We have:</p>
+<ul>
+<li>executed_orders_factor = 10 (10 * 1)</li>
+<li>canceled_orders_factor = 2,5 (5*0.5)</li>
+<li>step_1 = 12,5</li>
+<li>step_2 = 8,75 (12.5 * 0.7)</li>
+<li>score_interaction = 0.05 * sqrt(8.75 / 50) = 0.02092</li>
+</ul>
+<p>✅ <strong>Notes:</strong></p>
+<ul>
+<li>Penalizes spam and favors organic activity.</li>
+<li>Ensures balanced distribution among different profiles.</li>
+</ul>
+<p><strong>1.6 Proof of Referral (Weight 0.10)</strong></p>
+<p>Description: rewards those who refer qualified new users.</p>
+<p><strong>Formula:</strong></p>
+<div class="arithmatex">\[
+score\_referral = 0.10 \times \sqrt{\frac{referral\_count}{max\_referral\_count}}
+\]</div>
+<p>Where:</p>
+<ul>
+<li>score_referral: user's referral score.</li>
+<li>referral_count: number of referrals by the user during the month.</li>
+<li>max_referral_count: highest number of referrals recorded for a user during the month.</li>
+</ul>
+<p>✅ <strong>Notes:</strong></p>
+<ul>
+<li>Normalizes discrepancies and prevents abuse.</li>
+<li>Encourages organic growth of the user base.</li>
+</ul>
+<p><strong>1.7 Loyalty (Weight 0.05)</strong></p>
+<p>Description: measures the activity rate across the user's history.</p>
+<p><strong>Formula:</strong></p>
+<div class="arithmatex">\[
+raw\_loyalty\_score = active\_months
+\]</div>
+<p>Example:</p>
+<p>If 10 months have passed since the first interaction and the user was active in 7 of them:</p>
+<div class="arithmatex">\[
+raw\_loyalty\_score = 7
+\]</div>
+<p>The raw score is calculated as:</p>
+<div class="arithmatex">\[
+score\_loyalty = 0.05 \times \sqrt{\frac{raw\_loyalty\_score}{max\_raw\_loyalty\_score}}
+\]</div>
+<p><strong>Normalization and weight</strong></p>
+<ul>
+<li>max_raw_loyalty_score: highest raw loyalty score among all users during the month.</li>
+</ul>
+<p><strong>Note:</strong> In the example, the raw loyalty score is 7. In the implementation, replace 7 with the actual calculated value of raw_loyalty_score.</p>
+<p>✅ <strong>Notes:</strong></p>
+<ul>
+<li>Reinforces retention and continuity.</li>
+<li>Values long-standing and consistent users.</li>
+</ul>
+<h4 id="aggregation-of-the-total-score">🧮 Aggregation of the total score</h4>
+<p>The user's individual score is the sum of all weighted components:</p>
+<div class="arithmatex">\[
+Individual\ Score = T + F + L + S + I + R + Lo
+\]</div>
+<p>Where:</p>
+<ul>
+<li>T: Trading</li>
+<li>F: Frequency</li>
+<li>L: Liquidity</li>
+<li>S: Staking</li>
+<li>I: Interactions</li>
+<li>R: Referral</li>
+<li>Lo: Loyalty</li>
+</ul>
+<p>The final score defines the participation weight of each user in the monthly rewards pool.</p>
+<h4 id="users-share-in-the-pool">User's share in the pool</h4>
+<p>This section defines how each user's share in the month's rewards pool is calculated, based on the Individual Score.</p>
+<p><strong>Definitions:</strong></p>
+<ul>
+<li>user_score: user's total Individual Score in the reference period (month), as defined in the "Individual Score" section.</li>
+<li>total_user_scores: sum of the Individual Scores of all eligible users in the month.</li>
+</ul>
+<p><strong>Base formula for the user's share in the pool:</strong></p>
+<div class="arithmatex">\[
+user\_share = \frac{user\_score}{total\_user\_scores}
+\]</div>
+<p><strong>Base reward allocation:</strong></p>
+<div class="arithmatex">\[
+user\_rewards = R \times user\_share
+\]</div>
+<p><strong>Per-user cap rule (cap of 5% of the pool):</strong></p>
+<p>No user can receive more than 5% of the total pool in the month.</p>
+<p>If the user_rewards exceed 5% of R, the adjustment applies:</p>
+<p><strong>General case:</strong></p>
+<div class="arithmatex">\[
+user\_rewards\_capped = 0.05 \times R \times user\_score
+\]</div>
+<p><strong>Exception:</strong> if user_score = 1.10, the user can exceed 5% using:</p>
+<div class="arithmatex">\[
+user\_rewards\_capped = 0.05 \times R \times 1.10
+\]</div>
+<p><strong>Operational note:</strong></p>
+<ol>
+<li>First, calculate the user_rewards.</li>
+<li>Check the 5% cap of R.</li>
+<li>If it exceeds, apply the rule above according to the user_score.</li>
+</ol>
+<h4 id="example-of-capped-distribution-users-a-b-c-d">Example of capped distribution (users A, B, C, D)</h4>
+<p>Assume:</p>
+<ul>
+<li>Monthly rewards pool R = 25,000 units.</li>
+<li>Individual scores in the month:</li>
+<li>User A: 1.10</li>
+<li>User B: 0.70</li>
+<li>User C: 0.30</li>
+<li>User D: 0.20</li>
+</ul>
+<p><strong>Sum of scores:</strong></p>
+<div class="arithmatex">\[
+total\_user\_scores = 1.10 + 0.70 + 0.30 + 0.20 = 2.30
+\]</div>
+<p><strong>Calculation of the base reward:</strong></p>
+<p><strong>Shares:</strong></p>
+<ul>
+<li>A: 1.10 / 2.30 ≈ 0.478261</li>
+<li>B: 0.70 / 2.30 ≈ 0.304348</li>
+<li>C: 0.30 / 2.30 ≈ 0.130435</li>
+<li>D: 0.20 / 2.30 ≈ 0.086957</li>
+</ul>
+<p><strong>Base rewards (R = 25,000):</strong></p>
+<ul>
+<li>A: 25,000 × 0.478261 ≈ 11,956.52</li>
+<li>B: 25,000 × 0.304348 ≈ 7,608.70</li>
+<li>C: 25,000 × 0.130435 ≈ 3,260.87</li>
+<li>D: 25,000 × 0.086957 ≈ 2,173.91</li>
+</ul>
+<p><strong>Application of the 5% cap:</strong></p>
+<p>5% of R = 0.05 × 25,000 = 1,250</p>
+<p><strong>Applying:</strong></p>
+<p><strong>User A (score 1.10):</strong></p>
+<p>Special cap:</p>
+<div class="arithmatex">\[
+user\_rewards\_capped = 1,250 \times 1.10 = 1,375
+\]</div>
+<p><strong>User B (score 0.70):</strong></p>
+<p>Weighted general cap:</p>
+<div class="arithmatex">\[
+user\_rewards\_capped = 1,250 \times 0.70 = 875
+\]</div>
+<p><strong>User C (score 0.30):</strong></p>
+<p>Weighted general cap:</p>
+<div class="arithmatex">\[
+user\_rewards\_capped = 1,250 \times 0.30 = 375
+\]</div>
+<p><strong>User D (score 0.20):</strong></p>
+<p>Weighted general cap:</p>
+<div class="arithmatex">\[
+user\_rewards\_capped = 1,250 \times 0.20 = 250
+\]</div>
+<h3 id="5-simulated-distribution-example">5. Simulated distribution example</h3>
+<p>Considering a fixed pool of 105,693.92 tokens and applying the volume factor at level 1 (25%), we have:</p>
+<div class="arithmatex">\[
+effective\_pool = 105,693.92 \times 0.25 = 26,423.48
+\]</div>
+<table>
+<thead>
+<tr>
+<th>User</th>
+<th>Individual Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>0.3776</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0.1717</td>
+</tr>
+<tr>
+<td>C</td>
+<td>0.5995</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Proportional share of the pool:</strong></p>
+<div class="arithmatex">\[
+total\_score = 0.3776 + 0.1717 + 0.5995 = 1.1488
+\]</div>
+<table>
+<thead>
+<tr>
+<th>User</th>
+<th>Proportional Reward</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>8,217.27</td>
+</tr>
+<tr>
+<td>B</td>
+<td>3,736.51</td>
+</tr>
+<tr>
+<td>C</td>
+<td>13,046.22</td>
+</tr>
+</tbody>
+</table>
+<p>Considering that a single user cannot receive more than 5% of the pool (in this example 1,250.0), we have:</p>
+<table>
+<thead>
+<tr>
+<th>User</th>
+<th>Capped Reward</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>1,250.0 × score = 472.00</td>
+</tr>
+<tr>
+<td>B</td>
+<td>1,250.0 × score = 214.62</td>
+</tr>
+<tr>
+<td>C</td>
+<td>1,250.0 × score = 749.37</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Tokens distributed: 1436</strong></p>
+<h4 id="calculation-of-the-monthly-rewards-amount">Calculation of the monthly rewards amount</h4>
+<p>The amount of tokens allocated to the monthly rewards pool is defined based on pre-established annual percentages over the undistributed total of tokens. This rule ensures predictability, distribution control and long-term economic sustainability.</p>
+<p><strong>Distribution rules by period</strong></p>
+<table>
+<thead>
+<tr>
+<th>Period</th>
+<th>Annual %</th>
+<th>Objective</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Years 1 – 5</td>
+<td>8% per year</td>
+<td>Accelerated incentive for initial adoption</td>
+</tr>
+<tr>
+<td>Years 6 – 10</td>
+<td>4% per year</td>
+<td>Gradual distribution adjustment</td>
+</tr>
+<tr>
+<td>From Year 11 onward</td>
+<td>2% per year</td>
+<td>Minimum distribution for stability</td>
+</tr>
+</tbody>
+</table>
+<p>The monthly pool value is calculated by dividing the corresponding annual percentage by 12 months, and applying it to the remaining balance of the total tokens available for rewards.</p>
+<div class="arithmatex">\[
+monthly\_pool = \frac{annual\_percentage}{12} \times remaining\_reward\_token\_balance
+\]</div>
+<h4 id="accumulation-and-burn-of-undistributed-tokens">Accumulation and burn of undistributed tokens</h4>
+<p>To reinforce sustainability of the distribution and encourage platform activity, tokens not distributed in the month follow a combined logic of burn and accumulation.</p>
+<p>The rule works as follows:</p>
+<ol>
+<li><strong>Calculation of the distributed amount:</strong>
+   It is based on the Volume Factor.</li>
+</ol>
+<p>Example: if the pool is 100,000 tokens and the volume factor is 25%, the distributed amount will be:</p>
+<p>$$
+   distributed = 100,000 \times 0.25 = 25,000
+   $$</p>
+<ol>
+<li><strong>Calculation of the remaining amount:</strong></li>
+</ol>
+<p>$$
+   remaining = monthly_pool - distributed
+   $$</p>
+<ol>
+<li><strong>Application of the burn:</strong>
+   The burn percentage will be equal to the Volume Factor applied to the remainder:</li>
+</ol>
+<p>$$
+   burned = remaining \times volume_factor
+   $$</p>
+<ol>
+<li><strong>Calculation of the amount accumulated for the next months:</strong></li>
+</ol>
+<p>$$
+   accumulated = remaining - burned
+   $$</p>
+<p><strong>Summarizing the rule:</strong></p>
+<div class="arithmatex">\[
+distributed = monthly\_pool \times volume\_factor
+\]</div>
+<div class="arithmatex">\[
+burned = (monthly\_pool - distributed) \times volume\_factor
+\]</div>
+<div class="arithmatex">\[
+accumulated = monthly\_pool - distributed - burned
+\]</div>
+<p>✅ <strong>Applied patterns:</strong></p>
+<ul>
+<li>monthly_pool → Monthly token pool.</li>
+<li>distributed → Amount distributed.</li>
+<li>burn → Tokens burned.</li>
+<li>volume_factor → Volume factor.</li>
+<li>accumulated → Tokens accumulated for next periods.</li>
+</ul>
+<p>This approach ensures:</p>
+<ul>
+<li>That there is always a burn proportion in periods of low activity, reducing token inflation;</li>
+<li>That part of the undistributed tokens is reused in the following months, maintaining the incentive for future engagement.</li>
+</ul>
+<h4 id="practical-example">Practical example</h4>
+<ul>
+<li>remaining_reward_token_balance (initial balance) = 15,000,000 tokens</li>
+<li>annual_percentagege (Years 1–5) = 8%</li>
+</ul>
+<p><strong>monthly_pool:</strong></p>
+<div class="arithmatex">\[
+monthly\_pool = \frac{0.08}{12} \times 15,000,000 = 100,000
+\]</div>
+<div class="arithmatex">\[
+monthly\_pool = 100,000
+\]</div>
+<div class="arithmatex">\[
+remaining\_reward\_token\_balance = 15,000,000 - 100,000 = 14,900,000
+\]</div>
+<p><strong>Volume Factor = 25%</strong></p>
+<div class="arithmatex">\[
+distributed = 100,000 \times 0.25 = 25,000
+\]</div>
+<div class="arithmatex">\[
+burned = 75,000 \times 0.25 = 18,750
+\]</div>
+<div class="arithmatex">\[
+accumulated = 75,000 - 18,750 = 56,250
+\]</div>
+<p>In the second month, the pool calculation will be:</p>
+<div class="arithmatex">\[
+monthly\_pool = \frac{0.08}{12} \times 14,900,000 + 56,250 = 155,916.67
+\]</div>
+<p>Remembering that the effective distribution in the second month will also depend on the volume factor in that period. Considering that in month 2 the volume factor was 50%, we have:</p>
+<div class="arithmatex">\[
+distributed = 155,916.67 \times 0.50 = 77,958.335
+\]</div>
+<div class="arithmatex">\[
+burned = 77,958.335 \times 0.50 = 38,979.1675
+\]</div>
+<div class="arithmatex">\[
+remaining\_reward\_token\_balance = 14,956,250 - (distributed + burned) = 14,881,468.755
+\]</div>
+<p>✅ <strong>Model advantages:</strong></p>
+<ul>
+<li>Distribution control and token appreciation via burn mechanism;</li>
+<li>Rewards proportional to the platform's real activity;</li>
+<li>Long-term sustainability with incentive for constant platform use;</li>
+<li>Dynamic and automatic adjustment, without need for external interventions.</li>
+</ul>
+<p>Thus, undistributed tokens return to the remaining balance, directly impacting the calculation of subsequent months and preserving the ecosystem's economy.</p>
+<h4 id="important-note-on-rewards-distribution">Important Note on Rewards Distribution</h4>
+<p>Even after calculating the total rewards pool for the period, the amount actually distributed to users may be lower than the originally planned amount.</p>
+<p>This happens because the protocol distributes rewards only among participants who meet the minimum eligibility criteria, such as:</p>
+<ul>
+<li>proven real activity</li>
+<li>engagement metrics foreseen in the system</li>
+<li>absence of abusive behavior or manipulation</li>
+<li>compliance with the operational rules defined for the cycle</li>
+</ul>
+<p>If the number of eligible participants is low — whether due to lack of activity, low utilization or filtering for security/anti-abuse — the distribution is reduced proportionally.</p>
+<p>This dynamic preserves:</p>
+<ul>
+<li>the system's economic sustainability,</li>
+<li>the integrity of incentives,</li>
+<li>protection against unjustified dilution,</li>
+<li>the alignment between rewards and real contribution.</li>
+</ul>
+<p>In such situations, the entire undistributed balance is automatically returned to the protocol's total rewards pool, ensuring sustainability, predictability and continuity of the economic model over time.</p>
+<h3 id="6-conclusion">6. Conclusion</h3>
+<p>The rewards mechanism of the Hymple was designed to create a self-regulated and meritocratic ecosystem, in which:</p>
+<ul>
+<li>Traders and market makers are rewarded for real activity;</li>
+<li>The system values quality, frequency and loyalty;</li>
+<li>Distribution adapts to the health and volume of the exchange;</li>
+<li>There is prevention of concentration and long-term sustainability;</li>
+<li>The community participates in a continuous cycle of mutual growth and appreciation.</li>
+</ul>
+<p>Thus, the Rewards model of Hymple ensures balanced incentives, on-chain transparency and an efficient, fair and resilient.</p>
+<hr>
+<div class="nav-buttons">
+  <a href="../18 - tokenUtility/" class="nav-button nav-button-prev">
+    <span class="nav-label">PREVIOUS</span>
+    <span class="nav-title">Token Utility</span>
+  </a>
+  <a href="../20 - staking/" class="nav-button nav-button-next">
+    <span class="nav-label">NEXT</span>
+    <span class="nav-title">Staking</span>
+  </a>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 <a href="https://hymple.exchange" target="_blank" rel="noopener">Hymple Exchange</a> - All rights reserved
+
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://twitter.com/hymple" target="_blank" rel="noopener" title="Hymple on X" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M357.2 48h70.6L273.6 224.2 455 464H313L201.7 318.6 74.5 464H3.8l164.9-188.5L-5.2 48h145.6l100.5 132.9zm-24.8 373.8h39.1L119.1 88h-42z"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.path", "navigation.prune", "navigation.sections", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="../javascripts/sidebar-adjust.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
