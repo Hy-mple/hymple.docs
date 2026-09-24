@@ -44,13 +44,16 @@ This process eliminates the need for registration, password, or email.
 - Funds remain under the user's exclusive control: Hymple cannot withdraw them and can only settle trades signed by the user.
 - Withdrawals are available at any time — instantly through the Hymple interface (network fee only) or directly on-chain. See **Settlement & Withdrawals** for details.
 
+!!! warning "Important: withdrawing with open orders"
+    If you withdraw **directly on-chain** while you have open orders on the book, the release can take **up to 30 minutes** and a behavior-based Hymple fee applies. Withdrawing **through the Hymple interface** is instant and free of Hymple fees, even with open orders. Understand this difference before your first deposit — see [Settlement & Withdrawals](custody-withdrawals.md).
+
 **Initial Setup (Optional)**
 
 After authentication, the user can:
 
 - Set interface preferences (theme, layout, favorite pairs).
 - Adjust confirmation levels for sensitive orders.
-- Configure alerts, notifications, and risk limits.
+- Configure alerts, notifications, and risk limits *(planned)*.
 
 ### Order Execution: Simplified Experience
 
@@ -81,7 +84,7 @@ To keep the experience light and efficient:
 
 Hymple uses elements that encourage continued use, without intrusive mechanisms:
 
-- - Interface consistent with market standards.
+- Interface consistent with market standards.
 - Usage-based rewards system (staking, reduced fees, incentives in HYM).
 - Fast re-entry flow: wallet reconnection happens instantly.
 
@@ -91,7 +94,7 @@ The frontend is built with a focus on:
 
 - smooth behavior on slow connections,
 - compatibility with mobile devices and small screens,
-- support for multiple languages.
+- support for multiple languages *(planned)*.
 
 The entire interface follows UX best practices ensuring a consistent experience for all profiles.
 
