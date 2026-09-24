@@ -3,33 +3,35 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Hybrid by nature, simple by choice - Next-generation hybrid decentralized exchange">
+        <meta name="description" content="How funds are held in the settlement vault and how withdrawals work on Hymple's non-custodial exchange.">
       
       
       
-        <link rel="canonical" href="https://docs.hymple.com/">
+        <link rel="canonical" href="https://docs.hymple.com/custody-withdrawals/">
       
       
+        <link rel="prev" href="../architecture/">
       
-        <link rel="next" href="introduction/">
+      
+        <link rel="next" href="../observability-monitoring/">
       
       
         
       
       
-      <link rel="icon" href="assets/logo.png">
+      <link rel="icon" href="../assets/logo.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>Documentation | Hymple - HYMPLE</title>
+        <title>Settlement &amp; Withdrawals - HYMPLE</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -48,9 +50,9 @@
       
     
     
-      <link rel="stylesheet" href="stylesheets/styles.css">
+      <link rel="stylesheet" href="../stylesheets/styles.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -71,17 +73,17 @@
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="HYMPLE">
-<meta property="og:title" content="🏠 Home | HYMPLE">
-<meta property="og:description" content="Hybrid by nature, simple by choice - Next-generation hybrid decentralized exchange">
-<meta property="og:url" content="https://docs.hymple.com/">
+<meta property="og:title" content="🔐 Settlement &amp; Withdrawals | HYMPLE">
+<meta property="og:description" content="How funds are held in the settlement vault and how withdrawals work on Hymple's non-custodial exchange.">
+<meta property="og:url" content="https://docs.hymple.com/custody-withdrawals/">
 <meta property="og:image" content="https://docs.hymple.com/assets/logo.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="🏠 Home | HYMPLE">
-<meta name="twitter:description" content="Hybrid by nature, simple by choice - Next-generation hybrid decentralized exchange">
+<meta name="twitter:title" content="🔐 Settlement &amp; Withdrawals | HYMPLE">
+<meta name="twitter:description" content="How funds are held in the settlement vault and how withdrawals work on Hymple's non-custodial exchange.">
 <meta name="twitter:image" content="https://docs.hymple.com/assets/logo.png">
 
 
-  <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -110,7 +112,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#explore-the-documentation" class="md-skip">
+        <a href="#settlement-withdrawals" class="md-skip">
           Skip to content
         </a>
       
@@ -126,9 +128,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="HYMPLE" class="md-header__button md-logo" aria-label="HYMPLE" data-md-component="logo">
+    <a href=".." title="HYMPLE" class="md-header__button md-logo" aria-label="HYMPLE" data-md-component="logo">
       
-  <img src="assets/logo.png" alt="logo">
+  <img src="../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -145,7 +147,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Documentation | Hymple
+              Settlement &amp; Withdrawals
             
           </span>
         </div>
@@ -247,8 +249,6 @@
           
             
               
-                
-              
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -260,9 +260,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="HYMPLE" class="md-nav__button md-logo" aria-label="HYMPLE" data-md-component="logo">
+    <a href=".." title="HYMPLE" class="md-nav__button md-logo" aria-label="HYMPLE" data-md-component="logo">
       
-  <img src="assets/logo.png" alt="logo">
+  <img src="../assets/logo.png" alt="logo">
 
     </a>
     HYMPLE
@@ -274,35 +274,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    🏠 Home
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -318,35 +293,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#explore-the-documentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Explore the documentation
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -358,7 +304,7 @@
   
   
     <li class="md-nav__item">
-      <a href="introduction/" class="md-nav__link">
+      <a href="../introduction/" class="md-nav__link">
         
   
   
@@ -385,7 +331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="from-traditional-to-hybrid/" class="md-nav__link">
+      <a href="../from-traditional-to-hybrid/" class="md-nav__link">
         
   
   
@@ -412,7 +358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="global-exchange-landscape/" class="md-nav__link">
+      <a href="../global-exchange-landscape/" class="md-nav__link">
         
   
   
@@ -439,7 +385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="benefits/" class="md-nav__link">
+      <a href="../benefits/" class="md-nav__link">
         
   
   
@@ -466,7 +412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="architecture/" class="md-nav__link">
+      <a href="../architecture/" class="md-nav__link">
         
   
   
@@ -490,10 +436,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="custody-withdrawals/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🔐 Settlement &amp; Withdrawals
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -509,6 +482,103 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#1-the-settlement-vault" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The Settlement Vault
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-deposits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Deposits
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-withdrawals-via-the-hymple-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Withdrawals via the Hymple Interface
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-direct-on-chain-withdrawals-without-hymple" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Direct On-Chain Withdrawals (Without Hymple)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-why-the-delay-and-fee-exist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Why the Delay and Fee Exist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-anti-abuse-sanctions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Anti-Abuse Sanctions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -520,7 +590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="observability-monitoring/" class="md-nav__link">
+      <a href="../observability-monitoring/" class="md-nav__link">
         
   
   
@@ -547,7 +617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user-experience-onboarding/" class="md-nav__link">
+      <a href="../user-experience-onboarding/" class="md-nav__link">
         
   
   
@@ -574,7 +644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="security-architecture/" class="md-nav__link">
+      <a href="../security-architecture/" class="md-nav__link">
         
   
   
@@ -601,7 +671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="operational-resilience/" class="md-nav__link">
+      <a href="../operational-resilience/" class="md-nav__link">
         
   
   
@@ -628,7 +698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="anti-manipulation-protocols/" class="md-nav__link">
+      <a href="../anti-manipulation-protocols/" class="md-nav__link">
         
   
   
@@ -655,7 +725,7 @@
   
   
     <li class="md-nav__item">
-      <a href="dispute-resolution/" class="md-nav__link">
+      <a href="../dispute-resolution/" class="md-nav__link">
         
   
   
@@ -682,7 +752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="system-limitations/" class="md-nav__link">
+      <a href="../system-limitations/" class="md-nav__link">
         
   
   
@@ -709,7 +779,7 @@
   
   
     <li class="md-nav__item">
-      <a href="governance-framework/" class="md-nav__link">
+      <a href="../governance-framework/" class="md-nav__link">
         
   
   
@@ -736,7 +806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="audit-transparency/" class="md-nav__link">
+      <a href="../audit-transparency/" class="md-nav__link">
         
   
   
@@ -763,7 +833,7 @@
   
   
     <li class="md-nav__item">
-      <a href="risk-disclosure-threat-model/" class="md-nav__link">
+      <a href="../risk-disclosure-threat-model/" class="md-nav__link">
         
   
   
@@ -790,7 +860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tokenomics/" class="md-nav__link">
+      <a href="../tokenomics/" class="md-nav__link">
         
   
   
@@ -817,7 +887,7 @@
   
   
     <li class="md-nav__item">
-      <a href="token-utility/" class="md-nav__link">
+      <a href="../token-utility/" class="md-nav__link">
         
   
   
@@ -844,7 +914,7 @@
   
   
     <li class="md-nav__item">
-      <a href="rewards/" class="md-nav__link">
+      <a href="../rewards/" class="md-nav__link">
         
   
   
@@ -871,7 +941,7 @@
   
   
     <li class="md-nav__item">
-      <a href="staking/" class="md-nav__link">
+      <a href="../staking/" class="md-nav__link">
         
   
   
@@ -898,7 +968,7 @@
   
   
     <li class="md-nav__item">
-      <a href="fees/" class="md-nav__link">
+      <a href="../fees/" class="md-nav__link">
         
   
   
@@ -925,7 +995,7 @@
   
   
     <li class="md-nav__item">
-      <a href="burn-policy/" class="md-nav__link">
+      <a href="../burn-policy/" class="md-nav__link">
         
   
   
@@ -958,8 +1028,6 @@
               
                 
 
-  
-
 
 
   
@@ -969,63 +1037,121 @@
               <article class="md-content__inner md-typeset">
                 
                   
-  
 
 
 
-
-<div class="hymple-hero">
-  <div class="hymple-hero-badge">Whitepaper v1.1 · September 2026</div>
-  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="assets/logo.png" data-desc-position="bottom"><img src="assets/logo.png" alt="Hymple Logo" class="hymple-hero-logo"></a>
-  <h1 class="hymple-hero-title">Hybrid by nature.<br><span>Simple by choice.</span></h1>
-  <p class="hymple-hero-subtitle">
-    Hybrid Execution. On-Chain Transparency. User Sovereignty.
-  </p>
-  <div class="hymple-hero-actions">
-    <a href="./2 - introduction/" class="hymple-btn hymple-btn-primary">Read the Whitepaper →</a>
-    <a href="./6 - architecture/" class="hymple-btn hymple-btn-outline">Explore the Architecture</a>
-  </div>
+<h1 id="settlement-withdrawals">Settlement &amp; Withdrawals</h1>
+<blockquote>
+<p><em>How funds are held, settled, and withdrawn on Hymple</em></p>
+</blockquote>
+<p>Hymple's settlement model was designed around a single principle: <strong>the user always keeps control of their funds</strong>. This document describes exactly how that works in practice — how deposits are held, how trades are settled, and how withdrawals work in each available path.</p>
+<p>The diagram below summarizes the flow of funds — the platform coordinates settlement but never takes possession of user funds:</p>
+<pre class="mermaid"><code>flowchart LR
+    W[User Wallet] --&gt;|deposit on-chain| V[Settlement Vault]
+    V --&gt;|balance backs signed orders| M[Off-chain Matching Engine]
+    M --&gt;|settle trades signed by the user| V
+    V --&gt;|withdraw — only the depositing user| W</code></pre>
+<hr>
+<h3 id="1-the-settlement-vault">1. The Settlement Vault</h3>
+<p>To trade on Hymple, the user deposits funds into a <strong>smart contract</strong> — the Hymple settlement vault.</p>
+<p>The contract rules are simple and enforced on-chain:</p>
+<ul>
+<li><strong>Hymple cannot withdraw user funds.</strong> The contract has no administrative withdrawal function in favor of the platform.</li>
+<li><strong>Only the depositing user can withdraw</strong> their own balance.</li>
+<li><strong>Hymple can only settle trades</strong> — and exclusively trades that were <strong>signed by the user's wallet</strong>. The user's signature is the cryptographic proof that authorizes each settlement.</li>
+</ul>
+<p>This means the platform never takes possession of user funds. It operates as a settlement coordinator, not as a custodian.</p>
+<div class="admonition note">
+<p class="admonition-title">Administrative roles</p>
+<p>The vault's administrative roles (settle, pause, upgrade, fee parameters) will be documented here with their on-chain addresses and timelock periods before the TGE. An emergency pause, when present, does not create any withdrawal path for the operator.</p>
 </div>
-
-<h2 id="explore-the-documentation">Explore the documentation</h2>
-<div class="hymple-sections">
-  <a href="./2 - introduction/" class="hymple-section-card">
-    <span class="hymple-section-icon">📖</span>
-    <span class="hymple-section-title">Introduction</span>
-    <span class="hymple-section-desc">What Hymple is and why a hybrid exchange model.</span>
-  </a>
-  <a href="./6 - architecture/" class="hymple-section-card">
-    <span class="hymple-section-icon">🏗️</span>
-    <span class="hymple-section-title">Architecture</span>
-    <span class="hymple-section-desc">System design, components and execution flow.</span>
-  </a>
-  <a href="./9 - advancedSecurityArchitecture/" class="hymple-section-card">
-    <span class="hymple-section-icon">🔒</span>
-    <span class="hymple-section-title">Security</span>
-    <span class="hymple-section-desc">Advanced security architecture and threat model.</span>
-  </a>
-  <a href="./8 - userExperience&amp;OnboardingFlow/" class="hymple-section-card">
-    <span class="hymple-section-icon">👤</span>
-    <span class="hymple-section-title">User Experience</span>
-    <span class="hymple-section-desc">Onboarding flow and user journey design.</span>
-  </a>
-  <a href="./17 - tokenomics/" class="hymple-section-card">
-    <span class="hymple-section-icon">💰</span>
-    <span class="hymple-section-title">Tokenomics</span>
-    <span class="hymple-section-desc">Token model, utility, rewards and staking.</span>
-  </a>
-  <a href="./21 - fees/" class="hymple-section-card">
-    <span class="hymple-section-icon">💵</span>
-    <span class="hymple-section-title">Fees</span>
-    <span class="hymple-section-desc">Fee structure and burn policy.</span>
-  </a>
-</div>
-
+<h3 id="2-deposits">2. Deposits</h3>
+<p>Depositing is a standard on-chain transaction from the user's wallet to the settlement vault:</p>
+<ol>
+<li>The user connects their wallet and chooses the asset and amount.</li>
+<li>The wallet requests confirmation for the deposit transaction.</li>
+<li>Once confirmed on-chain, the balance becomes available for trading.</li>
+</ol>
+<p>Deposits only require the standard network fee. Hymple charges no deposit fee.</p>
+<h3 id="3-withdrawals-via-the-hymple-interface">3. Withdrawals via the Hymple Interface</h3>
+<p>Withdrawing through the Hymple interface is the recommended path:</p>
+<ul>
+<li><strong>Instant release</strong> of funds.</li>
+<li><strong>Only the standard network fee applies</strong> — Hymple charges no withdrawal fee.</li>
+<li><strong>No sanctions or delays</strong>, even if the user has open orders on the book.</li>
+</ul>
+<h3 id="4-direct-on-chain-withdrawals-without-hymple">4. Direct On-Chain Withdrawals (Without Hymple)</h3>
+<p>The user can also withdraw directly through the blockchain, interacting with the settlement vault without depending on the Hymple interface. This guarantees that access to funds never depends on the platform's availability.</p>
+<p>Two situations apply:</p>
+<p><strong>4.1 No open orders on the book</strong></p>
+<ul>
+<li>The withdrawal is released <strong>immediately</strong>.</li>
+<li>The user pays <strong>only the standard network fee</strong>.</li>
+</ul>
+<p><strong>4.2 Open orders on the book</strong></p>
+<ul>
+<li>The withdrawal can take <strong>up to 30 minutes</strong> to be released.</li>
+<li>In addition to the network fee, a <strong>Hymple fee</strong> applies, calculated based on the user's behavior history.</li>
+</ul>
+<h3 id="5-why-the-delay-and-fee-exist">5. Why the Delay and Fee Exist</h3>
+<p>Open orders on Hymple's book are commitments backed by the user's deposited balance. If a user could instantly withdraw on-chain while keeping orders open, those orders could be matched <strong>without funds available for settlement</strong> — harming counterparties and market integrity.</p>
+<p>The delay and the behavioral fee exist to discourage this abuse pattern. They are protective measures, not revenue mechanisms.</p>
+<h3 id="6-anti-abuse-sanctions">6. Anti-Abuse Sanctions</h3>
+<p>Users who repeatedly open orders and withdraw on-chain to avoid settlement may face progressive sanctions:</p>
+<ul>
+<li><strong>Withdrawal delay</strong> (up to 30 minutes) when open orders exist;</li>
+<li><strong>Higher withdrawal fees</strong>, scaled by behavior;</li>
+<li><strong>Reduction of account score</strong>, affecting rewards and privileges;</li>
+<li><strong>Interface restrictions</strong> (operator <abbr title="User Interface">UI</abbr>/<abbr title="Application Programming Interface">API</abbr>), in extreme and recurrent cases — the vault still honors withdrawals by the depositing address.</li>
+</ul>
+<p>Sanctions are applied automatically, based on objective behavioral criteria, and are documented in the Anti-Manipulation and Anti-Abuse Protocols.</p>
+<p><strong>Important:</strong> sanctions never result in permanent seizure of funds. The user's ability to withdraw is always preserved — delays and fees are temporary and conditional protections, not confiscation.</p>
+<h3 id="7-summary">7. Summary</h3>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Path</th>
+<th>Release</th>
+<th>Fees</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Deposit</td>
+<td>Wallet → settlement vault</td>
+<td>On-chain confirmation</td>
+<td>Network fee only</td>
+</tr>
+<tr>
+<td>Withdraw</td>
+<td>Hymple interface</td>
+<td>Instant</td>
+<td>Network fee only</td>
+</tr>
+<tr>
+<td>Withdraw</td>
+<td>Direct on-chain, no open orders</td>
+<td>Immediate</td>
+<td>Network fee only</td>
+</tr>
+<tr>
+<td>Withdraw</td>
+<td>Direct on-chain, with open orders</td>
+<td>Up to 30 minutes</td>
+<td>Network fee + behavioral Hymple fee</td>
+</tr>
+</tbody>
+</table>
+<hr>
 <div class="nav-buttons">
-  <div class="nav-button-placeholder"></div>
-  <a href="./2 - introduction/" class="nav-button nav-button-next">
+  <a href="../architecture/" class="nav-button nav-button-prev">
+    <span class="nav-label">PREVIOUS</span>
+    <span class="nav-title">Architecture</span>
+  </a>
+  <a href="../observability-monitoring/" class="nav-button nav-button-next">
     <span class="nav-label">NEXT</span>
-    <span class="nav-title">Introduction</span>
+    <span class="nav-title">Observability &amp; Monitoring</span>
   </a>
 </div>
 
@@ -1042,8 +1168,6 @@
 
   
 
-
-  
 
 
 
@@ -1107,14 +1231,14 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.path", "navigation.prune", "navigation.sections", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.path", "navigation.prune", "navigation.sections", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
       
-        <script src="javascripts/mathjax.js"></script>
+        <script src="../javascripts/mathjax.js"></script>
       
-        <script src="javascripts/sidebar-adjust.js"></script>
+        <script src="../javascripts/sidebar-adjust.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       

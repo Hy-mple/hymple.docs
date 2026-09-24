@@ -1,43 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://hy-mple.github.io/hymple.docs/</loc>
-         <lastmod>2026-01-03</lastmod>
+         <loc>https://docs.hymple.com/</loc>
+         <lastmod>2026-09-24</lastmod>
     </url>
     <url>
-         <loc>https://hy-mple.github.io/hymple.docs/10%20-%20operationalResilience%26IncidentResponse/</loc>
-         <lastmod>2026-01-03</lastmod>
+         <loc>https://docs.hymple.com/anti-manipulation-protocols/</loc>
+         <lastmod>2026-09-24</lastmod>
     </url>
     <url>
-         <loc>https://hy-mple.github.io/hymple.docs/2%20-%20introduction/</loc>
-         <lastmod>2026-01-03</lastmod>
+         <loc>https://docs.hymple.com/architecture/</loc>
+         <lastmod>2026-09-24</lastmod>
     </url>
     <url>
-         <loc>https://hy-mple.github.io/hymple.docs/3%20-%20from_traditional_to_hybrid/</loc>
-         <lastmod>2026-01-03</lastmod>
+         <loc>https://docs.hymple.com/audit-transparency/</loc>
+         <lastmod>2026-09-24</lastmod>
     </url>
     <url>
-         <loc>https://hy-mple.github.io/hymple.docs/4%20-%20globalExchangeLandscape/</loc>
-         <lastmod>2026-01-03</lastmod>
+         <loc>https://docs.hymple.com/benefits/</loc>
+         <lastmod>2026-09-24</lastmod>
     </url>
     <url>
-         <loc>https://hy-mple.github.io/hymple.docs/5%20-%20benefits/</loc>
-         <lastmod>2026-01-03</lastmod>
+         <loc>https://docs.hymple.com/burn-policy/</loc>
+         <lastmod>2026-09-24</lastmod>
     </url>
     <url>
-         <loc>https://hy-mple.github.io/hymple.docs/6%20-%20architecture/</loc>
-         <lastmod>2026-01-03</lastmod>
+         <loc>https://docs.hymple.com/custody-withdrawals/</loc>
+         <lastmod>2026-09-24</lastmod>
     </url>
     <url>
-         <loc>https://hy-mple.github.io/hymple.docs/7%20-%20observability%26MonitoringLayer/</loc>
-         <lastmod>2026-01-03</lastmod>
+         <loc>https://docs.hymple.com/dispute-resolution/</loc>
+         <lastmod>2026-09-24</lastmod>
     </url>
     <url>
-         <loc>https://hy-mple.github.io/hymple.docs/8%20-%20userExperience%26OnboardingFlow/</loc>
-         <lastmod>2026-01-03</lastmod>
+         <loc>https://docs.hymple.com/fees/</loc>
+         <lastmod>2026-09-24</lastmod>
     </url>
     <url>
-         <loc>https://hy-mple.github.io/hymple.docs/9%20-%20advancedSecurityArchitecture/</loc>
-         <lastmod>2026-01-03</lastmod>
+         <loc>https://docs.hymple.com/from-traditional-to-hybrid/</loc>
+         <lastmod>2026-09-24</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.hymple.com/global-exchange-landscape/</loc>
+         <lastmod>2026-09-24</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.hymple.com/governance-framework/</loc>
+         <lastmod>2026-09-24</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.hymple.com/introduction/</loc>
+         <lastmod>2026-09-24</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.hymple.com/observability-monitoring/</loc>
+         <lastmod>2026-09-24</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.hymple.com/operational-resilience/</loc>
+         <lastmod>2026-09-24</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.hymple.com/rewards/</loc>
+         <lastmod>2026-09-24</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.hymple.com/risk-disclosure-threat-model/</loc>
+         <lastmod>2026-09-24</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.hymple.com/security-architecture/</loc>
+         <lastmod>2026-09-24</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.hymple.com/staking/</loc>
+         <lastmod>2026-09-24</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.hymple.com/system-limitations/</loc>
+         <lastmod>2026-09-24</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.hymple.com/token-utility/</loc>
+         <lastmod>2026-09-24</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.hymple.com/tokenomics/</loc>
+         <lastmod>2026-09-24</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.hymple.com/user-experience-onboarding/</loc>
+         <lastmod>2026-09-24</lastmod>
     </url>
 </urlset>

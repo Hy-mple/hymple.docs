@@ -3,33 +3,35 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Hybrid by nature, simple by choice - Next-generation hybrid decentralized exchange">
+        <meta name="description" content="Risk disclosure and threat model for the Hymple exchange.">
       
       
       
-        <link rel="canonical" href="https://docs.hymple.com/">
+        <link rel="canonical" href="https://docs.hymple.com/risk-disclosure-threat-model/">
       
       
+        <link rel="prev" href="../audit-transparency/">
       
-        <link rel="next" href="introduction/">
+      
+        <link rel="next" href="../tokenomics/">
       
       
         
       
       
-      <link rel="icon" href="assets/logo.png">
+      <link rel="icon" href="../assets/logo.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>Documentation | Hymple - HYMPLE</title>
+        <title>Risk Disclosure &amp; Threat Model - HYMPLE</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -48,9 +50,9 @@
       
     
     
-      <link rel="stylesheet" href="stylesheets/styles.css">
+      <link rel="stylesheet" href="../stylesheets/styles.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -71,17 +73,17 @@
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="HYMPLE">
-<meta property="og:title" content="🏠 Home | HYMPLE">
-<meta property="og:description" content="Hybrid by nature, simple by choice - Next-generation hybrid decentralized exchange">
-<meta property="og:url" content="https://docs.hymple.com/">
+<meta property="og:title" content="🎯 Risk Disclosure &amp; Threat Model | HYMPLE">
+<meta property="og:description" content="Risk disclosure and threat model for the Hymple exchange.">
+<meta property="og:url" content="https://docs.hymple.com/risk-disclosure-threat-model/">
 <meta property="og:image" content="https://docs.hymple.com/assets/logo.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="🏠 Home | HYMPLE">
-<meta name="twitter:description" content="Hybrid by nature, simple by choice - Next-generation hybrid decentralized exchange">
+<meta name="twitter:title" content="🎯 Risk Disclosure &amp; Threat Model | HYMPLE">
+<meta name="twitter:description" content="Risk disclosure and threat model for the Hymple exchange.">
 <meta name="twitter:image" content="https://docs.hymple.com/assets/logo.png">
 
 
-  <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -110,7 +112,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#explore-the-documentation" class="md-skip">
+        <a href="#risk-disclosure-threat-model" class="md-skip">
           Skip to content
         </a>
       
@@ -126,9 +128,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="HYMPLE" class="md-header__button md-logo" aria-label="HYMPLE" data-md-component="logo">
+    <a href=".." title="HYMPLE" class="md-header__button md-logo" aria-label="HYMPLE" data-md-component="logo">
       
-  <img src="assets/logo.png" alt="logo">
+  <img src="../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -145,7 +147,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Documentation | Hymple
+              Risk Disclosure &amp; Threat Model
             
           </span>
         </div>
@@ -247,8 +249,6 @@
           
             
               
-                
-              
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -260,9 +260,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="HYMPLE" class="md-nav__button md-logo" aria-label="HYMPLE" data-md-component="logo">
+    <a href=".." title="HYMPLE" class="md-nav__button md-logo" aria-label="HYMPLE" data-md-component="logo">
       
-  <img src="assets/logo.png" alt="logo">
+  <img src="../assets/logo.png" alt="logo">
 
     </a>
     HYMPLE
@@ -274,35 +274,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    🏠 Home
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -318,35 +293,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#explore-the-documentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Explore the documentation
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -358,7 +304,7 @@
   
   
     <li class="md-nav__item">
-      <a href="introduction/" class="md-nav__link">
+      <a href="../introduction/" class="md-nav__link">
         
   
   
@@ -385,7 +331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="from-traditional-to-hybrid/" class="md-nav__link">
+      <a href="../from-traditional-to-hybrid/" class="md-nav__link">
         
   
   
@@ -412,7 +358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="global-exchange-landscape/" class="md-nav__link">
+      <a href="../global-exchange-landscape/" class="md-nav__link">
         
   
   
@@ -439,7 +385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="benefits/" class="md-nav__link">
+      <a href="../benefits/" class="md-nav__link">
         
   
   
@@ -466,7 +412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="architecture/" class="md-nav__link">
+      <a href="../architecture/" class="md-nav__link">
         
   
   
@@ -493,7 +439,7 @@
   
   
     <li class="md-nav__item">
-      <a href="custody-withdrawals/" class="md-nav__link">
+      <a href="../custody-withdrawals/" class="md-nav__link">
         
   
   
@@ -520,7 +466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="observability-monitoring/" class="md-nav__link">
+      <a href="../observability-monitoring/" class="md-nav__link">
         
   
   
@@ -547,7 +493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user-experience-onboarding/" class="md-nav__link">
+      <a href="../user-experience-onboarding/" class="md-nav__link">
         
   
   
@@ -574,7 +520,7 @@
   
   
     <li class="md-nav__item">
-      <a href="security-architecture/" class="md-nav__link">
+      <a href="../security-architecture/" class="md-nav__link">
         
   
   
@@ -601,7 +547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="operational-resilience/" class="md-nav__link">
+      <a href="../operational-resilience/" class="md-nav__link">
         
   
   
@@ -628,7 +574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="anti-manipulation-protocols/" class="md-nav__link">
+      <a href="../anti-manipulation-protocols/" class="md-nav__link">
         
   
   
@@ -655,7 +601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="dispute-resolution/" class="md-nav__link">
+      <a href="../dispute-resolution/" class="md-nav__link">
         
   
   
@@ -682,7 +628,7 @@
   
   
     <li class="md-nav__item">
-      <a href="system-limitations/" class="md-nav__link">
+      <a href="../system-limitations/" class="md-nav__link">
         
   
   
@@ -709,7 +655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="governance-framework/" class="md-nav__link">
+      <a href="../governance-framework/" class="md-nav__link">
         
   
   
@@ -736,7 +682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="audit-transparency/" class="md-nav__link">
+      <a href="../audit-transparency/" class="md-nav__link">
         
   
   
@@ -760,10 +706,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="risk-disclosure-threat-model/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🎯 Risk Disclosure &amp; Threat Model
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -779,6 +752,114 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#1-market-risks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Market Risks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-blockchain-on-chain-layer-risks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Blockchain &amp; On-chain Layer Risks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-technological-operational-risks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Technological &amp; Operational Risks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-user-security-risks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. User Security Risks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-external-integration-risks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. External Integration Risks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-regulatory-risks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Regulatory Risks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-threat-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Threat Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-statement-of-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Statement of Limitations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -790,7 +871,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tokenomics/" class="md-nav__link">
+      <a href="../tokenomics/" class="md-nav__link">
         
   
   
@@ -817,7 +898,7 @@
   
   
     <li class="md-nav__item">
-      <a href="token-utility/" class="md-nav__link">
+      <a href="../token-utility/" class="md-nav__link">
         
   
   
@@ -844,7 +925,7 @@
   
   
     <li class="md-nav__item">
-      <a href="rewards/" class="md-nav__link">
+      <a href="../rewards/" class="md-nav__link">
         
   
   
@@ -871,7 +952,7 @@
   
   
     <li class="md-nav__item">
-      <a href="staking/" class="md-nav__link">
+      <a href="../staking/" class="md-nav__link">
         
   
   
@@ -898,7 +979,7 @@
   
   
     <li class="md-nav__item">
-      <a href="fees/" class="md-nav__link">
+      <a href="../fees/" class="md-nav__link">
         
   
   
@@ -925,7 +1006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="burn-policy/" class="md-nav__link">
+      <a href="../burn-policy/" class="md-nav__link">
         
   
   
@@ -958,8 +1039,6 @@
               
                 
 
-  
-
 
 
   
@@ -969,63 +1048,121 @@
               <article class="md-content__inner md-typeset">
                 
                   
-  
 
 
 
-
-<div class="hymple-hero">
-  <div class="hymple-hero-badge">Whitepaper v1.1 · September 2026</div>
-  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="assets/logo.png" data-desc-position="bottom"><img src="assets/logo.png" alt="Hymple Logo" class="hymple-hero-logo"></a>
-  <h1 class="hymple-hero-title">Hybrid by nature.<br><span>Simple by choice.</span></h1>
-  <p class="hymple-hero-subtitle">
-    Hybrid Execution. On-Chain Transparency. User Sovereignty.
-  </p>
-  <div class="hymple-hero-actions">
-    <a href="./2 - introduction/" class="hymple-btn hymple-btn-primary">Read the Whitepaper →</a>
-    <a href="./6 - architecture/" class="hymple-btn hymple-btn-outline">Explore the Architecture</a>
-  </div>
-</div>
-
-<h2 id="explore-the-documentation">Explore the documentation</h2>
-<div class="hymple-sections">
-  <a href="./2 - introduction/" class="hymple-section-card">
-    <span class="hymple-section-icon">📖</span>
-    <span class="hymple-section-title">Introduction</span>
-    <span class="hymple-section-desc">What Hymple is and why a hybrid exchange model.</span>
-  </a>
-  <a href="./6 - architecture/" class="hymple-section-card">
-    <span class="hymple-section-icon">🏗️</span>
-    <span class="hymple-section-title">Architecture</span>
-    <span class="hymple-section-desc">System design, components and execution flow.</span>
-  </a>
-  <a href="./9 - advancedSecurityArchitecture/" class="hymple-section-card">
-    <span class="hymple-section-icon">🔒</span>
-    <span class="hymple-section-title">Security</span>
-    <span class="hymple-section-desc">Advanced security architecture and threat model.</span>
-  </a>
-  <a href="./8 - userExperience&amp;OnboardingFlow/" class="hymple-section-card">
-    <span class="hymple-section-icon">👤</span>
-    <span class="hymple-section-title">User Experience</span>
-    <span class="hymple-section-desc">Onboarding flow and user journey design.</span>
-  </a>
-  <a href="./17 - tokenomics/" class="hymple-section-card">
-    <span class="hymple-section-icon">💰</span>
-    <span class="hymple-section-title">Tokenomics</span>
-    <span class="hymple-section-desc">Token model, utility, rewards and staking.</span>
-  </a>
-  <a href="./21 - fees/" class="hymple-section-card">
-    <span class="hymple-section-icon">💵</span>
-    <span class="hymple-section-title">Fees</span>
-    <span class="hymple-section-desc">Fee structure and burn policy.</span>
-  </a>
-</div>
-
+<h1 id="risk-disclosure-threat-model">Risk Disclosure &amp; Threat Model</h1>
+<blockquote>
+<p><em>Transparency about risks and operational assumptions of the Hymple ecosystem</em></p>
+</blockquote>
+<p>The operation of a non-custodial hybrid exchange involves technological, economic, and regulatory factors that can impact performance, user experience, and security.</p>
+<p>This section presents the main identified risks and the threat model considered in the development of Hymple, reinforcing the project's commitment to transparency and responsibility.</p>
+<h3 id="1-market-risks">1. Market Risks</h3>
+<p>Although the protocol offers fast execution, there is no guarantee of financial results or price stability.</p>
+<ul>
+<li>Extreme volatility can cause slippage.</li>
+<li>Insufficient liquidity in external markets can affect prices and execution.</li>
+<li>Macroeconomic events can reduce demand or operational capacity.</li>
+</ul>
+<p>Hymple does not intervene in prices, markets, or investment decisions.</p>
+<h3 id="2-blockchain-on-chain-layer-risks">2. Blockchain &amp; On-chain Layer Risks</h3>
+<p>Hymple depends on public blockchain networks to record transactions and verify signatures.</p>
+<p>Possible risks include:</p>
+<ul>
+<li>Network congestion, increasing fees and confirmation time.</li>
+<li>Failures or instability of the chain used.</li>
+<li>Network attacks (51%, reorganizations, outages).</li>
+<li>Errors in smart contracts or external integrations.</li>
+</ul>
+<p>Although contracts are audited, no on-chain system is risk-free.</p>
+<h3 id="3-technological-operational-risks">3. Technological &amp; Operational Risks</h3>
+<p>The operation of Hymple's core depends on off-chain infrastructure — including APIs, matching engine, and validation services.</p>
+<p>Potential risks:</p>
+<ul>
+<li>temporary unavailability of infrastructure,</li>
+<li>DDoS attacks,</li>
+<li>global connectivity issues,</li>
+<li>internal software failures,</li>
+<li>disruptions caused by external providers.</li>
+</ul>
+<p>The architecture includes redundancy and mitigation, but downtime cannot be completely eliminated.</p>
+<h3 id="4-user-security-risks">4. User Security Risks</h3>
+<p>Being non-custodial, the user retains full control over their assets — which brings benefits and responsibilities.</p>
+<p>Main risks:</p>
+<ul>
+<li>loss of private key or seed phrase,</li>
+<li>use of infected devices,</li>
+<li>phishing, malicious links and fake websites,</li>
+<li>excessive permissions granted to third-party smart contracts,</li>
+<li>scams and unsafe interactions in the <abbr title="Web 3.0 - Decentralized Web">Web3</abbr> ecosystem.</li>
+</ul>
+<p>Hymple cannot recover keys, funds, or incorrectly granted authorizations.</p>
+<p>Additional risks related to the custody model:</p>
+<ul>
+<li><strong>Smart contract risk:</strong> funds deposited for trading are held in the Hymple settlement vault; although designed so that only the user can withdraw, undiscovered vulnerabilities in smart contracts are an inherent risk of on-chain systems.</li>
+<li><strong>Withdrawal rules:</strong> direct on-chain withdrawals made while open orders exist on the book are subject to a release delay (up to 30 minutes) and a behavior-based fee, as an anti-abuse measure. Users should understand these rules before choosing the direct on-chain path. See <strong>Settlement &amp; Withdrawals</strong>.</li>
+<li><strong>Behavioral sanctions:</strong> repeated abuse of the settlement model can lead to score reduction and, in extreme cases, interface restrictions by the operator — the vault still honors withdrawals by the depositing address.</li>
+</ul>
+<h3 id="5-external-integration-risks">5. External Integration Risks</h3>
+<p>Hymple may connect to:</p>
+<ul>
+<li>price providers,</li>
+<li>blockchain networks,</li>
+<li>external wallets,</li>
+<li>analytics tools,</li>
+<li>aggregators or oracles.</li>
+</ul>
+<p>Each integration adds dependencies and possible points of failure.</p>
+<p>The system performs validations and monitoring, but does not control third-party operations.</p>
+<h3 id="6-regulatory-risks">6. Regulatory Risks</h3>
+<p>The global regulatory environment for digital assets is dynamic and varies between jurisdictions.</p>
+<p>Possible risks include:</p>
+<ul>
+<li>sudden changes in legislation,</li>
+<li>rules for hybrid and non-custodial exchanges,</li>
+<li>compliance requirements in specific markets,</li>
+<li>restrictions imposed on certain regions.</li>
+</ul>
+<p>Hymple will adjust its legal framework as necessary, but external changes can impact the service.</p>
+<h3 id="7-threat-model">7. Threat Model</h3>
+<p>Hymple considers and mitigates the following vectors:</p>
+<h4 id="active-threats">Active threats</h4>
+<ul>
+<li>DDoS attacks on public endpoints.</li>
+<li>Attempts at manipulation via high-frequency bots.</li>
+<li>Replay attacks on signatures and messages.</li>
+<li>Exploitation of smart contracts.</li>
+<li>Malicious injections in APIs or payloads.</li>
+</ul>
+<h4 id="passive-threats">Passive threats</h4>
+<ul>
+<li>Collection of external traffic metadata.</li>
+<li>Monitoring of usage patterns.</li>
+<li>Risks arising from public indexers.</li>
+</ul>
+<h4 id="internal-threats">Internal threats</h4>
+<ul>
+<li>Operational errors, update or deployment failures.</li>
+<li>Unauthorized administrative access (mitigated by segregation and logs).</li>
+<li>Incorrect infrastructure configurations.</li>
+</ul>
+<h3 id="8-statement-of-limitations">8. Statement of Limitations</h3>
+<p>Even with best practices, audits and controls:</p>
+<ul>
+<li>there is no guarantee of absolute security,</li>
+<li>no system is 100% free of flaws,</li>
+<li>residual risks exist in any <abbr title="Web 3.0 - Decentralized Web">Web3</abbr> environment.</li>
+</ul>
+<p>Hymple adopts robust prevention measures, but users must understand and accept the risks inherent in using decentralized technologies.</p>
+<hr>
 <div class="nav-buttons">
-  <div class="nav-button-placeholder"></div>
-  <a href="./2 - introduction/" class="nav-button nav-button-next">
+  <a href="../audit-transparency/" class="nav-button nav-button-prev">
+    <span class="nav-label">PREVIOUS</span>
+    <span class="nav-title">Audit &amp; Transparency Model</span>
+  </a>
+  <a href="../tokenomics/" class="nav-button nav-button-next">
     <span class="nav-label">NEXT</span>
-    <span class="nav-title">Introduction</span>
+    <span class="nav-title">Tokenomics</span>
   </a>
 </div>
 
@@ -1042,8 +1179,6 @@
 
   
 
-
-  
 
 
 
@@ -1107,14 +1242,14 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.path", "navigation.prune", "navigation.sections", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.path", "navigation.prune", "navigation.sections", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
       
-        <script src="javascripts/mathjax.js"></script>
+        <script src="../javascripts/mathjax.js"></script>
       
-        <script src="javascripts/sidebar-adjust.js"></script>
+        <script src="../javascripts/sidebar-adjust.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       

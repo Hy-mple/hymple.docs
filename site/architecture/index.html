@@ -3,33 +3,35 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Hybrid by nature, simple by choice - Next-generation hybrid decentralized exchange">
+        <meta name="description" content="Hymple's technical architecture — off-chain execution, on-chain settlement, and the layers in between.">
       
       
       
-        <link rel="canonical" href="https://docs.hymple.com/">
+        <link rel="canonical" href="https://docs.hymple.com/architecture/">
       
       
+        <link rel="prev" href="../benefits/">
       
-        <link rel="next" href="introduction/">
+      
+        <link rel="next" href="../custody-withdrawals/">
       
       
         
       
       
-      <link rel="icon" href="assets/logo.png">
+      <link rel="icon" href="../assets/logo.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>Documentation | Hymple - HYMPLE</title>
+        <title>Architecture - HYMPLE</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -48,9 +50,9 @@
       
     
     
-      <link rel="stylesheet" href="stylesheets/styles.css">
+      <link rel="stylesheet" href="../stylesheets/styles.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -71,17 +73,17 @@
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="HYMPLE">
-<meta property="og:title" content="🏠 Home | HYMPLE">
-<meta property="og:description" content="Hybrid by nature, simple by choice - Next-generation hybrid decentralized exchange">
-<meta property="og:url" content="https://docs.hymple.com/">
+<meta property="og:title" content="🏗️ Architecture | HYMPLE">
+<meta property="og:description" content="Hymple's technical architecture — off-chain execution, on-chain settlement, and the layers in between.">
+<meta property="og:url" content="https://docs.hymple.com/architecture/">
 <meta property="og:image" content="https://docs.hymple.com/assets/logo.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="🏠 Home | HYMPLE">
-<meta name="twitter:description" content="Hybrid by nature, simple by choice - Next-generation hybrid decentralized exchange">
+<meta name="twitter:title" content="🏗️ Architecture | HYMPLE">
+<meta name="twitter:description" content="Hymple's technical architecture — off-chain execution, on-chain settlement, and the layers in between.">
 <meta name="twitter:image" content="https://docs.hymple.com/assets/logo.png">
 
 
-  <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -110,7 +112,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#explore-the-documentation" class="md-skip">
+        <a href="#architecture" class="md-skip">
           Skip to content
         </a>
       
@@ -126,9 +128,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="HYMPLE" class="md-header__button md-logo" aria-label="HYMPLE" data-md-component="logo">
+    <a href=".." title="HYMPLE" class="md-header__button md-logo" aria-label="HYMPLE" data-md-component="logo">
       
-  <img src="assets/logo.png" alt="logo">
+  <img src="../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -145,7 +147,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Documentation | Hymple
+              Architecture
             
           </span>
         </div>
@@ -247,8 +249,6 @@
           
             
               
-                
-              
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -260,9 +260,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="HYMPLE" class="md-nav__button md-logo" aria-label="HYMPLE" data-md-component="logo">
+    <a href=".." title="HYMPLE" class="md-nav__button md-logo" aria-label="HYMPLE" data-md-component="logo">
       
-  <img src="assets/logo.png" alt="logo">
+  <img src="../assets/logo.png" alt="logo">
 
     </a>
     HYMPLE
@@ -274,35 +274,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    🏠 Home
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -318,35 +293,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#explore-the-documentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Explore the documentation
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -358,7 +304,7 @@
   
   
     <li class="md-nav__item">
-      <a href="introduction/" class="md-nav__link">
+      <a href="../introduction/" class="md-nav__link">
         
   
   
@@ -385,7 +331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="from-traditional-to-hybrid/" class="md-nav__link">
+      <a href="../from-traditional-to-hybrid/" class="md-nav__link">
         
   
   
@@ -412,7 +358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="global-exchange-landscape/" class="md-nav__link">
+      <a href="../global-exchange-landscape/" class="md-nav__link">
         
   
   
@@ -439,7 +385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="benefits/" class="md-nav__link">
+      <a href="../benefits/" class="md-nav__link">
         
   
   
@@ -463,10 +409,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="architecture/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏗️ Architecture
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -482,6 +455,114 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#interface-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💻 Interface Layer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execution-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙ Execution Layer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#settlement-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 Settlement Layer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-protocol-and-infrastructure-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧩 Core Protocol and Infrastructure Layer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-and-privacy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔐 Security and Privacy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scalability-and-resilience" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚡Scalability and Resilience
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interoperability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 Interoperability
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hymples-multichain-deploy-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📘 Hymple's Multichain Deploy Strategy
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -493,7 +574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="custody-withdrawals/" class="md-nav__link">
+      <a href="../custody-withdrawals/" class="md-nav__link">
         
   
   
@@ -520,7 +601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="observability-monitoring/" class="md-nav__link">
+      <a href="../observability-monitoring/" class="md-nav__link">
         
   
   
@@ -547,7 +628,7 @@
   
   
     <li class="md-nav__item">
-      <a href="user-experience-onboarding/" class="md-nav__link">
+      <a href="../user-experience-onboarding/" class="md-nav__link">
         
   
   
@@ -574,7 +655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="security-architecture/" class="md-nav__link">
+      <a href="../security-architecture/" class="md-nav__link">
         
   
   
@@ -601,7 +682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="operational-resilience/" class="md-nav__link">
+      <a href="../operational-resilience/" class="md-nav__link">
         
   
   
@@ -628,7 +709,7 @@
   
   
     <li class="md-nav__item">
-      <a href="anti-manipulation-protocols/" class="md-nav__link">
+      <a href="../anti-manipulation-protocols/" class="md-nav__link">
         
   
   
@@ -655,7 +736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="dispute-resolution/" class="md-nav__link">
+      <a href="../dispute-resolution/" class="md-nav__link">
         
   
   
@@ -682,7 +763,7 @@
   
   
     <li class="md-nav__item">
-      <a href="system-limitations/" class="md-nav__link">
+      <a href="../system-limitations/" class="md-nav__link">
         
   
   
@@ -709,7 +790,7 @@
   
   
     <li class="md-nav__item">
-      <a href="governance-framework/" class="md-nav__link">
+      <a href="../governance-framework/" class="md-nav__link">
         
   
   
@@ -736,7 +817,7 @@
   
   
     <li class="md-nav__item">
-      <a href="audit-transparency/" class="md-nav__link">
+      <a href="../audit-transparency/" class="md-nav__link">
         
   
   
@@ -763,7 +844,7 @@
   
   
     <li class="md-nav__item">
-      <a href="risk-disclosure-threat-model/" class="md-nav__link">
+      <a href="../risk-disclosure-threat-model/" class="md-nav__link">
         
   
   
@@ -790,7 +871,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tokenomics/" class="md-nav__link">
+      <a href="../tokenomics/" class="md-nav__link">
         
   
   
@@ -817,7 +898,7 @@
   
   
     <li class="md-nav__item">
-      <a href="token-utility/" class="md-nav__link">
+      <a href="../token-utility/" class="md-nav__link">
         
   
   
@@ -844,7 +925,7 @@
   
   
     <li class="md-nav__item">
-      <a href="rewards/" class="md-nav__link">
+      <a href="../rewards/" class="md-nav__link">
         
   
   
@@ -871,7 +952,7 @@
   
   
     <li class="md-nav__item">
-      <a href="staking/" class="md-nav__link">
+      <a href="../staking/" class="md-nav__link">
         
   
   
@@ -898,7 +979,7 @@
   
   
     <li class="md-nav__item">
-      <a href="fees/" class="md-nav__link">
+      <a href="../fees/" class="md-nav__link">
         
   
   
@@ -925,7 +1006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="burn-policy/" class="md-nav__link">
+      <a href="../burn-policy/" class="md-nav__link">
         
   
   
@@ -958,8 +1039,6 @@
               
                 
 
-  
-
 
 
   
@@ -969,63 +1048,218 @@
               <article class="md-content__inner md-typeset">
                 
                   
-  
 
 
 
-
-<div class="hymple-hero">
-  <div class="hymple-hero-badge">Whitepaper v1.1 · September 2026</div>
-  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="assets/logo.png" data-desc-position="bottom"><img src="assets/logo.png" alt="Hymple Logo" class="hymple-hero-logo"></a>
-  <h1 class="hymple-hero-title">Hybrid by nature.<br><span>Simple by choice.</span></h1>
-  <p class="hymple-hero-subtitle">
-    Hybrid Execution. On-Chain Transparency. User Sovereignty.
-  </p>
-  <div class="hymple-hero-actions">
-    <a href="./2 - introduction/" class="hymple-btn hymple-btn-primary">Read the Whitepaper →</a>
-    <a href="./6 - architecture/" class="hymple-btn hymple-btn-outline">Explore the Architecture</a>
-  </div>
-</div>
-
-<h2 id="explore-the-documentation">Explore the documentation</h2>
-<div class="hymple-sections">
-  <a href="./2 - introduction/" class="hymple-section-card">
-    <span class="hymple-section-icon">📖</span>
-    <span class="hymple-section-title">Introduction</span>
-    <span class="hymple-section-desc">What Hymple is and why a hybrid exchange model.</span>
-  </a>
-  <a href="./6 - architecture/" class="hymple-section-card">
-    <span class="hymple-section-icon">🏗️</span>
-    <span class="hymple-section-title">Architecture</span>
-    <span class="hymple-section-desc">System design, components and execution flow.</span>
-  </a>
-  <a href="./9 - advancedSecurityArchitecture/" class="hymple-section-card">
-    <span class="hymple-section-icon">🔒</span>
-    <span class="hymple-section-title">Security</span>
-    <span class="hymple-section-desc">Advanced security architecture and threat model.</span>
-  </a>
-  <a href="./8 - userExperience&amp;OnboardingFlow/" class="hymple-section-card">
-    <span class="hymple-section-icon">👤</span>
-    <span class="hymple-section-title">User Experience</span>
-    <span class="hymple-section-desc">Onboarding flow and user journey design.</span>
-  </a>
-  <a href="./17 - tokenomics/" class="hymple-section-card">
-    <span class="hymple-section-icon">💰</span>
-    <span class="hymple-section-title">Tokenomics</span>
-    <span class="hymple-section-desc">Token model, utility, rewards and staking.</span>
-  </a>
-  <a href="./21 - fees/" class="hymple-section-card">
-    <span class="hymple-section-icon">💵</span>
-    <span class="hymple-section-title">Fees</span>
-    <span class="hymple-section-desc">Fee structure and burn policy.</span>
-  </a>
-</div>
-
+<h1 id="architecture">Architecture</h1>
+<blockquote>
+<p><em>The technical framework that combines centralized performance and decentralized settlement.</em></p>
+</blockquote>
+<p>Hymple's architecture delivers low latency, auditability and user sovereignty by combining off-chain execution with on-chain settlement.</p>
+<p>The diagram below summarizes the end-to-end lifecycle of an order — from the user's wallet to on-chain settlement:</p>
+<pre class="mermaid"><code>flowchart LR
+    U[User Wallet] --&gt;|signs order| FE[Interface Layer]
+    FE --&gt;|order via WS/REST| EX[Execution Layer]
+    EX --&gt;|match off-chain| OB[Order Book]
+    OB --&gt;|matched trade| ST[Settlement Layer]
+    ST --&gt;|settle on-chain| SC[Smart Contract]
+    SC --&gt;|funds remain withdrawable only by user| U</code></pre>
+<h3 id="interface-layer">💻 Interface Layer</h3>
+<p>Responsible for the user experience, it was designed with a focus on simplicity, performance and interoperability with the <abbr title="Web 3.0 - Decentralized Web">Web3</abbr> ecosystem.</p>
+<p><strong>Technologies</strong></p>
+<ul>
+<li>React (Next.js) + TypeScript</li>
+<li>Bootstrap CSS + dark mode</li>
+<li>WebSockets for instant updates</li>
+<li>SSR and pre-rendering for maximum performance</li>
+<li>Initial integration via WalletConnect v2</li>
+</ul>
+<p><strong>Mobile Roadmap</strong></p>
+<p>Development of a native app for iOS and Android, offering full access to the Hymple ecosystem and optimized connectivity with mobile wallets.</p>
+<p><strong>Wallet Support Strategy</strong></p>
+<p>Hymple adopts WalletConnect v2 as the main integration layer, ensuring immediate compatibility with hundreds of non-custodial wallets. This allows users to connect their wallets securely, quickly and in a standardized way.</p>
+<p>Wallets supported via WC2 (among others):</p>
+<ul>
+<li>MetaMask (mobile via WalletConnect)</li>
+<li>Trust Wallet</li>
+<li>Coinbase Wallet</li>
+<li>OKX Wallet</li>
+<li>Rabby</li>
+<li>Rainbow</li>
+<li>Ledger Live (via WalletConnect)</li>
+<li>SafePal</li>
+<li>
+<p>1inch Wallet
+<strong>Beginner Mode</strong></p>
+</li>
+<li>
+<p>Simplified layout</p>
+</li>
+<li>Quick orders (limit and market)</li>
+<li>Visual portfolio</li>
+<li>Integrated educational guides</li>
+<li>Security confirmations</li>
+</ul>
+<p><strong>Advanced Mode</strong></p>
+<ul>
+<li>Real-time order book</li>
+<li>Market depth</li>
+<li>Charting tools</li>
+<li>Orders: limit and market</li>
+<li>(Support for stop and OCO will be implemented in upcoming releases as part of the advanced orders module.)</li>
+<li>Low-latency execution</li>
+</ul>
+<p>The interface connects to the Execution Layer via WebSocket and REST, ensuring fast, stable and optimized communication for high demand.</p>
+<h3 id="execution-layer">⚙ Execution Layer</h3>
+<p>Operational core responsible for order processing.</p>
+<p><strong>Technologies</strong></p>
+<ul>
+<li>C#</li>
+<li>Cache (in-memory)</li>
+<li>NATS</li>
+<li>Proprietary optimized engine</li>
+<li>Support for complex orders</li>
+<li>WebSockets for real-time</li>
+</ul>
+<h3 id="settlement-layer">🔗 Settlement Layer</h3>
+<p>Ensures secure and transparent on-chain settlement.</p>
+<p><strong>Technologies</strong></p>
+<ul>
+<li>Contracts in Solidity</li>
+<li>Multi-chain (<abbr title="Ethereum Virtual Machine">EVM</abbr>)</li>
+<li>Hardhat / Foundry</li>
+<li>Recurring audits</li>
+<li>Anti front-running mechanisms</li>
+<li>Support for ERC-20 / ERC-721</li>
+</ul>
+<p><strong>Optimization</strong></p>
+<p>Batch settlement → reduces gas, avoids partial liquidations and increases efficiency.</p>
+<h3 id="core-protocol-and-infrastructure-layer">🧩 Core Protocol and Infrastructure Layer</h3>
+<p>Supports the interoperability and resilience of the ecosystem.</p>
+<p><strong>Technologies</strong></p>
+<ul>
+<li>Kubernetes + Docker</li>
+<li>Georedundant load balancing</li>
+<li>gRPC, REST and GraphQL APIs</li>
+<li>On-chain indexers</li>
+</ul>
+<h3 id="security-and-privacy">🔐 Security and Privacy</h3>
+<ul>
+<li>Non-custodial</li>
+<li>No <abbr title="Know Your Customer">KYC</abbr></li>
+<li>Constant audits</li>
+<li>Anti-fraud and anti front-running mechanisms</li>
+<li>Rate limiting + firewalls</li>
+</ul>
+<h3 id="scalability-and-resilience">⚡Scalability and Resilience</h3>
+<ul>
+<li>Distributed microservices</li>
+<li>Horizontal scalability</li>
+<li>Dedicated channels for HFT and institutional volumes</li>
+</ul>
+<h3 id="interoperability">🔄 Interoperability</h3>
+<ul>
+<li>Multi-chain <abbr title="Ethereum Virtual Machine">EVM</abbr></li>
+<li>Expansion to non-<abbr title="Ethereum Virtual Machine">EVM</abbr> ecosystems planned in later phases, according to ecosystem maturity and market demand.</li>
+<li><abbr title="Application Programming Interface">API</abbr> and <abbr title="Software Development Kit">SDK</abbr> for partners</li>
+<li>Modular architecture for continuous updates</li>
+</ul>
+<h3 id="hymples-multichain-deploy-strategy">📘 Hymple's Multichain Deploy Strategy</h3>
+<p><em>(BSC as a starting point, L2 as strategic expansion)</em></p>
+<p>Hymple adopts a pragmatic, growth-oriented multichain deployment strategy, balancing user adoption, operational efficiency and technological evolution. This approach was designed to minimize friction in the initial launch while positioning the ecosystem for sustainable expansion within the Ethereum universe.</p>
+<p><strong>Initial Phase — Deploy on BNB Smart Chain (BSC)</strong></p>
+<p>The first phase of the Hymple ecosystem will be launched on the BNB Smart Chain, chosen for strategic factors:</p>
+<p><strong>Motivations</strong></p>
+<ul>
+<li>Extremely simple onboarding: a large portion of global market users already use BSC natively.</li>
+<li>Low operational cost: significantly cheaper gas and deployment fees, ideal for validation, iteration and growth phases.</li>
+<li>Access to a large retail market: BSC has one of the largest active communities of users and developers.</li>
+<li>Accelerated launch: allows releasing the token, staking and initial liquidity quickly, without unnecessary technical complexity.</li>
+<li>
+<p>Easy integration with popular wallets: Trust Wallet and MetaMask already work natively.
+<strong>Objectives of the Initial Phase</strong></p>
+</li>
+<li>
+<p>Establish a solid user base.</p>
+</li>
+<li>Validate tokenomics, the <abbr title="Decentralized Exchange">DEX</abbr>/Hybrid Engine flow and the settlement engine's performance.</li>
+<li>Reduce experimentation and adjustment costs.</li>
+</ul>
+<p>BSC serves as an runway ideal to get the project off the ground quickly, reducing technical and financial risks.</p>
+<p><strong>Phase 2 — Expansion to Ethereum Network L2s</strong></p>
+<p>After validating the model and consolidating initial adoption, the ecosystem will evolve to a multichain architecture, incorporating native support for the main Layer 2 (L2) solutions in the market, including:</p>
+<ul>
+<li>Base</li>
+<li>Arbitrum</li>
+<li>Optimism</li>
+</ul>
+<p><strong>Benefits of Expanding to L2</strong></p>
+<ul>
+<li>Stronger institutional reputation, attracting advanced traders, market makers and strategic partners.</li>
+<li>Safer and standardized settlement, leveraging the Ethereum-rollups ecosystem.</li>
+<li>Much lower costs and better performance than traditional L1s (Ethereum), ideal for on-chain settlement of a hybrid exchange.</li>
+<li>Greater global reach, connecting the token and users to the entire modern <abbr title="Ethereum Virtual Machine">EVM</abbr> ecosystem.</li>
+</ul>
+<p><strong>Objectives of Phase 2</strong></p>
+<ul>
+<li>Introduce an institutional version of Hymple.</li>
+<li>Implement optimized settlement routes on L2.</li>
+<li>Expand wallet compatibility via WalletConnect natively.
+<strong>Long-Term Multichain Strategy</strong></li>
+</ul>
+<p>Hymple will be natively multichain, but with unified governance.</p>
+<p>This allows:</p>
+<ul>
+<li>Attract users from distinct communities.</li>
+<li>Diversify operational risk.</li>
+<li>Create arbitrage and efficiency routes via cross-chain routers.</li>
+</ul>
+<p>Expansion to new networks will happen gradually, following technical criteria:</p>
+<ul>
+<li>network maturity</li>
+<li>infrastructure security</li>
+<li>potential user volume</li>
+<li>operational costs</li>
+<li>wallet support</li>
+</ul>
+<p><strong>Strategic Summary</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Stage</strong></th>
+<th><strong>Network</strong></th>
+<th><strong>Main Objective</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Phase 1</td>
+<td>BSC</td>
+<td>Fast adoption, low cost, initial user base building</td>
+</tr>
+<tr>
+<td>Phase 2</td>
+<td>L2s</td>
+<td>Scale, institutional reputation, security and efficiency</td>
+</tr>
+<tr>
+<td>Phase 3</td>
+<td>Multichain</td>
+<td>Distributed liquidity, advanced integration, global expansion</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Conclusion</strong>
+Hymple is born on BSC to grow quickly and then expands to L2s to scale with safety, reputation and efficiency. This strategy — combined with Hymple's hybrid architecture, which blends the performance of a <abbr title="Centralized Exchange">CEX</abbr> with the sovereignty and transparency of a <abbr title="Decentralized Exchange">DEX</abbr> — establishes a new technical standard for global hybrid exchanges, uniting accessible entry for users and a robust infrastructure geared toward the platform's institutional future.</p>
+<hr>
 <div class="nav-buttons">
-  <div class="nav-button-placeholder"></div>
-  <a href="./2 - introduction/" class="nav-button nav-button-next">
+  <a href="../benefits/" class="nav-button nav-button-prev">
+    <span class="nav-label">PREVIOUS</span>
+    <span class="nav-title">Benefits</span>
+  </a>
+  <a href="../custody-withdrawals/" class="nav-button nav-button-next">
     <span class="nav-label">NEXT</span>
-    <span class="nav-title">Introduction</span>
+    <span class="nav-title">Settlement &amp; Withdrawals</span>
   </a>
 </div>
 
@@ -1042,8 +1276,6 @@
 
   
 
-
-  
 
 
 
@@ -1107,14 +1339,14 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.path", "navigation.prune", "navigation.sections", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "navigation.expand", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.path", "navigation.prune", "navigation.sections", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
       
-        <script src="javascripts/mathjax.js"></script>
+        <script src="../javascripts/mathjax.js"></script>
       
-        <script src="javascripts/sidebar-adjust.js"></script>
+        <script src="../javascripts/sidebar-adjust.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
