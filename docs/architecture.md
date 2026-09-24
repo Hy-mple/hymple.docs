@@ -96,7 +96,7 @@ Ensures secure and transparent on-chain settlement.
 - Hardhat / Foundry
 - Independent audits *(planned — see Audit & Transparency Model)*
 - Anti front-running mechanisms *(target control — the mechanism will be documented before activation; see [Glossary](glossary.md))*
-- Support for ERC-20 / ERC-721
+- Support for ERC-20 tokens
 
 **Optimization**
 

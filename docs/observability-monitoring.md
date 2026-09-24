@@ -85,7 +85,7 @@ The system monitors, in real time, everything that happens in contracts and on t
 
 - Transaction and settlement status
 - Gas price, mempool, and congestion
-- Contract events (ERC-20, ERC-721, liquidations)
+- Contract events (ERC-20 transfers, settlements, liquidations)
 - Failures, reverts, and critical executions
 
 On-chain observability is integrated into the main dashboards, allowing the technical team to visualize the complete journey of a trade, from the off-chain order to the on-chain settlement.
