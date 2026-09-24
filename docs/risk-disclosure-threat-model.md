@@ -65,6 +65,8 @@ Hymple cannot recover keys, funds, or incorrectly granted authorizations.
 Additional risks related to the custody model:
 
 - **Smart contract risk:** funds deposited for trading are held in the Hymple settlement vault; although designed so that only the user can withdraw, undiscovered vulnerabilities in smart contracts are an inherent risk of on-chain systems.
+- **Contract upgradeability risk:** if the vault contract is upgradeable, upgrades are gated by a timelock for public review (see Advanced Security Architecture). Users should treat the upgrade window as a trust assumption and review announced upgrades before they take effect.
+- **Operator liveness risk:** the matching engine is operated by Hymple. If the operator becomes unavailable, trading halts — **but funds in the vault remain withdrawable directly on-chain by the depositing user**, without depending on the platform (see Settlement & Withdrawals). The operator is a trust point for price and fill execution, never for ownership of funds.
 - **Withdrawal rules:** direct on-chain withdrawals made while open orders exist on the book are subject to a release delay (up to 30 minutes) and a behavior-based fee, as an anti-abuse measure. Users should understand these rules before choosing the direct on-chain path. See **Settlement & Withdrawals**.
 - **Behavioral sanctions:** repeated abuse of the settlement model can lead to score reduction and, in extreme cases, interface restrictions by the operator — the vault still honors withdrawals by the depositing address.
 
