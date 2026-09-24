@@ -1,19 +1,29 @@
 ---
-title: Custody & Withdrawals
-description: How custody and withdrawals work on Hymple's non-custodial exchange.
+title: Settlement & Withdrawals
+description: How funds are held in the settlement vault and how withdrawals work on Hymple's non-custodial exchange.
 ---
 
-# Custody & Withdrawals
+# Settlement & Withdrawals
 
 > *How funds are held, settled, and withdrawn on Hymple*
 
-Hymple's custody model was designed around a single principle: **the user always keeps control of their funds**. This document describes exactly how that works in practice — how deposits are held, how trades are settled, and how withdrawals work in each available path.
+Hymple's settlement model was designed around a single principle: **the user always keeps control of their funds**. This document describes exactly how that works in practice — how deposits are held, how trades are settled, and how withdrawals work in each available path.
+
+The diagram below summarizes the flow of funds — the platform coordinates settlement but never takes possession of user funds:
+
+```mermaid
+flowchart LR
+    W[User Wallet] -->|deposit on-chain| V[Settlement Vault]
+    V -->|balance backs signed orders| M[Off-chain Matching Engine]
+    M -->|settle trades signed by the user| V
+    V -->|withdraw — only the depositing user| W
+```
 
 ---
 
-### 1. The Custody Contract
+### 1. The Settlement Vault
 
-To trade on Hymple, the user deposits funds into a **smart contract** — the Hymple custody contract.
+To trade on Hymple, the user deposits funds into a **smart contract** — the Hymple settlement vault.
 
 The contract rules are simple and enforced on-chain:
 
@@ -25,7 +35,7 @@ This means the platform never takes possession of user funds. It operates as a s
 
 ### 2. Deposits
 
-Depositing is a standard on-chain transaction from the user's wallet to the custody contract:
+Depositing is a standard on-chain transaction from the user's wallet to the settlement vault:
 
 1. The user connects their wallet and chooses the asset and amount.
 2. The wallet requests confirmation for the deposit transaction.
@@ -43,7 +53,7 @@ Withdrawing through the Hymple interface is the recommended path:
 
 ### 4. Direct On-Chain Withdrawals (Without Hymple)
 
-The user can also withdraw directly through the blockchain, interacting with the custody contract without depending on the Hymple interface. This guarantees that access to funds never depends on the platform's availability.
+The user can also withdraw directly through the blockchain, interacting with the settlement vault without depending on the Hymple interface. This guarantees that access to funds never depends on the platform's availability.
 
 Two situations apply:
 
@@ -80,7 +90,7 @@ Sanctions are applied automatically, based on objective behavioral criteria, and
 
 | Action | Path | Release | Fees |
 |---|---|---|---|
-| Deposit | Wallet → custody contract | On-chain confirmation | Network fee only |
+| Deposit | Wallet → settlement vault | On-chain confirmation | Network fee only |
 | Withdraw | Hymple interface | Instant | Network fee only |
 | Withdraw | Direct on-chain, no open orders | Immediate | Network fee only |
 | Withdraw | Direct on-chain, with open orders | Up to 30 minutes | Network fee + behavioral Hymple fee |
@@ -88,11 +98,11 @@ Sanctions are applied automatically, based on objective behavioral criteria, and
 ---
 
 <div class="nav-buttons">
-  <a href="../6 - architecture/" class="nav-button nav-button-prev">
+  <a href="../architecture/" class="nav-button nav-button-prev">
     <span class="nav-label">PREVIOUS</span>
     <span class="nav-title">Architecture</span>
   </a>
-  <a href="../7 - observability&MonitoringLayer/" class="nav-button nav-button-next">
+  <a href="../observability-monitoring/" class="nav-button nav-button-next">
     <span class="nav-label">NEXT</span>
     <span class="nav-title">Observability & Monitoring</span>
   </a>

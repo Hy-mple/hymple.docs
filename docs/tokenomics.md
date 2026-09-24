@@ -37,16 +37,16 @@ The total supply of 70 million HYM tokens will be distributed as follows:
 
 | Category | Amount | Percentage | Description |
 |----------|--------|------------|-------------|
-| Ecosystem Rewards Program | 15.000.000 | 21,4% | Rewards for users who interact with the platform (trading, staking, liquidity, referrals). |
-| Staking Rewards | 15.000.000 | 21,4% | Long-term rewards for staking participants. |
-| Airdrops | 2.000.000 | 2,9% | Initial incentive for community formation. |
-| Marketing | 3.000.000 | 4,3% | Strategic global adoption campaigns. |
-| Ecosystem & Strategic Partnerships | 5.000.000 | 7,1% | Technical partnerships, listings and integrations. |
-| Treasury & Governance Reserve | 5.000.000 | 7,1% | Institutional reserve for governance and contingencies. |
-| Team Members | 7.000.000 | 10% | Long-term incentives for the technical and operational team. |
-| Pre-Sale | 5.000.000 | 7,1% | Private sale . |
-| Public Sale | 5.000.000 | 7,1% | Public sale at TGE. |
-| Liquidity & Market Stability Fund | 8.000.000 | 11,4% | Provision of liquidity and pair stability. |
+| Ecosystem Rewards Program | 15,000,000 | 21.4% | Rewards for users who interact with the platform (trading, staking, liquidity, referrals). |
+| Staking Rewards | 15,000,000 | 21.4% | Long-term rewards for staking participants. |
+| Airdrops | 2,000,000 | 2.9% | Initial incentive for community formation. |
+| Marketing | 3,000,000 | 4.3% | Strategic global adoption campaigns. |
+| Ecosystem & Strategic Partnerships | 5,000,000 | 7.1% | Technical partnerships, listings and integrations. |
+| Treasury & Governance Reserve | 5,000,000 | 7.1% | Institutional reserve for governance and contingencies. |
+| Team Members | 7,000,000 | 10% | Long-term incentives for the technical and operational team. |
+| Pre-Sale | 5,000,000 | 7.1% | Private sale. |
+| Public Sale | 5,000,000 | 7.1% | Public sale at TGE. |
+| Liquidity & Market Stability Fund | 8,000,000 | 11.4% | Provision of liquidity and pair stability. |
 
 ### ⏳ Release Schedule and Vesting
 
@@ -106,11 +106,11 @@ support for the longevity and economic resilience of the Hymple ecosystem.
 ---
 
 <div class="nav-buttons">
-  <a href="../16 - riskDisclosure&ThreatModel/" class="nav-button nav-button-prev">
+  <a href="../risk-disclosure-threat-model/" class="nav-button nav-button-prev">
     <span class="nav-label">PREVIOUS</span>
     <span class="nav-title">Risk Disclosure & Threat Model</span>
   </a>
-  <a href="../18 - tokenUtility/" class="nav-button nav-button-next">
+  <a href="../token-utility/" class="nav-button nav-button-next">
     <span class="nav-label">NEXT</span>
     <span class="nav-title">Token Utility</span>
   </a>

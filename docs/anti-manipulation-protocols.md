@@ -109,7 +109,7 @@ Recurrent wallets may be prevented from interacting with:
 - Market maker program
 - Premium features
 
-**Note:** The user's ability to withdraw is never permanently blocked — funds are held in a smart contract that only the user can withdraw from. As an anti-abuse measure, direct on-chain withdrawals made while the user has open orders on the book may be subject to a temporary release delay (up to 30 minutes) and a behavior-based fee, preventing orders from being left open without funds to settle. Repeated abuse can lead to score reduction and, in extreme cases, account restrictions on the platform. See **Custody & Withdrawals** for details.
+**Note:** User funds are never seized or permanently blocked — they are held in a settlement vault that only the depositing user can withdraw from. The anti-abuse measures affect **timing and cost, never ownership**: direct on-chain withdrawals made while the user has open orders on the book may be subject to a temporary release delay (up to 30 minutes) and a behavior-based fee, preventing orders from being left open without funds to settle. Repeated abuse can lead to score reduction and, in extreme cases, account restrictions on the platform. See **Settlement & Withdrawals** for details.
 
 #### 4.5 Dynamic Adjustment of Algorithms
 
@@ -176,11 +176,11 @@ Hymple's Anti-Manipulation and Anti-Abuse Protocols ensure:
 All this while preserving Hymple's core principles: **non-custodial nature, privacy, transparency, and high performance.**
 
 <div class="nav-buttons">
-  <a href="../10 - operationalResilience&IncidentResponse/" class="nav-button nav-button-prev">
+  <a href="../operational-resilience/" class="nav-button nav-button-prev">
     <span class="nav-label">PREVIOUS</span>
     <span class="nav-title">Operational Resilience & Incident Response</span>
   </a>
-  <a href="../12 - conflictandDisputeResolutionMechanism/" class="nav-button nav-button-next">
+  <a href="../dispute-resolution/" class="nav-button nav-button-next">
     <span class="nav-label">NEXT</span>
     <span class="nav-title">Conflict and Dispute Resolution Mechanism</span>
   </a>

@@ -118,9 +118,9 @@ Withdrawal fees depend on the path chosen by the user:
 
 The behavior-based fee on direct on-chain withdrawals with open orders is an anti-abuse measure: it prevents users from keeping orders on the book while withdrawing the funds that should back their settlement. The fee scales with the user's behavior history, and repeated abuse can lead to score reduction and, in extreme cases, account restrictions.
 
-Deposits into the custody contract never incur Hymple fees — only the standard network fee applies.
+Deposits into the settlement vault never incur Hymple fees — only the standard network fee applies.
 
-See **Custody & Withdrawals** for the complete description of the model.
+See **Settlement & Withdrawals** for the complete description of the model.
 
 ---
 
@@ -149,11 +149,11 @@ This policy reinforces the commitment of Hymple to transparency, security and lo
 ---
 
 <div class="nav-buttons">
-  <a href="../20 - staking/" class="nav-button nav-button-prev">
+  <a href="../staking/" class="nav-button nav-button-prev">
     <span class="nav-label">PREVIOUS</span>
     <span class="nav-title">Staking</span>
   </a>
-  <a href="../22 - burnPolicy/" class="nav-button nav-button-next">
+  <a href="../burn-policy/" class="nav-button nav-button-next">
     <span class="nav-label">NEXT</span>
     <span class="nav-title">Burn Policy</span>
   </a>

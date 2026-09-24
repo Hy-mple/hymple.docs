@@ -86,11 +86,11 @@ It offers the best of both worlds: an active voice for users and technical robus
 ---
 
 <div class="nav-buttons">
-  <a href="../13 - systemLimitations&Assumptions/" class="nav-button nav-button-prev">
+  <a href="../system-limitations/" class="nav-button nav-button-prev">
     <span class="nav-label">PREVIOUS</span>
     <span class="nav-title">System Limitations & Assumptions</span>
   </a>
-  <a href="../15 - audit&TransparencyModel/" class="nav-button nav-button-next">
+  <a href="../audit-transparency/" class="nav-button nav-button-next">
     <span class="nav-label">NEXT</span>
     <span class="nav-title">Audit & Transparency Model</span>
   </a>

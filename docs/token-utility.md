@@ -105,11 +105,11 @@ It is the link that transforms Hymple into a living, efficient and aligned ecosy
 ---
 
 <div class="nav-buttons">
-  <a href="../17 - tokenomics/" class="nav-button nav-button-prev">
+  <a href="../tokenomics/" class="nav-button nav-button-prev">
     <span class="nav-label">PREVIOUS</span>
     <span class="nav-title">Tokenomics</span>
   </a>
-  <a href="../19 - rewards/" class="nav-button nav-button-next">
+  <a href="../rewards/" class="nav-button nav-button-next">
     <span class="nav-label">NEXT</span>
     <span class="nav-title">Rewards</span>
   </a>

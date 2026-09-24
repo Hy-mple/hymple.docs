@@ -210,12 +210,12 @@ Hymple is born on BSC to grow quickly and then expands to L2s to scale with safe
 ---
 
 <div class="nav-buttons">
-  <a href="../5 - benefits/" class="nav-button nav-button-prev">
+  <a href="../benefits/" class="nav-button nav-button-prev">
     <span class="nav-label">PREVIOUS</span>
     <span class="nav-title">Benefits</span>
   </a>
-  <a href="../23 - custodyAndWithdrawals/" class="nav-button nav-button-next">
+  <a href="../custody-withdrawals/" class="nav-button nav-button-next">
     <span class="nav-label">NEXT</span>
-    <span class="nav-title">Custody & Withdrawals</span>
+    <span class="nav-title">Settlement & Withdrawals</span>
   </a>
 </div>

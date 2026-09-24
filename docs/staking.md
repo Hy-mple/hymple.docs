@@ -124,11 +124,11 @@ Thus, the protocol creates a robust, fair and sustainable economic cycle, streng
 ---
 
 <div class="nav-buttons">
-  <a href="../19 - rewards/" class="nav-button nav-button-prev">
+  <a href="../rewards/" class="nav-button nav-button-prev">
     <span class="nav-label">PREVIOUS</span>
     <span class="nav-title">Rewards</span>
   </a>
-  <a href="../21 - fees/" class="nav-button nav-button-next">
+  <a href="../fees/" class="nav-button nav-button-next">
     <span class="nav-label">NEXT</span>
     <span class="nav-title">Fees</span>
   </a>

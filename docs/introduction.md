@@ -90,7 +90,7 @@ The result is a hybrid exchange that combines the sovereignty of DEXs with the o
     <span class="nav-label">PREVIOUS</span>
     <span class="nav-title">Home</span>
   </a>
-  <a href="../3 - from_traditional_to_hybrid/" class="nav-button nav-button-next">
+  <a href="../from-traditional-to-hybrid/" class="nav-button nav-button-next">
     <span class="nav-label">NEXT</span>
     <span class="nav-title">From Traditional to Hybrid</span>
   </a>
