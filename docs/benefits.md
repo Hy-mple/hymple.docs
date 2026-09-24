@@ -32,7 +32,7 @@ The platform interface was designed to remove technical barriers and make use in
 
 ### Scalability and Interoperability
 
-With a modern technology stack — including Rust, Redis, Golang, Kubernetes, Docker, Kong and smart contracts in Solidity — Hymple offers horizontal scalability and smooth integration with multiple blockchains. This architecture expands liquidity and real-time trading opportunities.
+With a modern technology stack — services in Go and C# (.NET), NATS event streaming, DragonflyDB cache, PostgreSQL persistence, Docker-based infrastructure, an Envoy edge gateway and smart contracts in Solidity — Hymple offers horizontal scalability and smooth integration with multiple blockchains (see [Architecture](architecture.md)). This architecture expands liquidity and real-time trading opportunities.
 
 ### Transparency and Cryptographic Trust
 

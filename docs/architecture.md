@@ -77,9 +77,10 @@ Operational core responsible for order processing.
 
 **Technologies**
 
-- C#
-- Cache (in-memory)
-- NATS
+- Matching engine in C# (.NET)
+- Order ingress, validation and market data services in Go
+- NATS for event streaming between services
+- DragonflyDB (Redis-compatible) for hot state and cache
 - Proprietary optimized engine
 - Support for complex orders
 - WebSockets for real-time
@@ -93,8 +94,8 @@ Ensures secure and transparent on-chain settlement.
 - Contracts in Solidity
 - Multi-chain (EVM)
 - Hardhat / Foundry
-- Recurring audits
-- Anti front-running mechanisms
+- Independent audits *(planned — see Audit & Transparency Model)*
+- Anti front-running mechanisms *(target control — the mechanism will be documented before activation; see [Glossary](glossary.md))*
 - Support for ERC-20 / ERC-721
 
 **Optimization**
@@ -107,24 +108,24 @@ Supports the interoperability and resilience of the ecosystem.
 
 **Technologies**
 
-- Kubernetes + Docker
-- Georedundant load balancing
-- gRPC, REST and GraphQL APIs
+- Docker-based deployment *(Kubernetes planned for later phases)*
+- Envoy as the edge gateway, with load balancing
+- gRPC, REST and WebSocket APIs
 - On-chain indexers
 
 ### 🔐 Security and Privacy
 
-- Non-custodial
+- Non-custodial (user-gated vault — see [Glossary](glossary.md))
 - No KYC
-- Constant audits
-- Anti-fraud and anti front-running mechanisms
+- Independent audits *(planned — see Audit & Transparency Model)*
+- Anti-fraud mechanisms
 - Rate limiting + firewalls
 
 ### ⚡Scalability and Resilience
 
 - Distributed microservices
 - Horizontal scalability
-- Dedicated channels for HFT and institutional volumes
+- Dedicated channels for HFT and institutional volumes *(planned for later phases)*
 
 ### 🔄 Interoperability
 
