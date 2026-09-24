@@ -34,7 +34,7 @@ The contract rules are simple and enforced on-chain:
 This means the platform never takes possession of user funds. It operates as a settlement coordinator, not as a custodian.
 
 !!! note "Administrative roles"
-    The vault's administrative roles (settle, pause, upgrade, fee parameters) will be documented here with their on-chain addresses and timelock periods before the TGE. An emergency pause, when present, does not create any withdrawal path for the operator.
+    The vault's administrative roles (settle, pause, upgrade, fee parameters) will be documented here with their on-chain addresses and timelock periods before the TGE. An emergency pause, when present, does not create any withdrawal path for the operator. The exact scope of a pause — what it freezes (e.g., settlement) and what it never freezes (withdrawals by the depositing user) — will be documented together with the roles before the TGE.
 
 ### 2. Deposits
 
@@ -50,9 +50,12 @@ Deposits only require the standard network fee. Hymple charges no deposit fee.
 
 Withdrawing through the Hymple interface is the recommended path:
 
-- **Instant release** of funds.
+- **Instant release** of funds — "instant" means the withdrawal is requested immediately through the interface; final settlement still depends on the on-chain confirmation of the withdrawal transaction.
 - **Only the standard network fee applies** — Hymple charges no withdrawal fee.
 - **No sanctions or delays**, even if the user has open orders on the book.
+
+!!! note "Open orders and interface withdrawals"
+    The interaction between an interface withdrawal and the user's open orders (whether affected orders are canceled, and under which balance conditions) will be specified here before the TGE.
 
 ### 4. Direct On-Chain Withdrawals (Without Hymple)
 
@@ -69,6 +72,9 @@ Two situations apply:
 
 - The withdrawal can take **up to 30 minutes** to be released.
 - In addition to the network fee, a **Hymple fee** applies, calculated based on the user's behavior history.
+
+!!! note "Behavioral fee"
+    The exact formula (or range) of the behavioral fee will be published here before the TGE, together with the objective criteria that scale it.
 
 ### 5. Why the Delay and Fee Exist
 
