@@ -9,7 +9,7 @@ description: What Hymple is — a hybrid, non-custodial exchange combining off-c
 
 Hymple is a cryptocurrency exchange designed to unify the benefits of centralized (CEX) and decentralized (DEX) models into a single hybrid solution. Its core operates with off-chain order books, allowing low latency, high liquidity and superior order execution performance.
 
-The platform adopts a **non-custodial** architecture: funds are held in a smart contract that only the user can withdraw from — Hymple has no withdrawal power and can only settle trades signed by the user's wallet. This eliminates risks associated with intermediary custody and significantly reduces common attack vectors present in traditional exchanges.
+The platform adopts a **non-custodial** architecture: funds are held in a **user-gated vault** — a smart contract that only the user can withdraw from — and Hymple has no withdrawal power, being able only to settle trades signed by the user's wallet (see [Glossary](glossary.md)). This eliminates risks associated with intermediary custody and significantly reduces common attack vectors present in traditional exchanges.
 
 Hymple also stands out for not requiring KYC, preserving user privacy without compromising operational integrity. The approach combines security, transparency and a streamlined experience, removing barriers to entry and making the environment ideal for both beginners and advanced traders.
 

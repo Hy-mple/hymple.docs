@@ -64,7 +64,8 @@ theme:
 nav:
   - 🏠 Home: index.md
   - 📖 Introduction: introduction.md
-  - 🔄 From Traditional to Hybrid: from-traditional-to-hybrid.md
+  - � Glossary: glossary.md
+  - �🔄 From Traditional to Hybrid: from-traditional-to-hybrid.md
   - 🌍 Global Exchange Landscape: global-exchange-landscape.md
   - ✨ Benefits: benefits.md
   - 🏗️ Architecture: architecture.md

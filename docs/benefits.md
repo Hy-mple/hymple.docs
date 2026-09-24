@@ -15,9 +15,9 @@ This hybrid architecture offers strategic advantages for both beginner users and
 
 The combination of off-chain order books with on-chain settlement enables low latency, high market depth and full verifiable transparency. This approach eliminates common bottlenecks of traditional DEXs without giving up the user's control over their own assets.
 
-### Full User Custody
+### User-Gated Custody
 
-By adopting a **non-custodial** model, Hymple ensures that user funds are held in a smart contract that only the user can withdraw from — the platform can never move funds on its own, only settle trades signed by the user. This drastically reduces risks associated with hacks, freezes, operational failures or mismanagement by custodians.
+By adopting a **non-custodial** model, Hymple ensures that user funds are held in a **user-gated vault** — a smart contract that only the depositing user can withdraw from. The platform can never move funds on its own, only settle trades signed by the user's wallet (see [Glossary](glossary.md)). This drastically reduces risks associated with hacks, freezes, operational failures or mismanagement by custodians.
 
 ### Preserved Privacy (No-KYC)
 
