@@ -116,7 +116,7 @@ Withdrawal fees depend on the path chosen by the user:
 | Direct on-chain, no open orders | Immediate | Network fee only |
 | Direct on-chain, with open orders on the book | Up to 30 minutes | Network fee + behavior-based Hymple fee |
 
-The behavior-based fee on direct on-chain withdrawals with open orders is an anti-abuse measure: it prevents users from keeping orders on the book while withdrawing the funds that should back their settlement. The fee scales with the user's behavior history, and repeated abuse can lead to score reduction and, in extreme cases, account restrictions.
+The behavior-based fee on direct on-chain withdrawals with open orders is an anti-abuse measure: it prevents users from keeping orders on the book while withdrawing the funds that should back their settlement. The fee scales with the user's behavior history, and repeated abuse can lead to score reduction and, in extreme cases, interface restrictions by the operator — the vault still honors withdrawals by the depositing address.
 
 Deposits into the settlement vault never incur Hymple fees — only the standard network fee applies.
 

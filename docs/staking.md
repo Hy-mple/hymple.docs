@@ -88,7 +88,7 @@ Both the APR (nominal annual rate) and the estimated APY will be displayed in re
 
 All staking protocol parameters — including base rate, volume and balance of available tokens — are on-chain auditable.
 
-Structural changes, such as APR adjustments or changes in the maximum participation limit, will be submitted to Hymple's decentralized governance, ensuring active community participation in critical decisions.
+Structural changes, such as APR adjustments or changes in the maximum participation limit, will be submitted to on-chain voting by HYM holders, ensuring active community participation in critical decisions.
 
 ---
 

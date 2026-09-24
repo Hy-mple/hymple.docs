@@ -62,14 +62,14 @@ mitigation of anomalous bursts,
 component isolation,
 triggering emergency on-chain protocols.
 Immutable logs auditable by the team and the community.
-### Audit, Compliance and Transparency
+### Security Standards and Audits
 
 To reinforce trust and integrity:
 
-- Periodic public reports on security, availability and mitigated incidents.
-- Compliance with global standards, including OWASP, CIS Benchmarks and NIST.
+- Periodic public reports on security, availability and mitigated incidents (planned — the first report will be linked here).
+- Security engineering aligned with global standards, including OWASP, CIS Benchmarks and NIST.
 - Periodic vulnerability analysis mitigating any vulnerability published in the CVEs
-- Annual independent reviews, with publication of executive summaries.
+- Annual independent reviews, with publication of executive summaries (planned).
 - Continuous assessment of attack surfaces, adapting controls as the ecosystem evolves.
 
 ### Conclusion

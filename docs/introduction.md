@@ -5,7 +5,7 @@ description: What Hymple is — a hybrid, non-custodial exchange combining off-c
 
 # Introduction
 
-> *The Next-Gen Hybrid Exchange - No custody, user controlled, built for scale.*
+> *The Next-Gen Hybrid Exchange — user-controlled keys, on-chain settlement vault, built for scale.*
 
 Hymple is a cryptocurrency exchange designed to unify the benefits of centralized (CEX) and decentralized (DEX) models into a single hybrid solution. Its core operates with off-chain order books, allowing low latency, high liquidity and superior order execution performance.
 
@@ -21,7 +21,7 @@ The goal is to establish a bridge between accessibility, financial sovereignty a
 
 Hymple was designed to unite freedom, security and auditability, balancing decentralization and operational efficiency.
 
-- Users retain exclusive withdrawal control over their assets at all times.
+- Only the depositing wallet can withdraw from the settlement vault. Interface withdrawals are designed to be immediate; direct on-chain withdrawals may be delayed when open orders exist (see Settlement & Withdrawals).
 - No private key is stored by the platform.
 - Interactions with smart contracts — swaps, staking and liquidity — occur directly on the blockchain.
 
@@ -44,16 +44,16 @@ The Hymple ecosystem combines two complementary layers:
   - fees,
   - operational metrics
 
-are made available in public and auditable logs.
+will be made available in public and auditable logs (planned — links will be published here).
 
 ### Transparency and Audit
 
 Hymple adopts a model of verifiable transparency, with:
 
-- Public execution logs and operational metrics
+- Public execution logs and operational metrics (planned)
 - Immutable and traceable on-chain transactions
-- Periodic independent audits
-- Public dashboards with liquidity, volume and fee indicators
+- Periodic independent audits (planned — reports will be linked here)
+- Public dashboards with liquidity, volume and fee indicators (planned)
 
 This framework allows the community to monitor the integrity of the system without compromising security or performance.
 

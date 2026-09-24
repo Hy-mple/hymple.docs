@@ -33,6 +33,9 @@ The contract rules are simple and enforced on-chain:
 
 This means the platform never takes possession of user funds. It operates as a settlement coordinator, not as a custodian.
 
+!!! note "Administrative roles"
+    The vault's administrative roles (settle, pause, upgrade, fee parameters) will be documented here with their on-chain addresses and timelock periods before the TGE. An emergency pause, when present, does not create any withdrawal path for the operator.
+
 ### 2. Deposits
 
 Depositing is a standard on-chain transaction from the user's wallet to the settlement vault:
@@ -80,7 +83,7 @@ Users who repeatedly open orders and withdraw on-chain to avoid settlement may f
 - **Withdrawal delay** (up to 30 minutes) when open orders exist;
 - **Higher withdrawal fees**, scaled by behavior;
 - **Reduction of account score**, affecting rewards and privileges;
-- **Account restrictions** on the platform, in extreme and recurrent cases.
+- **Interface restrictions** (operator UI/API), in extreme and recurrent cases — the vault still honors withdrawals by the depositing address.
 
 Sanctions are applied automatically, based on objective behavioral criteria, and are documented in the Anti-Manipulation and Anti-Abuse Protocols.
 

@@ -109,7 +109,7 @@ Recurrent wallets may be prevented from interacting with:
 - Market maker program
 - Premium features
 
-**Note:** User funds are never seized or permanently blocked — they are held in a settlement vault that only the depositing user can withdraw from. The anti-abuse measures affect **timing and cost, never ownership**: direct on-chain withdrawals made while the user has open orders on the book may be subject to a temporary release delay (up to 30 minutes) and a behavior-based fee, preventing orders from being left open without funds to settle. Repeated abuse can lead to score reduction and, in extreme cases, account restrictions on the platform. See **Settlement & Withdrawals** for details.
+**Note:** User funds are never seized or permanently blocked — they are held in a settlement vault that only the depositing user can withdraw from. The anti-abuse measures affect **timing and cost, never ownership**: direct on-chain withdrawals made while the user has open orders on the book may be subject to a temporary release delay (up to 30 minutes) and a behavior-based fee, preventing orders from being left open without funds to settle. Repeated abuse can lead to score reduction and, in extreme cases, interface restrictions by the operator — the vault still honors withdrawals by the depositing address. See **Settlement & Withdrawals** for details.
 
 #### 4.5 Dynamic Adjustment of Algorithms
 

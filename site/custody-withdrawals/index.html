@@ -1061,6 +1061,10 @@
 <li><strong>Hymple can only settle trades</strong> — and exclusively trades that were <strong>signed by the user's wallet</strong>. The user's signature is the cryptographic proof that authorizes each settlement.</li>
 </ul>
 <p>This means the platform never takes possession of user funds. It operates as a settlement coordinator, not as a custodian.</p>
+<div class="admonition note">
+<p class="admonition-title">Administrative roles</p>
+<p>The vault's administrative roles (settle, pause, upgrade, fee parameters) will be documented here with their on-chain addresses and timelock periods before the TGE. An emergency pause, when present, does not create any withdrawal path for the operator.</p>
+</div>
 <h3 id="2-deposits">2. Deposits</h3>
 <p>Depositing is a standard on-chain transaction from the user's wallet to the settlement vault:</p>
 <ol>
@@ -1098,7 +1102,7 @@
 <li><strong>Withdrawal delay</strong> (up to 30 minutes) when open orders exist;</li>
 <li><strong>Higher withdrawal fees</strong>, scaled by behavior;</li>
 <li><strong>Reduction of account score</strong>, affecting rewards and privileges;</li>
-<li><strong>Account restrictions</strong> on the platform, in extreme and recurrent cases.</li>
+<li><strong>Interface restrictions</strong> (operator <abbr title="User Interface">UI</abbr>/<abbr title="Application Programming Interface">API</abbr>), in extreme and recurrent cases — the vault still honors withdrawals by the depositing address.</li>
 </ul>
 <p>Sanctions are applied automatically, based on objective behavioral criteria, and are documented in the Anti-Manipulation and Anti-Abuse Protocols.</p>
 <p><strong>Important:</strong> sanctions never result in permanent seizure of funds. The user's ability to withdraw is always preserved — delays and fees are temporary and conditional protections, not confiscation.</p>
