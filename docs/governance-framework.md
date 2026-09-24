@@ -25,6 +25,13 @@ These signalings include:
 
 Although non-binding, these votes are recorded, published and taken into account in all planning cycles.
 
+#### Binding vs. signaling — explicit rule
+
+To remove any ambiguity (see [Glossary](glossary.md)):
+
+- **At launch, no parameter is decided by binding vote.** Every community vote — including votes on fees, staking APR, rewards parameters, listings and treasury — is a **signaling vote**: public, recorded on-chain, and non-binding.
+- **Binding votes** (on-chain votes that a contract executes automatically) do not exist in the current model. They may be introduced only for a closed set of low-risk parameters as part of the progressive decentralization path (Section 5), and will be publicly announced before activation.
+
 ### 2. Open Forums and Technical Calls
 
 The governance mechanism includes official channels for participation:

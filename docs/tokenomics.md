@@ -19,9 +19,11 @@ The tokenomics structure was designed with a focus on:
 
 ### 🪙 Strategic Functions of the HYM Token
 
-- **On-chain voting:** each HYM token grants voting power over a defined set of
-protocol parameters (see Technical Governance). The operator retains control of the
-matching engine and product releases.
+- **On-chain signaling:** each HYM token grants voting power in public, recorded
+consultations over a defined set of protocol parameters (see Technical Governance).
+These votes are **non-binding** (signaling votes — see [Glossary](glossary.md)): the
+operator retains control of the matching engine, product releases and the final
+decision on parameters.
 - **Rewards and incentives:** fair and predictable distribution for those who use and
 strengthen the platform.
 - **Staking:** participation in pools with rewards in HYM, encouraging
@@ -81,20 +83,24 @@ Additional schedules:
 tokens from the market.
 - **Circular economy:** tokens return to the ecosystem via fees, staking and
 rewards.
-- **Community management:** economic parameters can be revised through on-chain governance.
+- **Community participation:** economic parameters can be reviewed through community
+signaling votes (non-binding), recorded on-chain.
 
 ### 🧭 Governance
 
-The HYM token acts as a governance mechanism, allowing voting on decisions such as:
+The HYM token acts as a **signaling** mechanism, allowing the community to vote on
+topics such as:
 
 - Economic parameters, fees and distributions;
 - Listings and new pairs;
 - Use of the treasury;
 - Technical evolution of the protocol.
 
-Voting is on-chain and auditable. Hymple is not a DAO: the operator retains
-control of the matching engine and product releases, with on-chain voting covering a
-defined set of parameters.
+Voting is on-chain, recorded and auditable — but **non-binding** (signaling votes,
+see [Glossary](glossary.md)). Hymple is not a DAO: the operator retains control of
+the matching engine, product releases and the final decision on every parameter.
+Binding on-chain votes, if ever introduced, will cover only a closed set of low-risk
+parameters and will be announced in advance (see Technical Governance Framework).
 
 ### ✅ Conclusion
 
