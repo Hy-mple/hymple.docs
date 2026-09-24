@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="How custody and withdrawals work on Hymple's non-custodial exchange.">
+        <meta name="description" content="How funds are held in the settlement vault and how withdrawals work on Hymple's non-custodial exchange.">
       
       
       
@@ -24,7 +24,7 @@
     
     
       
-        <title>Custody &amp; Withdrawals - HYMPLE</title>
+        <title>Settlement &amp; Withdrawals - HYMPLE</title>
       
     
     
@@ -73,13 +73,13 @@
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="HYMPLE">
-<meta property="og:title" content="🔐 Custody &amp; Withdrawals | HYMPLE">
-<meta property="og:description" content="How custody and withdrawals work on Hymple's non-custodial exchange.">
+<meta property="og:title" content="🔐 Settlement &amp; Withdrawals | HYMPLE">
+<meta property="og:description" content="How funds are held in the settlement vault and how withdrawals work on Hymple's non-custodial exchange.">
 <meta property="og:url" content="https://docs.hymple.com/custody-withdrawals/">
 <meta property="og:image" content="https://docs.hymple.com/assets/logo.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="🔐 Custody &amp; Withdrawals | HYMPLE">
-<meta name="twitter:description" content="How custody and withdrawals work on Hymple's non-custodial exchange.">
+<meta name="twitter:title" content="🔐 Settlement &amp; Withdrawals | HYMPLE">
+<meta name="twitter:description" content="How funds are held in the settlement vault and how withdrawals work on Hymple's non-custodial exchange.">
 <meta name="twitter:image" content="https://docs.hymple.com/assets/logo.png">
 
 
@@ -112,7 +112,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#custody-withdrawals" class="md-skip">
+        <a href="#settlement-withdrawals" class="md-skip">
           Skip to content
         </a>
       
@@ -147,7 +147,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Custody &amp; Withdrawals
+              Settlement &amp; Withdrawals
             
           </span>
         </div>
@@ -455,7 +455,7 @@
   <span class="md-ellipsis">
     
   
-    🔐 Custody &amp; Withdrawals
+    🔐 Settlement &amp; Withdrawals
   
 
     
@@ -473,7 +473,7 @@
   <span class="md-ellipsis">
     
   
-    🔐 Custody &amp; Withdrawals
+    🔐 Settlement &amp; Withdrawals
   
 
     
@@ -499,10 +499,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#1-the-custody-contract" class="md-nav__link">
+  <a href="#1-the-settlement-vault" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. The Custody Contract
+        1. The Settlement Vault
       
     </span>
   </a>
@@ -1040,14 +1040,20 @@
 
 
 
-<h1 id="custody-withdrawals">Custody &amp; Withdrawals</h1>
+<h1 id="settlement-withdrawals">Settlement &amp; Withdrawals</h1>
 <blockquote>
 <p><em>How funds are held, settled, and withdrawn on Hymple</em></p>
 </blockquote>
-<p>Hymple's custody model was designed around a single principle: <strong>the user always keeps control of their funds</strong>. This document describes exactly how that works in practice — how deposits are held, how trades are settled, and how withdrawals work in each available path.</p>
+<p>Hymple's settlement model was designed around a single principle: <strong>the user always keeps control of their funds</strong>. This document describes exactly how that works in practice — how deposits are held, how trades are settled, and how withdrawals work in each available path.</p>
+<p>The diagram below summarizes the flow of funds — the platform coordinates settlement but never takes possession of user funds:</p>
+<pre class="mermaid"><code>flowchart LR
+    W[User Wallet] --&gt;|deposit on-chain| V[Settlement Vault]
+    V --&gt;|balance backs signed orders| M[Off-chain Matching Engine]
+    M --&gt;|settle trades signed by the user| V
+    V --&gt;|withdraw — only the depositing user| W</code></pre>
 <hr>
-<h3 id="1-the-custody-contract">1. The Custody Contract</h3>
-<p>To trade on Hymple, the user deposits funds into a <strong>smart contract</strong> — the Hymple custody contract.</p>
+<h3 id="1-the-settlement-vault">1. The Settlement Vault</h3>
+<p>To trade on Hymple, the user deposits funds into a <strong>smart contract</strong> — the Hymple settlement vault.</p>
 <p>The contract rules are simple and enforced on-chain:</p>
 <ul>
 <li><strong>Hymple cannot withdraw user funds.</strong> The contract has no administrative withdrawal function in favor of the platform.</li>
@@ -1056,7 +1062,7 @@
 </ul>
 <p>This means the platform never takes possession of user funds. It operates as a settlement coordinator, not as a custodian.</p>
 <h3 id="2-deposits">2. Deposits</h3>
-<p>Depositing is a standard on-chain transaction from the user's wallet to the custody contract:</p>
+<p>Depositing is a standard on-chain transaction from the user's wallet to the settlement vault:</p>
 <ol>
 <li>The user connects their wallet and chooses the asset and amount.</li>
 <li>The wallet requests confirmation for the deposit transaction.</li>
@@ -1071,7 +1077,7 @@
 <li><strong>No sanctions or delays</strong>, even if the user has open orders on the book.</li>
 </ul>
 <h3 id="4-direct-on-chain-withdrawals-without-hymple">4. Direct On-Chain Withdrawals (Without Hymple)</h3>
-<p>The user can also withdraw directly through the blockchain, interacting with the custody contract without depending on the Hymple interface. This guarantees that access to funds never depends on the platform's availability.</p>
+<p>The user can also withdraw directly through the blockchain, interacting with the settlement vault without depending on the Hymple interface. This guarantees that access to funds never depends on the platform's availability.</p>
 <p>Two situations apply:</p>
 <p><strong>4.1 No open orders on the book</strong></p>
 <ul>
@@ -1109,7 +1115,7 @@
 <tbody>
 <tr>
 <td>Deposit</td>
-<td>Wallet → custody contract</td>
+<td>Wallet → settlement vault</td>
 <td>On-chain confirmation</td>
 <td>Network fee only</td>
 </tr>
@@ -1135,11 +1141,11 @@
 </table>
 <hr>
 <div class="nav-buttons">
-  <a href="../6 - architecture/" class="nav-button nav-button-prev">
+  <a href="../architecture/" class="nav-button nav-button-prev">
     <span class="nav-label">PREVIOUS</span>
     <span class="nav-title">Architecture</span>
   </a>
-  <a href="../7 - observability&amp;MonitoringLayer/" class="nav-button nav-button-next">
+  <a href="../observability-monitoring/" class="nav-button nav-button-next">
     <span class="nav-label">NEXT</span>
     <span class="nav-title">Observability &amp; Monitoring</span>
   </a>

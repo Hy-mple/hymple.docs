@@ -34,11 +34,11 @@ Hymple was designed to combine the advantages of CEX and DEX, removing common li
 ---
 
 <div class="nav-buttons">
-  <a href="../2 - introduction/" class="nav-button nav-button-prev">
+  <a href="../introduction/" class="nav-button nav-button-prev">
     <span class="nav-label">PREVIOUS</span>
     <span class="nav-title">Introduction</span>
   </a>
-  <a href="../4 - globalExchangeLandscape/" class="nav-button nav-button-next">
+  <a href="../global-exchange-landscape/" class="nav-button nav-button-next">
     <span class="nav-label">NEXT</span>
     <span class="nav-title">Global Exchange Landscape</span>
   </a>

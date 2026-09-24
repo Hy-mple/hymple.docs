@@ -86,11 +86,11 @@ This commitment to transparency is fundamental to the hybrid model, balancing te
 ---
 
 <div class="nav-buttons">
-  <a href="../12 - conflictandDisputeResolutionMechanism/" class="nav-button nav-button-prev">
+  <a href="../dispute-resolution/" class="nav-button nav-button-prev">
     <span class="nav-label">PREVIOUS</span>
     <span class="nav-title">Conflict and Dispute Resolution Mechanism</span>
   </a>
-  <a href="../14 - technicalGovernanceFramework/" class="nav-button nav-button-next">
+  <a href="../governance-framework/" class="nav-button nav-button-next">
     <span class="nav-label">NEXT</span>
     <span class="nav-title">Technical Governance Framework</span>
   </a>

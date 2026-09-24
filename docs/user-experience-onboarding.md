@@ -37,12 +37,12 @@ Onboarding was structured to be straightforward, without complex steps or KYC re
 
 This process eliminates the need for registration, password, or email.
 
-**Deposit into the Custody Contract**
+**Deposit into the Settlement Vault**
 
-- To start trading, the user deposits funds into the Hymple custody smart contract directly from their wallet.
+- To start trading, the user deposits funds into the Hymple settlement vault directly from their wallet.
 - The deposit is a standard on-chain transaction and only requires the network fee — Hymple charges no deposit fee.
 - Funds remain under the user's exclusive control: Hymple cannot withdraw them and can only settle trades signed by the user.
-- Withdrawals are available at any time — instantly through the Hymple interface (network fee only) or directly on-chain. See **Custody & Withdrawals** for details.
+- Withdrawals are available at any time — instantly through the Hymple interface (network fee only) or directly on-chain. See **Settlement & Withdrawals** for details.
 
 **Initial Setup (Optional)**
 
@@ -98,11 +98,11 @@ The entire interface follows UX best practices ensuring a consistent experience 
 ---
 
 <div class="nav-buttons">
-  <a href="../7 - observability&MonitoringLayer/" class="nav-button nav-button-prev">
+  <a href="../observability-monitoring/" class="nav-button nav-button-prev">
     <span class="nav-label">PREVIOUS</span>
     <span class="nav-title">Observability & Monitoring</span>
   </a>
-  <a href="../9 - advancedSecurityArchitecture/" class="nav-button nav-button-next">
+  <a href="../security-architecture/" class="nav-button nav-button-next">
     <span class="nav-label">NEXT</span>
     <span class="nav-title">Advanced Security Architecture</span>
   </a>

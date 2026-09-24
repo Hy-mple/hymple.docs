@@ -66,11 +66,11 @@ The goal is to ensure that any participant can independently assess the platform
 ---
 
 <div class="nav-buttons">
-  <a href="../14 - technicalGovernanceFramework/" class="nav-button nav-button-prev">
+  <a href="../governance-framework/" class="nav-button nav-button-prev">
     <span class="nav-label">PREVIOUS</span>
     <span class="nav-title">Technical Governance Framework</span>
   </a>
-  <a href="../16 - riskDisclosure&ThreatModel/" class="nav-button nav-button-next">
+  <a href="../risk-disclosure-threat-model/" class="nav-button nav-button-next">
     <span class="nav-label">NEXT</span>
     <span class="nav-title">Risk Disclosure & Threat Model</span>
   </a>

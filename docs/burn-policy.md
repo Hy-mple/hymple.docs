@@ -83,7 +83,7 @@ All burn events will be publicly verifiable through:
 ---
 
 <div class="nav-buttons">
-  <a href="../21 - fees/" class="nav-button nav-button-prev">
+  <a href="../fees/" class="nav-button nav-button-prev">
     <span class="nav-label">PREVIOUS</span>
     <span class="nav-title">Fees</span>
   </a>

@@ -68,7 +68,7 @@ nav:
   - 🌍 Global Exchange Landscape: global-exchange-landscape.md
   - ✨ Benefits: benefits.md
   - 🏗️ Architecture: architecture.md
-  - 🔐 Custody & Withdrawals: custody-withdrawals.md
+  - 🔐 Settlement & Withdrawals: custody-withdrawals.md
   - 📊 Observability & Monitoring: observability-monitoring.md
   - 👤 User Experience & Onboarding: user-experience-onboarding.md
   - 🔒 Advanced Security Architecture: security-architecture.md

@@ -50,9 +50,9 @@ A hybrid exchange, non-custodial and without KYC, with an interface adapted for 
 
 | **Scenario** | **Global Market Share** | **Daily Volume** | **Estimated Revenue (0.05%)** |
 |--------------|-------------------------|------------------|-------------------------------|
-| Conservative | 0,01% | ~US$ 1M | ~US$ 500/day |
-| Moderate | 0,1% | ~US$ 10M | ~US$ 5,000/day |
-| Optimistic | 0,5% | ~US$ 50M | ~US$ 25,000/day |
+| Conservative | 0.01% | ~US$ 1M | ~US$ 500/day |
+| Moderate | 0.1% | ~US$ 10M | ~US$ 5,000/day |
+| Optimistic | 0.5% | ~US$ 50M | ~US$ 25,000/day |
 
 **Insight:** Even the conservative scenario demonstrates significant economic viability.
 
@@ -92,11 +92,11 @@ and capturing users dissatisfied with limitations of both CEX and DEX.
 ---
 
 <div class="nav-buttons">
-  <a href="../3 - from_traditional_to_hybrid/" class="nav-button nav-button-prev">
+  <a href="../from-traditional-to-hybrid/" class="nav-button nav-button-prev">
     <span class="nav-label">PREVIOUS</span>
     <span class="nav-title">From Traditional to Hybrid</span>
   </a>
-  <a href="../5 - benefits/" class="nav-button nav-button-next">
+  <a href="../benefits/" class="nav-button nav-button-next">
     <span class="nav-label">NEXT</span>
     <span class="nav-title">Benefits</span>
   </a>
