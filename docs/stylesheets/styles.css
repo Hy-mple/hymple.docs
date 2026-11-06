@@ -1278,7 +1278,7 @@ html {
     position: fixed;
     top: 3.6rem;
     left: 0;
-    height: auto;
+    height: calc(100vh - 3.6rem);
     max-height: calc(100vh - 3.6rem);
     overflow: hidden;
     z-index: 3;
@@ -1290,6 +1290,7 @@ html {
   max-height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
+  scrollbar-gutter: stable;
   padding-bottom: 2rem;
   /* Forçar cor padrão da scrollbar */
   scrollbar-color: rgba(0, 0, 0, 0.2) transparent !important;
@@ -2058,11 +2059,6 @@ button:focus-visible,
   transform: translateY(-4px);
   border-color: var(--hymple-text-tertiary);
   box-shadow: var(--gitbook-shadow-md);
-}
-
-.hymple-section-icon {
-  font-size: 1.5rem;
-  line-height: 1;
 }
 
 .hymple-section-title {

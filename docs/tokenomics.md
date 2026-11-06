@@ -17,7 +17,7 @@ The tokenomics structure was designed with a focus on:
 - Active community participation;
 - Distribution with a deflationary tendency over time.
 
-### 🪙 Strategic Functions of the HYM Token
+### Strategic Functions of the HYM Token
 
 - **On-chain signaling:** each HYM token grants voting power in public, recorded
 consultations over a defined set of protocol parameters (see Technical Governance).
@@ -34,7 +34,7 @@ reduced fees and access to advanced features.
 periodic buybacks and burns, reducing the circulating supply in a
 sustainable way.
 
-### 📈 Total Token Distribution
+### Total Token Distribution
 
 The total supply of 70 million HYM tokens will be distributed as follows:
 
@@ -51,7 +51,7 @@ The total supply of 70 million HYM tokens will be distributed as follows:
 | Public Sale | 5,000,000 | 7.1% | Public sale at TGE. |
 | Liquidity & Market Stability Fund | 8,000,000 | 11.4% | Provision of liquidity and pair stability. |
 
-### ⏳ Release Schedule and Vesting
+### Release Schedule and Vesting
 
 The Platform Usage Rewards (15M) and the Staking Rewards
 (15M) will be released gradually following a fixed annual cap.
@@ -91,7 +91,7 @@ Additional schedules:
 - Private/Public Sale: gradual unlocking after TGE. The detailed unlock schedule will be
 **published here before the TGE** — until it is linked, it is not yet public;
 
-### 💰 Economic Sustainability
+### Economic Sustainability
 
 - **Supply control:** gradual, capped emission model limits inflation.
 - **Buybacks and burns:** part of the fees is destined for the permanent removal of
@@ -109,7 +109,7 @@ signaling votes (non-binding), recorded on-chain.
     periods distribution approaches the cap. Net supply direction is therefore an emergent
     result of usage, not a guarantee.
 
-### 🧭 Governance
+### Governance
 
 The HYM token acts as a **signaling** mechanism, allowing the community to vote on
 topics such as:
@@ -125,7 +125,7 @@ the matching engine, product releases and the final decision on every parameter.
 Binding on-chain votes, if ever introduced, will cover only a closed set of low-risk
 parameters and will be announced in advance (see Technical Governance Framework).
 
-### ✅ Conclusion
+### Conclusion
 
 HYM Tokenomics combines robust initial incentives with controlled and deflationary
 distribution over time, promoting a balance between

@@ -1,194 +1,61 @@
-# Setup Guide - Hymple Documentation
+# Configuração do ambiente local
 
-Este guia explica como instalar e configurar todas as dependências necessárias para o MkDocs.
+Este guia descreve como executar e validar o site de documentação neste
+repositório.
+
+## Requisitos
+
+- Python 3
+- `pip`
 
 ## Instalação
 
-### 1. Instalar Python e pip
-
-Certifique-se de ter Python 3.8+ instalado:
+Na raiz do repositório, crie e ative um ambiente virtual:
 
 ```bash
-python3 --version
+python3 -m venv .venv
+source .venv/bin/activate
 ```
 
-### 2. Criar ambiente virtual (recomendado)
+Instale as dependências utilizadas pelo site:
 
 ```bash
-cd /home/jeferson/workspace/hymple.docs
-python3 -m venv venv
-source venv/bin/activate  # Linux/Mac
+python -m pip install --upgrade pip
+python -m pip install mkdocs-material mkdocs-glightbox
 ```
 
-### 3. Instalar dependências
+## Executar o site
 
 ```bash
-pip install mkdocs-material
-pip install mkdocs-glightbox
-pip install mkdocs-git-revision-date-localized-plugin
-pip install mkdocs-minify-plugin
+mkdocs serve --dev-addr 127.0.0.1:8000
 ```
 
-Ou instale tudo de uma vez:
+Acesse <http://127.0.0.1:8000/>. O MkDocs observa os arquivos e atualiza o site
+durante o desenvolvimento.
+
+## Validar o build
+
+Antes de enviar alterações, execute:
 
 ```bash
-pip install mkdocs-material mkdocs-glightbox mkdocs-git-revision-date-localized-plugin mkdocs-minify-plugin
+mkdocs build --strict
 ```
 
-### 4. Verificar instalação
+Os arquivos gerados ficam em `site/`. Esse diretório é resultado do build e não
+deve ser editado manualmente.
 
-```bash
-mkdocs --version
-```
+## Organização do conteúdo
 
-## Comandos Úteis
+- Páginas e recursos publicados: `docs/`.
+- Configuração do site e navegação: `mkdocs.yml`.
+- Conteúdo Markdown reutilizável: `includes/`.
+- Personalizações de template: `overrides/`.
 
-### Iniciar servidor de desenvolvimento
+O conteúdo público é mantido em inglês. Preserve os termos definidos no
+glossário e diferencie informações disponíveis de itens planejados ou controles
+alvo.
 
-```bash
-mkdocs serve
-```
+## Publicação
 
-Acesse em: http://127.0.0.1:8000
-
-### Build da documentação
-
-```bash
-mkdocs build
-```
-
-Os arquivos serão gerados em `site/`
-
-### Deploy no GitHub Pages
-
-```bash
-mkdocs gh-deploy
-```
-
-## Estrutura de Arquivos
-
-```
-hymple.docs/
-├── mkdocs.yml                 # Configuração principal
-├── docs/                      # Arquivos de documentação
-│   ├── index.md              # Página inicial
-│   ├── introduction.md       # Introdução
-│   ├── examples.md           # Exemplos de recursos
-│   ├── assets/               # Imagens e recursos
-│   ├── stylesheets/
-│   │   └── styles.css        # CSS customizado
-│   └── javascripts/
-│       └── mathjax.js        # Configuração MathJax
-├── includes/
-│   └── abbreviations.md      # Abreviações DeFi/Web3
-└── site/                      # Build output (gerado)
-```
-
-## Personalização
-
-### Cores do Tema
-
-Edite em `mkdocs.yml`:
-
-```yaml
-theme:
-  palette:
-    primary: custom  # Definido em styles.css
-    accent: blue
-```
-
-### CSS Customizado
-
-Edite `docs/stylesheets/styles.css` para ajustar:
-- Cores (variáveis CSS em `:root`)
-- Tipografia
-- Espaçamentos
-- Animações
-
-### Navegação
-
-Edite a seção `nav` em `mkdocs.yml`:
-
-```yaml
-nav:
-  - Home: index.md
-  - Whitepaper:
-    - Introduction: introduction.md
-    - Architecture: architecture.md
-  - Developer:
-    - API: api.md
-    - SDK: sdk.md
-```
-
-## Recursos Avançados
-
-### Mermaid Diagrams
-
-Já configurado! Use:
-
-\`\`\`mermaid
-graph TD
-    A[Start] --> B[Process]
-    B --> C[End]
-\`\`\`
-
-### Fórmulas Matemáticas
-
-Já configurado com MathJax:
-
-- Inline: `\\(formula\\)`
-- Display: `\\[formula\\]`
-
-### Admonitions
-
-```markdown
-!!! note "Título"
-    Conteúdo da nota
-```
-
-Tipos: note, tip, warning, danger, success, info
-
-### Tabs
-
-```markdown
-=== "Tab 1"
-    Conteúdo 1
-
-=== "Tab 2"
-    Conteúdo 2
-```
-
-## Dicas de Performance
-
-1. Use `mkdocs-minify-plugin` para otimizar HTML/CSS/JS
-2. Otimize imagens antes de adicionar em `docs/assets/`
-3. Use caching do navegador
-4. Configure CDN para assets estáticos
-
-## Troubleshooting
-
-### Erro: Plugin não encontrado
-
-```bash
-pip install mkdocs-[plugin-name]
-```
-
-### Servidor não inicia
-
-Verifique se a porta 8000 está livre:
-
-```bash
-lsof -i :8000
-mkdocs serve -a 127.0.0.1:8001  # Use outra porta
-```
-
-### Estilos não aplicados
-
-Limpe o cache do navegador ou use Ctrl+Shift+R
-
-## Recursos Adicionais
-
-- [MkDocs Material Documentation](https://squidfunk.github.io/mkdocs-material/)
-- [Markdown Guide](https://www.markdownguide.org/)
-- [Mermaid Diagrams](https://mermaid.js.org/)
-- [MathJax Documentation](https://www.mathjax.org/)
+A publicação é realizada pelo GitHub Actions, conforme o workflow do repositório.
+Não use `mkdocs gh-deploy` como fluxo de publicação deste projeto.

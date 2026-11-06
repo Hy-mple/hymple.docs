@@ -21,32 +21,26 @@ hide:
 
 <div class="hymple-sections">
   <a href="./introduction/" class="hymple-section-card">
-    <span class="hymple-section-icon">📖</span>
     <span class="hymple-section-title">Introduction</span>
     <span class="hymple-section-desc">What Hymple is and why a hybrid exchange model.</span>
   </a>
   <a href="./architecture/" class="hymple-section-card">
-    <span class="hymple-section-icon">🏗️</span>
     <span class="hymple-section-title">Architecture</span>
     <span class="hymple-section-desc">System design, components and execution flow.</span>
   </a>
   <a href="./security-architecture/" class="hymple-section-card">
-    <span class="hymple-section-icon">🔒</span>
     <span class="hymple-section-title">Security</span>
     <span class="hymple-section-desc">Advanced security architecture and threat model.</span>
   </a>
   <a href="./user-experience-onboarding/" class="hymple-section-card">
-    <span class="hymple-section-icon">👤</span>
     <span class="hymple-section-title">User Experience</span>
     <span class="hymple-section-desc">Onboarding flow and user journey design.</span>
   </a>
   <a href="./tokenomics/" class="hymple-section-card">
-    <span class="hymple-section-icon">💰</span>
     <span class="hymple-section-title">Tokenomics</span>
     <span class="hymple-section-desc">Token model, utility, rewards and staking.</span>
   </a>
   <a href="./fees/" class="hymple-section-card">
-    <span class="hymple-section-icon">💵</span>
     <span class="hymple-section-title">Fees</span>
     <span class="hymple-section-desc">Fee structure and burn policy.</span>
   </a>
