@@ -11,7 +11,7 @@ The staking protocol of the Hymple token was designed to incentivize token reten
 
 The staking program is fully on-chain, transparent and auditable, ensuring fairness in distribution and preservation of the ecosystem's integrity.
 
-💡 **Note:** The HYM token staking protocol has a maximum and immutable cap of **15,000,000 HYM**.
+**Note:** The HYM token staking protocol has a maximum and immutable cap of **15,000,000 HYM**.
 These tokens will not be minted, but rather pre-reserved during the token creation, ensuring full transparency, emission control and preservation of scarcity within the ecosystem.
 
 ---
@@ -28,7 +28,7 @@ The annual return rate (APR) applied to staking is directly linked to the exchan
 
 The progressive variation of the APR seeks to balance reward distribution with the platform's organic growth, avoiding excessive token release and preserving its market value.
 
-💡 **Important:** the APR is a **nominal target rate**, not a guarantee of token emission. The actual payout is always limited by the tokens available in the monthly pool and by the per-user cap — see "Reward payout rule" below.
+**Important:** the APR is a **nominal target rate**, not a guarantee of token emission. The actual payout is always limited by the tokens available in the monthly pool and by the per-user cap — see "Reward payout rule" below.
 
 ---
 

@@ -75,10 +75,10 @@ These mechanisms complement — but do not replace — central governance.
 
 Hymple positions itself as a hybrid, auditable and transparent ecosystem that balances decentralization and efficiency:
 
-- 🔒 **Non-custodial**
-- 🧩 **On-chain contracts** that are open-source and auditable
-- ⚙ **High-performance proprietary** off-chain infrastructure
-- 🌐 **Verifiable transparency**
+- **Non-custodial**
+- **On-chain contracts** that are open-source and auditable
+- **High-performance proprietary** off-chain infrastructure
+- **Verifiable transparency**
 - 🗳 **On-chain participatory governance**
 
 The result is a hybrid exchange that combines the sovereignty of DEXs with the operational efficiency of CEXs.

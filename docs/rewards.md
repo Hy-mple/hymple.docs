@@ -13,7 +13,7 @@ The Hymple ecosystem adopts an innovative rewards mechanism intended to incentiv
 
 The main objective of the rewards mechanism is to foster sustainable use of the platform, rewarding users who contribute to the growth, stability and integrity of the ecosystem, while controlling token release to avoid excessive concentration.
 
-💡 **Note:** Hymple's rewards program has a maximum and immutable limit of 15,000,000 HYM.
+**Note:** Hymple's rewards program has a maximum and immutable limit of 15,000,000 HYM.
 These tokens will not be minted, but rather pre-reserved during the token creation, ensuring full transparency, emission control and preservation of scarcity within the ecosystem.
 
 ### 2. Weight structure and criteria
@@ -34,7 +34,7 @@ During the launch phase (year 1 to year 3), rewards will be calculated based on 
 
 The sum of the metrics generates an individual normalized score, which defines each user's share of the rewards pool.
 
-💡 **Note:** A total weighted value greater than 1 reflects the possibility of amplifying rewards for users who stand out in multiple criteria, promoting a more robust and active ecosystem from the launch phase.
+**Note:** A total weighted value greater than 1 reflects the possibility of amplifying rewards for users who stand out in multiple criteria, promoting a more robust and active ecosystem from the launch phase.
 
 #### Weights review in future phases
 
@@ -125,7 +125,7 @@ Where:
 - user_volume: user's trading volume during the month.
 - max_user_volume: highest trading volume recorded for a user during the month.
 
-✅ **Notes:**
+**Notes:**
 
 - The square root reduces disparities between large and small traders.
 - It promotes constant activity, not just volume spikes.
@@ -146,7 +146,7 @@ Where:
 - active_days: number of days in the month the user had activity.
 - possible_active_days: total possible days in the month (30 or 31).
 
-✅ **Notes:**
+**Notes:**
 
 - Rewards consistency of engagement, not just volume.
 - Values users with continuous presence.
@@ -167,7 +167,7 @@ Where:
 - user_liquidity_total: total liquidity provided by the user during the month.
 - max_user_liquidity: highest liquidity provided value recorded for a user during the month.
 
-✅ **Notes:**
+**Notes:**
 
 - Encourages stable liquidity provision.
 - Reduces disparities between large and small providers.
@@ -190,7 +190,7 @@ Where:
 - staking_days: number of days with tokens staked.
 - days_in_month: total days in the month (30 or 31).
 
-✅ **Notes:**
+**Notes:**
 
 - Values commitment and stability.
 - Ensures that only eligible users participate.
@@ -229,7 +229,7 @@ Where:
 - step2: user's result after applying the diversification factor.
 - max_step2: Highest Step 2 result among all users during the month.
 
-✅ **Example**
+**Example**
 
 Given the situation:
 
@@ -246,7 +246,7 @@ We have:
 - step_2 = 8.75 (12.5 * 0.7)
 - score_interaction = 0.05 * sqrt(8.75 / 50) = 0.02092
 
-✅ **Notes:**
+**Notes:**
 
 - Penalizes spam and favors organic activity.
 - Ensures balanced distribution among different profiles.
@@ -267,7 +267,7 @@ Where:
 - qualified_referral_count: number of **qualified** referrals by the user during the month. A referral is qualified only when the referred user demonstrates proven real activity (executed trades) and passes the anti-abuse filters defined in **Anti-Manipulation and Anti-Abuse Protocols** — empty or sybil wallets do not count.
 - max_qualified_referral_count: highest number of qualified referrals recorded for a user during the month.
 
-✅ **Notes:**
+**Notes:**
 
 - Normalizes discrepancies and prevents abuse.
 - Counting only qualified referrals removes the incentive to create empty wallets.
@@ -303,7 +303,7 @@ $$
 
 **Note:** In the example, the raw loyalty score is 7. In the implementation, replace 7 with the actual calculated value of raw_loyalty_score.
 
-✅ **Notes:**
+**Notes:**
 
 - Reinforces retention and continuity.
 - Values long-standing and consistent users.
@@ -424,7 +424,7 @@ $$
 
 Since all eligible users are at the cap, there is no one below the cap to receive the redistribution. The 20,000 surplus is therefore treated as undistributed and follows the burn and accumulation rule (see "Accumulation and burn of undistributed tokens").
 
-💡 **Note:** with few eligible users, the 5% cap is intentionally restrictive — it prevents pool concentration and returns the undistributed amount to the ecosystem.
+**Note:** with few eligible users, the 5% cap is intentionally restrictive — it prevents pool concentration and returns the undistributed amount to the ecosystem.
 
 ### 5. Simulated distribution example
 
@@ -530,7 +530,7 @@ $$
 accumulated = monthly\_pool - distributed - burned
 $$
 
-✅ **Applied patterns:**
+**Applied patterns:**
 
 - monthly_pool → Monthly token pool.
 - distributed → Amount distributed.
@@ -596,7 +596,7 @@ $$
 remaining\_reward\_token\_balance = 14,956,250 - (distributed + burned) = 14,881,468.755
 $$
 
-✅ **Model advantages:**
+**Model advantages:**
 
 - Distribution control and token appreciation via burn mechanism;
 - Rewards proportional to the platform's real activity;

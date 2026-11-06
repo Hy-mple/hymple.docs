@@ -1,6 +1,6 @@
-site_name: HYMPLE
-site_url: https://docs.hymple.com/
-site_description: Hybrid by nature, simple by choice - Next-generation hybrid decentralized exchange
+site_name: Hymple Docs
+site_url: https://docs.hymple.exchange/
+site_description: Product, protocol, and technical documentation for Hymple.
 
 # Theme Configuration
 theme:
@@ -62,30 +62,35 @@ theme:
 
 # Navigation Structure
 nav:
-  - 🏠 Home: index.md
-  - 📖 Introduction: introduction.md
-  - � Glossary: glossary.md
-  - �🔄 From Traditional to Hybrid: from-traditional-to-hybrid.md
-  - 🌍 Global Exchange Landscape: global-exchange-landscape.md
-  - ✨ Benefits: benefits.md
-  - 🏗️ Architecture: architecture.md
-  - 🔐 Settlement & Withdrawals: custody-withdrawals.md
-  - 📊 Observability & Monitoring: observability-monitoring.md
-  - 👤 User Experience & Onboarding: user-experience-onboarding.md
-  - 🔒 Advanced Security Architecture: security-architecture.md
-  - 🚨 Operational Resilience & Incident Response: operational-resilience.md
-  - 🛡️ Anti-Manipulation and Anti-Abuse Protocols: anti-manipulation-protocols.md
-  - ⚖️ Conflict and Dispute Resolution Mechanism: dispute-resolution.md
-  - ⚠️ System Limitations & Assumptions: system-limitations.md
-  - 🏛️ Technical Governance Framework: governance-framework.md
-  - 🔍 Audit & Transparency Model: audit-transparency.md
-  - 🎯 Risk Disclosure & Threat Model: risk-disclosure-threat-model.md
-  - 💰 Tokenomics: tokenomics.md
-  - 🪙 Token Utility: token-utility.md
-  - 🎁 Rewards: rewards.md
-  - 📈 Staking: staking.md
-  - 💵 Fees: fees.md
-  - 🔥 Burn Policy: burn-policy.md
+  - Home: index.md
+  - Overview:
+      - Introduction: introduction.md
+      - From Traditional to Hybrid: from-traditional-to-hybrid.md
+      - Global Exchange Landscape: global-exchange-landscape.md
+      - Benefits: benefits.md
+      - User Experience & Onboarding: user-experience-onboarding.md
+  - Protocol:
+      - Architecture: architecture.md
+      - Settlement & Withdrawals: custody-withdrawals.md
+      - Glossary: glossary.md
+  - Security & Operations:
+      - Advanced Security Architecture: security-architecture.md
+      - Operational Resilience & Incident Response: operational-resilience.md
+      - Anti-Manipulation and Anti-Abuse Protocols: anti-manipulation-protocols.md
+      - Conflict and Dispute Resolution: dispute-resolution.md
+      - System Limitations & Assumptions: system-limitations.md
+      - Risk Disclosure & Threat Model: risk-disclosure-threat-model.md
+      - Audit & Transparency Model: audit-transparency.md
+      - Observability & Monitoring: observability-monitoring.md
+  - Governance:
+      - Technical Governance Framework: governance-framework.md
+  - HYM Token:
+      - Tokenomics: tokenomics.md
+      - Token Utility: token-utility.md
+      - Rewards: rewards.md
+      - Staking: staking.md
+      - Fees: fees.md
+      - Burn Policy: burn-policy.md
 
 # Plugins
 plugins:
@@ -159,7 +164,6 @@ extra_css:
 # Extra JavaScript
 extra_javascript:
   - javascripts/mathjax.js
-  - javascripts/sidebar-adjust.js
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 # Remove "Made with Material for MkDocs" from footer
