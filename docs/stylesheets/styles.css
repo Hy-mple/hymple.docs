@@ -364,6 +364,14 @@ body {
     display: none !important;
   }
 
+  /* Remove o espaço do cabeçalho reservado pelo tema no sumário integrado ao drawer. */
+  .md-nav--primary .md-nav--secondary .md-nav__title {
+    height: auto !important;
+    padding: 0.75rem 1rem !important;
+    line-height: 1.5rem !important;
+    white-space: normal !important;
+  }
+
   /* Ensure drawer works properly */
   .md-overlay {
     position: fixed;
